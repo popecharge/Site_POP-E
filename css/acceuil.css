@@ -1,0 +1,169 @@
+/* ── RESET ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── VARIABLES ── */
+:root {
+  --green:     #33FF00;
+  --white:     #FFFFFF;
+  --off:       #F6F6F3;
+  --gray-text: #6B6B69;
+  --gray-mid:  #D4D4CF;
+  --black:     #111110;
+}
+
+/* ── BASE ── */
+html, body {
+  height: 100%;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--black);
+}
+
+/* ── PAGE ── */
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  overflow: hidden;
+}
+
+
+.logo img {
+    height: 160px;
+}
+/* ── DESCRIPTION ── */
+.description {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  text-align: center;
+}
+
+.description p {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  font-weight: 300;
+  color: var(--gray-text);
+  line-height: 1.8;
+}
+
+/* ── TOGGLES ── */
+.toggle-item {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  isolation: isolate;
+}
+
+#toggle-users {
+  top: 5%;
+  left: 4%;
+}
+
+#toggle-pro {
+  bottom: 15%;
+  left: 4%;
+}
+
+#toggle-marques {
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%);
+}
+
+.toggle-btn {
+  width: 160px;
+  height: 160px;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+.toggle-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.toggle-btn:hover img {
+  transform: scale(1.05);
+}
+
+/* ── PANEL ── */
+.panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  margin-top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--off);
+  border: 1px solid var(--gray-mid);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.panel.open {
+  display: block;
+  animation: popIn 0.2s ease;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateX(-50%) scale(0.9) translateY(-8px); }
+  to   { opacity: 1; transform: translateX(-50%) scale(1)   translateY(0);    }
+}
+
+/* ── PANEL BUTTON ── */
+.panel-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.panel-btn:hover {
+  background: var(--green);
+  color: var(--black);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .toggle-btn {
+    width: 120px;
+    height: 120px;
+  }
+
+  #toggle-users   { top: 4%;    left: 2%;  }
+  #toggle-pro     { bottom: 4%; right: 2%; }
+  #toggle-marques { top: 50%;   right: 2%; }
+}
+
+@media (max-width: 480px) {
+  .toggle-btn {
+    width: 90px;
+    height: 90px;
+  }
+}
