@@ -24,8 +24,8 @@ html {
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background: var(--white);
-  color: var(--black);
+  background: var(--black);
+  color: var(--white);
   line-height: 1.6;
 }
 
@@ -33,20 +33,23 @@ body {
    HERO
 ════════════════════ */
 .hero {
-  background: var(--white);
+  background: var(--black);
   padding: 5rem 2.5rem 4rem;
   border-bottom: 1px solid #E5E5E1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
   max-width: 860px;
   margin: 0 auto;
   width: 100%;
 }
 
+
 .logo img {
-    height: 90px;
+    height: 90px; 
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(214, 255, 204, 0.788));
+
 }
 .logo2 img {
     height: 5cqi;
@@ -54,7 +57,7 @@ body {
 .tagline {
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   font-weight: 300;
-  color: var(--gray-text);
+  color: var(--gray-mid);
   line-height: 1.55;
   max-width: 480px;
 }
@@ -74,7 +77,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.75rem;
+  gap: 1rem;
 }
 
 /* Backgrounds */
@@ -136,6 +139,7 @@ body {
   text-decoration: none;
   border: 2px solid var(--black);
   transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  border-radius: 8px;
 }
 
 .cta-btn:hover {
@@ -155,9 +159,63 @@ body {
 .cta-btn--dark:hover {
   background: var(--white);
   color: var(--black);
-  border-color: var(--black);
+  border-color: var(--white);
 }
 
+/* ════════════════════
+   TICKER (bandeau défilant)
+════════════════════ */
+.ticker-wrap {
+  background: #0A0A0A;
+  overflow: hidden;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid #ADFF00;
+  border-bottom: 2px solid #ADFF00;
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker-scroll 18s linear infinite;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 2.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ADFF00;
+}
+
+.ticker-item .val {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.ticker-sep {
+  display: inline-block;
+  width: 4px; height: 4px;
+  background: #9109F0;
+  border-radius: 50%;
+  margin: 0 1.5rem;
+  flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 /* ════════════════════
    FOOTER
 ════════════════════ */
