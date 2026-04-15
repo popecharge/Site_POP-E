@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 8%;
+    padding: 10px;
 }
 
 .logo img {
@@ -144,6 +144,49 @@ body {
 .card p { 
     color: var(--text-gray); 
     font-size: 1.05rem;
+}
+
+.gateway-card {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.gateway-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.gateway-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gateway-card:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.gateway-card:hover {
+    color: #000; /* Le texte devient noir pour contraster avec le jaune */
+}
+
+.gateway-card:hover p, 
+.gateway-card:hover .step,
+.gateway-card:hover .arrow-link {
+    color: #000; /* On force toutes les parties du texte en noir */
+}
+
+.gateway-card:hover .icon-box {
+    border-color: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.05);
 }
 
 .branding-area {
