@@ -6,81 +6,28 @@
     <title>POP-E | Solutions B2B</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        /* Styles spécifiques pour l'effet "Entonnoir" */
-        .gateway-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .gateway-card {
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            min-height: 400px;
-        }
-
-        .gateway-card:hover {
-            transform: scale(1.02);
-            border-color: var(--accent);
-            background: rgba(195, 247, 30, 0.03);
-        }
-
-        .gateway-card .icon-box {
-            width: 80px;
-            height: 80px;
-            font-size: 2.5rem;
-            margin: 0 auto 30px auto;
-        }
-
-        .gateway-card h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .gateway-card p {
-            font-size: 0.95rem;
-            opacity: 0.7;
-            max-width: 250px;
-        }
-
-        .arrow-link {
-            margin-top: 30px;
-            color: var(--accent);
-            font-weight: 800;
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 1024px) {
-            .gateway-grid { grid-template-columns: 1fr; }
-            .gateway-card { min-height: 250px; }
-        }
-    </style>
 </head>
 <body>
 
+    <!-- HEADER -->
     <nav class="navbar">
         <div class="logo">
             <a href="/">
                 <img src="/logo_pop-e_blanc.png" alt="POP-E Logo">
-            </a>    
+            </a>
         </div>
     </nav>
 
-    <header class="hero">
-        <h1>Quelle est votre <span>activité ?</span></h1>
-        <p>Sélectionnez votre secteur pour découvrir nos solutions de recharge sur-mesure.</p>
-    </header>
+    <!-- FOND FIXE -->
+    <div class="section-fixed">
 
-    <section class="container">
+        <header class="hero">
+            <h1>Quelle est votre <span>activité ?</span></h1>
+            <p>Sélectionnez votre secteur pour découvrir nos solutions de recharge sur-mesure.</p>
+        </header>
+
         <div class="gateway-grid">
-            
+
             <a href="festival.html" class="card gateway-card">
                 <div class="icon-box">🎸</div>
                 <h2>Festivals & Événements</h2>
@@ -102,6 +49,28 @@
                 <div class="arrow-link">→</div>
             </a>
 
+        </div>
+    </div>
+
+    <!-- SPACER : crée la hauteur de scroll nécessaire -->
+    <div class="scroll-spacer"></div>
+
+    <!-- PAGE QUI MONTE PAR-DESSUS -->
+    <section class="section-overlay">
+        <h2>Lorem ipsum dolor sit amet</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+        <div class="overlay-columns">
+            <div>
+                <h3>Nemo enim ipsam voluptatem</h3>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            </div>
+            <div>
+                <h3>Ut labore et dolore</h3>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.</p>
+            </div>
         </div>
     </section>
 
