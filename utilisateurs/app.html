@@ -13,10 +13,11 @@
   <!-- HERO -->
   <header class="hero">
     <h1 class="logo">
-        <img src="/img/logo.png" alt="Logo POP E">
+        <img src="/img/logo2.png" alt="Logo POP E">
     </h1>    
     <p class="tagline">La batterie externe en libre-service,<br>disponible partout, rendue n'importe où.</p>
-    </header>
+  </header>
+      
 
   <!-- SECTION 1 — COMMENT ÇA MARCHE -->
   <section class="block block--white">
@@ -63,12 +64,49 @@
     </div>
   </section>
 
+
+    <!-- BANDEAU DÉFILANT -->
+    <div class="ticker-wrap">
+        <div class="ticker-track">
+            <span class="ticker-item"><span class="val">500+</span> Stations</span>
+            <span class="ticker-sep"></span>
+            <span class="ticker-item"><span class="val">3 câbles</span> Compatible</span>
+            <span class="ticker-sep"></span>
+            <span class="ticker-item"><span class="val">0 friction</span> Simple comme bonjour</span>
+            <span class="ticker-sep"></span>
+            <!-- Dupliquer une fois pour boucle fluide -->
+            <span class="ticker-item"><span class="val">500+</span> Stations</span>
+            <span class="ticker-sep"></span>
+            <span class="ticker-item"><span class="val">3 câbles</span> Compatible</span>
+            <span class="ticker-sep"></span>
+            <span class="ticker-item"><span class="val">0 friction</span> Simple comme bonjour</span>
+            <span class="ticker-sep"></span>
+        </div>
+    </div>
+
   <!-- FOOTER -->
   <footer class="footer">
   <h1 class="logo2">
         <img src="/img/logo2.png" alt="Logo POP E">
     </h1>    <a href="/app/contact" class="footer-contact">Contact</a>
   </footer>
+  <script>
+  const slides = document.querySelectorAll('.billboard-slide');
+  const dots = [document.getElementById('d0'), document.getElementById('d1'), document.getElementById('d2')];
+  let cur = 0;
+
+  function next() {
+    slides[cur].classList.remove('active');
+    slides[cur].classList.add('exit');
+    dots[cur].classList.remove('on');
+    setTimeout(() => { slides[cur].classList.remove('exit'); }, 450);
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('on');
+  }
+
+  setInterval(next, 2800);
+</script>
 
 </body>
 </html>
