@@ -1,87 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POP-E | Solutions B2B</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POP-E | Solutions B2B</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/b2b.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="/">
-                <img src="/img/logo2.png" alt="POP-E Logo">
-            </a>
-        </div>
-    </nav>
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <div class="logo-mark">
+        <img src="/img/logo2.png" alt="Logo POP-E" style="height: 40px; width: auto;">
+      </div>
+    </a>
+    <a href="https://calendly.com/pop-e/rdv-festival-2026-pop-e" target="_blank" rel="noopener" class="btn-partner">
+      Devenir partenaire <span class="arrow">→</span>
+    </a>
+  </nav>
 
-    <!-- FOND FIXE -->
-    <div class="section-fixed">
+  <!-- ─── MAIN ─── -->
+  <main>
 
-        <header class="hero">
-            <h1>Quelle est votre <span>activité ?</span></h1>
-            <p>Sélectionnez votre secteur pour découvrir nos solutions de recharge sur-mesure.</p>
-        </header>
-
-        <div class="gateway-grid">
-
-            <a href="festival.html" class="card gateway-card">
-                <div class="icon-box">
-                    <img src="/img/events_image.png" alt="Icône Festival">
-                </div>
-                <h2>Festivals & Événements</h2>
-                <p>Solutions mobiles haute capacité pour flux massifs de festivaliers.</p>
-                <div class="arrow-link">→</div>
-            </a>
-
-            <a href="lieux.html" class="card gateway-card highlight">
-                <div class="icon-box">
-                    <img src="/img/restaurant_image.png" alt="Icône Festival">
-                </div>
-                <h2>Bars, Clubs & Hôtels</h2>
-                <p>Bornes design pour fidéliser votre clientèle et augmenter le panier moyen.</p>
-                <div class="arrow-link">→</div>
-            </a>
-
-            <a href="collectivités.html" class="card gateway-card">
-                <div class="icon-box">
-                    <img src="/img/collectivités_image.png" alt="Icône Festival">
-                </div>
-                <h2>Collectivités & Public</h2>
-                <p>Équipements durables pour gares, mairies et espaces urbains connectés.</p>
-                <div class="arrow-link">→</div>
-            </a>
-
-        </div>
-    </div>
-
-    <!-- SPACER : crée la hauteur de scroll nécessaire -->
-    <div class="scroll-spacer"></div>
-
-    <!-- PAGE QUI MONTE PAR-DESSUS -->
-    <section class="section-overlay">
-        <h2>Lorem ipsum dolor sit amet</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-
-        <div class="overlay-columns">
-            <div>
-                <h3>Nemo enim ipsam voluptatem</h3>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-            </div>
-            <div>
-                <h3>Ut labore et dolore</h3>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.</p>
-            </div>
-        </div>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Choisissez votre<br><em>type de lieu</em></h1>
+      <p>Recharge, expérience et visibilité,<br>conçues pour votre public.</p>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- CARDS -->
+    <div class="gateway-grid">
 
-    <script src="/js/pro.js"></script>
+      <a href="festival.html" class="gateway-card">
+        <div class="card-number">01</div>
+        <h2>Festivals &amp; Événements</h2>
+        <p>Maximisez l'expérience et la visibilité sur des flux massifs.</p>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="lieux.html" class="gateway-card">
+        <div class="card-number">02</div>
+        <h2>Bars, Clubs &amp; Hôtels</h2>
+        <p>Offrez un service premium à vos clients.</p>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="collectivites.html" class="gateway-card">
+        <div class="card-number">03</div>
+        <h2>Collectivités &amp; Lieux publics</h2>
+        <p>Un service utile pour vos usagers au quotidien — gares, mairies, espaces urbains.</p>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="evenements-prives.html" class="gateway-card">
+        <div class="card-number">04</div>
+        <h2>Événements privés</h2>
+        <p>Mariages, soirées, événements exclusifs : offre une expérience unique à vos invités.</p>
+        <div class="card-arrow">→</div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-left">
+      <img src="/img/logo2.png" alt="Logo POP-E" style="height: 40px; width: auto;">
+      <a href="mailto:hello@pop-e.eu" class="footer-email">hello@pop-e.eu</a>
+    </div>
+  </footer>
+
 </body>
 </html>
