@@ -114,10 +114,9 @@ a {
 .hero {
   position: relative;
   text-align: center;
-  padding: 100px 24px 48px;
+  padding: 160px 24px 48px;
   overflow: hidden;
-  background:
-    var(--dark);
+  background: transparent;
 }
 
 .hero-content {
@@ -158,6 +157,8 @@ a {
 
 .cards-section {
   position: relative;
+  margin-top: -400px; 
+  padding-top: 400px;
   background:
     linear-gradient(to bottom, var(--dark) 0%, transparent 20%),
     url('/img/card-background.png');
@@ -629,9 +630,6 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero {
-    padding-top: 90px;
-  }
 
   .footer-container {
     grid-template-columns: 1fr;
