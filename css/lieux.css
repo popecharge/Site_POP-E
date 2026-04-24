@@ -8,16 +8,18 @@
 :root {
   --green: #ADFF00;
   --black: #080A06;
-  --dark:  #0C0E09;
-  --text:  #FFFFFF;
+  --dark: #0C0E09;
+  --text: #FFFFFF;
   --text-muted: rgba(255, 255, 255, 0.65);
   --font-display: 'Bebas Neue', sans-serif;
-  --font-body:    'Barlow', sans-serif;
+  --font-body: 'Barlow', sans-serif;
   --radius: 20px;
 }
 
 /* ─── RESET ─── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -30,11 +32,11 @@ html {
 
 body {
   background-color: var(--black);
-  background-image: 
+  background-image:
     linear-gradient(to bottom, rgba(8, 10, 6, 0.8) 0%, rgba(8, 10, 6, 0.4) 50%, var(--black) 100%),
-    url('/img/lieux-background.png');
-    background-attachment: fixed;
-    background-size: cover;
+    url('/img/b2b-commerces/lieux-background.png');
+  background-attachment: fixed;
+  background-size: cover;
   color: var(--text);
   font-family: var(--font-body);
   min-height: 100vh;
@@ -213,7 +215,6 @@ a {
   overflow: hidden;
 }
 
-/* subtle green glow in corner */
 .feature-card::after {
   content: '';
   position: absolute;
@@ -232,7 +233,6 @@ a {
   opacity: 1;
 }
 
-/* rotating border */
 .feature-card::before {
   content: '';
   position: absolute;
@@ -310,7 +310,9 @@ a {
 
 /* ─── ANIMATIONS ─── */
 @keyframes rotate-border {
-  to { --angle: 360deg; }
+  to {
+    --angle: 360deg;
+  }
 }
 
 /* ─── RESPONSIVE ─── */

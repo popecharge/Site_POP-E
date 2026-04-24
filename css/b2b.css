@@ -114,11 +114,11 @@ a {
 
 .cards-section {
   position: relative;
-  margin-top: -400px; 
+  margin-top: -400px;
   padding-top: 400px;
   background:
     linear-gradient(to bottom, var(--dark) 0%, transparent 20%),
-    url('/img/card-background.png');
+    url('/img/b2b-acceuil/card-background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -152,7 +152,7 @@ a {
   height: 480px;
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid rgba(192,192,192, 0.15);
+  border: 1px solid rgba(192, 192, 192, 0.15);
   transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), border-color 0.4s, box-shadow 0.4s;
   transform: translateZ(0);
 
@@ -217,7 +217,7 @@ a {
       rgba(8, 10, 6, 0) 100%);
   z-index: 2;
 
-  
+
 }
 
 .card-title {
@@ -240,14 +240,14 @@ a {
   display: flex;
   justify-content: center;
   z-index: 3;
-  margin-top: -60px; 
+  margin-top: -60px;
   padding-top: 60px;
 
-  background: linear-gradient(to bottom, 
-    transparent 0%,
-    transparent 20%,
-    rgba(8, 10, 6, 0.4) 40%,
-    rgba(8, 10, 6, 0.95) 100%);
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      transparent 20%,
+      rgba(8, 10, 6, 0.4) 40%,
+      rgba(8, 10, 6, 0.95) 100%);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 

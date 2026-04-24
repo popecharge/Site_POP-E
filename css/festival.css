@@ -8,16 +8,18 @@
 :root {
   --green: #ADFF00;
   --black: #080A06;
-  --dark:  #0C0E09;
-  --text:  #FFFFFF;
+  --dark: #0C0E09;
+  --text: #FFFFFF;
   --text-muted: rgba(255, 255, 255, 0.65);
   --font-display: 'Bebas Neue', sans-serif;
-  --font-body:    'Barlow', sans-serif;
+  --font-body: 'Barlow', sans-serif;
   --radius: 25px;
 }
 
 /* ─── RESET ─── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -30,10 +32,10 @@ html {
 
 body {
   background-color: var(--black);
-  background-image: url('/img/festival-background.png');
-   background-size: cover;
-    background-position: center;
-     background-attachment: fixed;
+  background-image: url('/img/b2b-événements/festival-background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-body);
   min-height: 100vh;
@@ -163,21 +165,17 @@ a {
   transform: scale(1.04);
 }
 
-/* Dark overlay on photo */
 .card-bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(8, 10, 6, 0.50) 0%,
-    rgba(8, 10, 6, 0.20) 30%,
-    rgba(8, 10, 6, 0.72) 65%,
-    rgba(8, 10, 6, 0.97) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(8, 10, 6, 0.50) 0%,
+      rgba(8, 10, 6, 0.20) 30%,
+      rgba(8, 10, 6, 0.72) 65%,
+      rgba(8, 10, 6, 0.97) 100%);
   z-index: 1;
 }
 
-/* Card inner layout */
 .card-overlay {
   position: relative;
   z-index: 2;
@@ -208,7 +206,6 @@ a {
   opacity: 0.5;
 }
 
-/* Pushes footer to bottom */
 .card-spacer {
   flex: 1;
 }
@@ -259,20 +256,17 @@ a {
   flex-shrink: 0;
 }
 
-/* Button area */
 .card-button-wrapper {
   padding: 0 24px 28px 24px;
   display: flex;
   justify-content: center;
   margin-top: -30px;
   padding-top: 50px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    transparent 20%,
-    rgba(8, 10, 6, 0.45) 45%,
-    rgba(8, 10, 6, 0.96) 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      transparent 20%,
+      rgba(8, 10, 6, 0.45) 45%,
+      rgba(8, 10, 6, 0.96) 100%);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
 }
@@ -339,7 +333,6 @@ a {
   transform: translateX(3px);
 }
 
-/* Rotating border on hover */
 .card::before {
   content: '';
   position: absolute;
@@ -367,7 +360,9 @@ a {
 
 /* ─── ANIMATIONS ─── */
 @keyframes rotate-border {
-  to { --angle: 360deg; }
+  to {
+    --angle: 360deg;
+  }
 }
 
 /* ─── RESPONSIVE ─── */
