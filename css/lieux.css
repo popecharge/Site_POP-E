@@ -162,6 +162,14 @@ a {
   width: clamp(160px, 20vw, 280px);
   height: auto;
   filter: drop-shadow(0 0 40px rgba(173, 255, 0, 0.25));
+  transition: filter 0.4s ease, transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+  cursor: default;
+
+}
+
+.hero-img:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 55px rgba(173, 255, 0, 0.65)) drop-shadow(0 0 20px rgba(173, 255, 0, 0.35));
 }
 
 .btn-install {
