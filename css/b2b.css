@@ -52,49 +52,6 @@ a {
   opacity: 0.5;
 }
 
-.deco-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  pointer-events: none;
-}
-
-.deco-lines span {
-  display: block;
-  height: 2px;
-  background: var(--green);
-  border-radius: 2px;
-  opacity: 0.7;
-}
-
-.deco-lines.top-right {
-  position: absolute;
-  top: 24px;
-  right: 36px;
-  z-index: 2;
-  transform: skewY(-12deg);
-}
-
-.deco-lines.top-right span:nth-child(1) {
-  width: 36px;
-}
-
-.deco-lines.top-right span:nth-child(2) {
-  width: 28px;
-}
-
-.deco-lines.top-right span:nth-child(3) {
-  width: 44px;
-}
-
-.deco-lines.top-right span:nth-child(4) {
-  width: 22px;
-}
-
-.deco-lines.top-right span:nth-child(5) {
-  width: 38px;
-}
-
 .site-header {
   position: absolute;
   top: 0;
@@ -283,20 +240,14 @@ a {
   display: flex;
   justify-content: center;
   z-index: 3;
-  
-  /* On remonte le bloc pour qu'il chevauche parfaitement l'icône sans coupure */
   margin-top: -60px; 
   padding-top: 60px;
 
-  /* LE FIX : On commence le dégradé beaucoup plus bas */
   background: linear-gradient(to bottom, 
-    transparent 0%,           /* 100% transparent sur le début */
-    transparent 20%,          /* On maintient la transparence pour éviter la barre */
-    rgba(8, 10, 6, 0.4) 40%,  /* On commence à assombrir doucement */
-    rgba(8, 10, 6, 0.95) 100% /* Noir complet seulement à la fin */
-  );
-
-  /* On vire le blur qui crée aussi une démarcation visuelle */
+    transparent 0%,
+    transparent 20%,
+    rgba(8, 10, 6, 0.4) 40%,
+    rgba(8, 10, 6, 0.95) 100%);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 
@@ -654,15 +605,6 @@ a {
   }
 }
 
-@media (max-width: 540px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .deco-lines.top-right {
-    display: none;
-  }
-}
 
 @property --angle {
   syntax: '<angle>';
@@ -689,47 +631,6 @@ a {
     transform: scale(1);
   }
 }
-
-.ripple {
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%) translateY(50%);
-  /* Centrage amélioré */
-  width: 0;
-  height: 0;
-  background: rgba(173, 255, 0, 0.2);
-  /* Un léger fond coloré aide l'effet */
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 5;
-  /* Entre le contenu et la bordure */
-}
-
-@keyframes rippleEffect {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.6;
-    box-shadow: 0 0 0 0 rgba(173, 255, 0, 0.6);
-  }
-
-  70% {
-    width: 200px;
-    height: 200px;
-    opacity: 0.3;
-    box-shadow: 0 0 40px 20px rgba(173, 255, 0, 0.2);
-  }
-
-  100% {
-    width: 400px;
-    /* Augmenté pour couvrir toute la largeur de la carte */
-    height: 400px;
-    opacity: 0;
-    box-shadow: 0 0 80px 40px rgba(173, 255, 0, 0);
-  }
-}
-
 
 @keyframes waterShimmer {
 

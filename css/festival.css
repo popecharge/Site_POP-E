@@ -376,8 +376,4 @@ a {
     grid-template-columns: 1fr;
     padding: 0 20px;
   }
-
-  .deco-lines.top-right {
-    display: none;
-  }
 }
