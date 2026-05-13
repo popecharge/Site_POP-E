@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>POP-E – Charge Your Power</title>
   <link rel="stylesheet" href="/css/acceuil.css">
+  <link rel="stylesheet" href="/css/chatbot.css">
 </head>
 <body>
-
+  <button id="lang-btn" onclick="toggleLang()">🇫🇷 FR</button>
   <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
@@ -30,7 +31,6 @@
   <!-- NAVBAR -->
   <nav id="navbar">
     <img id="nav-logo" src="/img/logo2.png" alt="Logo POP E">
-    <div id="toggle" onclick="toggleTheme()"></div>
   </nav>
 
   <!-- SKIP (sera déplacé dans phrase-key par le JS) -->
@@ -106,13 +106,12 @@
     </div>
   </div>
 
-  <!-- CHATBOT -->
-  <div id="chatbot">💬</div>
 
   <!-- TRANSITION OVERLAY -->
   <div id="transition-overlay"></div>
 
   <script src="/js/acceuil.js"></script>
+  <script src="/js/chatbot.js"></script>
 
 </body>
 </html>

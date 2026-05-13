@@ -6,6 +6,7 @@
   inherits: false;
 }
 
+
 :root {
   --black: #000000;
   --white: #ffffff;
@@ -25,7 +26,51 @@ html, body {
   color: var(--white);
   overflow: hidden;
 }
+/* ─── LANGUAGE TOGGLE ─────────────────────────────────────── */
 
+#lang-btn {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--black);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+#lang-btn:hover {
+  background: rgba(0, 0, 0, 0.177);
+  border-color: rgb(0, 0, 0);
+  transform: scale(1.04);
+}
+
+#lang-btn:active {
+  transform: scale(0.97);
+}
+
+/* Adaptation en light-mode */
+body.light-mode #lang-btn {
+  color: #111;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+body.light-mode #lang-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.45);
+}
 /* ─────────── CUSTOM CURSOR ─────────── */
 .cursor {
   position: fixed; width: 12px; height: 12px;
@@ -222,23 +267,6 @@ html, body {
   opacity: 1;
   visibility: visible;
 }
-
-/* ─────────── TOGGLE ─────────── */
-#toggle {
-  width: 44px; height: 24px;
-  background: #333; border-radius: 12px;
-  position: relative; cursor: pointer;
-  transition: background 0.3s;
-}
-#toggle::after {
-  content: ''; position: absolute;
-  top: 3px; left: 3px;
-  width: 18px; height: 18px;
-  background: var(--white); border-radius: 50%;
-  transition: left 0.3s;
-}
-body.light-mode #toggle { background: var(--green); }
-body.light-mode #toggle::after { left: 23px; }
 
 /* ─────────── SCENE ─────────── */
 #scene {
@@ -583,37 +611,48 @@ body.light-mode #toggle::after { left: 23px; }
   to   { left: 160%; }
 }
 
-/* ─────────── SOCIAL SIDEBAR ─────────── */
+
+/* =============================================
+   SOCIAL SIDEBAR
+   ============================================= */
 #social-sidebar {
-  position: fixed; right: 22px; top: 50%;
+  position: fixed;
+  right: 14px;
+  top: 50%;
   transform: translateY(-50%);
-  display: flex; flex-direction: column; gap: 18px;
-  z-index: 50;
-  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9000;
 }
-#social-sidebar.visible { animation: sidebarReveal 0.5s ease 0.8s forwards; }
-@keyframes sidebarReveal { to { opacity: 1; } }
 
-.social-btn {
-  width: 52px; height: 52px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
+#social-sidebar .social-btn {
+  all: unset;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: background 0.25s, border-color 0.25s, transform 0.25s;
-  color: var(--text-muted);
-  font-size: 14px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
-.social-btn:hover {
-  background: rgba(173, 255, 0, 0.12);
-  border-color: var(--green);
-  color: var(--green);
-  transform: translateX(-4px);
-  box-shadow: 0 0 12px var(--green-glow);
-}
-.social-btn img { width: 80px; height: 80px; object-fit: contain; }
 
+#social-sidebar .social-btn:hover {
+  transform: translateX(-4px);
+}
+
+#social-sidebar .social-btn img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  max-width: none;
+}
+
+#social-sidebar .social-btn:hover img {
+  filter: drop-shadow(0 0 6px rgba(173, 255, 0, 0.7));
+}
 /* ─────────── CHATBOT ─────────── */
 #chatbot {
   position: fixed; bottom: 24px; right: 24px;
@@ -676,4 +715,370 @@ body.light-mode #nav-logo { color: #111; }
   filter: drop-shadow(0 0 10px var(--green-glow))
           drop-shadow(0 0 25px var(--green-glow)) !important;
   transition: filter 0.3s ease;
+}
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — À coller à la fin de acceuil.css
+   Breakpoints :
+     ≥ 1440px  → Grand écran
+     768–1439px → Tablette
+     < 768px   → Mobile
+═══════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────────────
+   GRAND ÉCRAN (≥ 1440px)
+───────────────────────────────────────────────────────  */
+@media (min-width: 1440px) {
+
+  /* Navbar */
+  #navbar {
+    padding: 28px 48px;
+  }
+  #navbar img {
+    width: 240px;
+  }
+
+  /* Texte centré */
+  #text-left {
+    bottom: 340px;
+  }
+  #text-left h1 {
+    font-size: 58px;
+  }
+  #text-left p {
+    font-size: 15px;
+  }
+
+  /* Produits */
+  #video-batterie {
+    width: 24vw;
+    max-width: 420px;
+  }
+  #video-borne {
+    width: 28vw;
+    max-width: 480px;
+  }
+
+  /* Cards */
+  #cards-row {
+    gap: 48px;
+    bottom: 56px;
+  }
+  .info-card {
+    width: 210px;
+    height: 200px;
+  }
+
+  /* Images latérales */
+  .left-img  { width: 340px; }
+  .right-img { width: 460px; }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   TABLETTE (768px – 1439px)
+───────────────────────────────────────────────────────  */
+@media (min-width: 768px) and (max-width: 1439px) {
+
+  /* Curseur custom désactivé sur tactile */
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+
+  /* Navbar */
+  #navbar {
+    padding: 18px 24px;
+  }
+  #navbar img {
+    width: 160px;
+  }
+
+  /* Texte centré — remonté car les cards sont plus petites */
+  #text-left {
+    bottom: 260px;
+    width: 90%;
+  }
+  #text-left h1 {
+    font-size: clamp(22px, 2.6vw, 36px);
+  }
+  #text-left p {
+    font-size: 13px;
+  }
+
+  /* Produits */
+  #product-stage {
+    right: 2%;
+    width: 58%;
+  }
+  #video-batterie {
+    width: 20vw;
+    max-width: 300px;
+  }
+  #video-borne {
+    width: 24vw;
+    max-width: 360px;
+  }
+
+  /* Images latérales — plus petites */
+  .left-img  { width: 200px; left: 40px; }
+  .right-img { width: 280px; right: -8px; }
+
+  /* Cards */
+  #cards-row {
+    gap: 24px;
+    bottom: 36px;
+  }
+  .info-card {
+    width: 170px;
+    height: 175px;
+    padding: 14px 14px 12px;
+  }
+  .card-title {
+    font-size: 14px;
+  }
+  .card-text {
+    font-size: 11px;
+  }
+  .card-cta {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  /* Social sidebar — plus proche du bord */
+  #social-sidebar {
+    right: 14px;
+    gap: 14px;
+  }
+  .social-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Intro logo */
+  #intro .logo img {
+    width: 380px;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   MOBILE (< 768px)
+───────────────────────────────────────────────────────  */
+@media (max-width: 767px) {
+
+  /* === GLOBAL === */
+  html, body {
+    overflow-y: auto; /* scroll vertical autorisé */
+  }
+
+  /* Curseur custom masqué */
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+
+  /* === INTRO === */
+  #intro .logo {
+    position: fixed;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #intro .logo img {
+    width: 260px;
+    position: relative;
+    left: auto;
+    transform: none;
+    transform-origin: center center;
+  }
+  #manifeste {
+    font-size: clamp(28px, 9vw, 52px);
+  }
+  #phrase-key h2 {
+    font-size: clamp(18px, 5.5vw, 28px);
+    padding: 0 20px;
+  }
+  #phrase-key p {
+    font-size: 12px;
+    padding: 0 20px;
+  }
+  #skip-btn {
+    font-size: 11px;
+  }
+
+  /* === NAVBAR === */
+  #navbar {
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  #navbar img {
+    width: 130px;
+  }
+
+  /* === SCENE — layout colonne === */
+  #scene {
+    position: relative; /* sort du fixed pour que le scroll fonctionne */
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; /* espace navbar */
+    overflow: visible;
+  }
+
+  /* Texte principal — centré en haut */
+  #text-left {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 92%;
+    text-align: center;
+    opacity: 1;
+    margin-top: 24px;
+    order: 1;
+  }
+  #text-left h1 {
+    font-size: clamp(24px, 7vw, 36px);
+    line-height: 1.05;
+  }
+  #text-left p {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  /* Images latérales — masquées sur mobile (trop encombrantes) */
+  .side-image {
+    display: none;
+  }
+
+  /* Produits — centrés, pleine largeur */
+  #product-stage {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    justify-content: center;
+    gap: 0;
+    order: 2;
+    margin-top: 20px;
+  }
+  #borne-wrap {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+  #video-batterie {
+    width: 38vw;
+    max-width: 180px;
+  }
+  #video-borne {
+    width: 44vw;
+    max-width: 210px;
+  }
+
+  /* Cards — empilées en colonne */
+  #cards-row {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 16px 32px;
+    width: 100%;
+    order: 3;
+    pointer-events: all;
+  }
+  .card-wrapper {
+    width: 100%;
+    max-width: 340px;
+    padding-bottom: 0;
+  }
+  /* Supprime l'ombre au sol (inutile en colonne) */
+  .card-wrapper::after {
+    display: none;
+  }
+
+  .info-card {
+    width: 100%;
+    height: auto;
+    padding: 18px 16px;
+    transform: none;
+    opacity: 1;
+  }
+
+  /* Les animations de reveal restent mais se déclenchent immédiatement */
+  #cards-row.visible .card-wrapper:nth-child(1) .info-card,
+  #cards-row.visible .card-wrapper:nth-child(2) .info-card,
+  #cards-row.visible .card-wrapper:nth-child(3) .info-card {
+    animation: cardReveal 0.4s ease forwards;
+  }
+
+  .card-title {
+    font-size: 17px;
+  }
+  .card-text {
+    font-size: 12px;
+  }
+  .card-cta {
+    font-size: 11px;
+    margin-top: 14px;
+  }
+
+  /* === SOCIAL SIDEBAR — reste sur le côté droit === */
+  #social-sidebar {
+    right: 10px;
+    gap: 12px;
+  }
+  .social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+  .social-btn img {
+    width: 60px;
+    height: 60px;
+  }
+  /* Désactive le translateX au hover (doigt, pas souris) */
+  .social-btn:hover {
+    transform: none;
+  }
+
+  /* === CHATBOT === */
+  #chatbot {
+    bottom: 24px;
+    right: 16px;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   TRÈS PETIT MOBILE (< 380px)
+───────────────────────────────────────────────────────  */
+@media (max-width: 379px) {
+  #text-left h1 {
+    font-size: 22px;
+  }
+  #video-batterie {
+    width: 42vw;
+  }
+  #video-borne {
+    width: 48vw;
+  }
+  .info-card {
+    padding: 14px 12px;
+  }
+  .card-title {
+    font-size: 15px;
+  }
 }

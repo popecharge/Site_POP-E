@@ -119,13 +119,14 @@ function runIntro() {
   }, 1400);
 
   // 3. Séquence des mots
-  const words = ['Recharge', 'Visibilité', 'Expérience'];
+  const words = ['Recharge', 'Visibilité', 'Expérience']; // tableau de référence pour le timing
   let wDelay = 2500;
 
-  words.forEach(word => {
+  words.forEach((_, i) => {
     setTimeout(() => {
       if (introSkipped) return;
-      manifesteEl.textContent = word;
+      // Lit le mot dans la langue courante au moment de l'affichage
+      manifesteEl.textContent = translations[currentLang].manifeste_words[i];
       manifesteEl.classList.remove('sticker-in', 'sticker-out');
       void manifesteEl.offsetWidth;
       manifesteEl.classList.add('sticker-in');
@@ -150,6 +151,7 @@ function runIntro() {
 
     setTimeout(() => {
       introEl.style.display = 'none';
+      introEl.style.pointerEvents = 'none';
       scene.classList.add('visible');
       socialBar.classList.add('visible');
       phraseKey.classList.add('show');
@@ -209,6 +211,7 @@ function skipIntro() {
 
   setTimeout(() => {
     introEl.style.display   = 'none';
+    introEl.style.pointerEvents = 'none';
     phraseKey.style.display = 'none';
   }, 300);
 
@@ -261,7 +264,69 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleTheme() {
   document.body.classList.toggle('light-mode');
 }
+// ─── LANGUAGE TOGGLE ─────────────────────────────────────────────────────────
 
+const translations = {
+  fr: {
+    manifeste_words: ['Recharge', 'Visibilité', 'Expérience'],
+    phrase_key: 'POP-E transforme chaque lieu<br>en point d\'<span class="g">énergie</span> et de visibilité.',
+    phrase_sub: 'Batteries en libre-service. Écrans utiles. Impact réel.',
+    skip: 'PASSER ↓',
+    hero_title: '<span class="green">Chargez</span> Diffusez <span class="green">Impactez</span>',
+    hero_sub: 'POP-E transforme chaque lieu en point d\'énergie et de visibilité pour vos clients et votre marque.',
+    card1_title: 'Utilisateur', card1_text: 'Louez une batterie, rechargez où vous êtes.', card1_cta: 'En Savoir Plus →',
+    card2_title: 'Organisateur', card2_text: 'Installez une borne, créez une expérience pour vos visiteurs.', card2_cta: 'En Savoir Plus →',
+    card3_title: 'Marque', card3_text: 'Affichez votre message là où les gens ont besoin de recharger.', card3_cta: 'En Savoir Plus →',
+  },
+  en: {
+    manifeste_words: ['Recharge', 'Visibility', 'Experience'],
+    phrase_key: 'POP-E turns every venue<br>into an <span class="g">energy</span> and visibility hub.',
+    phrase_sub: 'Self-service batteries. Smart screens. Real impact.',
+    skip: 'SKIP ↓',
+    hero_title: '<span class="green">Charge</span> Broadcast <span class="green">Impact</span>',
+    hero_sub: 'POP-E turns every venue into an energy and visibility hub for your customers and your brand.',
+    card1_title: 'User', card1_text: 'Rent a battery, charge up wherever you are.', card1_cta: 'Learn More →',
+    card2_title: 'Organiser', card2_text: 'Deploy a station, create an experience for your visitors.', card2_cta: 'Learn More →',
+    card3_title: 'Brand', card3_text: 'Display your message where people need to recharge.', card3_cta: 'Learn More →',
+  }
+};
+
+window.currentLang = 'fr';
+
+function toggleLang() {
+  currentLang = currentLang === 'fr' ? 'en' : 'fr';
+  const btn = document.getElementById('lang-btn');
+  btn.innerHTML = currentLang === 'fr' ? '🇫🇷 FR' : '🇬🇧 EN';
+  applyLang(currentLang);
+
+  // ── Réinitialiser le chatbot dans la nouvelle langue ──
+  const chatBody = document.getElementById('chatbot-body');
+  if (chatBody) {
+    chatBody.innerHTML = ''; // force welcome() au prochain open, ou immédiatement :
+    const chatWin = document.getElementById('chatbot-window');
+    if (chatWin && chatWin.classList.contains('open')) {
+      if (typeof window.chatbotWelcome === 'function') window.chatbotWelcome();
+    }
+  }
+}
+
+function applyLang(lang) {
+  const t = translations[lang];
+   document.querySelector('#phrase-key h2').innerHTML = t.phrase_key;
+  document.querySelector('#phrase-key p').textContent = t.phrase_sub;
+  document.getElementById('text-left').querySelector('h1').innerHTML = t.hero_title;
+  document.getElementById('text-left').querySelector('p').textContent = t.hero_sub;
+  document.getElementById('card-battery').querySelector('.card-title').textContent = t.card1_title;
+  document.getElementById('card-battery').querySelector('.card-text').textContent = t.card1_text;
+  document.getElementById('card-battery').querySelector('.card-cta').textContent = t.card1_cta;
+  document.getElementById('card-borne').querySelector('.card-title').textContent = t.card2_title;
+  document.getElementById('card-borne').querySelector('.card-text').textContent = t.card2_text;
+  document.getElementById('card-borne').querySelector('.card-cta').textContent = t.card2_cta;
+  document.getElementById('card-marque').querySelector('.card-title').textContent = t.card3_title;
+  document.getElementById('card-marque').querySelector('.card-text').textContent = t.card3_text;
+  document.getElementById('card-marque').querySelector('.card-cta').textContent = t.card3_cta;
+  document.getElementById('skip-btn').textContent = t.skip;
+}
 
 // ─── START ────────────────────────────────────────────────────────────────────
 

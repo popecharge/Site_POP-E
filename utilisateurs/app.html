@@ -5,15 +5,331 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>POP E</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Bebas+Neue&family=Syne:wght@800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/app.css">
-</head>
-<header>
-<div id="intro">
-  <img id="intro-image" src="/img/utilisateurs.png" alt="intro">
-</div>
-</header>
+  <link rel="stylesheet" href="/css/chatbot.css">
 
+</head>
+<body>
+
+  <header>
+    <div id="intro">
+      <img id="intro-image" src="/img/utilisateurs.png" alt="intro">
+
+      <div id="green-banner">
+        Batterie Externe <span class="sep">•</span>
+        Recharge Partout <span class="sep">•</span>
+        Éco Responsable <span class="sep">•</span>
+        Batterie Externe <span class="sep">•</span>
+        Recharge Partout <span class="sep">•</span>
+        Éco Responsable
+      </div>
+
+      <div id="green-banner-top">
+        Batterie Externe <span class="sep">•</span>
+        Recharge Partout <span class="sep">•</span>
+        Éco Responsable <span class="sep">•</span>
+        Batterie Externe <span class="sep">•</span>
+        Recharge Partout <span class="sep">•</span>
+        Éco Responsable
+      </div>
+
+      <img id="intro-logo-left" src="/img/logo2.png" alt="logo">
+      <img id="intro-fille" src="/img/fille.png" alt="fille">
+
+      <div id="intro-title">
+          <img src="/img/plusjamais.png" class="main-title" alt="Plus jamais à 0%">
+          
+          <span class="sub">
+            On a tous un téléphone.<br>
+            Maintenant, on a tous une solution.
+          </span>
+      </div>
+      <a href="#" class="btn-app">Télécharger l'appli</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="comment-ca-marche">
+      <div id="ccm-left">
+        <h2>COMMENT<br>ÇA MARCHE ?</h2>
+        <p>5 étapes ultra simples</p>
+        <a href="#" class="btn-green">EN SAVOIR PLUS →</a>
+      </div>
+
+      <div id="ccm-steps">
+
+        <div class="step">
+          <div class="step-card">
+            <span class="step-number">1</span>
+            <img src="/img/borne1.png" alt="">
+            <div class="step-info">
+              <p class="step-verb">TROUVEZ</p>
+              <p class="step-desc">une borne près de vous.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-arrow">
+          <svg width="50" height="12" viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="3" cy="6" r="3" fill="#ADFF00"/>
+            <line x1="6" y1="6" x2="44" y2="6" stroke="#ADFF00" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <polygon points="44,2 50,6 44,10" fill="#ADFF00"/>
+          </svg>
+        </div>
+        <div class="step">
+          <div class="step-card">
+            <span class="step-number">2</span>
+            <img src="/img/batterie.png" alt="">
+            <div class="step-info">
+              <p class="step-verb">SCANNEZ</p>
+              <p class="step-desc">le QR code pour déverrouiller</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-arrow">
+          <svg width="50" height="12" viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="3" cy="6" r="3" fill="#ADFF00"/>
+            <line x1="6" y1="6" x2="44" y2="6" stroke="#ADFF00" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <polygon points="44,2 50,6 44,10" fill="#ADFF00"/>
+          </svg>
+        </div>
+
+        <div class="step">
+          <div class="step-card">
+            <span class="step-number">3</span>
+            <img src="/img/batterie.png" alt="">
+            <div class="step-info">
+              <p class="step-verb">PRENEZ</p>
+              <p class="step-desc">la batterie et partez l'esprit libre</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-arrow">
+          <svg width="50" height="12" viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="3" cy="6" r="3" fill="#ADFF00"/>
+            <line x1="6" y1="6" x2="44" y2="6" stroke="#ADFF00" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <polygon points="44,2 50,6 44,10" fill="#ADFF00"/>
+          </svg>
+        </div>
+        <div class="step">
+          <div class="step-card">
+            <span class="step-number">4</span>
+            <img src="/img/recharge.png" alt="">
+            <div class="step-info">
+              <p class="step-verb">RECHARGEZ</p>
+              <p class="step-desc">partout, tout le temps</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-arrow">
+          <svg width="50" height="12" viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="3" cy="6" r="3" fill="#ADFF00"/>
+            <line x1="6" y1="6" x2="44" y2="6" stroke="#ADFF00" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <polygon points="44,2 50,6 44,10" fill="#ADFF00"/>
+          </svg>
+        </div>
+
+        <div class="step">
+          <div class="step-card">
+            <span class="step-number">5</span>
+            <img src="/img/batterie.png" alt="">
+            <div class="step-info">
+              <p class="step-verb">RESTITUEZ</p>
+              <p class="step-desc">la batterie dans n'importe quelle borne POP-E</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section id="ou-utiliser">
+  <div id="ou-container">
+
+    <div id="ou-header">
+      <h2>Où utiliser POP-E ?</h2>
+      <p>Une solution pensée pour tous vos moments.</p>
+    </div>
+
+    <div id="ou-grid">
+
+      <a href="/ville" class="ou-card">
+        <img src="/img/ville.jpg" alt="En ville">
+        <div class="ou-overlay">
+          <div class="ou-text">
+            <h3>En ville</h3>
+            <p>Disponible dans les rues, centres commerciaux et transports.</p>
+          </div>
+          <div class="ou-arrow">
+            <span>→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/restaurant" class="ou-card">
+        <img src="/img/restaurant.jpg" alt="Au restaurant">
+        <div class="ou-overlay">
+          <div class="ou-text">
+            <h3>Au restaurant</h3>
+            <p>Rechargez pendant que vous dînez, repartez plein d'énergie.</p>
+          </div>
+          <div class="ou-arrow">
+            <span>→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/soiree" class="ou-card">
+        <img src="/img/bar.jpg" alt="En soirée">
+        <div class="ou-overlay">
+          <div class="ou-text">
+            <h3>En soirée</h3>
+            <p>Ne ratez plus aucun moment par manque de batterie.</p>
+          </div>
+          <div class="ou-arrow">
+            <span>→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/utilisateurs/app/festivals.html" class="ou-card">
+          <img src="/img/festival.jpg" alt="En festival">
+          <div class="ou-overlay">
+              <div class="ou-text">
+                  <h3>En festival</h3>
+                  <p>Musique, photos, maps — restez connecté toute la journée.</p>
+              </div>
+              <div class="ou-arrow">
+                  <span>→</span>
+              </div>
+          </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+<section id="impact">
+  <div id="impact-container">
+
+    <div id="impact-left">
+      <h2>Un impact<br>qui compte</h2>
+      <p>Chaque recharge évite des déchets et contribue à un monde plus responsable.</p>
+    </div>
+
+    <div id="impact-terre">
+      <img src="/img/terre.png" alt="Terre">
+    </div>
+
+          <div class="impact-stat">
+        <span class="impact-number">+250K</span>
+        <span class="impact-desc">recharges<br><strong>effectuées</strong></span>
+      </div>
+      <div class="impact-stat">
+        <span class="impact-number">+1250</span>
+        <span class="impact-desc">bornes<br><strong>installées</strong></span>
+      </div>
+      <div class="impact-stat">
+        <span class="impact-number">45</span>
+        <span class="impact-desc">villes<br><strong>couvertes</strong></span>
+      </div>
+      <div class="impact-stat">
+        <span class="impact-number">15T</span>
+        <span class="impact-desc">de déchets<br><strong>évités</strong></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="ambassadeur">
+  <div id="ambassadeur-container">
+
+    <div id="ambassadeur-left">
+      <h2>DEVENEZ<br>AMBASSADEUR<br>POP-E</h2>
+      <p>Faites venir POP-E dans vos lieux préférés et gagnez des récompenses exclusives.</p>
+      <a href="#" class="btn-green">DÉCOUVRIR LE PROGRAMME →</a>
+    </div>
+
+    <div id="ambassadeur-badge">
+      <img src="/img/badge.png" alt="Badge POP-E All Access">
+    </div>
+
+    <div id="ambassadeur-perks">
+      <div class="perk">
+        <div class="perk-icon">★</div>
+        <span>Des avantages exclusifs</span>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">🎁</div>
+        <span>Des récompenses à chaque action</span>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">🌐</div>
+        <span>Agissez pour un impact positif</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div id="social-sidebar">
+  <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
+    <img src="/img/insta.png" alt="Instagram">
+  </a>
+  <div class="social-btn" title="TikTok">
+    <img src="/img/tiktok.png" alt="TikTok">
+  </div>
+  <div class="social-btn" title="Téléphone">
+    <img src="/img/telephone.png" alt="Téléphone">
+  </div>
+</div>
+<footer id="footer">
+  <div id="footer-container">
+
+    <div id="footer-brand">
+      <img src="/img/logo2.png" alt="POP-E Logo">
+      <p>La batterie externe en libre-service.<br>Partout. Tout le temps.</p>
+      <div id="footer-socials">
+        <a href="#" class="social-btn">Instagram</a>
+        <a href="#" class="social-btn">TikTok</a>
+        <a href="#" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+
+    <div id="footer-links">
+      <div class="footer-col">
+        <h4>Solution</h4>
+        <a href="#">Comment ça marche</a>
+        <a href="#">Où utiliser POP-E</a>
+        <a href="#">Ambassadeur</a>
+      </div>
+      <div class="footer-col">
+        <h4>Entreprise</h4>
+        <a href="#">À propos</a>
+        <a href="#">Impact</a>
+        <a href="#">Presse</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="#">Nous contacter</a>
+        <a href="#">Installer une borne</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="footer-bottom">
+    <span>© 2026 POP-E. Tous droits réservés.</span>
+    <div id="footer-legal">
+      <a href="#">Mentions légales</a>
+      <a href="#">CGU</a>
+      <a href="#">Confidentialité</a>
+    </div>
+  </div>
+</footer>
+<script src="/js/chatbot.js"></script>
 
 </body>
 </html>
