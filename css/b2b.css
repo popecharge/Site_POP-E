@@ -102,7 +102,7 @@ a {
   margin-top: 18px;
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 400;
-  color: var(--text-muted);
+  color: var(--text);
   letter-spacing: 0.01em;
 }
 
@@ -230,7 +230,7 @@ a {
 
 .card-desc {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text);
   max-width: 85%;
 }
 
@@ -576,11 +576,137 @@ a {
   margin: 0 -48px;
 }
 
+    /* ── Language Switcher ── */
+    .lang-switcher {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      padding: 6px 14px 6px 8px;
+      cursor: pointer;
+      transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      user-select: none;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--green);
+      background: rgba(173, 255, 0, 0.06);
+      box-shadow: 0 0 12px rgba(173, 255, 0, 0.2);
+    }
+
+    .lang-btn.open {
+      border-color: var(--green);
+      background: rgba(173, 255, 0, 0.08);
+      box-shadow: 0 0 16px rgba(173, 255, 0, 0.25);
+    }
+
+    .lang-flag {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .lang-code {
+      color: var(--text);
+    }
+
+    .lang-btn.open .lang-code {
+      color: var(--green);
+    }
+
+    .lang-chevron {
+      width: 10px;
+      height: 10px;
+      margin-left: 2px;
+      color: var(--text-muted);
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
+    }
+
+    .lang-btn.open .lang-chevron {
+      transform: rotate(180deg);
+      color: var(--green);
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      background: #0f110c;
+      border: 1px solid rgba(173, 255, 0, 0.3);
+      border-radius: 14px;
+      overflow: hidden;
+      min-width: 120px;
+      box-shadow:
+        0 0 0 1px rgba(173, 255, 0, 0.1),
+        0 8px 30px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(173, 255, 0, 0.08);
+      opacity: 0;
+      transform: translateY(-8px) scale(0.96);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 100;
+    }
+
+    .lang-dropdown.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: all;
+    }
+
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background 0.18s ease;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    .lang-option:hover {
+      background: rgba(173, 255, 0, 0.08);
+      color: var(--green);
+    }
+
+    .lang-option .lang-flag {
+      font-size: 18px;
+    }
+
+    /* ── Header layout update ── */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
 @media (max-width: 960px) {
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 
   .footer-container {
     grid-template-columns: 1fr;
@@ -602,6 +728,44 @@ a {
     gap: 10px;
     justify-content: flex-end;
     margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    padding: 40px 20px 80px 20px;
+    gap: 14px;
+  }
+
+  .card {
+    height: 420px;
+  }
+
+  .hero {
+    padding: 140px 20px 40px;
+  }
+
+  .cards-section {
+    margin-top: -300px;
+    padding-top: 300px;
+  }
+
+  .cards-grid::after {
+    left: 20px;
+    right: 20px;
+  }
+
+  .site-footer {
+    padding: 32px 24px 0;
+  }
+
+  .footer-bottom-line {
+    margin: 0 -24px;
+  }
+
+  .store-buttons {
+    align-items: center;
   }
 }
 

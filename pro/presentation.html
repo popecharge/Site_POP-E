@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POP-E — Installez une borne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/presentation.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="logo-img-container">
+      <img src="/img/logo2.png" alt="Logo POP-E" class="logo-img">
+    </div>
+  </header>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="hero">
+
+    <!-- Image de fond -->
+    <img src="/img/b2b-présentation/background-1.png" alt="" class="hero-bg-img" aria-hidden="true" />
+ 
+    <!-- Texte dans la bulle -->
+    <div class="hero-bubble-overlay">
+      <h1 class="hero-title">
+        Mon téléphone s'éteint,<br />
+        Donc<br />
+        <span class="accent">Mon expérience aussi</span><br />
+      </h1>
+    </div>
+ 
+    <!-- Sous-titre + CTA sous la bulle -->
+    <div class="hero-below-bubble">
+      <p class="hero-sub">
+        Une borne, des dizaines de nouveaux clients.<br>Gratuit. Visible. Rentable.
+      </p>
+      <div class="cta-wrapper">
+        <a href="#" class="btn-primary">
+          <span class="btn-text">Planifier un rendez-vous</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+
+    <!-- Indicateur scroll -->
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">Découvrir</span>
+    </div>
+
+  </section>
+
+  <!-- ═════════════════ BORNES ═════════════════ -->
+  <section class="bornes">
+    <div class="bornes-inner">
+
+      <button class="bornes-nav bornes-nav--prev" aria-label="Précédent">‹</button>
+      <button class="bornes-nav bornes-nav--next" aria-label="Suivant">›</button>
+
+      <!-- Plateau -->
+      <div class="bornes-stage">
+        <canvas id="sparkle-canvas" aria-hidden="true"></canvas>
+        <div class="borne-item pos-left" data-index="0">
+          <img src="/img/borne2.png" alt="Borne POP-E Compact" draggable="false">
+        </div>
+        <div class="borne-item pos-center" data-index="1">
+          <img src="/img/borne1.png" alt="Borne POP-E Pro" draggable="false">
+        </div>
+        <div class="borne-item pos-right" data-index="2">
+          <img src="/img/borne3.png" alt="Borne POP-E Slim" draggable="false">
+        </div>
+      </div>
+
+      <!-- Barre de navigation -->
+      <div class="bornes-controls">
+        <button class="bornes-dot" data-index="0" aria-label="Borne Compact"></button>
+        <button class="bornes-dot active" data-index="1" aria-label="Borne Pro"></button>
+        <button class="bornes-dot" data-index="2" aria-label="Borne Slim"></button>
+      </div>
+
+      <!-- Texte dynamique -->
+      <div class="borne-info-panel">
+        <!-- Le contenu est généré via JS pour correspondre à la borne active -->
+        <div id="dynamic-content" class="fade-in"></div>
+
+        <div class="panel-footer">
+          <p id="dynamic-usage"></p>
+        </div>
+      </div>
+
+
+  </section>
+
+  <script>
+    (function () {
+      // Données extraites directement de l'image de référence
+      const data = [
+        {
+          title: "Borne 24 batteries",
+          desc: "Idéale pour les lieux de passage compacts, gares et centres commerciaux.",
+          usage: "Idéal pour commerces de proximité, salles de sport et bars.",
+          specs: [
+            { icon: "/img/carousel/carousel-icon1.png", h: "24", p: "batteries externes disponibles" },
+            { icon: "/img/carousel/carousel-icon2.png", h: "Écran 23 pouces", p: "monétisable" },
+            { icon: "/img/carousel/carousel-icon3.png", h: "Connexion", p: "Carte SIM ou Wi-Fi" },
+            { icon: "/img/carousel/carousel-icon5.png", h: "Paiement", p: "Sans contact / App" },
+            { icon: "/img/carousel/carousel-icon6.png", h: "Branchement", p: "Secteur classique" }
+          ]
+        },
+        {
+          title: "Borne 48 batteries",
+          desc: "La puissance maximale pour les festivals, lieux à fort flux et activations sponsorisées.",
+          usage: "Idéal pour festivals, gares, aéroports, clubs, salons et grands événements.",
+          specs: [
+            { icon: "/img/carousel/carousel-icon1.png", h: "48", p: "batteries externes disponibles" },
+            { icon: "/img/carousel/carousel-icon2.png", h: "Écran 43 pouces", p: "monétisable" },
+            { icon: "/img/carousel/carousel-icon3.png", h: "Connexion", p: "Carte SIM intégrée ou Wi-Fi" },
+            { icon: "/img/carousel/carousel-icon4.png", h: "Option", p: "waterproof disponible" },
+            { icon: "/img/carousel/carousel-icon5.png", h: "Paiement", p: "sans contact / QR code / application" },
+            { icon: "/img/carousel/carousel-icon6.png", h: "Branchement", p: "électrique classique (220V)" },
+            { icon: "/img/carousel/carousel-icon7.png", h: "Consommation", p: "moyenne estimée 200 à 250 W" },
+            { icon: "/img/carousel/carousel-icon9.png", h: "Recharge autonome", p: "en libre-service" },
+            { icon: "/img/carousel/carousel-icon8.png", h: "Écran exploitable", p: "pour informations, publicité et partenaires" }
+          ]
+        },
+        {
+          title: "Borne 6 batteries",
+          desc: "Le format idéal pour les comptoirs et espaces restreints.",
+          usage: "Idéal pour restaurants, comptoirs d'accueil et bureaux.",
+          specs: [
+            { icon: "/img/carousel/carousel-icon1.png", h: "6", p: "batteries disponibles" },
+            { icon: "/img/carousel/carousel-icon6.png", h: "Branchement", p: "USB-C / Secteur" },
+            { icon: "/img/carousel/carousel-icon9.png", h: "Format", p: "Compact et discret" }
+          ]
+        }
+      ];
+
+      let active = 1;
+      const items = document.querySelectorAll('.borne-item');
+      const dots = document.querySelectorAll('.bornes-dot');
+      const dynamicContent = document.getElementById('dynamic-content');
+      const dynamicUsage = document.getElementById('dynamic-usage');
+
+      /* Centre Y des paillettes par borne (px, canvas H=620)
+         0 → Borne 24 batt. : hauteur standard
+         1 → Borne 48 batt. : hauteur standard (grande borne)
+         2 → Borne 6 batt.  : abaissé — borne petite et compacte */
+      const SPARKLE_Y = [273, 273, 430];
+
+      function update(next) {
+        active = next;
+
+        // Repositionner les paillettes selon la borne active
+        if (window.setSparkleCenter) window.setSparkleCenter(SPARKLE_Y[next]);
+
+        // Mise à jour des positions du carousel
+        items.forEach((el, i) => {
+          el.classList.remove('pos-left', 'pos-center', 'pos-right');
+          if (i === active) el.classList.add('pos-center');
+          else if (i === (active + 2) % 3) el.classList.add('pos-left');
+          else el.classList.add('pos-right');
+        });
+
+        // Mise à jour des indicateurs visuels (dots)[cite: 2]
+        dots.forEach((d, i) => d.classList.toggle('active', i === active));
+
+        // Animation et mise à jour du panneau d'information
+        dynamicContent.style.opacity = 0;
+        setTimeout(() => {
+          const b = data[active];
+          let specsHTML = b.specs.map(s => `
+        <div class="spec-item">
+          <img src="${s.icon}" alt="icon">
+          <div class="spec-text">
+            <h4>${s.h}</h4>
+            <p>${s.p}</p>
+          </div>
+        </div>
+      `).join('');
+
+          dynamicContent.innerHTML = `
+        <div class="panel-left">
+          <div class="model-badge">
+            <img src="/img/carousel/carousel-icon1.png" alt="icon">
+            <h2>${b.title}</h2>
+          </div>
+          <p>${b.desc}</p>
+<a href="#" class="btn-order btn-animated">
+   <span class="btn-text">Demander cette borne</span>
+   <span class="btn-arrow">→</span>
+</a>
+        </div>
+        <div class="specs-grid">${specsHTML}</div>
+      `;
+          dynamicUsage.textContent = b.usage;
+          dynamicContent.style.opacity = 1;
+        }, 300);
+      }
+
+      // --- Événements d'interaction ---
+
+      // Clic sur les bornes elles-mêmes
+      items.forEach((item, i) => {
+        item.addEventListener('click', () => {
+          if (i !== active) update(i);
+        });
+      });
+
+      // Clic sur les points de navigation (dots)
+      dots.forEach((dot, i) => dot.addEventListener('click', () => update(i)));
+
+      // Clic sur les flèches
+      document.querySelector('.bornes-nav--prev').addEventListener('click', () => update((active + 2) % 3));
+      document.querySelector('.bornes-nav--next').addEventListener('click', () => update((active + 1) % 3));
+
+      // Initialisation au chargement — différé pour laisser le script
+      // des paillettes s'exécuter d'abord et exposer setSparkleCenter
+      setTimeout(() => update(1), 0);
+    })();
+  </script>
+
+  <!-- ═════════════════ CTA FINAL ═════════════════ -->
+  <section class="cta-final">
+
+    <div class="cta-final-grid-bg" aria-hidden="true"></div>
+    <div class="cta-final-aura" aria-hidden="true"></div>
+
+    <div class="cta-final-inner">
+
+      <!-- Surtitre -->
+      <p class="cta-final-eyebrow">Aucun frais. Zéro engagement.</p>
+
+      <!-- Titre principal -->
+      <h2 class="cta-final-title">
+        BOOSTEZ VOTRE<br />
+        ÉTABLISSEMENT<br />
+        <span class="accent">DÈS DEMAIN.</span>
+      </h2>
+
+      <!-- 3 cartes arguments -->
+      <div class="cta-cards">
+
+        <div class="cta-card">
+          <div class="cta-card-tag">FIDÉLISÉ</div>
+          <p class="cta-card-title">Clients qui<br />reviennent</p>
+          <p class="cta-card-desc">Une recharge complète, c'est plus de temps passé dans votre établissement.</p>
+        </div>
+
+        <div class="cta-card cta-card--featured">
+          <div class="cta-card-tag">ULTRA VISIBLE</div>
+          <p class="cta-card-title">App · Réseaux<br />Partenaires web</p>
+          <p class="cta-card-desc">Apparaissez sur notre app ultra-visible, Facebook, Instagram et le site POP-E.</p>
+        </div>
+
+        <div class="cta-card">
+          <div class="cta-card-tag">ULTRA SIMPLE</div>
+          <p class="cta-card-title">Service devenu<br />standard</p>
+          <p class="cta-card-desc">Vos clients l'attendent. Si ce n'est pas chez vous, ce sera chez votre voisin.</p>
+        </div>
+
+      </div>
+
+      <!-- Séparateur lumineux -->
+      <div class="cta-divider" aria-hidden="true"></div>
+
+      <!-- Bloc CTA principal -->
+      <div class="cta-final-action">
+        <p class="cta-final-promise">Installation gratuite · Revenus partagés · Visibilité immédiate</p>
+        <a href="#" class="btn-cta-mega">
+          <span class="btn-cta-text">Planifier un rendez-vous</span>
+          <span class="btn-cta-arrow" aria-hidden="true">→</span>
+        </a>
+        <p class="cta-final-note">Réponse sous 24h · Pas de frais cachés</p>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    /* ════ PAILLETTES — borne centrale ════ */
+    (function () {
+      const canvas = document.getElementById('sparkle-canvas');
+      const ctx    = canvas.getContext('2d');
+
+      /* Dimensions intrinsèques du canvas */
+      const W = 360, H = 620;
+      canvas.width  = W;
+      canvas.height = H;
+
+      /* Centre Y des paillettes — ajustable selon la borne active */
+      let sparkCenterY = H * 0.44;
+      window.setSparkleCenter = function(y) {
+        sparkCenterY = y;
+        /* Recycle toutes les particules immédiatement autour du nouveau centre */
+        for (let i = 0; i < pts.length; i++) pts[i] = make();
+      };
+
+      /* Palette : vert accent + blanc */
+      const PALETTE = [
+        [173, 255,   0],
+        [200, 255,  80],
+        [255, 255, 255],
+        [220, 255, 120],
+        [173, 255,   0],
+      ];
+
+      function rand(a, b) { return Math.random() * (b - a) + a; }
+
+      function make() {
+        /* Distribution elliptique serrée — reste collée à la borne */
+        const angle = rand(0, Math.PI * 2);
+        const rx    = rand(10, 130);
+        const ry    = rand(10, 100);   /* était 260 — ne monte plus dans le vide */
+        const [r, g, b] = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+        return {
+          x:        W / 2 + Math.cos(angle) * rx,
+          y:        sparkCenterY + Math.sin(angle) * ry,
+          size:     rand(0.8, 2.8),
+          phase:    rand(0, Math.PI * 2),
+          speed:    rand(0.5, 1.6),
+          maxAlpha: rand(0.3, 0.85),
+          vx:       rand(-0.06, 0.06),
+          vy:       rand(-0.06, -0.02),   /* dérive plus douce */
+          r, g, b,
+        };
+      }
+
+      const COUNT = 55;
+      const pts   = Array.from({ length: COUNT }, make);
+
+      let t = 0;
+      function loop() {
+        ctx.clearRect(0, 0, W, H);
+        t += 0.018;
+
+        for (let i = 0; i < pts.length; i++) {
+          const p = pts[i];
+
+          /* Opacité sinusoïdale → scintillement */
+          const raw   = Math.sin(t * p.speed + p.phase);
+          const alpha = Math.max(0, raw) * p.maxAlpha;
+
+          if (alpha < 0.01) { p.x += p.vx; p.y += p.vy; continue; }
+
+          const { r, g, b, x, y, size } = p;
+
+          /* Halo doux */
+          const grd = ctx.createRadialGradient(x, y, 0, x, y, size * 5);
+          grd.addColorStop(0,   `rgba(${r},${g},${b},${(alpha * 0.5).toFixed(3)})`);
+          grd.addColorStop(1,   `rgba(${r},${g},${b},0)`);
+          ctx.fillStyle = grd;
+          ctx.beginPath();
+          ctx.arc(x, y, size * 5, 0, Math.PI * 2);
+          ctx.fill();
+
+          /* Point central */
+          ctx.globalAlpha = alpha;
+          ctx.fillStyle   = `rgb(${r},${g},${b})`;
+          ctx.beginPath();
+          ctx.arc(x, y, size, 0, Math.PI * 2);
+          ctx.fill();
+
+          /* 4 bras d'étoile */
+          ctx.strokeStyle = `rgb(${r},${g},${b})`;
+          ctx.lineWidth   = Math.max(0.3, size * 0.3);
+          const arm = size * 2.8;
+          ctx.beginPath();
+          ctx.moveTo(x - arm, y); ctx.lineTo(x + arm, y);
+          ctx.moveTo(x, y - arm); ctx.lineTo(x, y + arm);
+          ctx.stroke();
+
+          ctx.globalAlpha = 1;
+
+          /* Dérive lente vers le haut */
+          p.x += p.vx;
+          p.y += p.vy;
+          /* Recycle si sorti par le haut OU trop loin au-dessus du centre */
+          if (p.y < -10 || p.y < sparkCenterY - 130) {
+            pts[i] = make();
+            pts[i].y = sparkCenterY + rand(50, 100); /* repart d'en dessous */
+          }
+        }
+
+        requestAnimationFrame(loop);
+      }
+
+      loop();
+    })();
+  </script>
+
+</body>
+
+</html>

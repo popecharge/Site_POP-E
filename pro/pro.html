@@ -11,6 +11,10 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/css/b2b.css" />
+
+  <style>
+
+  </style>
 </head>
 
 <body>
@@ -20,6 +24,24 @@
     <div class="logo-img">
       <img src="/img/logo2.png" alt="Logo POP-E" class="logo-img">
     </div>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+        <span class="lang-flag" id="currentFlag">🇫🇷</span>
+        <span class="lang-code" id="currentCode">FR</span>
+        <svg class="lang-chevron" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="lang-dropdown" id="langDropdown" role="listbox">
+        <div class="lang-option" data-lang="en" role="option">
+          <span class="lang-flag">🇬🇧</span>
+          <span>EN</span>
+        </div>
+      </div>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -28,10 +50,12 @@
 
     <div class="hero-content">
       <h1 class="hero-title">
-        CHOISISSEZ <span class="accent">VOTRE LIEU</span>
+        <span data-fr="CHOISISSEZ" data-en="CHOOSE">CHOISISSEZ</span>
+        <span class="accent" data-fr="VOTRE LIEU" data-en="YOUR VENUE">VOTRE LIEU</span>
       </h1>
       <p class="hero-subtitle">
-        CHAQUE ENVIRONNEMENT. <em>UNE STRATÉGIE DIFFÉRENTE.</em>
+        <span data-fr="CHAQUE ENVIRONNEMENT." data-en="EVERY ENVIRONMENT.">CHAQUE ENVIRONNEMENT.</span>
+        <em data-fr="UNE STRATÉGIE DIFFÉRENTE." data-en="A DIFFERENT STRATEGY.">UNE STRATÉGIE DIFFÉRENTE.</em>
       </p>
     </div>
   </section>
@@ -49,8 +73,8 @@
           </div>
 
           <div class="card-footer">
-            <h2 class="card-title">FESTIVALS<br>&amp; SALONS</h2>
-            <p class="card-desc">Attirez, engagez et monétisez votre public.</p>
+            <h2 class="card-title" data-fr="FESTIVALS<br>&amp; SALONS" data-en="FESTIVALS<br>&amp; TRADE SHOWS">FESTIVALS<br>&amp; SALONS</h2>
+            <p class="card-desc" data-fr="Attirez, engagez et monétisez votre public." data-en="Attract, engage and monetise your audience.">Attirez, engagez et monétisez votre public.</p>
           </div>
 
           <div class="card-center-icon">
@@ -59,7 +83,7 @@
 
           <div class="card-button-wrapper">
             <div class="btn-offer">
-              <span class="btn-text">VOIR L'OFFRE</span>
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
               <span class="btn-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -80,17 +104,17 @@
           </div>
 
           <div class="card-footer">
-            <h2 class="card-title">BARS, CLUBS<br>&amp; HOTELS</h2>
-            <p class="card-desc">Augmentez le temps sur place et la consommation.</p>
+            <h2 class="card-title" data-fr="BARS, CLUBS<br>&amp; HOTELS" data-en="BARS, CLUBS<br>&amp; HOTELS">BARS, CLUBS<br>&amp; HOTELS</h2>
+            <p class="card-desc" data-fr="Augmentez le temps sur place et la consommation." data-en="Increase dwell time and on-site spending.">Augmentez le temps sur place et la consommation.</p>
           </div>
 
           <div class="card-center-icon">
-            <img src="/img/b2b-acceuil/icon-bar.png" alt="Icône Festival" class="card-icon">
+            <img src="/img/b2b-acceuil/icon-bar.png" alt="Icône Bar" class="card-icon">
           </div>
 
           <div class="card-button-wrapper">
             <div class="btn-offer">
-              <span class="btn-text">VOIR L'OFFRE</span>
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
               <span class="btn-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -111,17 +135,17 @@
           </div>
 
           <div class="card-footer">
-            <h2 class="card-title">ESPACES PUBLICS</h2>
-            <p class="card-desc">Un service utile, moderne et visible.</p>
+            <h2 class="card-title" data-fr="ESPACES PUBLICS" data-en="PUBLIC SPACES">ESPACES PUBLICS</h2>
+            <p class="card-desc" data-fr="Un service utile, moderne et visible." data-en="A useful, modern and visible service.">Un service utile, moderne et visible.</p>
           </div>
 
           <div class="card-center-icon">
-            <img src="/img/b2b-acceuil/icon-public.png" alt="Icône Festival" class="card-icon">
+            <img src="/img/b2b-acceuil/icon-public.png" alt="Icône Public" class="card-icon">
           </div>
 
           <div class="card-button-wrapper">
             <div class="btn-offer">
-              <span class="btn-text">VOIR L'OFFRE</span>
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
               <span class="btn-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -142,17 +166,17 @@
           </div>
 
           <div class="card-footer">
-            <h2 class="card-title">ÉVÉNEMENTS PRIVÉS</h2>
-            <p class="card-desc">Créez une expérience premium pour vos invités.</p>
+            <h2 class="card-title" data-fr="ÉVÉNEMENTS PRIVÉS" data-en="PRIVATE EVENTS">ÉVÉNEMENTS PRIVÉS</h2>
+            <p class="card-desc" data-fr="Créez une expérience premium pour vos invités." data-en="Create a premium experience for your guests.">Créez une expérience premium pour vos invités.</p>
           </div>
 
           <div class="card-center-icon">
-            <img src="/img/b2b-acceuil/icon-privé.png" alt="Icône Festival" class="card-icon">
+            <img src="/img/b2b-acceuil/icon-privé.png" alt="Icône Privé" class="card-icon">
           </div>
 
           <div class="card-button-wrapper">
             <div class="btn-offer">
-              <span class="btn-text">VOIR L'OFFRE</span>
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
               <span class="btn-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -171,7 +195,6 @@
 
   <footer class="site-footer">
 
-    <!-- Courbe néon déco SVG -->
     <svg class="footer-arc" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true"
       style="position: absolute; pointer-events: none; width: 100%; height: auto;">
       <defs>
@@ -192,12 +215,11 @@
 
     <div class="footer-container">
 
-      <!-- GAUCHE : Badges stores -->
       <div class="store-buttons">
         <a href="#" class="store-btn">
           <img src="/img/google-play-logo.png" alt="Google Play" class="store-logo">
           <div class="store-text">
-            <span class="store-label">Disponible sur</span>
+            <span class="store-label" data-fr="Disponible sur" data-en="Get it on">Disponible sur</span>
             <span class="store-name">Google Play</span>
           </div>
         </a>
@@ -205,22 +227,20 @@
         <a href="#" class="store-btn">
           <img src="/img/apple-logo.png" alt="App Store" class="store-logo">
           <div class="store-text">
-            <span class="store-label">Télécharger sur</span>
+            <span class="store-label" data-fr="Télécharger sur" data-en="Download on the">Télécharger sur</span>
             <span class="store-name">App Store</span>
           </div>
         </a>
       </div>
 
-      <!-- CENTRE : Logo + Copyright -->
       <div class="footer-center">
         <img src="/img/logo2.png" alt="POP-E" class="footer-logo">
-        <p class="copyright">Copyright © 2026 POP-E | Tous droits réservés</p>
+        <p class="copyright" data-fr="Copyright © 2026 POP-E | Tous droits réservés" data-en="Copyright © 2026 POP-E | All rights reserved">Copyright © 2026 POP-E | Tous droits réservés</p>
       </div>
 
-      <!-- DROITE : Contact + Réseaux -->
       <div class="footer-right">
         <div class="contact-info">
-          <p class="contact-label">Contact :</p>
+          <p class="contact-label" data-fr="Contact :" data-en="Contact:">Contact :</p>
 
           <div class="contact-item">
             <img src="/img/icon-tel.png" alt="Téléphone" class="contact-img">
@@ -245,14 +265,85 @@
 
     </div>
 
-    <!-- Ligne accent bas -->
     <div class="footer-bottom-line"></div>
 
   </footer>
 
 
   <script>
+    /* ── Language Switcher Logic ── */
+    const langBtn      = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const currentFlag  = document.getElementById('currentFlag');
+    const currentCode  = document.getElementById('currentCode');
 
+    const LANGS = {
+      fr: { flag: '🇫🇷', code: 'FR' },
+      en: { flag: '🇬🇧', code: 'EN' }
+    };
+
+    let currentLang = 'fr';
+
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        const val = el.getAttribute('data-' + lang);
+        if (val !== null) el.innerHTML = val;
+      });
+      document.documentElement.lang = lang;
+    }
+
+    function updateButton(lang) {
+      currentFlag.textContent = LANGS[lang].flag;
+      currentCode.textContent = LANGS[lang].code;
+    }
+
+    function updateDropdown(lang) {
+      langDropdown.innerHTML = '';
+      Object.entries(LANGS).forEach(([key, info]) => {
+        if (key === lang) return; // hide current lang
+        const opt = document.createElement('div');
+        opt.className = 'lang-option';
+        opt.setAttribute('role', 'option');
+        opt.setAttribute('data-lang', key);
+        opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
+        opt.addEventListener('click', () => switchLang(key));
+        langDropdown.appendChild(opt);
+      });
+    }
+
+    function switchLang(lang) {
+      currentLang = lang;
+      applyLanguage(lang);
+      updateButton(lang);
+      updateDropdown(lang);
+      closeDropdown();
+    }
+
+    function openDropdown() {
+      langDropdown.classList.add('visible');
+      langBtn.classList.add('open');
+      langBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeDropdown() {
+      langDropdown.classList.remove('visible');
+      langBtn.classList.remove('open');
+      langBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
+    });
+
+    document.addEventListener('click', closeDropdown);
+    langDropdown.addEventListener('click', (e) => e.stopPropagation());
+
+    // Init
+    updateDropdown('fr');
+
+
+    /* ── Energy Canvas ── */
     const cards = document.querySelectorAll('.card');
     const container = document.querySelector('.cards-zone');
     const canvas = document.createElement('canvas');
@@ -276,7 +367,7 @@
       const zoneRect = container.getBoundingClientRect();
       return {
         x: cardRect.left - zoneRect.left + cardRect.width / 2,
-        y: cardRect.bottom - zoneRect.top // Positionné pile au bas de la carte
+        y: cardRect.bottom - zoneRect.top
       };
     }
 
@@ -285,38 +376,23 @@
       const radiusY = 35;
 
       ctx.save();
-      // On décale de -10px pour que le "haut" de l'ellipse passe sous le footer
       ctx.translate(x, y - 10);
 
       const startAngle = time * 2;
       const endAngle = startAngle + 2;
 
-      // 1. Le Halo (pour la lueur globale sous la carte)
-      const glow = ctx.createRadialGradient(0, 0, 0, 0, 0, radiusX);
-      glow.addColorStop(0, 'rgba(173, 255, 0, 0.15)');
-      glow.addColorStop(1, 'rgba(173, 255, 0, 0)');
-      ctx.fillStyle = glow;
-      ctx.beginPath();
-      ctx.ellipse(0, 5, radiusX * 1.2, radiusY * 1.5, 0, 0, Math.PI * 2);
-      ctx.fill();
-
-      // 2. La ligne (simple et efficace)
       ctx.beginPath();
       ctx.ellipse(0, 5, radiusX, radiusY, 0, startAngle, endAngle);
       ctx.strokeStyle = '#ADFF00';
       ctx.lineWidth = 3;
       ctx.lineCap = 'round';
-      ctx.shadowColor = '#ADFF00';
-      ctx.shadowBlur = 15;
       ctx.stroke();
 
-      // 3. Le point de tête
       const headX = Math.cos(endAngle) * radiusX;
       const headY = Math.sin(endAngle) * radiusY + 5;
 
       ctx.beginPath();
       ctx.fillStyle = '#FFFFFF';
-      ctx.shadowBlur = 10;
       ctx.arc(headX, headY, 2, 0, Math.PI * 2);
       ctx.fill();
 
@@ -329,7 +405,13 @@
     });
 
     function animate(time) {
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.restore();
+
+      ctx.shadowBlur = 0;
+      ctx.shadowColor = "transparent";
 
       if (activeCard) {
         const center = getCardBaseCenter(activeCard);
@@ -340,10 +422,7 @@
     }
 
     requestAnimationFrame(animate);
-
   </script>
-
-
 
 </body>
 
