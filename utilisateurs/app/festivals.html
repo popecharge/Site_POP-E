@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POP-E — Festivals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <link rel="stylesheet" href="/css/festivals.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="/"><img src="/img/logo2.png" alt="POP-E Logo"></a>
+    <div id="navbar-right">
+      <a href="/" class="nav-link">Accueil</a>
+      <a href="#" class="nav-link active">Festivals</a>
+      <a href="/utilisateurs/app/boutique.html" class="nav-link">E-shop</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div id="hero-band">
+    <h1>FESTIVALS<br><span>AVEC POP-E</span></h1>
+    <p>Retrouvez toutes les bornes POP-E déployées sur les festivals en France. Rechargez sans stress, capturez chaque moment.</p>
+    <div id="hero-meta">
+      <div class="hero-stat"><strong id="stat-fests">12</strong><span>Festivals</span></div>
+      <div class="hero-stat"><strong>2026</strong><span>Saison</span></div>
+      <div class="hero-stat"><strong>FR</strong><span>Couverture</span></div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div id="page-body">
+
+    <!-- MAP -->
+    <div id="map-wrap">
+      <div id="map"></div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div id="festival-list">
+      <div id="list-header">
+        <h3>Tous les festivals</h3>
+        <p id="list-count">12 événements • 2026</p>
+      </div>
+      <!-- Items injectés par JS -->
+    </div>
+
+  </div>
+
+  <!-- POPUP OVERLAY -->
+  <div id="popup-overlay" onclick="closePopup()"></div>
+
+  <!-- POPUP -->
+  <div id="festival-popup">
+    <button id="popup-close" onclick="closePopup()">✕</button>
+    <div id="popup-badge">POP-E PRÉSENT</div>
+    <div id="popup-name">—</div>
+    <div id="popup-city">—</div>
+    <div id="popup-divider"></div>
+    <div class="popup-row">
+      <div class="popup-icon">
+        <img src="/img/calendrier.png" alt="Calendrier">
+      </div>
+      <div>
+        <div class="popup-label">Dates</div>
+        <div class="popup-value" id="popup-dates">—</div>
+      </div>
+    </div>
+    <div class="popup-row">
+      <div class="popup-icon2">
+        <img src="/img/loc2.png" alt="Calendrier">
+      </div>
+      <div>
+        <div class="popup-label">Adresse</div>
+        <div class="popup-value" id="popup-address">—</div>
+      </div>
+    </div>
+    <div class="popup-row">
+      <div class="popup-icon2">
+        <img src="/img/genre.png" alt="Calendrier">
+      </div>
+      <div>
+        <div class="popup-label">Genre</div>
+        <div class="popup-value" id="popup-genre">—</div>
+      </div>
+    </div>
+    <div class="popup-row">
+      <div class="popup-icon">
+        <img src="/img/recharge.png" alt="Calendrier">
+      </div>
+      <div>
+        <div class="popup-label">Bornes POP-E</div>
+        <div class="popup-value" id="popup-bornes">—</div>
+      </div>
+    </div>
+    <button id="popup-cta">EN SAVOIR PLUS →</button>
+  </div>
+
+  <script src="/js/festivals.js"></script>
+
+</body>
+</html>

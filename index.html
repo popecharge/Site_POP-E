@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POP-E – Charge Your Power</title>
+  <link rel="stylesheet" href="/css/acceuil.css">
+  <link rel="stylesheet" href="/css/chatbot.css">
+</head>
+<body>
+  <button id="lang-btn" onclick="toggleLang()">🇫🇷 FR</button>
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- INTRO -->
+  <div id="intro">
+    <h1 class="logo">
+      <img id="intro-logo" src="/img/logo2.png" alt="Logo POP E">
+    </h1>
+    <div id="manifeste"></div>
+  </div>
+
+  <!-- PHRASE CLÉ — HORS de #scene, fixed plein écran -->
+  <div id="phrase-key">
+    <h2>POP-E transforme chaque lieu<br>en point d'<span class="g">énergie</span> et de visibilité.</h2>
+    <p>Batteries en libre-service. Écrans utiles. Impact réel.</p>
+    <!-- Le skip-btn sera déplacé ici par le JS -->
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <img id="nav-logo" src="/img/logo2.png" alt="Logo POP E">
+  </nav>
+
+  <!-- SKIP (sera déplacé dans phrase-key par le JS) -->
+  <div id="skip-btn" onclick="skipIntro()">PASSER ↓</div>
+
+  <!-- SCENE PRINCIPALE -->
+  <div id="scene">
+
+    <!-- TEXT CENTER -->
+    <div id="text-left">
+      <h1><span class="green">Chargez</span> Diffusez <span class="green">Impactez</span></h1>
+      <p>POP-E transforme chaque lieu en point d'énergie et de visibilité pour vos clients et votre marque.</p>
+    </div>
+
+    <!-- PRODUCT STAGE -->
+    <div id="product-stage">
+      <div id="battery-wrap"></div>
+      <div id="borne-wrap"></div>
+    </div>
+    <img src="/img/batterie.png" class="side-image left-img" alt="Borne électrique">
+  <img src="/img/borne.png" class="side-image right-img" alt="Batterie">
+
+
+        <!-- CARDS ROW -->
+<div id="cards-row">
+
+  <div class="card-wrapper">
+    <div class="info-card" id="card-battery" onclick="window.location.href='utilisateurs/app.html'">
+      <div class="card-inner">
+        <div class="card-number">01</div>
+        <div class="card-title">Utilisateur</div>
+        <div class="card-text">Louez une batterie, rechargez où vous êtes.</div>
+        <a href="utilisateurs/app.html" class="card-cta">En Savoir Plus →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-wrapper">
+    <div class="info-card" id="card-borne" onclick="gotoPage('organisateur')">
+      <div class="card-inner">
+        <div class="card-number">02</div>
+        <div class="card-title">Organisateur</div>
+        <div class="card-text">Installez une borne, créez une expérience pour vos visiteurs.</div>
+        <a href="pro/pro.html" class="card-cta">En Savoir Plus →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-wrapper">
+    <div class="info-card" id="card-marque" onclick="gotoPage('marque')">
+      <div class="card-inner">
+        <div class="card-number">03</div>
+        <div class="card-title">Marque</div>
+        <div class="card-text">Affichez votre message là où les gens ont besoin de recharger.</div>
+        <div class="card-cta">En Savoir Plus →</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+  </div><!-- /scene -->
+
+  <!-- SOCIAL SIDEBAR -->
+  <div id="social-sidebar">
+    <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
+      <img src="/img/insta.png" alt="Instagram">
+    </a>
+    <div class="social-btn" title="TikTok">
+      <img src="/img/tiktok.png" alt="TikTok">
+    </div>
+    <div class="social-btn" title="Téléphone">
+      <img src="/img/telephone.png" alt="Téléphone">
+    </div>
+  </div>
+
+
+  <!-- TRANSITION OVERLAY -->
+  <div id="transition-overlay"></div>
+
+  <script src="/js/acceuil.js"></script>
+  <script src="/js/chatbot.js"></script>
+
+</body>
+</html>
