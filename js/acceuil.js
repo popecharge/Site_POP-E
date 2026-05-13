@@ -226,12 +226,12 @@ function skipIntro() {
 
 // ─── NAVIGATION ──────────────────────────────────────────────────────────────
 
-function gotoPage(page) {
+function gotoPage(url) {
   const overlay = document.getElementById('transition-overlay');
   overlay.classList.add('active');
+
   setTimeout(() => {
-    alert('→ Page : ' + page + '\n(Remplacez par votre URL de destination)');
-    overlay.classList.remove('active');
+    window.location.href = url;
   }, 500);
 }
 
