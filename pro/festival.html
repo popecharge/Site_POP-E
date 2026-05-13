@@ -1,79 +1,193 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POP-E | Festival</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-fr="Choisissez Votre Événement" data-en="Choose Your Event">Choisissez Votre Événement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/festival.css" />
 </head>
-<body class="page-detail">
 
-    <nav class="navbar">
-        <div class="logo">
-            <a href="/">
-                <img src="/img/logo2.png" alt="POP-E Logo">
-            </a>    
+<body>
+
+  <div class="bg-noise"></div>
+
+  <header class="site-header">
+    <img src="/img/logo2.png" alt="Logo" class="logo-img" />
+
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+        <span class="lang-flag" id="currentFlag">🇫🇷</span>
+        <span class="lang-code" id="currentCode">FR</span>
+        <svg class="lang-chevron" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="lang-dropdown" id="langDropdown" role="listbox"></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span data-fr="Choisissez" data-en="Choose">Choisissez</span><br>
+        <span class="accent" data-fr="Votre Événement" data-en="Your Event">Votre Événement</span>
+      </h1>
+      <p class="hero-subtitle">
+        <span data-fr="Recharge, <em>visibilité</em>, performance. À chaque lieu sa stratégie." 
+              data-en="Charging, <em>visibility</em>, performance. A strategy for every venue.">
+          Recharge, <em>visibilité</em>, performance. À chaque lieu sa stratégie.
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="cards-grid">
+
+      <a class="card" href="#">
+        <div class="card-bg" style="background-image: url('/img/b2b-événements/festival-card.jpeg');"></div>
+        <div class="card-bg-overlay"></div>
+        <div class="card-overlay">
+          <div class="card-header">
+            <span class="card-number">01</span>
+            <div class="card-number-line"></div>
+          </div>
+          <div class="card-spacer"></div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Festivals" data-en="Festivals">Festivals</h2>
+            <p class="card-desc" data-fr="Attirez, engagez et monétisez votre public." data-en="Attract, engage, and monetize your audience.">Attirez, engagez et monétisez votre public.</p>
+            <ul class="card-features">
+              <li data-fr="Flux massif" data-en="Massive flow">Flux massif</li>
+              <li data-fr="Temps d'exposition élevé" data-en="High exposure time">Temps d'exposition élevé</li>
+              <li data-fr="Expérience utile" data-en="Useful experience">Expérience utile</li>
+            </ul>
+          </div>
+          <div class="card-button-wrapper">
+            <span class="btn-offer">
+              <span class="btn-text" data-fr="Voir l'offre" data-en="View offer">Voir l'offre</span>
+              <span class="btn-arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </span>
+          </div>
         </div>
-        <div class="nav-links">
-            <button class="btn-nav">Devenir partenaire</button>
+      </a>
+
+      <a class="card" href="#">
+        <div class="card-bg" style="background-image: url('/img/b2b-événements/salon-card.jpeg');"></div>
+        <div class="card-bg-overlay"></div>
+        <div class="card-overlay">
+          <div class="card-header">
+            <span class="card-number">02</span>
+            <div class="card-number-line"></div>
+          </div>
+          <div class="card-spacer"></div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Salons" data-en="Trade Shows">Salons</h2>
+            <p class="card-desc" data-fr="Transformez l'attention en opportunité." data-en="Turn attention into opportunity.">Transformez l'attention en opportunité.</p>
+            <ul class="card-features">
+              <li data-fr="Génération de leads" data-en="Lead generation">Génération de leads</li>
+              <li data-fr="Temps de présence long" data-en="Long attendance time">Temps de présence long</li>
+              <li data-fr="ROI mesurable" data-en="Measurable ROI">ROI mesurable</li>
+            </ul>
+          </div>
+          <div class="card-button-wrapper">
+            <span class="btn-offer">
+              <span class="btn-text" data-fr="Voir l'offre" data-en="View offer">Voir l'offre</span>
+              <span class="btn-arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </span>
+          </div>
         </div>
-    </nav>
+      </a>
 
-    <a href="/pro/pro.html" class="btn-back">
-        <span>←</span> Retour
-    </a>
+    </div>
+  </section>
 
-    <header class="hero">
-        <h1>Boostez l'expérience de vos <span>festivaliers</span></h1>
-        <p>Une solution de recharge autonome, esthétique et sans contrainte logistique pour votre événement.</p>
-    </header>
+<script>
+  const langBtn = document.getElementById('langBtn');
+  const langDropdown = document.getElementById('langDropdown');
+  const currentFlag = document.getElementById('currentFlag');
+  const currentCode = document.getElementById('currentCode');
 
-    <section class="container">
-        <div class="triple-grid">
-            
-            <div class="card">
-                <div class="card-header">
-                    <span class="step">01</span>
-                </div>
-                <div class="card-body">
-                    <h2>Zéro coût d'Installation</h2>
-                    <p>Nous gérons l'acheminement et le paramétrage complet des bornes. Aucun frais technique pour l'organisation.</p>
-                    <ul class="check-list">
-                        <li>Logistique 100% incluse</li>
-                    </ul>
-                </div>
-            </div>
+  const LANGS = {
+    fr: { flag: '🇫🇷', code: 'FR' },
+    en: { flag: '🇬🇧', code: 'EN' }
+  };
 
-            <div class="card highlight">
-                <div class="card-header">
-                    <span class="step">02</span>
-                </div>
-                <div class="card-body">
-                    <h2>Borne Sponsorisée</h2>
-                    <p>Transformez vos stations de recharge en supports publicitaires premium pour vos partenaires majeurs.</p>
-                    <div class="branding-area">
-                        ESPACE BRANDING
-                    </div>
-                </div>
-            </div>
+  let currentLang = 'fr';
 
-            <div class="card">
-                <div class="card-header">
-                    <span class="step">03</span>
-                </div>
-                <div class="card-body">
-                    <h2>Expérience complète</h2>
-                    <p>Une application fluide, des batteries longue durée</p>
-                </div>
-            </div>
+  function applyLanguage(lang) {
+    document.querySelectorAll('[data-fr]').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if (val !== null) el.innerHTML = val;
+    });
+    document.documentElement.lang = lang;
+  }
 
-        </div>
-    </section>
+  function updateButton(lang) {
+    currentFlag.textContent = LANGS[lang].flag;
+    currentCode.textContent = LANGS[lang].code;
+  }
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  function updateDropdown(lang) {
+    langDropdown.innerHTML = '';
+    Object.entries(LANGS).forEach(([key, info]) => {
+      if (key === lang) return;
+      const opt = document.createElement('div');
+      opt.className = 'lang-option';
+      opt.setAttribute('role', 'option');
+      opt.setAttribute('data-lang', key);
+      opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
+      opt.addEventListener('click', () => switchLang(key));
+      langDropdown.appendChild(opt);
+    });
+  }
 
-    <script src="/js/pro.js"></script>
+  function switchLang(lang) {
+    currentLang = lang;
+    applyLanguage(lang);
+    updateButton(lang);
+    updateDropdown(lang);
+    closeDropdown();
+  }
+
+  function openDropdown() {
+    langDropdown.classList.add('visible');
+    langBtn.classList.add('open');
+    langBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDropdown() {
+    langDropdown.classList.remove('visible');
+    langBtn.classList.remove('open');
+    langBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
+  });
+
+  document.addEventListener('click', closeDropdown);
+  langDropdown.addEventListener('click', (e) => e.stopPropagation());
+
+  // Initialisation
+  updateDropdown('fr');
+</script>
+
 </body>
+
 </html>

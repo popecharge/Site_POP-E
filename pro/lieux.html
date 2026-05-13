@@ -1,56 +1,199 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POP-E | Business</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bars · Clubs · Hôtels — POP-E</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/lieux.css" />
 </head>
-<body class="page-detail">
 
-    <nav class="navbar">
-        <div class="logo">
-            <a href="/">
-                <img src="/img/logo2.png" alt="POP-E Logo">
-            </a>    
+<body>
+
+  <div class="bg-noise"></div>
+
+  <header class="site-header">
+    <img src="/img/logo2.png" alt="POP-E" class="logo-img" />
+
+    <div class="lang-switcher" id="langSwitcher">
+    <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+      <span class="lang-flag" id="currentFlag">🇫🇷</span>
+      <span class="lang-code" id="currentCode">FR</span>
+      <svg class="lang-chevron" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="lang-dropdown" id="langDropdown" role="listbox">
+      </div>
+  </div>
+  </header>
+
+  <section class="hero">
+    <div class="deco-lines top-right">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="accent" data-fr="Augmentez l'expérience." data-en="Boost the experience.">Augmentez l'expérience.</span><br>
+          <span data-fr="Pas juste la consommation." data-en="Not just consumption.">Pas juste la consommation.</span>
+        </h1>
+        <p class="hero-subtitle">
+          <span data-fr="Un service utile, invisible et <strong>premium</strong>" data-en="A useful, invisible and <strong>premium</strong> service">Un service utile, invisible et <strong>premium</strong></span><br>
+          <span data-fr="qui transforme l'expérience client." data-en="that transforms the guest experience.">qui transforme l'expérience client.</span>
+        </p>
+        <a href="#" class="btn-install" data-fr="Installer POP-E →" data-en="Install POP-E →">Installer POP-E →</a>
+      </div>
+      <div class="hero-visual">
+        <div class="battery-wrapper">
+          <img src="/img/batterie.png" alt="" class="hero-img" />
+
+          <div class="float-badge badge-top-left">
+            <span class="badge-icon">
+              <img src="/img/b2b-commerces/icon-4k.png" alt="" />
+            </span>
+            <span class="badge-label" data-fr="Écran 4K" data-en="4K Screen">Écran 4K</span>
+          </div>
+
+          <div class="float-badge badge-top-right">
+            <span class="badge-icon">
+              <img src="/img/b2b-commerces/icon-innovation.png" alt="" />
+            </span>
+            <span class="badge-label" data-fr="Innovation" data-en="Innovation">Innovation</span>
+          </div>
+
+          <div class="float-badge badge-bottom-left">
+            <span class="badge-icon">
+              <img src="/img/b2b-commerces/icon-eco.png" alt="" />
+            </span>
+            <span class="badge-label" data-fr="Écoresponsable" data-en="Eco-friendly">Écoresponsable</span>
+          </div>
+
+          <div class="float-badge badge-bottom-right">
+            <span class="badge-icon">
+              <img src="/img/b2b-commerces/icon-revenus.png" alt="" />
+            </span>
+            <span class="badge-label" data-fr="Revenus passifs" data-en="Passive income">Revenus passifs</span>
+          </div>
+
         </div>
-        <button class="btn-nav">Devenir partenaire</button>
-    </nav>
+      </div>
+    </div>
+  </section>
 
-    <a href="/pro/pro.html" class="btn-back">
-        <span>←</span> Retour
-    </a>
+  <section class="features-section">
+    <div class="features-grid">
 
-    <header class="hero">
-        <h1>Boostez votre <span>établissement</span></h1>
-        <p>Attirez et fidélisez vos clients avec une solution de recharge élégante, 100% autonome et sans frais de gestion.</p>
-    </header>
-
-    <section class="container">
-        <div class="split-layout">
-            
-            <div class="card">
-                <div class="card-header">
-                    <span class="step">AVANTAGES</span>
-                </div>
-                <h2>Plus qu'un service, une expérience.</h2>
-                <p>Vos clients restent plus longtemps, consomment davantage et ne craignent plus la batterie faible. POP-E s'occupe de tout le hardware, vous vous occupez de vos clients.</p>
-            </div>
-
-            <div class="card highlight">
-                <div class="card-header">
-                    <span class="step">READY?</span>
-                </div>
-                <h2>Installation immédiate.</h2>
-                <p>Une borne compacte qui s'intègre partout. Branchez, louez.</p>
-                <div class="branding-area">
-                    Commander ma borne
-                </div>
-            </div>
-
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="/img//b2b-commerces/icon-experience.png" alt="" />
         </div>
-    </section>
+        <div class="feature-text">
+        <h3 class="feature-title" data-fr="Expérience client" data-en="Guest experience">Expérience client</h3>
+        <p class="feature-desc" data-fr="Service indispensable<br>sans friction." data-en="Essential service<br>without friction.">Service indispensable<br>sans friction.</p>
+      </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="/img/b2b-commerces/icon-premium.png" alt="" />
+        </div>
+        <div class="feature-text">
+        <h3 class="feature-title" data-fr="Image premium" data-en="Premium image">Image premium</h3>
+        <p class="feature-desc" data-fr="Positionnez votre lieu<br>comme innovant." data-en="Position your venue<br>as innovative.">Positionnez votre lieu<br>comme innovant.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="/img/b2b-commerces/icon-revenu.png" alt="" />
+        </div>
+        <div class="feature-text">
+        <h3 class="feature-title" data-fr="Revenu complémentaire" data-en="Additional revenue">Revenu complémentaire</h3>
+        <p class="feature-desc" data-fr="Générez un flux<br>sans effort." data-en="Generate a flow<br>effortlessly.">Générez un flux<br>sans effort.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<script>
+  const langBtn = document.getElementById('langBtn');
+  const langDropdown = document.getElementById('langDropdown');
+  const currentFlag = document.getElementById('currentFlag');
+  const currentCode = document.getElementById('currentCode');
+
+  const LANGS = {
+    fr: { flag: '🇫🇷', code: 'FR' },
+    en: { flag: '🇬🇧', code: 'EN' }
+  };
+
+  let currentLang = 'fr';
+
+  function applyLanguage(lang) {
+    document.querySelectorAll('[data-fr]').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if (val !== null) el.innerHTML = val;
+    });
+    document.documentElement.lang = lang;
+  }
+
+  function updateButton(lang) {
+    currentFlag.textContent = LANGS[lang].flag;
+    currentCode.textContent = LANGS[lang].code;
+  }
+
+  function updateDropdown(lang) {
+    langDropdown.innerHTML = '';
+    Object.entries(LANGS).forEach(([key, info]) => {
+      if (key === lang) return;
+      const opt = document.createElement('div');
+      opt.className = 'lang-option';
+      opt.setAttribute('role', 'option');
+      opt.setAttribute('data-lang', key);
+      opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
+      opt.addEventListener('click', () => switchLang(key));
+      langDropdown.appendChild(opt);
+    });
+  }
+
+  function switchLang(lang) {
+    currentLang = lang;
+    applyLanguage(lang);
+    updateButton(lang);
+    updateDropdown(lang);
+    closeDropdown();
+  }
+
+  function openDropdown() {
+    langDropdown.classList.add('visible');
+    langBtn.classList.add('open');
+    langBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDropdown() {
+    langDropdown.classList.remove('visible');
+    langBtn.classList.remove('open');
+    langBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
+  });
+
+  document.addEventListener('click', closeDropdown);
+  langDropdown.addEventListener('click', (e) => e.stopPropagation());
+
+  // Initialisation
+  updateDropdown('fr');
+</script>
 
 </body>
+
 </html>
