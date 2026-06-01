@@ -259,11 +259,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ─── THEME TOGGLE ────────────────────────────────────────────────────────────
-
-function toggleTheme() {
-  document.body.classList.toggle('light-mode');
-}
 // ─── LANGUAGE TOGGLE ─────────────────────────────────────────────────────────
 
 const translations = {
@@ -274,9 +269,9 @@ const translations = {
     skip: 'PASSER ↓',
     hero_title: '<span class="green">Chargez</span> Diffusez <span class="green">Impactez</span>',
     hero_sub: 'POP-E transforme chaque lieu en point d\'énergie et de visibilité pour vos clients et votre marque.',
-    card1_title: 'Utilisateur', card1_text: 'Louez une batterie, rechargez où vous êtes.', card1_cta: 'En Savoir Plus →',
-    card2_title: 'Organisateur', card2_text: 'Installez une borne, créez une expérience pour vos visiteurs.', card2_cta: 'En Savoir Plus →',
-    card3_title: 'Marque', card3_text: 'Affichez votre message là où les gens ont besoin de recharger.', card3_cta: 'En Savoir Plus →',
+    card1_title: 'Utilisateur',   card1_text: 'Louez une batterie, rechargez où vous êtes.',                        card1_cta: 'En Savoir Plus →',
+    card2_title: 'Organisateur',  card2_text: 'Installez une borne, créez une expérience pour vos visiteurs.',      card2_cta: 'En Savoir Plus →',
+    card3_title: 'Marque',        card3_text: 'Affichez votre message là où les gens ont besoin de recharger.',     card3_cta: 'En Savoir Plus →',
   },
   en: {
     manifeste_words: ['Recharge', 'Visibility', 'Experience'],
@@ -285,24 +280,46 @@ const translations = {
     skip: 'SKIP ↓',
     hero_title: '<span class="green">Charge</span> Broadcast <span class="green">Impact</span>',
     hero_sub: 'POP-E turns every venue into an energy and visibility hub for your customers and your brand.',
-    card1_title: 'User', card1_text: 'Rent a battery, charge up wherever you are.', card1_cta: 'Learn More →',
-    card2_title: 'Organiser', card2_text: 'Deploy a station, create an experience for your visitors.', card2_cta: 'Learn More →',
-    card3_title: 'Brand', card3_text: 'Display your message where people need to recharge.', card3_cta: 'Learn More →',
+    card1_title: 'User',       card1_text: 'Rent a battery, charge up wherever you are.',               card1_cta: 'Learn More →',
+    card2_title: 'Organiser',  card2_text: 'Deploy a station, create an experience for your visitors.', card2_cta: 'Learn More →',
+    card3_title: 'Brand',      card3_text: 'Display your message where people need to recharge.',       card3_cta: 'Learn More →',
   }
 };
 
 window.currentLang = 'fr';
 
-function toggleLang() {
-  currentLang = currentLang === 'fr' ? 'en' : 'fr';
-  const btn = document.getElementById('lang-btn');
-  btn.innerHTML = currentLang === 'fr' ? '🇫🇷 FR' : '🇬🇧 EN';
-  applyLang(currentLang);
+// Éléments du nouveau switcher
+const langBtn      = document.getElementById('langBtn');
+const langDropdown = document.getElementById('langDropdown');
+const currentFlag  = document.getElementById('currentFlag');
+const currentCode  = document.getElementById('currentCode');
 
-  // ── Réinitialiser le chatbot dans la nouvelle langue ──
+const LANGS = {
+  fr: { flag: '🇫🇷', code: 'FR' },
+  en: { flag: '🇬🇧', code: 'EN' }
+};
+
+function applyLang(lang) {
+  const t = translations[lang];
+  document.querySelector('#phrase-key h2').innerHTML       = t.phrase_key;
+  document.querySelector('#phrase-key p').textContent      = t.phrase_sub;
+  document.getElementById('text-left').querySelector('h1').innerHTML    = t.hero_title;
+  document.getElementById('text-left').querySelector('p').textContent   = t.hero_sub;
+  document.getElementById('card-battery').querySelector('.card-title').textContent = t.card1_title;
+  document.getElementById('card-battery').querySelector('.card-text').textContent  = t.card1_text;
+  document.getElementById('card-battery').querySelector('.card-cta').textContent   = t.card1_cta;
+  document.getElementById('card-borne').querySelector('.card-title').textContent   = t.card2_title;
+  document.getElementById('card-borne').querySelector('.card-text').textContent    = t.card2_text;
+  document.getElementById('card-borne').querySelector('.card-cta').textContent     = t.card2_cta;
+  document.getElementById('card-marque').querySelector('.card-title').textContent  = t.card3_title;
+  document.getElementById('card-marque').querySelector('.card-text').textContent   = t.card3_text;
+  document.getElementById('card-marque').querySelector('.card-cta').textContent    = t.card3_cta;
+  document.getElementById('skip-btn').textContent = t.skip;
+
+  // Chatbot reset si ouvert
   const chatBody = document.getElementById('chatbot-body');
   if (chatBody) {
-    chatBody.innerHTML = ''; // force welcome() au prochain open, ou immédiatement :
+    chatBody.innerHTML = '';
     const chatWin = document.getElementById('chatbot-window');
     if (chatWin && chatWin.classList.contains('open')) {
       if (typeof window.chatbotWelcome === 'function') window.chatbotWelcome();
@@ -310,23 +327,55 @@ function toggleLang() {
   }
 }
 
-function applyLang(lang) {
-  const t = translations[lang];
-   document.querySelector('#phrase-key h2').innerHTML = t.phrase_key;
-  document.querySelector('#phrase-key p').textContent = t.phrase_sub;
-  document.getElementById('text-left').querySelector('h1').innerHTML = t.hero_title;
-  document.getElementById('text-left').querySelector('p').textContent = t.hero_sub;
-  document.getElementById('card-battery').querySelector('.card-title').textContent = t.card1_title;
-  document.getElementById('card-battery').querySelector('.card-text').textContent = t.card1_text;
-  document.getElementById('card-battery').querySelector('.card-cta').textContent = t.card1_cta;
-  document.getElementById('card-borne').querySelector('.card-title').textContent = t.card2_title;
-  document.getElementById('card-borne').querySelector('.card-text').textContent = t.card2_text;
-  document.getElementById('card-borne').querySelector('.card-cta').textContent = t.card2_cta;
-  document.getElementById('card-marque').querySelector('.card-title').textContent = t.card3_title;
-  document.getElementById('card-marque').querySelector('.card-text').textContent = t.card3_text;
-  document.getElementById('card-marque').querySelector('.card-cta').textContent = t.card3_cta;
-  document.getElementById('skip-btn').textContent = t.skip;
+function updateLangButton(lang) {
+  currentFlag.textContent = LANGS[lang].flag;
+  currentCode.textContent = LANGS[lang].code;
 }
+
+function updateLangDropdown(lang) {
+  langDropdown.innerHTML = '';
+  Object.entries(LANGS).forEach(([key, info]) => {
+    if (key === lang) return;
+    const opt = document.createElement('div');
+    opt.className = 'lang-option';
+    opt.setAttribute('role', 'option');
+    opt.setAttribute('data-lang', key);
+    opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
+    opt.addEventListener('click', () => switchLang(key));
+    langDropdown.appendChild(opt);
+  });
+}
+
+function switchLang(lang) {
+  window.currentLang = lang;
+  applyLang(lang);
+  updateLangButton(lang);
+  updateLangDropdown(lang);
+  closeLangDropdown();
+}
+
+function openLangDropdown() {
+  langDropdown.classList.add('visible');
+  langBtn.classList.add('open');
+  langBtn.setAttribute('aria-expanded', 'true');
+}
+
+function closeLangDropdown() {
+  langDropdown.classList.remove('visible');
+  langBtn.classList.remove('open');
+  langBtn.setAttribute('aria-expanded', 'false');
+}
+
+langBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  langDropdown.classList.contains('visible') ? closeLangDropdown() : openLangDropdown();
+});
+
+document.addEventListener('click', closeLangDropdown);
+langDropdown.addEventListener('click', (e) => e.stopPropagation());
+
+// Init dropdown
+updateLangDropdown('fr');
 
 // ─── START ────────────────────────────────────────────────────────────────────
 

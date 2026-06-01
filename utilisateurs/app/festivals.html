@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <link rel="stylesheet" href="/css/festivals.css">
+  <link rel="stylesheet" href="/css/festivals-lang.css">
+  <link rel="stylesheet" href="/css/chatbot.css">
 </head>
 <body>
 
@@ -16,40 +18,54 @@
   <nav id="navbar">
     <a href="/"><img src="/img/logo2.png" alt="POP-E Logo"></a>
     <div id="navbar-right">
-      <a href="/" class="nav-link">Accueil</a>
-      <a href="#" class="nav-link active">Festivals</a>
-      <a href="/utilisateurs/app/boutique.html" class="nav-link">E-shop</a>
+      <a href="../app.html" class="nav-link nav-back" data-i18n="nav_back">← Retour</a>
+      <a href="/" class="nav-link" data-i18n="nav_home">Accueil</a>
+      <a href="#" class="nav-link active" data-i18n="nav_festivals">Festivals</a>
+
+      <!-- LANG SWITCHER -->
+      <div class="lang-switcher">
+        <button class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-flag" id="lang-flag">🇫🇷</span>
+          <span class="lang-code" id="lang-code">FR</span>
+          <svg class="lang-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="2,3 5,7 8,3"/>
+          </svg>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+          <div class="lang-option" data-lang="fr" role="option">
+            <span class="lang-flag">🇫🇷</span> Français
+          </div>
+          <div class="lang-option" data-lang="en" role="option">
+            <span class="lang-flag">🇬🇧</span> English
+          </div>
+        </div>
+      </div>
+
     </div>
   </nav>
 
   <!-- HERO -->
   <div id="hero-band">
-    <h1>FESTIVALS<br><span>AVEC POP-E</span></h1>
-    <p>Retrouvez toutes les bornes POP-E déployées sur les festivals en France. Rechargez sans stress, capturez chaque moment.</p>
+    <h1><span data-i18n="hero_title">FESTIVALS</span><br><span data-i18n="hero_title_span">AVEC POP-E</span></h1>
+    <p data-i18n="hero_desc">Retrouvez toutes les bornes POP-E déployées sur les festivals en France. Rechargez sans stress, capturez chaque moment.</p>
     <div id="hero-meta">
-      <div class="hero-stat"><strong id="stat-fests">12</strong><span>Festivals</span></div>
-      <div class="hero-stat"><strong>2026</strong><span>Saison</span></div>
-      <div class="hero-stat"><strong>FR</strong><span>Couverture</span></div>
+      <div class="hero-stat"><strong id="stat-fests">12</strong><span data-i18n="stat_label_fests">Festivals</span></div>
+      <div class="hero-stat"><strong>2026</strong><span data-i18n="stat_label_season">Saison</span></div>
+      <div class="hero-stat"><strong>FR</strong><span data-i18n="stat_label_coverage">Couverture</span></div>
     </div>
   </div>
 
   <!-- BODY -->
   <div id="page-body">
-
-    <!-- MAP -->
     <div id="map-wrap">
       <div id="map"></div>
     </div>
-
-    <!-- SIDEBAR -->
     <div id="festival-list">
       <div id="list-header">
-        <h3>Tous les festivals</h3>
-        <p id="list-count">12 événements • 2026</p>
+        <h3 data-i18n="list_title">Tous les festivals</h3>
+        <p id="list-count" data-i18n="list_count">12 événements • 2026</p>
       </div>
-      <!-- Items injectés par JS -->
     </div>
-
   </div>
 
   <!-- POPUP OVERLAY -->
@@ -58,50 +74,44 @@
   <!-- POPUP -->
   <div id="festival-popup">
     <button id="popup-close" onclick="closePopup()">✕</button>
-    <div id="popup-badge">POP-E PRÉSENT</div>
+    <div id="popup-badge" data-i18n="popup_badge">POP-E PRÉSENT</div>
     <div id="popup-name">—</div>
     <div id="popup-city">—</div>
     <div id="popup-divider"></div>
     <div class="popup-row">
-      <div class="popup-icon">
-        <img src="/img/calendrier.png" alt="Calendrier">
-      </div>
+      <div class="popup-icon"><img src="/img/calendrier.png" alt="Calendrier"></div>
       <div>
-        <div class="popup-label">Dates</div>
+        <div class="popup-label" data-i18n="popup_dates_label">Dates</div>
         <div class="popup-value" id="popup-dates">—</div>
       </div>
     </div>
     <div class="popup-row">
-      <div class="popup-icon2">
-        <img src="/img/loc2.png" alt="Calendrier">
-      </div>
+      <div class="popup-icon2"><img src="/img/loc2.png" alt="Localisation"></div>
       <div>
-        <div class="popup-label">Adresse</div>
+        <div class="popup-label" data-i18n="popup_address_label">Adresse</div>
         <div class="popup-value" id="popup-address">—</div>
       </div>
     </div>
     <div class="popup-row">
-      <div class="popup-icon2">
-        <img src="/img/genre.png" alt="Calendrier">
-      </div>
+      <div class="popup-icon2"><img src="/img/genre.png" alt="Genre"></div>
       <div>
-        <div class="popup-label">Genre</div>
+        <div class="popup-label" data-i18n="popup_genre_label">Genre</div>
         <div class="popup-value" id="popup-genre">—</div>
       </div>
     </div>
     <div class="popup-row">
-      <div class="popup-icon">
-        <img src="/img/recharge.png" alt="Calendrier">
-      </div>
+      <div class="popup-icon"><img src="/img/recharge.png" alt="Bornes"></div>
       <div>
-        <div class="popup-label">Bornes POP-E</div>
+        <div class="popup-label" data-i18n="popup_bornes_label">Bornes POP-E</div>
         <div class="popup-value" id="popup-bornes">—</div>
       </div>
     </div>
-    <button id="popup-cta">EN SAVOIR PLUS →</button>
+    <button id="popup-cta" data-i18n="popup_cta">EN SAVOIR PLUS →</button>
   </div>
 
   <script src="/js/festivals.js"></script>
+  <script src="/js/festivals-lang.js"></script>
+  <script src="/js/chatbot.js"></script>
 
 </body>
 </html>
