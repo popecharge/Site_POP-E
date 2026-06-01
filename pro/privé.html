@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POP-E — Événements Privés</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="/css/chatbot.css" />
+
+    <link rel="stylesheet" href="/css/privé.css" />
+    <link rel="stylesheet" href="/css/b2b.css" />
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="logo-img">
+            <img src="/img/logo2.png" alt="Logo POP-E" class="logo-img">
+        </div>
+
+        <div class="lang-switcher" id="langSwitcher">
+            <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                <span class="lang-flag" id="currentFlag">🇫🇷</span>
+                <span class="lang-code" id="currentCode">FR</span>
+                <svg class="lang-chevron" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="lang-dropdown" id="langDropdown" role="listbox">
+                <div class="lang-option" data-lang="en" role="option">
+                    <span class="lang-flag">🇬🇧</span>
+                    <span>EN</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="prive-hero">
+        <div class="bg-noise"></div>
+        <div class="hero-bg-placeholder"></div>
+
+        <div class="prive-hero-inner">
+
+            <div class="prive-hero-text">
+                <span class="hero-badge" data-fr="ÉVÉNEMENTS PRIVÉS" data-en="PRIVATE EVENTS">ÉVÉNEMENTS PRIVÉS</span>
+
+                <h1 class="prive-hero-title">
+                    <span data-fr="OFFREZ" data-en="OFFER YOUR">OFFREZ</span>
+                    <span class="accent" data-fr="LA RECHARGE" data-en="CHARGING">LA RECHARGE</span><br>
+                    <span data-fr="À VOS INVITÉS" data-en="TO YOUR GUESTS">À VOS INVITÉS</span>
+                </h1>
+
+                <p class="prive-hero-sub">
+                    <span data-fr="Mariage, anniversaire, soirée privée…"
+                        data-en="Wedding, birthday, private party…">Mariage, anniversaire, soirée privée…</span><br>
+                    <span data-fr="Faites de chaque moment un souvenir inoubliable,"
+                        data-en="Make every moment an unforgettable memory,">Faites de chaque moment un souvenir
+                        inoubliable,</span><br>
+                    <strong data-fr="sans jamais tomber à court de batterie."
+                        data-en="without ever running out of battery.">sans jamais tomber à court de batterie.</strong>
+                </p>
+
+                <a href="#contact" class="btn-cta">
+                    <span data-fr="DEMANDER UN DEVIS" data-en="REQUEST A QUOTE">DEMANDER UN DEVIS</span>
+                    <span class="btn-cta-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="benefits-inner">
+
+            <h2 class="section-title">
+                <span data-fr="UN SERVICE UTILE, MODERNE ET" data-en="A USEFUL, MODERN AND">UN SERVICE UTILE, MODERNE
+                    ET</span>
+                <span class="accent" data-fr=" APPRÉCIÉ PAR TOUS" data-en=" LOVED BY ALL"> APPRÉCIÉ PAR TOUS</span>
+            </h2>
+
+            <div class="benefits-grid">
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="14" r="9" stroke="#ADFF00" stroke-width="2" />
+                            <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <p class="benefit-main" data-fr="Vos invités restent connectés toute la soirée"
+                        data-en="Your guests stay connected all evening">Vos invités restent connectés toute la soirée
+                    </p>
+                    <p class="benefit-sub" data-fr="Plus de liberté, plus de moments."
+                        data-en="More freedom, more moments.">Plus de liberté, plus de moments.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="15" y="6" width="18" height="32" rx="3" stroke="#ADFF00" stroke-width="2" />
+                            <line x1="24" y1="32" x2="24" y2="34" stroke="#ADFF00" stroke-width="2.5"
+                                stroke-linecap="round" />
+                            <path d="M21 12h6" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <p class="benefit-main" data-fr="Plus besoin de laisser son téléphone dans un coin"
+                        data-en="No more leaving your phone in a corner">Plus besoin de laisser son téléphone dans un
+                        coin</p>
+                    <p class="benefit-sub" data-fr="Profitez de la soirée sans contrainte."
+                        data-en="Enjoy the evening without constraints.">Profitez de la soirée sans contrainte.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="14" width="36" height="26" rx="4" stroke="#ADFF00" stroke-width="2" />
+                            <circle cx="24" cy="27" r="7" stroke="#ADFF00" stroke-width="2" />
+                            <path d="M18 14l3-6h6l3 6" stroke="#ADFF00" stroke-width="2" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <p class="benefit-main" data-fr="Les photos et souvenirs continuent jusqu'au bout de la nuit"
+                        data-en="Photos and memories continue until the end of the night">Les photos et souvenirs
+                        continuent jusqu'au bout de la nuit</p>
+                    <p class="benefit-sub" data-fr="Capturez chaque instant, partagez vos moments."
+                        data-en="Capture every moment, share your memories.">Capturez chaque instant, partagez vos
+                        moments.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 6C17.373 6 12 11.373 12 18c0 10 12 24 12 24s12-14 12-24c0-6.627-5.373-12-12-12z"
+                                stroke="#ADFF00" stroke-width="2" />
+                            <circle cx="24" cy="18" r="4" stroke="#ADFF00" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <p class="benefit-main" data-fr="Restez joignable et retrouvez vos proches facilement"
+                        data-en="Stay reachable and find your loved ones easily">Restez joignable et retrouvez vos
+                        proches facilement</p>
+                    <p class="benefit-sub" data-fr="Un service pratique et rassurant."
+                        data-en="A practical and reassuring service.">Un service pratique et rassurant.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 6L8 13v12c0 9.389 6.857 17.282 16 19 9.143-1.718 16-9.611 16-19V13L24 6z"
+                                stroke="#ADFF00" stroke-width="2" />
+                            <path d="M17 24l5 5 9-9" stroke="#ADFF00" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <p class="benefit-main" data-fr="Une solution simple, sécurisée et autonome"
+                        data-en="A simple, secure and autonomous solution">Une solution simple, sécurisée et autonome
+                    </p>
+                    <p class="benefit-sub" data-fr="Utilisation intuitive, installation rapide."
+                        data-en="Intuitive use, quick installation.">Utilisation intuitive, installation rapide.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 6l4.5 9.1 10.1 1.5-7.3 7.1 1.7 10.1L24 29.1l-9 4.7 1.7-10.1-7.3-7.1 10.1-1.5L24 6z"
+                                stroke="#ADFF00" stroke-width="2" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <p class="benefit-main" data-fr="Une touche premium qui fait la différence"
+                        data-en="A premium touch that makes the difference">Une touche premium qui fait la différence
+                    </p>
+                    <p class="benefit-sub" data-fr="Offrez une expérience mémorable à vos invités."
+                        data-en="Offer a memorable experience to your guests.">Offrez une expérience mémorable à vos
+                        invités.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="events-section">
+        <div class="events-inner">
+
+            <h2 class="section-title">
+                <span data-fr="POUR TOUS VOS" data-en="FOR ALL YOUR">POUR TOUS VOS</span>
+                <span class="accent" data-fr=" ÉVÉNEMENTS PRIVÉS" data-en=" PRIVATE EVENTS"> ÉVÉNEMENTS PRIVÉS</span>
+            </h2>
+
+            <div class="event-cards-grid">
+
+                <a href="#" class="event-card">
+                    <div class="card-header">
+                        <span class="card-number">01</span>
+                        <div class="card-number-line"></div>
+                    </div>
+                    <div class="event-card-icon">
+                        <img src="/img/b2b-privé/icon-mariage.png" alt="Icône Mariage">
+                    </div>
+                    <h3 class="event-card-title" data-fr="MARIAGE" data-en="WEDDING">MARIAGE</h3>
+                    <p class="event-card-desc"
+                        data-fr="Offrez à vos proches la liberté de capturer chaque instant et de rester connectés."
+                        data-en="Give your loved ones the freedom to capture every moment and stay connected.">
+                        Offrez à vos proches la liberté de capturer chaque instant et de rester connectés.</p>
+                    
+                    <div class="card-footer">
+                        <div class="card-button-wrapper">
+                            <div class="event-card-btn">
+                                <span data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="event-card">
+                    <div class="card-header">
+                        <span class="card-number">02</span>
+                        <div class="card-number-line"></div>
+                    </div>
+                    <div class="event-card-icon">
+                        <img src="/img/b2b-privé/icon-anniversaire.png" alt="Icône Anniversaire">
+                    </div>
+                    <h3 class="event-card-title" data-fr="ANNIVERSAIRE" data-en="BIRTHDAY">ANNIVERSAIRE</h3>
+                    <p class="event-card-desc"
+                        data-fr="Une soirée réussie, des invités connectés, des souvenirs partagés sans interruption."
+                        data-en="A successful evening, connected guests, memories shared without interruption.">Une
+                        soirée réussie, des invités connectés, des souvenirs partagés sans interruption.</p>
+                    
+                    <div class="card-footer">
+                        <div class="card-button-wrapper">
+                            <div class="event-card-btn">
+                                <span data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="event-card">
+                    <div class="card-header">
+                        <span class="card-number">03</span>
+                        <div class="card-number-line"></div>
+                    </div>
+                    <div class="event-card-icon">
+                        <img src="/img/b2b-privé/icon-event.png" alt="Icône Entreprise">
+                    </div>
+                    <h3 class="event-card-title" data-fr="ÉVÉNEMENT<br>D'ENTREPRISE" data-en="CORPORATE<br>EVENT">
+                        ÉVÉNEMENT<br>D'ENTREPRISE</h3>
+                    <p class="event-card-desc"
+                        data-fr="Connectez vos équipes et invités pour un événement fluide, professionnel et impactant."
+                        data-en="Connect your teams and guests for a smooth, professional and impactful event.">
+                        Connectez vos équipes et invités pour un événement fluide, professionnel et impactant.</p>
+                    
+                    <div class="card-footer">
+                        <div class="card-button-wrapper">
+                            <div class="event-card-btn">
+                                <span data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="event-card">
+                    <div class="card-header">
+                        <span class="card-number">04</span>
+                        <div class="card-number-line"></div>
+                    </div>
+                    <div class="event-card-icon">
+                        <img src="/img/b2b-privé/icon-soirée.png" alt="Icône Soirée">
+                    </div>
+                    <h3 class="event-card-title" data-fr="AUTRE<br>ÉVÉNEMENT PRIVÉ"
+                        data-en="OTHER<br>PRIVATE EVENT">AUTRE<br>ÉVÉNEMENT PRIVÉ</h3>
+                    <p class="event-card-desc"
+                        data-fr="Baptêmes, fiançailles, garden parties, soirées à thème… POP-E s'adapte à vos besoins."
+                        data-en="Christenings, engagements, garden parties, themed evenings… POP-E adapts to your needs.">
+                        Baptêmes, fiançailles, garden parties, soirées à thème… POP-E s'adapte à vos besoins.</p>
+                    
+                    <div class="card-footer">
+                        <div class="card-button-wrapper">
+                            <div class="event-card-btn">
+                                <span data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner" id="contact">
+        <div class="cta-banner-inner">
+
+            <div class="cta-left">
+                <div class="cta-icon-wrap">
+                    <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 18C12 15.7909 13.7909 14 16 14H40C42.2091 14 44 15.7909 44 18V32" stroke="#ADFF00" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M12 18V42C12 44.2091 13.7909 46 16 46H30" stroke="#ADFF00" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M20 10V15" stroke="#ADFF00" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M36 10V15" stroke="#ADFF00" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M12 24H44" stroke="#ADFF00" stroke-width="2.5"/>
+                        <path d="M18 30H22M28 30H32M38 30H40M18 36H22M28 36H32" stroke="#ADFF00" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="44" cy="44" r="8" fill="#0c0f0a" stroke="#ADFF00" stroke-width="2.5"/>
+                        <path d="M40 44L43 47L48 40" stroke="#ADFF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="cta-text-block">
+                    <h2 class="cta-title">
+                        <span data-fr="UN DÉTAIL QUI CHANGE TOUTE" data-en="ONE DETAIL THAT CHANGES EVERYTHING">UN DÉTAIL QUI CHANGE TOUTE</span><br>
+                        <span class="accent" data-fr="L'EXPÉRIENCE" data-en="THE EXPERIENCE">L'EXPÉRIENCE</span>
+                    </h2>
+                    <p class="cta-desc"
+                        data-fr="Vos invités restent présents, connectés et sereins. Vous profitez pleinement de votre événement. Tout le monde y gagne."
+                        data-en="Your guests stay present, connected and relaxed. You fully enjoy your event. Everyone wins.">
+                        Vos invités restent présents, connectés et sereins.<br>Vous profitez pleinement de votre événement.<br>Tout le monde y gagne.</p>
+                </div>
+            </div>
+
+            <div class="cta-right">
+                <a href="mailto:hello@pop-e.eu" class="btn-cta btn-cta--large">
+                    <span data-fr="DEMANDER UN DEVIS" data-en="REQUEST A QUOTE">DEMANDER UN DEVIS</span>
+                    <span class="btn-cta-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <div id="social-sidebar">
+        <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn"
+            title="Instagram">
+            <img src="/img/insta.png" alt="Instagram">
+        </a>
+        <div class="social-btn" title="TikTok">
+            <img src="/img/tiktok.png" alt="TikTok">
+        </div>
+        <div class="social-btn" title="Téléphone">
+            <img src="/img/telephone.png" alt="Contact">
+        </div>
+    </div>
+
+    <div id="chatbot">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <script src="/js/chatbot.js"></script>
+
+    <script>
+        /* ── Language Switcher Logic ── */
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        const currentFlag = document.getElementById('currentFlag');
+        const currentCode = document.getElementById('currentCode');
+
+        const LANGS = {
+            fr: { flag: '🇫🇷', code: 'FR' },
+            en: { flag: '🇬🇧', code: 'EN' }
+        };
+
+        let currentLang = 'fr';
+
+        function applyLanguage(lang) {
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                const val = el.getAttribute('data-' + lang);
+                if (val !== null) el.innerHTML = val;
+            });
+            document.documentElement.lang = lang;
+        }
+
+        function updateButton(lang) {
+            currentFlag.textContent = LANGS[lang].flag;
+            currentCode.textContent = LANGS[lang].code;
+        }
+
+        function updateDropdown(lang) {
+            langDropdown.innerHTML = '';
+            Object.entries(LANGS).forEach(([key, info]) => {
+                if (key === lang) return;
+                const opt = document.createElement('div');
+                opt.className = 'lang-option';
+                opt.setAttribute('role', 'option');
+                opt.setAttribute('data-lang', key);
+                opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
+                opt.addEventListener('click', () => switchLang(key));
+                langDropdown.appendChild(opt);
+            });
+        }
+
+        function switchLang(lang) {
+            currentLang = lang;
+            applyLanguage(lang);
+            updateButton(lang);
+            updateDropdown(lang);
+            closeDropdown();
+        }
+
+        function openDropdown() {
+            langDropdown.classList.add('visible');
+            langBtn.classList.add('open');
+            langBtn.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeDropdown() {
+            langDropdown.classList.remove('visible');
+            langBtn.classList.remove('open');
+            langBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
+        });
+
+        document.addEventListener('click', closeDropdown);
+        langDropdown.addEventListener('click', (e) => e.stopPropagation());
+
+        updateDropdown('fr');
+    </script>
+
+</body>
+
+</html>

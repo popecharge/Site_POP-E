@@ -576,6 +576,46 @@ a {
   margin: 0 -48px;
 }
 
+/* ── Social Sidebar ── */
+#social-sidebar {
+  position: fixed;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9000;
+}
+
+#social-sidebar .social-btn {
+  all: unset;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#social-sidebar .social-btn:hover {
+  transform: translateX(-4px);
+}
+
+#social-sidebar .social-btn img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  max-width: none;
+}
+
+#social-sidebar .social-btn:hover img {
+  filter: drop-shadow(0 0 6px rgba(173, 255, 0, 0.7));
+}
+
     /* ── Language Switcher ── */
     .lang-switcher {
       position: relative;

@@ -10,6 +10,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
     rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/chatbot.css">
   <link rel="stylesheet" href="/css/b2b.css" />
 
   <style>
@@ -62,7 +64,6 @@
 
   <!-- Cards Grid -->
   <section class="cards-section cards-zone">
-    <div id="energyCanvas"></div>
     <div class="cards-grid">
 
       <a href="festival.html" class="card">
@@ -253,14 +254,6 @@
           </div>
         </div>
 
-        <div class="social-links">
-          <a href="#" class="social-btn" aria-label="TikTok">
-            <img src="/img/icon-tel.png" alt="TikTok" class="social-img">
-          </a>
-          <a href="#" class="social-btn" aria-label="Instagram">
-            <img src="/img/icon-tel.png" alt="Instagram" class="social-img">
-          </a>
-        </div>
       </div>
 
     </div>
@@ -269,6 +262,22 @@
 
   </footer>
 
+  <div id="social-sidebar">
+  <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
+    <img src="/img/insta.png" alt="Instagram">
+  </a>
+  <div class="social-btn" title="TikTok">
+    <img src="/img/tiktok.png" alt="TikTok">
+  </div>
+  <div class="social-btn" title="Téléphone">
+    <img src="/img/telephone.png" alt="Contact"> 
+  </div>
+</div>
+
+<div id="chatbot">
+    <i class="fas fa-comments"></i> </div>
+
+  <script src="/js/chatbot.js"></script>
 
   <script>
     /* ── Language Switcher Logic ── */
@@ -342,86 +351,6 @@
     // Init
     updateDropdown('fr');
 
-
-    /* ── Energy Canvas ── */
-    const cards = document.querySelectorAll('.card');
-    const container = document.querySelector('.cards-zone');
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    document.getElementById('energyCanvas').appendChild(canvas);
-
-    let activeCard = null;
-
-    function resizeCanvas() {
-      canvas.width = container.offsetWidth * devicePixelRatio;
-      canvas.height = container.offsetHeight * devicePixelRatio;
-      canvas.style.width = container.offsetWidth + 'px';
-      canvas.style.height = container.offsetHeight + 'px';
-      ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    function getCardBaseCenter(card) {
-      const cardRect = card.getBoundingClientRect();
-      const zoneRect = container.getBoundingClientRect();
-      return {
-        x: cardRect.left - zoneRect.left + cardRect.width / 2,
-        y: cardRect.bottom - zoneRect.top
-      };
-    }
-
-    function drawEnergyOrbit(x, y, time) {
-      const radiusX = 140;
-      const radiusY = 35;
-
-      ctx.save();
-      ctx.translate(x, y - 10);
-
-      const startAngle = time * 2;
-      const endAngle = startAngle + 2;
-
-      ctx.beginPath();
-      ctx.ellipse(0, 5, radiusX, radiusY, 0, startAngle, endAngle);
-      ctx.strokeStyle = '#ADFF00';
-      ctx.lineWidth = 3;
-      ctx.lineCap = 'round';
-      ctx.stroke();
-
-      const headX = Math.cos(endAngle) * radiusX;
-      const headY = Math.sin(endAngle) * radiusY + 5;
-
-      ctx.beginPath();
-      ctx.fillStyle = '#FFFFFF';
-      ctx.arc(headX, headY, 2, 0, Math.PI * 2);
-      ctx.fill();
-
-      ctx.restore();
-    }
-
-    cards.forEach(card => {
-      card.addEventListener('mouseenter', () => { activeCard = card; });
-      card.addEventListener('mouseleave', () => { activeCard = null; });
-    });
-
-    function animate(time) {
-      ctx.save();
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.restore();
-
-      ctx.shadowBlur = 0;
-      ctx.shadowColor = "transparent";
-
-      if (activeCard) {
-        const center = getCardBaseCenter(activeCard);
-        drawEnergyOrbit(center.x, center.y, time * 0.001);
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    requestAnimationFrame(animate);
   </script>
 
 </body>
