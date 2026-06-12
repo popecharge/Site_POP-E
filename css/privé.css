@@ -676,23 +676,28 @@
 @media (max-width: 900px) {
   .prive-hero {
     flex-direction: column;
+    height: auto !important;
+    min-height: auto !important;
+    margin-top: 60px;
+    margin-bottom: 40px;
   }
   .hero-bg-placeholder {
-    width: 100%;
-    height: 50%;
-    top: auto;
-    bottom: 0;
+    display: none;
   }
   .prive-hero-inner {
     grid-template-columns: 1fr;
-    padding: 120px 0 0 0;
+    padding: 0;                   /* Supprime le trou restant au-dessus */
+    height: auto !important;      /* CORRIGÉ : Sécurité pour empêcher ce bloc de s'étirer */
+    min-height: auto !important;
   }
   .prive-hero-visual {
-    height: 45vh;
-    order: -1;
+    height: 250px;                /* Ajuste l'image pour tablette */
+    order: -1;                    /* Place bien l'image au-dessus du texte */
+    width: 100%;
   }
   .prive-hero-text {
-    padding: 48px 32px;
+    padding: 40px 20px;           /* Un padding propre et serré autour du texte */
+    text-align: center;
   }
   .benefits-section,
   .events-section,
@@ -736,6 +741,9 @@
   }
   .prive-hero-title {
     font-size: clamp(2.6rem, 10vw, 3.5rem);
+  }
+  .section-title {
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem);
   }
   .benefits-section,
   .events-section,

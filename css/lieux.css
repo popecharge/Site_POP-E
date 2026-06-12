@@ -607,7 +607,65 @@ body:has(.hero-img:hover) .btn-install {
   }
 }
 
-/* ─── RESPONSIVE ─── */
+/* ─── RESPONSIVE TABLETTE ─── */
+@media (min-width: 761px) and (max-width: 1100px) {
+  .site-header {
+    padding: 14px 28px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 100px 40px 20px 40px;
+  }
+
+  .hero-inner {
+    gap: 24px;
+  }
+
+  .hero-content {
+    max-width: 480px;
+  }
+
+  /* Suppression des badges flottants sur tablette */
+  .float-badge {
+    display: none;
+  }
+
+  .hero-img {
+    width: clamp(220px, 28vw, 340px);
+  }
+
+  /* Cards : colonne unique, gap réduit */
+  .features-section {
+    padding: 20px 32px 60px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .feature-card {
+    min-height: 120px;
+    padding: 18px 24px;
+    gap: 20px;
+  }
+
+  .feature-icon {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+  }
+
+  .feature-icon img {
+    width: 130%;
+    height: 130%;
+  }
+}
+
+/* ─── RESPONSIVE MOBILE ─── */
 @media (max-width: 760px) {
   .site-header {
     padding: 18px 24px;

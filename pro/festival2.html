@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POP-E — L'Énergie de votre Festival</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/css/chatbot.css" />
+    <link rel="stylesheet" href="/css/b2b.css" />
+    <link rel="stylesheet" href="/css/festival2.css" />
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="/?skipIntro=true" class="logo-link">
+            <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
+        </a>
+
+        <div class="header-right">
+            <a href="/pro/pro.html" class="nav-link nav-back" data-fr="← Retour" data-en="← Back">← Retour</a>
+            <div class="lang-switcher">
+                <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="lang-flag" id="currentFlag">🇫🇷</span>
+                    <span class="lang-code" id="currentCode">FR</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown" role="listbox"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="fest-hero">
+        <div class="bg-noise"></div>
+
+        <div class="hero-container">
+            <div class="hero-left">
+                <h1 class="hero-title" data-fr="L'ÉNERGIE QUI FAIT VIVRE <span class='accent'>VOTRE FESTIVAL</span>" data-en="THE ENERGY THAT DRIVES <span class='accent'>YOUR FESTIVAL</span>">
+                    L'ÉNERGIE QUI FAIT VIVRE <span class="accent">VOTRE FESTIVAL</span>
+                </h1>
+                <p class="hero-subtitle" data-fr="Bornes de batteries externes en libre-service pour des festivaliers connectés, sereins et une expérience inoubliable." data-en="Self-service power bank stations for connected, stress-free festival-goers and an unforgettable experience.">
+                    Bornes de batteries externes en libre-service pour des festivaliers connectés, sereins et une expérience inoubliable.
+                </p>
+
+                <ul class="hero-bullets">
+                    <li>
+                        <span class="bullet-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        </span>
+                        <span data-fr="Expérience festivalier améliorée" data-en="Enhanced attendee experience">Expérience festivalier améliorée</span>
+                    </li>
+                    <li>
+                        <span class="bullet-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </span>
+                        <span data-fr="Écrans publicitaires 4K intégrés" data-en="Integrated 4K advertising displays">Écrans publicitaires 4K intégrés</span>
+                    </li>
+                    <li>
+                        <span class="bullet-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </span>
+                        <span data-fr="Installation en moins de 20 minutes" data-en="Setup in under 20 minutes">Installation en moins de 20 minutes</span>
+                    </li>
+                    <li>
+                        <span class="bullet-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span data-fr="Revenus complémentaires possibles" data-en="Additional revenue opportunities">Revenus complémentaires possibles</span>
+                    </li>
+                </ul>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-cta text-black">
+                        <span data-fr="DEMANDER UN DEVIS" data-en="REQUEST A QUOTE">DEMANDER UN DEVIS</span>
+                        <span class="btn-cta-arrow">→</span>
+                    </a>
+                    <a href="#" class="btn-outline">
+                        <span data-fr="VOIR LA BROCHURE" data-en="VIEW BROCHURE">VOIR LA BROCHURE</span>
+                        <span class="download-icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="station-visual-wrapper">
+                    <img src="/img/borne.png" alt="Borne POP-E" class="main-station-img">
+                    
+                    <div class="floating-stat stat-top-right">
+                        <span class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="11" x2="23" y2="13"/></svg>
+                        </span>
+                        <div class="stat-txt"><strong>48</strong><small data-fr="BATTERIES" data-en="POWER BANKS">BATTERIES</small></div>
+                    </div>
+                    <div class="floating-stat stat-mid-right">
+                        <span class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </span>
+                        <div class="stat-txt"><strong>4K</strong><small data-fr="ÉCRAN" data-en="DISPLAY">DISPLAY</small></div>
+                    </div>
+                    <div class="floating-stat stat-low-right">
+                        <span class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </span>
+                        <div class="stat-txt"><strong>3 €</strong><small data-fr="/ HEURE" data-en="/ HOUR">/ HEURE</small></div>
+                    </div>
+                    <div class="floating-stat stat-bottom-right">
+                        <span class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        </span>
+                        <div class="stat-txt"><strong>98%</strong><small data-fr="DISPONIBILITÉ" data-en="AVAILABILITY">DISPONIBILITÉ</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fest-section padding-global">
+        <h2 class="section-title-centered" data-fr="POURQUOI LES FESTIVALS CHOISISSENT <span class='accent'>POP-E</span>" data-en="WHY FESTIVALS CHOOSE <span class='accent'>POP-E</span>">
+            POURQUOI LES FESTIVALS CHOISISSENT <span class="accent">POP-E</span>
+        </h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-card-top">
+                    <span class="icon-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </span>
+                    <strong data-fr="TÉLÉPHONES TOUJOURS CHARGÉS" data-en="PHONES ALWAYS CHARGED">TÉLÉPHONES TOUJOURS CHARGÉS</strong>
+                </div>
+                <p data-fr="Les festivaliers restent joignables, filment, partagent et profitent pleinement du festival." data-en="Attendees stay reachable, film, share, and fully enjoy the festival.">Les festivaliers restent joignables, filment, partagent et profitent pleinement du festival.</p>
+                <span class="card-index">01</span>
+            </div>
+            <div class="why-card">
+                <div class="why-card-top">
+                    <span class="icon-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </span>
+                    <strong data-fr="PLUS DE CONFORT" data-en="MORE COMFORT">PLUS DE CONFORT</strong>
+                </div>
+                <p data-fr="Fini le stress de la batterie vide au moment de retrouver ses amis ou de payer." data-en="No more dead battery stress when meeting friends or trying to pay.">Fini le stress de la batterie vide au moment de retrouver ses amis ou de payer.</p>
+                <span class="card-index">02</span>
+            </div>
+            <div class="why-card">
+                <div class="why-card-top">
+                    <span class="icon-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </span>
+                    <strong data-fr="PLUS DE SÉCURITÉ" data-en="MORE SECURITY">PLUS DE SÉCURITÉ</strong>
+                </div>
+                <p data-fr="Un téléphone chargé, c'est un festivalier joignable. La sécurité de tous est renforcée." data-en="A charged phone means a reachable attendee. Everyone's safety is enhanced.">Un téléphone chargé, c'est un festivalier joignable. La sécurité de tous est renforcée.</p>
+                <span class="card-index">03</span>
+            </div>
+            <div class="why-card">
+                <div class="why-card-top">
+                    <span class="icon-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </span>
+                    <strong data-fr="UNE IMAGE MODERNE" data-en="A MODERN IMAGE">UNE IMAGE MODERNE</strong>
+                </div>
+                <p data-fr="Un service innovant, utile et responsable qui valorise votre événement." data-en="An innovative, useful, and responsible service that adds value to your event.">Un service innovant, utile et responsable qui valorise votre événement.</p>
+                <span class="card-index">04</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="fest-section padding-global bg-darker">
+        <h2 class="section-title-centered" data-fr="COMMENT <span class='accent'>ÇA FONCTIONNE ?</span>" data-en="HOW <span class='accent'>IT WORKS?</span>">
+            COMMENT <span class="accent">ÇA FONCTIONNE ?</span>
+        </h2>
+        <div class="steps-horizontal">
+            <div class="step-item">
+                <div class="step-number-ring">1</div>
+                <span class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </span>
+                <h3 data-fr="Nous installons les bornes" data-en="We install the stations">Nous installons les bornes</h3>
+                <p data-fr="Installation rapide sans travaux." data-en="Quick installation with no construction work.">Installation rapide sans travaux.</p>
+            </div>
+            <div class="step-arrow">➔</div>
+            <div class="step-item">
+                <div class="step-number-ring">2</div>
+                <span class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                </span>
+                <h3 data-fr="Les festivaliers louent une batterie" data-en="Attendees rent a power bank">Les festivaliers louent une batterie</h3>
+                <p data-fr="En quelques secondes via l'écran tactile." data-en="In a few seconds via the touchscreen.">En quelques secondes via l'écran tactile.</p>
+            </div>
+            <div class="step-arrow">➔</div>
+            <div class="step-item">
+                <div class="step-number-ring">3</div>
+                <span class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                </span>
+                <h3 data-fr="Ils profitent du festival" data-en="They enjoy the festival">Ils profitent du festival</h3>
+                <p data-fr="Téléphone chargé, esprit libre." data-en="Fully charged phone, peace of mind.">Téléphone chargé, esprit libre.</p>
+            </div>
+            <div class="step-arrow">➔</div>
+            <div class="step-item">
+                <div class="step-number-ring">4</div>
+                <span class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 10 12 15 7 10"/><line x1="12" y1="15" x2="12" y2="3"/><path d="M20 17v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/></svg>
+                </span>
+                <h3 data-fr="Ils rendent la batterie" data-en="They return the power bank">Ils rendent la batterie</h3>
+                <p data-fr="Libre et disponible dans n'importe quelle borne." data-en="Freely available to drop off at any station.">Libre et disponible dans n'importe quelle borne.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="fest-section padding-global">
+        <h2 class="section-title-centered" data-fr="PLUSIEURS MODÈLES DE <span class='accent'>COLLABORATION</span>" data-en="MULTIPLE <span class='accent'>COLLABORATION MODELS</span>">
+            PLUSIEURS MODÈLES DE <span class="accent">COLLABORATION</span>
+        </h2>
+        <div class="collab-grid">
+            <div class="collab-card">
+                <div class="collab-badge" data-fr="OFFRE 1" data-en="OFFER 1">OFFRE 1</div>
+                <h3 data-fr="FESTIVAL PARTENAIRE" data-en="PARTNER FESTIVAL">FESTIVAL PARTENAIRE</h3>
+                <span class="collab-icon-main">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                </span>
+                <ul class="collab-features">
+                    <li data-fr="✔️ Installation gratuite" data-en="✔️ Free installation">✔️ Installation gratuite</li>
+                    <li data-fr="✔️ POP-E exploite le service" data-en="✔️ POP-E operates the service">✔️ POP-E exploite le service</li>
+                    <li data-fr="✔️ Partage publicitaire" data-en="✔️ Advertising revenue sharing">✔️ Partage publicitaire</li>
+                    <li data-fr="✔️ Aucun risque" data-en="✔️ Zero risk">✔️ Aucun risque</li>
+                </ul>
+                <a href="/pro/devis.html" class="collab-link" data-fr="NOUS CONTACTER →" data-en="CONTACT US →">NOUS CONTACTER →</a>
+            </div>
+            <div class="collab-card">
+                <div class="collab-badge" data-fr="OFFRE 2" data-en="OFFER 2">OFFRE 2</div>
+                <h3 data-fr="FESTIVAL SPONSORISÉ" data-en="SPONSORED FESTIVAL">FESTIVAL SPONSORISÉ</h3>
+                <span class="collab-icon-main">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
+                <ul class="collab-features">
+                    <li data-fr="✔️ Recharge offerte au public" data-en="✔️ Free charging for the public">✔️ Recharge offerte au public</li>
+                    <li data-fr="✔️ Sponsor exclusif" data-en="✔️ Exclusive sponsor">✔️ Sponsor exclusif</li>
+                    <li data-fr="✔️ Forte visibilité partenaire" data-en="✔️ Strong partner visibility">✔️ Forte visibilité partenaire</li>
+                    <li data-fr="✔️ Expérience premium" data-en="✔️ Premium experience">✔️ Expérience premium</li>
+                </ul>
+                <a href="/pro/devis.html" class="collab-link" data-fr="NOUS CONTACTER →" data-en="CONTACT US →">NOUS CONTACTER →</a>
+            </div>
+            <div class="collab-card">
+                <div class="collab-badge" data-fr="OFFRE 3" data-en="OFFER 3">OFFRE 3</div>
+                <h3 data-fr="LOCATION ÉVÉNEMENTIELLE" data-en="EVENT RENTAL">LOCATION ÉVÉNEMENTIELLE</h3>
+                <span class="collab-icon-main">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </span>
+                <ul class="collab-features">
+                    <li data-fr="✔️ Tarif fixe" data-en="✔️ Fixed rate">✔️ Tarif fixe</li>
+                    <li data-fr="✔️ Recharge offerte ou payante" data-en="✔️ Free or paid charging">✔️ Recharge offerte ou payante</li>
+                    <li data-fr="✔️ Idéal pour événements privés" data-en="✔️ Ideal for private events">✔️ Idéal pour événements privés</li>
+                    <li data-fr="✔️ Flexibilité totale" data-en="✔️ Total flexibility">✔️ Flexibilité totale</li>
+                </ul>
+                <a href="/pro/devis.html" class="collab-link" data-fr="NOUS CONTACTER →" data-en="CONTACT US →">NOUS CONTACTER →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="fest-section padding-global bg-darker">
+        <div class="ads-container">
+            <div class="ads-left">
+                <h2 class="ads-title" data-fr="UN SUPPORT PUBLICITAIRE <br><span class='accent'>AU CŒUR DU FESTIVAL</span>" data-en="ADVERTISING DISPLAY <br><span class='accent'>AT THE HEART OF THE FESTIVAL</span>">UN SUPPORT PUBLICITAIRE <br><span class="accent">AU CŒUR DU FESTIVAL</span></h2>
+                <p class="ads-desc" data-fr="Diffusez vos messages, line-up, informations pratiques, prévention et visuels partenaires sur nos écrans 4K ultra-lumineux." data-en="Broadcast your messages, line-up, practical information, prevention, and partner visuals on our ultra-bright 4K screens.">Diffusez vos messages, line-up, informations pratiques, prévention et visuels partenaires sur nos écrans 4K ultra-lumineux.</p>
+                
+                <div class="ads-floating-tag"><span data-fr="📌 LINE-UP EN TEMPS RÉEL" data-en="📌 REAL-TIME LINE-UP">📌 LINE-UP EN TEMPS RÉEL</span></div>
+                <div class="ads-floating-tag"><span data-fr="🗺️ INFOS PRATIQUES & PLAN DU SITE" data-en="🗺️ PRACTICAL INFO & SITE MAP">🗺️ INFOS PRATIQUES & PLAN DU SITE</span></div>
+                <div class="ads-floating-tag"><span data-fr="⚠️ ALERTES MÉTÉO & SÉCURITÉ" data-en="⚠️ WEATHER & SECURITY ALERTS">⚠️ ALERTES MÉTÉO & SÉCURITÉ</span></div>
+            </div>
+            
+            <div class="ads-right">
+                <div class="ads-floating-tag"><span data-fr="🛡️ PRÉVENTION & SÉCURITÉ" data-en="🛡️ PREVENTION & SAFETY">🛡️ PRÉVENTION & SÉCURITÉ</span></div>
+                <div class="ads-floating-tag"><span data-fr="🤝 VISIBILITÉ PARTENAIRES" data-en="🤝 PARTNER VISIBILITY">🤝 VISIBILITÉ PARTENAIRES</span></div>
+                <div class="ads-floating-tag"><span data-fr="🌱 COMMUNICATION RSE & ÉCO-GESTES" data-en="🌱 CSR COMMUNICATION & ECO-ACTIONS">🌱 COMMUNICATION RSE & ÉCO-GESTES</span></div>
+
+                <div class="huge-stat-box">
+                    <h3>10</h3>
+                    <p data-fr="SECONDES<br>TOUTES LES<br>2 MINUTES" data-en="SECONDS<br>EVERY<br>2 MINUTES">SECONDES<br>TOUTES LES<br>2 MINUTES</p>
+                    <small data-fr="AU CŒUR DES FLUX FESTIVALIERS" data-en="IN THE HEART OF FESTIVAL TRAFFIC">AU CŒUR DES FLUX FESTIVALIERS</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fest-section padding-global">
+        <h2 class="section-title-centered" data-fr="UN IMPACT <span class='accent'>CONCRET ET MESURABLE</span>" data-en="A <span class='accent'>CONCRETE AND MEASURABLE</span> IMPACT">UN IMPACT <span class="accent">CONCRET ET MESURABLE</span></h2>
+        
+        <div class="eco-grid">
+            <div class="eco-item">
+                <span class="eco-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5M17 17H7l5-7 5 7zM15 11H9l3-5 3 5z"/></svg>
+                </span>
+                <div>
+                    <strong data-fr="1 BORNE INSTALLÉE = 1 ARBRE PLANTÉ" data-en="1 STATION INSTALLED = 1 TREE PLANTED">1 BORNE INSTALLÉE = 1 ARBRE PLANTÉ</strong>
+                    <p data-fr="100 locations = 1 arbre planté" data-en="100 rentals = 1 tree planted">100 locations = 1 arbre planté</p>
+                </div>
+            </div>
+            <div class="eco-item">
+                <span class="eco-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                </span>
+                <div>
+                    <strong data-fr="JUSQU'À 5-6 UTILISATIONS PAR BATTERIE" data-en="UP TO 5-6 USES PER POWER BANK">JUSQU'À 5-6 UTILISATIONS PAR BATTERIE</strong>
+                    <p data-fr="Sur un festival de 20 000 festivaliers" data-en="At a festival with 20,000 attendees">Sur un festival de 20 000 festivaliers</p>
+                </div>
+            </div>
+            <div class="eco-item">
+                <span class="eco-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+                </span>
+                <div>
+                    <strong data-fr="-30% DE DÉCHETS TECHNOLOGIQUES" data-en="-30% E-WASTE">-30% DE DÉCHETS TECHNOLOGIQUES</strong>
+                    <p data-fr="Moins d'achats compulsifs, moins de batteries jetées." data-en="Fewer impulse buys, fewer discarded power banks.">Moins d'achats compulsifs, moins de batteries jetées.</p>
+                </div>
+            </div>
+            <div class="eco-item">
+                <span class="eco-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2z"/><path d="M19 2L11 10"/></svg>
+                </span>
+                <div>
+                    <strong data-fr="MOINS D'IMPRESSIONS, PLUS D'ÉCONOMIES" data-en="FEWER PRINTS, MORE SAVINGS">MOINS D'IMPRESSIONS, PLUS D'ÉCONOMIES</strong>
+                    <p data-fr="Communication digitale, éco-responsable et instantanée." data-en="Digital, eco-friendly, and instant communication.">Communication digitale, éco-responsable et instantanée.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="counters-row">
+            <div class="counter-block"><strong>48</strong><small data-fr="BATTERIES PAR BORNE" data-en="POWER BANKS PER STATION">BATTERIES PAR BORNE</small></div>
+            <div class="counter-block"><strong>&lt;20</strong><small data-fr="MINUTES D'INSTALLATION" data-en="MINUTES TO INSTALL">MINUTES D'INSTALLATION</small></div>
+            <div class="counter-block"><strong>4K</strong><small data-fr="ÉCRANS PUBLICITAIRES" data-en="ADVERTISING SCREENS">ÉCRANS PUBLICITAIRES</small></div>
+            <div class="counter-block"><strong>98%</strong><small data-fr="DISPONIBILITÉ DU SERVICE" data-en="SERVICE AVAILABILITY">DISPONIBILITÉ DU SERVICE</small></div>
+            <div class="counter-block purple-bg">
+                <strong data-fr="1000 RECHARGES" data-en="1000 CHARGES">1000 RECHARGES</strong>
+                <small data-fr="= 10 ARBRES PLANTÉS" data-en="= 10 TREES PLANTED">= 10 ARBRES PLANTÉS</small>
+                <div class="mini-trees-svg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#e0aaff" stroke-width="2"><path d="M12 22v-5M17 17H7l5-7 5 7z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#e0aaff" stroke-width="2"><path d="M12 22v-5M17 17H7l5-7 5 7z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#e0aaff" stroke-width="2"><path d="M12 22v-5M17 17H7l5-7 5 7z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#e0aaff" stroke-width="2"><path d="M12 22v-5M17 17H7l5-7 5 7z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#e0aaff" stroke-width="2"><path d="M12 22v-5M17 17H7l5-7 5 7z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section padding-global" id="contact">
+        <div class="form-layout-container">
+            <div class="form-left-text">
+                <h2 data-fr="PRÊT À OFFRIR <br>LA <span class='accent'>MEILLEURE EXPÉRIENCE</span> <br>À VOS FESTIVALIERS ?" data-en="READY TO OFFER <br>THE <span class='accent'>BEST EXPERIENCE</span> <br>TO YOUR ATTENDEES ?">PRÊT À OFFRIR <br>LA <span class="accent">MEILLEURE EXPÉRIENCE</span> <br>À VOS FESTIVALIERS ?</h2>
+                <p data-fr="Recevez une proposition personnalisée adaptée à votre festival." data-en="Receive a customized proposal tailored to your festival.">Recevez une proposition personnalisée adaptée à votre festival.</p>
+            </div>
+            <div class="form-right-inputs">
+                <form action="#" method="POST" class="fest-form-grid">
+                    <input type="text" placeholder="Nom du festival *" data-fr="Nom du festival *" data-en="Festival name *" required>
+                    <input type="number" placeholder="Nombre de festivaliers *" data-fr="Nombre de festivaliers *" data-en="Number of attendees *">
+                    <input type="text" placeholder="Dates de l'événement *" data-fr="Dates de l'événement *" data-en="Event dates *">
+                    <input type="text" placeholder="Nom & prénom *" data-fr="Nom & prénom *" data-en="Full name *">
+                    <input type="tel" placeholder="Téléphone" data-fr="Téléphone" data-en="Phone">
+                    <input type="email" placeholder="Email *" data-fr="Email *" data-en="Email *" required>
+                    
+                    <button type="submit" class="btn-submit-fest" data-fr="RECEVOIR MA PROPOSITION →" data-en="GET MY PROPOSAL →">RECEVOIR MA PROPOSITION →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/chatbot.js"></script>
+
+    <script>
+const langBtn = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const currentFlag = document.getElementById('currentFlag');
+    const currentCode = document.getElementById('currentCode');
+
+    const LANGS = {
+      fr: { flag: '🇫🇷', code: 'FR' },
+      en: { flag: '🇬🇧', code: 'EN' }
+    };
+
+    let currentLang = localStorage.getItem('selectedLanguage') || 'fr';
+
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        const val = el.getAttribute('data-' + lang);
+        if (val !== null) el.innerHTML = val;
+      });
+      document.documentElement.lang = lang;
+    }
+
+    function updateButton(lang) {
+      currentFlag.textContent = LANGS[lang].flag;
+      currentCode.textContent = LANGS[lang].code;
+    }
+
+    function updateDropdown(lang) {
+      langDropdown.innerHTML = '';
+      Object.entries(LANGS).forEach(([key, info]) => {
+        if (key === lang) return;
+        const opt = document.createElement('div');
+        opt.className = 'lang-option';
+        opt.setAttribute('role', 'option');
+        opt.setAttribute('data-lang', key);
+        opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
+        opt.addEventListener('click', () => switchLang(key));
+        langDropdown.appendChild(opt);
+      });
+    }
+
+    function switchLang(lang) {
+      currentLang = lang;
+      applyLanguage(lang);
+      updateButton(lang);
+      updateDropdown(lang);
+      closeDropdown();
+    }
+
+    function openDropdown() {
+      langDropdown.classList.add('visible');
+      langBtn.classList.add('open');
+      langBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeDropdown() {
+      langDropdown.classList.remove('visible');
+      langBtn.classList.remove('open');
+      langBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    function switchLang(lang) {
+      currentLang = lang;
+
+      localStorage.setItem('selectedLanguage', lang);
+
+      applyLanguage(lang);
+      updateButton(lang);
+      updateDropdown(lang);
+      closeDropdown();
+    }
+
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
+    });
+
+    document.addEventListener('click', closeDropdown);
+    langDropdown.addEventListener('click', (e) => e.stopPropagation());
+
+    // Initialisation
+    applyLanguage(currentLang);
+    updateButton(currentLang);
+    updateDropdown(currentLang);
+    </script>
+</body>
+</html>

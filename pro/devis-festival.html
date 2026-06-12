@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="POP-E | Devis Festival" data-en="POP-E | Festival Quotation">POP-E | Devis Festival</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/chatbot.css">
+    <link rel="stylesheet" href="/css/devis.css">
+    <link rel="stylesheet" href="/css/b2b.css" />
+
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="/?skipIntro=true" class="logo-link">
+            <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
+        </a>
+
+        <div class="header-right">
+            <a href="/pro/pro.html" class="nav-link nav-back" data-fr="← Retour" data-en="← Back">← Retour</a>
+
+            <div class="lang-switcher">
+                <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="lang-flag" id="currentFlag">🇫🇷</span>
+                    <span class="lang-code" id="currentCode">FR</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown" role="listbox"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-title-wrapper">
+                <h1 data-fr="DEVIS <span class='accent'>FESTIVAL</span>"
+                    data-en="FESTIVAL <span class='accent'>QUOTE</span>">DEVIS <span class="accent">FESTIVAL</span></h1>
+                <img src="/img/b2b-devis/carnet.png" alt="Icône carnet" class="title-icon">
+            </div>
+            <p class="subtitle"
+                data-fr="Configurez l'accueil de votre festival,<br> on vous prépare une offre énergétique et logistique <strong>sur-mesure</strong>."
+                data-en="Configure your festival setup,<br> we will prepare a <strong>custom</strong> energy and logistics offer.">
+                Configurez l'accueil de votre festival,<br> on vous prépare une offre énergétique et logistique
+                <strong>sur-mesure</strong>.</p>
+        </section>
+
+        <section class="form-container">
+            <form action="#" method="POST">
+
+                <div class="separator" style="margin-top: 0;" data-fr="INFORMATIONS SUR LE FESTIVAL"
+                    data-en="FESTIVAL INFORMATION">INFORMATIONS SUR LE FESTIVAL</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span data-fr="NOM DU FESTIVAL" data-en="FESTIVAL NAME">NOM DU FESTIVAL</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-guitar"></i>
+                            <input type="text" name="nom_festival" data-fr="Ex : Rock en Seine" data-en="E.g., Glastonbury"
+                                placeholder="Ex : Rock en Seine" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-fr="NOMBRE DE FESTIVALIERS ATTENDUS" data-en="EXPECTED ATTENDANCE">NOMBRE DE
+                                FESTIVALIERS ATTENDUS</span> <span class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="far fa-user"></i>
+                            <input type="text" name="nombre_festivaliers" inputmode="numeric" pattern="[0-9]*"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')" data-fr="Ex : 15000"
+                                data-en="E.g., 15000" placeholder="Ex : 15000" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span data-fr="DATE DE DÉBUT" data-en="START DATE">DATE DE DÉBUT</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="far fa-calendar-alt"></i>
+                            <input type="date" name="date_debut" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-fr="DATE DE FIN" data-en="END DATE">DATE DE FIN</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="far fa-calendar-alt"></i>
+                            <input type="date" name="date_fin" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator" data-fr="HORAIRES D'OUVERTURE DU SITE" data-en="SITE HOURS">HORAIRES D'OUVERTURE
+                    DU SITE</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin:-15px 0 25px 0; text-align: center; font-style: italic;"
+                    data-fr="À titre indicatif, ces horaires nous permettent d'estimer les besoins en énergie et le nombre de rotations nécessaires."
+                    data-en="As an indication, these hours allow us to estimate energy needs and the required number of rotations.">
+                    À titre indicatif, ces horaires nous permettent d'estimer les besoins en énergie et le nombre de
+                    rotations nécessaires.</p>
+
+                <div class="hours-section-container">
+                    <div class="hours-inputs-grid">
+                        <div class="form-group">
+                            <label><span data-fr="HEURE D'OUVERTURE" data-en="OPENING TIME">HEURE D'OUVERTURE</span>
+                                <span class="asterisk">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="far fa-clock"></i>
+                                <input type="text" name="heure_ouverture_site" data-fr="Ex : 14:00" data-en="E.g., 2:00 PM" placeholder="Ex : 14:00"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><span data-fr="HEURE DE FERMETURE" data-en="CLOSING TIME">HEURE DE FERMETURE</span>
+                                <span class="asterisk">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-clock"></i>
+                                <input type="text" name="heure_fin_site" data-fr="Ex : 02:00" data-en="E.g., 2:00 AM" placeholder="Ex : 02:00"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hours-info-box">
+                        <i class="fas fa-moon hours-info-icon"></i>
+                        <div class="hours-info-content">
+                            <h4 data-fr="À TITRE INDICATIF" data-en="FOR INFORMATION ONLY">À TITRE INDICATIF</h4>
+                            <p data-fr="Ces horaires nous permettent d'estimer les besoins en énergie et le nombre de rotations nécessaires."
+                                data-en="These hours allow us to estimate energy needs and the required number of rotations.">
+                                Ces horaires nous permettent d'estimer les besoins en énergie et le nombre de rotations
+                                nécessaires.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator" data-fr="CAMPING" data-en="CAMPSITE">CAMPING</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span data-fr="VOTRE FESTIVAL DISPOSE-T-IL D'UN CAMPING ?"
+                                data-en="DOES YOUR FESTIVAL HAVE A CAMPSITE?">VOTRE FESTIVAL DISPOSE-T-IL D'UN CAMPING
+                                ?</span> <span class="asterisk">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="has_camping" value="oui" required>
+                                <span data-fr="Oui" data-en="Yes">Oui</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="has_camping" value="non">
+                                <span data-fr="Non" data-en="No">Non</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-fr="NOMBRE DE PLACES / CAMPEURS ATTENDUS"
+                            data-en="EXPECTED NUMBER OF CAMPERS">NOMBRE DE PLACES / CAMPEURS ATTENDUS</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-users"></i>
+                            <input type="text" name="nombre_campeurs" data-fr="Ex : 3000" data-en="E.g., 3000" placeholder="Ex : 3000">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label data-fr="LE CAMPING EST-IL ACCESSIBLE 24H/24 ?"
+                            data-en="IS THE CAMPSITE ACCESSIBLE 24/7?">LE CAMPING EST-IL ACCESSIBLE 24H/24 ?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="camping_24h" value="oui">
+                                <span data-fr="Oui" data-en="Yes">Oui</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="camping_24h" value="non">
+                                <span data-fr="Non" data-en="No">Non</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-fr="PETIT DÉJEUNER OU RESTAURATION LE MATIN ?"
+                            data-en="BREAKFAST OR MORNING CATERING?">PETIT DÉJEUNER OU RESTAURATION LE MATIN ?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="camping_breakfast" value="oui">
+                                <span data-fr="Oui" data-en="Yes">Oui</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="camping_breakfast" value="non">
+                                <span data-fr="Non" data-en="No">Non</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator" data-fr="VOS BESOINS OU QUESTIONS" data-en="YOUR NEEDS OR QUESTIONS">VOS BESOINS
+                    OU QUESTIONS</div>
+
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label><span data-fr="DÉCRIVEZ VOS BESOINS, VOS CONTRAINTES OU VOS ENVIES"
+                                data-en="DESCRIBE YOUR NEEDS, CONSTRAINTS OR WISHES">DÉCRIVEZ VOS BESOINS, VOS
+                                CONTRAINTES OU VOS ENVIES</span> <span class="asterisk">*</span></label>
+                        <div class="input-wrapper" style="align-items: flex-start;">
+                            <i class="far fa-lightbulb" style="top: 20px;"></i>
+                            <textarea name="description_besoin" data-fr="Parlez-nous de votre projet festival..."
+                                data-en="Tell us about your festival project..."
+                                placeholder="Parlez-nous de votre projet festival..." required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator" data-fr="LIEU DU FESTIVAL" data-en="FESTIVAL LOCATION">LIEU DU FESTIVAL</div>
+
+                <div class="form-group" style="margin-bottom: 24px;">
+                    <label><span data-fr="ADRESSE COMPLÈTE" data-en="FULL ADDRESS">ADRESSE COMPLÈTE</span> <span
+                            class="asterisk">*</span></label>
+                    <div class="input-wrapper">
+                        <input type="text" name="adresse" data-fr="Adresse du site ou du festival" data-en="Festival or site address"
+                            placeholder="Adresse du site ou du festival" class="no-icon" required>
+                    </div>
+                </div>
+
+                <div class="form-row three-cols">
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-pin" style="color: rgba(255,255,255,0.4);"></i>
+                            <input type="text" name="code_postal" inputmode="numeric" pattern="[0-9]*"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')" data-fr="Code postal"
+                                data-en="Postcode" placeholder="Code postal" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <i class="far fa-building" style="color: rgba(255,255,255,0.4);"></i>
+                            <input type="text" name="ville" data-fr="Ville" data-en="City" placeholder="Ville" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <i class="fas fa-globe-europe" style="color: rgba(255,255,255,0.4);"></i>
+                            <select name="pays" required>
+                                <option value="" disabled selected data-fr="Pays" data-en="Country">Pays</option>
+                                <option value="fr" data-fr="France" data-en="France">France</option>
+                                <option value="be" data-fr="Belgique" data-en="Belgium">Belgique</option>
+                                <option value="ch" data-fr="Suisse" data-en="Switzerland">Suisse</option>
+                            </select>
+                            <i class="fas fa-chevron-down right-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator" data-fr="VOS COORDONNÉES" data-en="YOUR CONTACT INFO">VOS COORDONNÉES</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span data-fr="PRÉNOM" data-en="FIRST NAME">PRÉNOM</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="far fa-user"></i>
+                            <input type="text" name="prenom" data-fr="Votre prénom" data-en="Your first name"
+                                placeholder="Votre prénom" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-fr="NOM" data-en="LAST NAME">NOM</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="far fa-user"></i>
+                            <input type="text" name="nom" data-fr="Votre nom" data-en="Your last name" placeholder="Votre nom"
+                                required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span data-fr="E-MAIL" data-en="EMAIL">E-MAIL</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="far fa-envelope"></i>
+                            <input type="email" name="email" data-fr="votre@email.com" data-en="your@email.com"
+                                placeholder="votre@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-fr="TÉLÉPHONE" data-en="PHONE NUMBER">TÉLÉPHONE</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone-alt"></i>
+                            <input type="tel" name="telephone" id="telephone" inputmode="numeric" maxlength="14" data-fr="06 12 34 56 78"
+                                data-en="06 12 34 56 78" placeholder="06 12 34 56 78" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator" data-fr="OPTIONS SOUHAITÉES" data-en="REQUESTED OPTIONS">OPTIONS SOUHAITÉES</div>
+
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin: -15px 0 25px 0; text-align: center; font-style: italic;"
+                    data-fr="Nos options peuvent être entièrement financées par des annonceurs ou partenaires. Dans la majorité des cas, leur installation ne génère aucun coût pour votre festival."
+                    data-en="Our options can be fully funded by advertisers or partners. In most cases, their installation generates no cost for your festival.">
+                    Nos options peuvent être entièrement financées par des annonceurs ou partenaires. Dans la majorité
+                    des cas, leur installation ne génère aucun coût pour votre festival.
+                </p>
+
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+
+                    <div class="options-box" style="margin-top:0;">
+                        <input type="checkbox" name="videobooth" class="custom-checkbox">
+                        <div class="option-content">
+                            <h4 data-fr="Videobooth 360°" data-en="360° Videobooth">Videobooth 360°</h4>
+                            <p data-fr="Animation vidéo immersive et souvenirs personnalisés pour vos festivaliers."
+                                data-en="Immersive video and personalised memories for your festival."></p>
+                        </div>
+                    </div>
+                    <div class="options-box" style="margin-top:0;">
+                        <input type="checkbox" name="zone_chill" class="custom-checkbox">
+                        <div class="option-content">
+                            <h4 data-fr="Zone chill offerte" data-en="Complimentary Chill Zone">Zone chill offerte</h4>
+                            <p data-fr="Espace détente aménagé par nos soins pour vos festivaliers."
+                                data-en="Relaxation and seating area set up by us for your attendees."></p>
+                        </div>
+                    </div>
+                    <div class="options-box" style="margin-top:0;">
+                        <input type="checkbox" name="recharge_gratuite" class="custom-checkbox">
+                        <div class="option-content">
+                            <h4 data-fr="Recharge gratuite pour les festivaliers" data-en="Free Charging for Attendees">
+                                Recharge gratuite pour les festivaliers</h4>
+                            <p data-fr="La recharge est intégralement offerte aux festivaliers (sous réserve d'un sponsor)"
+                                data-en="Recharging is completely free for festival-goers (subject to sponsorship)"></p>
+                        </div>
+                    </div>
+                    <div class="options-box" style="margin-top:0;">
+                        <input type="checkbox" name="recherche_sponsor" class="custom-checkbox">
+                        <div class="option-content">
+                            <h4 data-fr="Recherche de sponsor par pop-e" data-en="Sponsor Matching by POP-E">Recherche
+                                de sponsor par pop-e</h4>
+                            <p data-fr="Nous trouvons le partenaire qui financera tout ou partie du dispositif"
+                                data-en="Assistance in co-funding the setup via brand partnerships."></p>
+                        </div>
+                    </div>
+                    <div class="options-box" style="margin-top:0;">
+                        <input type="checkbox" name="conseil_implantation" class="custom-checkbox">
+                        <div class="option-content">
+                            <h4 data-fr="Conseil et implantation" data-en="Consulting & On-site Mapping">Conseil et
+                                implantation</h4>
+                            <p data-fr="Je souhaite être conseillé sur la meilleure implantation des bornes et animations"
+                                data-en="I would like some advice on the best way to set up the stations and activities">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-submit-wrapper">
+                    <button type="submit" class="btn-cta">
+                        <span data-fr="ENVOYER MA DEMANDE DE DEVIS" data-en="SEND MY QUOTATION REQUEST">ENVOYER MA
+                            DEMANDE DE DEVIS</span>
+                        <span class="btn-cta-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+
+            </form>
+
+            <div class="security-info">
+                <i class="fas fa-lock"></i> <span data-fr="Vos informations sont 100% sécurisées et confidentielles."
+                    data-en="Your information is 100% secure and confidential.">Vos informations sont 100% sécurisées et
+                    confidentielles.</span>
+            </div>
+        </section>
+    </main>
+
+    <div id="popup-overlay"
+        style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); z-index:1000; align-items:center; justify-content:center;">
+        <div id="popup-box"
+            style="background:#0a0c08; border:1px solid rgba(173,255,0,0.4); border-radius:20px; padding:60px 50px; max-width:480px; width:90%; text-align:center; position:relative; transform:scale(0.8); opacity:0; transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;">
+            <div id="popup-check"
+                style="width:80px; height:80px; background:var(--accent); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 28px; font-size:2.2rem; color:#000; transform:scale(0); transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.2s;">
+                ✓</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:2.4rem; letter-spacing:0.04em; margin:0 0 12px; color:#fff;"
+                data-fr="DEMANDE ENVOYÉE !" data-en="REQUEST SENT!">DEMANDE ENVOYÉE !</h2>
+            <p style="color:rgba(255,255,255,0.65); font-size:1rem; line-height:1.7; margin:0 0 36px;"
+                data-fr="Nous avons bien reçu votre demande de devis festival.<br>Notre équipe vous contactera dans les plus brefs délais."
+                data-en="We have received your festival quote request.<br>Our team will contact you shortly.">Nous avons
+                bien reçu votre demande de devis festival.<br>Notre équipe vous contactera dans les plus brefs délais.
+            </p>
+            <button onclick="closePopup()"
+                style="background:var(--accent); border:none; border-radius:999px; padding:14px 40px; font-family:'Barlow',sans-serif; font-weight:800; font-size:1rem; color:#000; cursor:pointer; letter-spacing:0.05em; transition:all 0.3s ease;"
+                data-fr="FERMER" data-en="CLOSE">FERMER</button>
+        </div>
+    </div>
+
+    <script src="/js/chatbot.js"></script>
+
+    <script>
+        /* ── Language Switcher Logic ── */
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        const currentFlag = document.getElementById('currentFlag');
+        const currentCode = document.getElementById('currentCode');
+        const validationMessages = {
+            fr: "Veuillez renseigner ce champ.",
+            en: "Please fill out this field."
+        };
+
+        const LANGS = {
+            fr: { flag: '🇫🇷', code: 'FR' },
+            en: { flag: '🇬🇧', code: 'EN' }
+        };
+
+        let currentLang = localStorage.getItem('selectedLanguage') || 'fr';
+
+        function applyLanguage(lang) {
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                const val = el.getAttribute('data-' + lang);
+                if (val !== null) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = val;
+                    } else {
+                        el.innerHTML = val;
+                    }
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        function updateButton(lang) {
+            currentFlag.textContent = LANGS[lang].flag;
+            currentCode.textContent = LANGS[lang].code;
+        }
+
+        function updateDropdown(lang) {
+            langDropdown.innerHTML = '';
+            Object.entries(LANGS).forEach(([key, info]) => {
+                if (key === lang) return;
+                const opt = document.createElement('div');
+                opt.className = 'lang-option';
+                opt.setAttribute('role', 'option');
+                opt.setAttribute('data-lang', key);
+                opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
+                opt.addEventListener('click', () => switchLang(key));
+                langDropdown.appendChild(opt);
+            });
+        }
+
+        function closeDropdown() {
+            langDropdown.classList.remove('visible');
+            langBtn.classList.remove('open');
+            langBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        function openDropdown() {
+            langDropdown.classList.add('visible');
+            langBtn.classList.add('open');
+            langBtn.setAttribute('aria-expanded', 'true');
+        }
+
+        function switchLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('selectedLanguage', lang);
+            applyLanguage(lang);
+            updateButton(lang);
+            updateDropdown(lang);
+            closeDropdown();
+            updateFormValidationMessages();
+        }
+
+        function updateFormValidationMessages() {
+            const requiredInputs = document.querySelectorAll('form [required]');
+            requiredInputs.forEach(input => {
+                input.oninvalid = function (e) {
+                    e.target.setCustomValidity(validationMessages[currentLang]);
+                };
+                input.addEventListener('input', function (e) {
+                    e.target.setCustomValidity("");
+                });
+            });
+        }
+
+        // Formatage téléphone (Espaces automatiques)
+        const phoneInput = document.getElementById('telephone');
+        phoneInput.addEventListener('input', function (e) {
+            let clearValue = e.target.value.replace(/\D/g, '');
+            let formattedValue = clearValue.match(/.{1,2}/g)?.join(' ') || '';
+            e.target.value = formattedValue;
+        });
+
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
+        });
+
+        document.addEventListener('click', closeDropdown);
+        langDropdown.addEventListener('click', (e) => e.stopPropagation());
+
+        // Initialisation
+        applyLanguage(currentLang);
+        updateButton(currentLang);
+        updateDropdown(currentLang);
+        updateFormValidationMessages();
+
+        /* ── Popup Trigger Logic ── */
+        function closePopup() {
+            const overlay = document.getElementById('popup-overlay');
+            const box = document.getElementById('popup-box');
+            const check = document.getElementById('popup-check');
+            box.style.transform = 'scale(0.8)';
+            box.style.opacity = '0';
+            check.style.transform = 'scale(0)';
+            setTimeout(() => { overlay.style.display = 'none'; }, 300);
+        }
+
+        document.getElementById('popup-overlay').addEventListener('click', function (e) {
+            if (e.target === this) closePopup();
+        });
+
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Simulation d'envoi et affichage immédiat de l'overlay de succès
+            const overlay = document.getElementById('popup-overlay');
+            const box = document.getElementById('popup-box');
+            const check = document.getElementById('popup-check');
+
+            overlay.style.display = 'flex';
+            setTimeout(() => {
+                box.style.transform = 'scale(1)';
+                box.style.opacity = '1';
+                setTimeout(() => { check.style.transform = 'scale(1)'; }, 200);
+            }, 10);
+        });
+    </script>
+
+    <!-- SDK Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        // ── Connexion Supabase ──
+        const { createClient } = supabase;
+        const db = createClient(
+            'https://lzjxepjgsqhyprlgmpgy.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx6anhlcGpnc3FoeXBybGdtcGd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMDQxMjAsImV4cCI6MjA5NTg4MDEyMH0.BFygMWxG07uGHH_PtutQ6vRs4cXDC1TobKNJupFouoA'
+        );
+
+        function closePopup() {
+            const overlay = document.getElementById('popup-overlay');
+            const box = document.getElementById('popup-box');
+            const check = document.getElementById('popup-check');
+            box.style.transform = 'scale(0.8)';
+            box.style.opacity = '0';
+            check.style.transform = 'scale(0)';
+            setTimeout(() => { overlay.style.display = 'none'; }, 300);
+        }
+
+        // Fermer en cliquant sur l'overlay
+        document.getElementById('popup-overlay').addEventListener('click', function (e) {
+            if (e.target === this) closePopup();
+        });
+
+        // ── Soumission du formulaire ──
+// ── Soumission du formulaire ──
+document.querySelector('form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const btn = this.querySelector('button[type="submit"]');
+    const originalText = btn.querySelector('span').textContent;
+    btn.disabled = true;
+    btn.querySelector('span').textContent = 'Envoi en cours...';
+
+    // Récupération des données via FormData
+    const formData = new FormData(this);
+
+    // Construction de l'objet de données
+    const data = {
+        nom_festival: formData.get('nom_festival'),
+        nombre_festivaliers: parseInt(formData.get('nombre_festivaliers')) || 0,
+        date_debut: formData.get('date_debut') || null,
+        date_fin: formData.get('date_fin') || null,
+        heure_ouverture_site: formData.get('heure_ouverture_site'),
+        heure_fin_site: formData.get('heure_fin_site'),
+        
+        // Gestion des booleans (checkboxes/radios)
+        camping: formData.get('has_camping') === 'oui',
+        nombre_campeurs: parseInt(formData.get('nombre_campeurs')) || 0,
+        'camping_24h': formData.get('camping_24h') === 'oui',
+        restauration_le_matin: formData.get('camping_breakfast') === 'oui',
+        
+        description_besoin: formData.get('description_besoin'),
+        adresse: formData.get('adresse'),
+        code_postal: formData.get('code_postal'),
+        ville: formData.get('ville'),
+        pays: formData.get('pays'),
+        prenom: formData.get('prenom'),
+        nom: formData.get('nom'),
+        email: formData.get('email'),
+        telephone: formData.get('telephone'),
+        
+        // Options checkboxes (true si coché, null/false sinon)
+        videobooth: formData.has('videobooth'),
+        zone_chill: formData.has('zone_chill'),
+        recharge_gratuite: formData.has('recharge_gratuite'),
+        recherche_sponsor: formData.has('recherche_sponsor'),
+        conseil_implantation: formData.has('conseil_implantation')
+    };
+
+    // Envoi à la base de données
+    const { error } = await db.from('Festival_formulaire').insert([data]);
+
+    if (error) {
+        alert('Une erreur est survenue lors de l\'envoi. Veuillez réessayer.');
+        console.error('Erreur Supabase:', error);
+        btn.disabled = false;
+        btn.querySelector('span').textContent = originalText;
+    } else {
+        this.reset();
+        // Affiche le popup de succès
+        const overlay = document.getElementById('popup-overlay');
+        const box = document.getElementById('popup-box');
+        const check = document.getElementById('popup-check');
+        overlay.style.display = 'flex';
+        setTimeout(() => {
+            box.style.transform = 'scale(1)';
+            box.style.opacity = '1';
+            setTimeout(() => { check.style.transform = 'scale(1)'; }, 200);
+        }, 10);
+        btn.disabled = false;
+        btn.querySelector('span').textContent = originalText;
+    }
+});
+    </script>
+
+</body>
+
+</html>
