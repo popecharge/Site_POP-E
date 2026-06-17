@@ -355,6 +355,177 @@
 .ctx-1, .ctx-2, .ctx-3, .ctx-4 {
   font-weight: 600;
 }
+/* ─── MODALE "QUESTION" (universelle, injectée par chatbot.js) ─── */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.contact-modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.modal-window {
+  position: relative;
+  z-index: 1;
+  width: 480px;
+  max-width: calc(100vw - 32px);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #0e0e0e;
+  border-radius: 20px;
+  padding: 32px 28px;
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.contact-modal.open .modal-window {
+  transform: translateY(0) scale(1);
+}
+.modal-window::-webkit-scrollbar { width: 4px; }
+.modal-window::-webkit-scrollbar-track { background: transparent; }
+.modal-window::-webkit-scrollbar-thumb { border-radius: 2px; }
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.modal-close:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.modal-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.modal-badge img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.modal-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+.modal-header p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+  margin: 2px 0 0;
+}
+.modal-desc {
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modal-row {
+  display: flex;
+  gap: 10px;
+}
+.modal-input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+.modal-input::placeholder { color: rgba(255,255,255,0.3); }
+.modal-textarea {
+  resize: none;
+  height: 90px;
+}
+.modal-submit {
+  width: 100%;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.modal-submit:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.ctx-e300 {
+  border: 1px solid rgba(227, 0, 255, 0.4);
+  box-shadow: 0 0 60px rgba(227, 0, 255, 0.15), 0 24px 60px rgba(0,0,0,0.6);
+}
+.ctx-e300::-webkit-scrollbar-thumb { background: #E300FF; }
+.badge-e300 {
+  background: rgba(227, 0, 255, 0.15);
+  border: 1px solid rgba(227, 0, 255, 0.4);
+}
+.ctx-e300 .modal-header p { color: #E300FF; }
+.ctx-e300 .modal-input:focus {
+  border-color: #E300FF;
+  background: rgba(255, 255, 255, 0.04);
+}
+.ctx-e300 .modal-input:-webkit-autofill,
+.ctx-e300 .modal-input:-webkit-autofill:hover,
+.ctx-e300 .modal-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #0e0e0e inset;
+  border-color: #E300FF;
+}
+.btn-e300-submit {
+  background: #E300FF;
+  color: #fff;
+}
 /* ─── RESPONSIVE ─── */
 @media (max-width: 767px) {
   #chatbot-window {

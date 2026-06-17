@@ -49,6 +49,7 @@ const FEST_LANG_META = {
 };
 
 let festLang = localStorage.getItem('pope-lang') || 'fr';
+window.currentLang = festLang;
 
 function festApplyLang(lang) {
   const t = FEST_TRANSLATIONS[lang];
@@ -71,6 +72,7 @@ function festApplyLang(lang) {
   document.getElementById('lang-code').textContent  = meta.code;
 
   festLang = lang;
+  window.currentLang = lang;
   localStorage.setItem('pope-lang', lang);
 }
 

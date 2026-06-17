@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>POP-E | Notre Impact</title>
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Bebas+Neue&family=Syne:wght@800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+
+  <style>
+    /* Styles propres à cette page uniquement.
+       #navbar, .nav-link, .nav-back et .lang-switcher viennent déjà de /css/app.css */
+
+    #ef-hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: var(--black);
+      overflow: hidden;
+    }
+
+    #ef-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="ef-hero">
+    <img id="ef-bg" src="/img/app/e-foret.jpeg" alt="Impact POP-E - plantation de forêts">
+
+    <nav id="navbar">
+      <a href="/"><img src="/img/logo2.png" alt="POP-E Logo"></a>
+
+      <div id="navbar-right">
+        <a href="#" id="ef-back" class="nav-link nav-back" data-i18n="nav_back">← Retour</a>
+
+        <!-- LANG SWITCHER -->
+        <div class="lang-switcher">
+          <button class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+            <span class="lang-flag" id="lang-flag">🇫🇷</span>
+            <span class="lang-code" id="lang-code">FR</span>
+            <svg class="lang-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="2,3 5,7 8,3"/>
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+            <div class="lang-option" data-lang="fr" role="option">
+              <span class="lang-flag">🇫🇷</span> Français
+            </div>
+            <div class="lang-option" data-lang="en" role="option">
+              <span class="lang-flag">🇬🇧</span> English
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+
+  <script src="/js/lang.js"></script>
+  <script>
+    // Change la photo de fond selon la langue choisie (fr / en)
+    function setHeroImage(lang) {
+      var img = document.getElementById('ef-bg');
+      if (!img) return;
+      img.src = (lang === 'en') ? '/img/app/e-foretEN.png' : '/img/app/e-foret.jpeg';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Langue de départ : on se base sur l'attribut lang du <html>
+      // (mis à jour par lang.js si l'utilisateur avait déjà choisi EN ailleurs sur le site)
+      var initialLang = document.documentElement.lang === 'en' ? 'en' : 'fr';
+      setHeroImage(initialLang);
+
+      // À chaque clic sur une option du switcher, on met à jour la photo
+      document.querySelectorAll('.lang-option').forEach(function (option) {
+        option.addEventListener('click', function () {
+          setHeroImage(option.getAttribute('data-lang'));
+        });
+      });
+
+      // Bouton retour : revient à la page précédente, sinon repli sur l'accueil
+      document.getElementById('ef-back').addEventListener('click', function (e) {
+        e.preventDefault();
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = '/';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -8,11 +8,10 @@ const TRANSLATIONS = {
     banner:               'Batterie Externe <span class="sep">•</span> Recharge Partout <span class="sep">•</span> Éco Responsable <span class="sep">•</span> Batterie Externe <span class="sep">•</span> Recharge Partout <span class="sep">•</span> Éco Responsable',
     nav_back:             '← Retour',
     nav_app:              'App',
-    btn_download:         "Télécharger l'appli",
-
+    btn_download: '<img src="/img/app/telecharger.png" class="btn-icon" alt=""> Télécharger l\'appli',
+    
     /* ── Comment ça marche ── */
-    ccm_title:            'COMMENT<br>ÇA MARCHE ?',
-    step1_verb:           'TROUVEZ',
+    ccm_title: '<span class="ccm-title-white">COMMENT </span><span class="ccm-title-green">ÇA MARCHE ?</span>',
     step1_desc:           'Repérez les bornes POP-E autour de vous.',
     step2_verb:           'LOUEZ',
     step2_desc:           'Scannez le QR code, prenez une batterie.',
@@ -25,10 +24,10 @@ const TRANSLATIONS = {
     ip_title:             'NOTRE IMPACT POSITIF',
     ip_trees:             'ARBRES PLANTÉS',
     ip_charges:           'RECHARGES EFFECTUÉES',
-    ip_desc:              'Chaque recharge contribue à replanter des arbres et à préserver notre planète.',
+    ip_desc:              ' Chaque recharge compte! Les utilisateurs participent à la plantation de nouvelles Forêts en France + 1 arbre planté par borne implantés!',
 
     /* ── Impact qui grandit ── */
-    ig_title_span:        'AVEC VOUS',
+    ig_title:             'UN IMPACT<br>QUI GRANDIT<br><span>AVEC VOUS</span>',
     ig_desc:              'Chaque recharge compte.<br>Ensemble, construisons un<br>monde plus connecté et<br>plus responsable.',
     ig_btn:               'VOIR NOTRE IMPACT →',
     ig_form_title:        'ON ARRIVE CHEZ TOI ?',
@@ -52,14 +51,15 @@ const TRANSLATIONS = {
     /* ── Où trouver ── */
     ot_title:             'OÙ NOUS<br>TROUVER',
     ot_desc:              'Partout où vous vivez,<br>voyagez, sortez.',
+    btn_download_ot: '<img src="/img/app/telecharger_green.png" class="btn-icon" alt=""> Télécharger l\'appli',
 
     /* ── Festival ── */
     fest_title1:          "T'ES UN",
     fest_title2:          'FESTIVALIER',
-    fest_title3:          'HORS PAIR',
-    fest_li1:             'Trouvez <strong>ta borne</strong> en festival',
-    fest_li2:             'Gardez votre téléphone chargé <strong>avec toi</strong>',
-    fest_li3:             'Profitez <strong>à 100%</strong>',
+    fest_title3:          'HORS PAIR',     
+    fest_li1:             'Trouves <strong>ta borne</strong> en festival',
+    fest_li2:             'Gardes ton téléphone chargé <strong>avec toi</strong>',
+    fest_li3:             'Profites <strong>à 100%</strong>',
     fest_btn:             'VOIR LES FESTIVALS →',
 
     /* ── Lifestyle ── */
@@ -68,6 +68,8 @@ const TRANSLATIONS = {
     ls_badge2:            'ÉNERGIE<br>PARTOUT',
     ls_badge3:            'STYLE<br>FESTIVAL',
     ls_btn:               'VOIR LES PRODUITS →',
+    ticker_label: 'RETROUVES NOUS SUR LES<br>FESTIVALS PARTENAIRES',
+    ticker_brand: 'POP-E',
 
     /* ── Modales — Stagiaires ── */
     modal_stage_title:    "REJOINS L'ÉQUIPE",
@@ -142,10 +144,9 @@ const TRANSLATIONS = {
     banner:               'External Battery <span class="sep">•</span> Charge Anywhere <span class="sep">•</span> Eco Responsible <span class="sep">•</span> External Battery <span class="sep">•</span> Charge Anywhere <span class="sep">•</span> Eco Responsible',
     nav_back:             '← Back',
     nav_app:              'App',
-    btn_download:         'Download the app',
-
+    btn_download: '<img src="/img/app/telecharger.png" class="btn-icon" alt=""> Download the app',
     /* ── How it works ── */
-    ccm_title:            'HOW<br>IT WORKS',
+    ccm_title: '<span class="ccm-title-white">HOW </span><span class="ccm-title-green">IT WORKS</span>',    
     step1_verb:           'FIND',
     step1_desc:           'Locate POP-E stations near you.',
     step2_verb:           'RENT',
@@ -159,10 +160,9 @@ const TRANSLATIONS = {
     ip_title:             'OUR POSITIVE IMPACT',
     ip_trees:             'TREES PLANTED',
     ip_charges:           'CHARGES COMPLETED',
-    ip_desc:              'Every charge helps replant trees and preserve our planet.',
-
+    ip_desc: 'Every charge counts! Users help plant new forests in France + 1 tree planted per station installed!',
     /* ── Growing impact ── */
-    ig_title_span:        'WITH YOU',
+    ig_title:              'AN IMPACT<br>THAT GROWS<br><span>WITH YOU</span>',
     ig_desc:              "Every charge counts.<br>Together, let's build a<br>more connected and<br>more responsible world.",
     ig_btn:               'SEE OUR IMPACT →',
     ig_form_title:        'COMING TO YOUR CITY?',
@@ -186,6 +186,7 @@ const TRANSLATIONS = {
     /* ── Where to find ── */
     ot_title:             'WHERE TO<br>FIND US',
     ot_desc:              'Wherever you live,<br>travel, go out.',
+    btn_download_ot: '<img src="/img/app/telecharger_green.png" class="btn-icon" alt=""> Download the app',
 
     /* ── Festival ── */
     fest_title1:          "YOU'RE A",
@@ -202,6 +203,8 @@ const TRANSLATIONS = {
     ls_badge2:            'ENERGY<br>EVERYWHERE',
     ls_badge3:            'FESTIVAL<br>STYLE',
     ls_btn:               'SEE PRODUCTS →',
+    ticker_label: 'FIND US AT<br>PARTNER FESTIVALS',
+    ticker_brand: 'POP-E',
 
     /* ── Modals — Interns ── */
     modal_stage_title:    'JOIN THE TEAM',
@@ -280,6 +283,7 @@ const LANG_META = {
 
 /* ── Current lang (persisted) ── */
 let currentLang = localStorage.getItem('pope-lang') || 'fr';
+window.currentLang = currentLang;
 
 /* ── Apply translations to the DOM ── */
 function applyLang(lang) {
@@ -312,17 +316,43 @@ function applyLang(lang) {
   syncProofText(lang);
 
   currentLang = lang;
+  window.currentLang = lang;
   localStorage.setItem('pope-lang', lang);
-   const intro = document.getElementById('intro');
-  if (intro) {
-    if (lang === 'en') {
-      intro.style.backgroundImage = "url('/img/app-telephoneEN.png')";
-    } else {
-      intro.style.backgroundImage = "url('/img/app-telephone.png')";
-    }
+   // Hero desktop (background-image sur #intro)
+  // Hero desktop (background-image sur #intro)
+  const intro = document.getElementById('intro');
+const introImage = document.getElementById('intro-image');
+
+if (intro) {
+  const w = window.innerWidth;
+  if (w < 600) {
+    intro.style.backgroundImage = lang === 'en'
+      ? "url('/img/app/app-telephoneEN.png')"
+      : "url('/img/app/app-telephone.png')";
+  } else if (w < 768) {
+    intro.style.backgroundImage = lang === 'en'
+      ? "url('/img/app/app-(max-width-767px)_EN.png')"
+      : "url('/img/app/app-(max-width-767px).png')";
+  } else if (w < 1200) {
+    intro.style.backgroundImage = lang === 'en'
+      ? "url('/img/app/app_tablette_En.png')"
+      : "url('/img/app/app_tablette.png')";
+  } else {
+    intro.style.backgroundImage = '';
   }
+
 }
 
+// Change l'image utilisateurs (desktop uniquement)
+if (introImage) {
+  introImage.src = lang === 'en'
+    ? '/img/app/utilisateurs_eng.png'
+    : '/img/app/utilisateurs.png';
+}
+
+  }
+
+window.addEventListener('resize', () => applyLang(currentLang));
 /* ── Sync the proof text (called after load() in ig-form too) ── */
 function syncProofText(lang) {
   const proofEl = document.getElementById('ig-proof-text');
@@ -398,6 +428,7 @@ window.getCurrentLang = function() { return currentLang; };
       btn.setAttribute('aria-expanded', 'false');
     }
   });
+  
 
   /* Init on load */
   applyLang(currentLang);
