@@ -4,23 +4,530 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>POP-E — Festivals & Salons</title>
+  <title>POP-E — Votre Marque sur nos Écrans</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
     rel="stylesheet" />
-
   <link rel="stylesheet" href="/css/chatbot.css">
-  <link rel="stylesheet" href="/css/b2b.css" />
-  <link rel="stylesheet" href="/css/marque.css"/>
 
   <style>
+    :root {
+      --green: #ADFF00;
+      --black: #080A06;
+      --dark: #0C0E09;
+      --text: #FFFFFF;
+      --text-muted: rgba(255, 255, 255, 0.65);
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+      --radius: 25px;
+      --transition: 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
 
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .bg-noise {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* Header Modifié pour correspondre à pro.html */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+    
+    .nav-back {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+
+    .nav-back:hover {
+      color: var(--green);
+    }
+
+    /* Styles pour le sélecteur de langue */
+/* ── Language Switcher ── */
+.lang-switcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 6px 14px 6px 8px;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  user-select: none;
+}
+
+.lang-btn:hover {
+  border-color: var(--green);
+  background: rgba(173, 255, 0, 0.06);
+  box-shadow: 0 0 12px rgba(173, 255, 0, 0.2);
+}
+
+.lang-btn.open {
+  border-color: var(--green);
+  background: rgba(173, 255, 0, 0.08);
+  box-shadow: 0 0 16px rgba(173, 255, 0, 0.25);
+}
+
+.lang-flag {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.lang-code {
+  color: var(--text);
+}
+
+.lang-btn.open .lang-code {
+  color: var(--green);
+}
+
+.lang-chevron {
+  width: 10px;
+  height: 10px;
+  margin-left: 2px;
+  color: var(--text-muted);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
+}
+
+.lang-btn.open .lang-chevron {
+  transform: rotate(180deg);
+  color: var(--green);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #0f110c;
+  border: 1px solid rgba(173, 255, 0, 0.3);
+  border-radius: 14px;
+  overflow: hidden;
+  min-width: 120px;
+  box-shadow:
+    0 0 0 1px rgba(173, 255, 0, 0.1),
+    0 8px 30px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(173, 255, 0, 0.08);
+  opacity: 0;
+  transform: translateY(-8px) scale(0.96);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 100;
+}
+
+.lang-dropdown.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.18s ease;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+.lang-option:hover {
+  background: rgba(173, 255, 0, 0.08);
+  color: var(--green);
+}
+
+.lang-option .lang-flag {
+  font-size: 18px;
+}
+
+    /* Hero Section - Alignée à gauche avec visuel à droite */
+    .hero {
+      position: relative;
+      padding: 180px 60px 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      min-height: 650px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-title .accent {
+      color: var(--green);
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-desc {
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 580px;
+    }
+
+    /* Visuel central/droite de la borne */
+    .hero-visual {
+      position: relative;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .borne-main-img {
+      max-height: 520px;
+      width: auto;
+      filter: drop-shadow(0 0 50px rgba(173, 255, 0, 0.35));
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* Cards Section */
+    .cards-section {
+      position: relative;
+      background: linear-gradient(to bottom, transparent 0%, var(--dark) 10%, var(--dark) 100%);
+      padding-bottom: 40px;
+    }
+
+    .cards-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 60px 60px 60px;
+      z-index: 2;
+    }
+
+    .card {
+      position: relative;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      height: 480px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(192, 192, 192, 0.15);
+      background: rgba(8, 10, 6, 0.6);
+      backdrop-filter: blur(10px);
+      transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), border-color 0.4s, box-shadow 0.4s;
+    }
+
+    .card-overlay {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px 24px;
+    }
+
+    .card-center-icon {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s ease;
+    }
+
+    .card-icon {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+    }
+
+    .card-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--text);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      min-height: 60px;
+    }
+
+    .btn-offer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      padding: 6px 6px 6px 20px;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .btn-text {
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    .btn-arrow {
+      width: 30px;
+      height: 30px;
+      background: var(--black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+      transition: transform 0.3s ease;
+    }
+
+    /* Card Hover Effects */
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: var(--green);
+      box-shadow:
+        0 0 25px rgba(173, 255, 0, 0.25),
+        0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .card:hover .card-center-icon {
+      transform: scale(1.1);
+    }
+
+    .card:hover .btn-offer {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .card:hover .btn-text {
+      color: #000000;
+    }
+
+    .card:hover .btn-arrow {
+      background: #000000;
+      color: var(--green);
+      transform: translateX(2px);
+    }
+
+    /* Barre de Highlights (Bas de page du screen) */
+    .highlights-bar {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px 60px 40px 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .highlight-icon {
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .highlight-text {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero {
+        flex-direction: column;
+        padding-top: 140px;
+        text-align: center;
+      }
+
+      .hero-content {
+        text-align: center;
+        max-width: 100%;
+      }
+
+      .hero-desc {
+        margin: 0 auto;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 40px 20px;
+      }
+
+      .highlights-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlights-bar {
+        grid-template-columns: 1fr;
+        justify-items: start;
+        padding-left: 40px;
+      }
+    }
   </style>
 </head>
 
 <body>
+
+  <div class="bg-noise"></div>
 
   <header class="site-header">
     <a href="/?skipIntro=true" class="logo-link">
@@ -28,280 +535,123 @@
     </a>
 
     <div class="header-right">
-      <a href="/?skipIntro=true" class="nav-link nav-back" data-i18n="nav_back">← Retour</a>
+      <a href="/pro/pro.html" class="nav-link nav-back" data-fr="← Retour" data-en="← Back">← Retour</a>
+
       <div class="lang-switcher">
         <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
           <span class="lang-flag" id="currentFlag">🇫🇷</span>
           <span class="lang-code" id="currentCode">FR</span>
         </button>
-        <div class="lang-dropdown" id="langDropdown" role="listbox">
-        </div>
+        <div class="lang-dropdown" id="langDropdown" role="listbox"></div>
       </div>
     </div>
   </header>
 
-
-  <section class="fst-hero">
-    <img src="/img/marques/background-haut.png" alt="Fond hero : foule festival de nuit" class="fst-hero-bg" loading="eager">
-    <div class="fst-hero-overlay"></div>
-
-    <div class="fst-hero-content">
-      <div class="fst-hero-left">
-        <h1 class="fst-hero-title">
-          <span data-fr="VOTRE MARQUE." data-en="YOUR BRAND.">VOTRE MARQUE.</span><br>
-          <span data-fr="AU CŒUR" data-en="AT THE HEART">AU CŒUR</span><br>
-          <span data-fr="DE L'EXPÉRIENCE" data-en="OF THE">DE L'EXPÉRIENCE</span><br>
-          <span class="accent" data-fr="FESTIVAL." data-en="FESTIVAL EXPERIENCE.">FESTIVAL.</span>
-        </h1>
-
-        <p class="fst-hero-desc"
-          data-fr="Transformez un service utile en une expérience de marque mémorable. 
-Chaque recharge devient une interaction, chaque interaction une opportunité de créer un souvenir positif."
-          data-en="Turn a useful service into a memorable brand experience. 
-Every refill becomes an interaction, and every interaction is an opportunity to create a positive memory.">
-          Transformez un service utile en une expérience de marque mémorable. 
-Chaque recharge devient une interaction, chaque interaction une opportunité de créer un souvenir positif.
-        </p>
-
-        <a href="#activations" class="fst-cta">
-          <span data-fr="DÉCOUVRIR NOS ACTIVATIONS" data-en="DISCOVER OUR ACTIVATIONS">DÉCOUVRIR NOS ACTIVATIONS</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
-
-
-      <div class="fst-hero-right">
-  <div class="fst-stat-card">
-    <div class="fst-stat-icon">
-      <img src="/img/marques/icon-impact.png" alt="Icône impact visuel">
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title" data-fr="Votre marque <span class='accent'>sur les écrans pop-e.</span>" data-en="Your brand <span class='accent'>on pop-e screens.</span>">
+        Votre marque
+        <span class="accent">sur les écrans pop-e.</span>
+      </h1>
+      <p class="hero-subtitle" data-fr="Visible là où le public a vraiment besoin de vous." data-en="Visible where the audience really needs you.">Visible là où le public a vraiment besoin de vous.</p>
+      <p class="hero-desc" data-fr="POP-E transforme ses bornes de recharge en supports média nouvelle génération : des écrans placés dans des lieux de passage, d'attente, de fête et d'expérience. Une présence utile, contextuelle et mémorable." data-en="POP-E transforms its charging stations into next-generation media supports: screens placed in transit areas, waiting zones, party and experience venues. A useful, contextual, and memorable presence.">
+        POP-E transforme ses bornes de recharge en supports média nouvelle génération : des écrans placés dans des lieux
+        de passage, d'attente, de fête et d'expérience. Une présence utile, contextuelle et mémorable.
+      </p>
     </div>
-    <div class="fst-stat-body">
-      <span class="fst-stat-label" data-fr="IMPACT VISUEL" data-en="VISUAL IMPACT">IMPACT VISUEL</span>
-      <p class="fst-stat-desc" data-fr="Une présence lumineuse, design et incontournable qui capte l'attention au cœur de la fête." data-en="A luminous, design-led and unmissable presence that captures attention at the heart of the party.">Une présence lumineuse, design et incontournable qui capte l'attention au cœur de la fête.</p>
-    </div>
-  </div>
 
-  <div class="fst-stat-card">
-    <div class="fst-stat-icon">
-      <img src="/img/marques/icon-audience.png" alt="Icône audience">
-    </div>
-    <div class="fst-stat-body">
-      <span class="fst-stat-label" data-fr="AUDIENCE QUALIFIÉE" data-en="QUALIFIED AUDIENCE">AUDIENCE QUALIFIÉE</span>
-      <p class="fst-stat-desc" data-fr="Captez une cible jeune, engagée et ultra-réceptive au moment exact où elle a besoin de vous." data-en="Capture a young, engaged and ultra-receptive target at the exact moment they need you.">Captez une cible jeune, engagée et ultra-réceptive au moment exact où elle a besoin de vous.</p>
-    </div>
-  </div>
-
-  <div class="fst-stat-card">
-    <div class="fst-stat-icon">
-      <img src="/img/marques/icon-partage.png" alt="Icône contenu partagé">
-    </div>
-    <div class="fst-stat-body">
-      <span class="fst-stat-label" data-fr="CONTENU PARTAGÉ" data-en="SHARED CONTENT">CONTENU PARTAGÉ</span>
-      <p class="fst-stat-desc" data-fr="Vos activations diffusées massivement sur les réseaux." data-en="Your activations massively broadcasted on social networks.">Vos activations diffusées massivement sur les réseaux.</p>
-    </div>
-  </div>
-</div>
+    <div class="hero-visual">
+      <img src="/img/borne.png" alt="Borne Écran POP-E" class="borne-main-img">
     </div>
   </section>
 
+  <section class="cards-section">
+    <div class="cards-grid">
 
-  <section class="fst-trust">
-    <p class="fst-trust-label">
-      <span data-fr="ILS NOUS" data-en="THEY">ILS NOUS</span>
-      <span class="accent" data-fr="FONT CONFIANCE" data-en="TRUST US">FONT CONFIANCE</span>
-    </p>
-
-    <div class="fst-trust-divider" aria-hidden="true"></div>
-
-    <div class="fst-logos">
-      <img src="/img/marques/confiance-1.png" alt="logo" class="fst-logo-item" width="80" height="26">
-      <img src="/img/marques/confiance-2.png" alt="logo" class="fst-logo-item" width="120" height="26">
-      <img src="/img/marques/confiance-3.png" alt="logo" class="fst-logo-item" width="70" height="26">
-      <img src="/img/marques/confiance-4.png" alt="logo" class="fst-logo-item" width="26" height="26">
-      <img src="/img/marques/confiance-5.png" alt="logo" class="fst-logo-item" width="90" height="26">
-    </div>
-  </section>
-
-
-  <section class="fst-activations" id="activations">
-    <h2 class="fst-section-title" data-fr="NOS ACTIVATIONS" data-en="OUR ACTIVATIONS">NOS ACTIVATIONS</h2>
-    <p class="fst-act-subtitle" data-fr="Cliquez sur une activation pour découvrir le détail" data-en="Click an activation to discover more">Cliquez sur une activation pour découvrir le détail</p>
-
-    <div class="fst-act-grid">
-
-      <!-- 01 -->
-      <div class="fst-act-card" tabindex="0" role="button" aria-label="Recharge offerte">
-        <div class="fst-act-inner">
-          <div class="fst-act-face fst-act-front">
-            <img src="/img/marques/card1.png" alt="Recharge offerte" class="fst-act-img">
-            <div class="fst-act-overlay"></div>
-            <div class="fst-act-shimmer"></div>
-            <div class="fst-act-info">
-              <span class="fst-act-number">01</span>
-              <span class="fst-act-title" data-fr="RECHARGE OFFERTE" data-en="FREE CHARGING">RECHARGE OFFERTE</span>
-            </div>
-            <div class="fst-act-hint" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
-            </div>
+      <div class="card">
+        <div class="card-overlay">
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-festival.png" alt="Festivals" class="card-icon">
           </div>
-          <div class="fst-act-face fst-act-back">
-            <div class="fst-act-back-content">
-              <span class="fst-act-number">01</span>
-              <h3 class="fst-act-back-title" data-fr="RECHARGE OFFERTE" data-en="FREE CHARGING">RECHARGE OFFERTE</h3>
-              <p class="fst-act-back-desc" data-fr="Offrez la recharge à vos festivaliers. Votre marque au cœur du moment de soulagement le plus attendu de la journée." data-en="Offer charging to your festival-goers. Your brand at the heart of the most anticipated relief of the day.">Offrez la recharge à vos festivaliers. Votre marque au cœur du moment de soulagement le plus attendu de la journée.</p>
-              <div class="fst-act-back-tags">
-                <span class="fst-act-tag" data-fr="ENGAGEMENT" data-en="ENGAGEMENT">ENGAGEMENT</span>
-                <span class="fst-act-tag" data-fr="VISIBILITÉ" data-en="VISIBILITY">VISIBILITÉ</span>
-              </div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Festivals &<br>grands événements" data-en="Festivals &<br>major events">Festivals &<br>grands événements</h2>
+            <p class="card-desc" data-fr="Attirez, engagez et monétisez votre public." data-en="Attract, engage and monetize your audience.">Attirez, engagez et monétisez votre public.</p>
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 02 -->
-      <div class="fst-act-card" tabindex="0" role="button" aria-label="Videobooth 360">
-        <div class="fst-act-inner">
-          <div class="fst-act-face fst-act-front">
-            <img src="/img/marques/card2.png" alt="Videobooth 360" class="fst-act-img">
-            <div class="fst-act-overlay"></div>
-            <div class="fst-act-shimmer"></div>
-            <div class="fst-act-info">
-              <span class="fst-act-number">02</span>
-              <span class="fst-act-title" data-fr="VIDEOBOOTH 360" data-en="360 VIDEOBOOTH">VIDEOBOOTH 360</span>
-            </div>
-            <div class="fst-act-hint" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
-            </div>
+      <div class="card">
+        <div class="card-overlay">
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-bar.png" alt="Bars" class="card-icon">
           </div>
-          <div class="fst-act-face fst-act-back">
-            <div class="fst-act-back-content">
-              <span class="fst-act-number">02</span>
-              <h3 class="fst-act-back-title" data-fr="VIDEOBOOTH 360" data-en="360 VIDEOBOOTH">VIDEOBOOTH 360</h3>
-              <p class="fst-act-back-desc" data-fr="Cabine photo & vidéo brandée. Chaque contenu créé est partagé sur les réseaux avec votre signature — reach organique garanti." data-en="Branded photo & video booth. Every piece of content created is shared on social media with your signature — guaranteed organic reach.">Cabine photo & vidéo brandée. Chaque contenu créé est partagé sur les réseaux avec votre signature — reach organique garanti.</p>
-              <div class="fst-act-back-tags">
-                <span class="fst-act-tag" data-fr="VIRAL" data-en="VIRAL">VIRAL</span>
-                <span class="fst-act-tag" data-fr="UGC" data-en="UGC">UGC</span>
-              </div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Bars, hôtels &<br>lieux de vie" data-en="Bars, hotels &<br>lifestyle venues">Bars, hôtels &<br>lieux de vie</h2>
+            <p class="card-desc" data-fr="Augmentez le temps sur place et la consommation." data-en="Increase dwell time and on-site spending.">Augmentez le temps sur place et la consommation.</p>
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 03 -->
-      <div class="fst-act-card" tabindex="0" role="button" aria-label="Zone chill sponsorisée">
-        <div class="fst-act-inner">
-          <div class="fst-act-face fst-act-front">
-            <img src="/img/marques/card3.png" alt="Zone chill sponsorisée" class="fst-act-img">
-            <div class="fst-act-overlay"></div>
-            <div class="fst-act-shimmer"></div>
-            <div class="fst-act-info">
-              <span class="fst-act-number">03</span>
-              <span class="fst-act-title" data-fr="ZONE CHILL SPONSORISÉE" data-en="SPONSORED CHILL ZONE">ZONE CHILL SPONSORISÉE</span>
-            </div>
-            <div class="fst-act-hint" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
-            </div>
+      <div class="card">
+        <div class="card-overlay">
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-public.png" alt="Espaces publics" class="card-icon">
           </div>
-          <div class="fst-act-face fst-act-back">
-            <div class="fst-act-back-content">
-              <span class="fst-act-number">03</span>
-              <h3 class="fst-act-back-title" data-fr="ZONE CHILL SPONSORISÉE" data-en="SPONSORED CHILL ZONE">ZONE CHILL SPONSORISÉE</h3>
-              <p class="fst-act-back-desc" data-fr="Espace lounge exclusif à votre image. Visibilité prolongée dans un environnement premium, mémorable et propice aux échanges." data-en="Exclusive lounge space in your brand image. Prolonged visibility in a premium, memorable environment ideal for engagement.">Espace lounge exclusif à votre image. Visibilité prolongée dans un environnement premium, mémorable et propice aux échanges.</p>
-              <div class="fst-act-back-tags">
-                <span class="fst-act-tag" data-fr="BRANDING" data-en="BRANDING">BRANDING</span>
-                <span class="fst-act-tag" data-fr="EXPÉRIENCE" data-en="EXPERIENCE">EXPÉRIENCE</span>
-              </div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Espaces<br>publics" data-en="Public<br>spaces">Espaces<br>publics</h2>
+            <p class="card-desc" data-fr="Un service utile, moderne et visible." data-en="A useful, modern and visible service.">Un service utile, moderne et visible.</p>
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 04 -->
-      <div class="fst-act-card" tabindex="0" role="button" aria-label="Influenceurs">
-        <div class="fst-act-inner">
-          <div class="fst-act-face fst-act-front">
-            <img src="/img/marques/card4.png" alt="Influenceurs" class="fst-act-img">
-            <div class="fst-act-overlay"></div>
-            <div class="fst-act-shimmer"></div>
-            <div class="fst-act-info">
-              <span class="fst-act-number">04</span>
-              <span class="fst-act-title" data-fr="INFLUENCEURS" data-en="INFLUENCERS">INFLUENCEURS</span>
-            </div>
-            <div class="fst-act-hint" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
-            </div>
+      <div class="card">
+        <div class="card-overlay">
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-privé.png" alt="Transports" class="card-icon">
           </div>
-          <div class="fst-act-face fst-act-back">
-            <div class="fst-act-back-content">
-              <span class="fst-act-number">04</span>
-              <h3 class="fst-act-back-title" data-fr="INFLUENCEURS" data-en="INFLUENCERS">INFLUENCEURS</h3>
-              <p class="fst-act-back-desc" data-fr="Activation avec des créateurs triés sur le volet. Reach organique, authenticité de contenu et impact mesurable sur votre notoriété." data-en="Activation with hand-picked creators. Organic reach, authentic content and measurable impact on your brand awareness.">Activation avec des créateurs triés sur le volet. Reach organique, authenticité de contenu et impact mesurable sur votre notoriété.</p>
-              <div class="fst-act-back-tags">
-                <span class="fst-act-tag" data-fr="REACH" data-en="REACH">REACH</span>
-                <span class="fst-act-tag" data-fr="AUTHENTICITÉ" data-en="AUTHENTICITY">AUTHENTICITÉ</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 05 -->
-      <div class="fst-act-card" tabindex="0" role="button" aria-label="Publicité sur écran">
-        <div class="fst-act-inner">
-          <div class="fst-act-face fst-act-front">
-            <img src="/img/marques/card5.png" alt="Publicité sur écran" class="fst-act-img">
-            <div class="fst-act-overlay"></div>
-            <div class="fst-act-shimmer"></div>
-            <div class="fst-act-info">
-              <span class="fst-act-number">05</span>
-              <span class="fst-act-title" data-fr="PUBLICITÉ SUR ÉCRAN" data-en="ON-SCREEN ADVERTISING">PUBLICITÉ SUR ÉCRAN</span>
-            </div>
-            <div class="fst-act-hint" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
-            </div>
-          </div>
-          <div class="fst-act-face fst-act-back">
-            <div class="fst-act-back-content">
-              <span class="fst-act-number">05</span>
-              <h3 class="fst-act-back-title" data-fr="PUBLICITÉ SUR ÉCRAN" data-en="ON-SCREEN ADVERTISING">PUBLICITÉ SUR ÉCRAN</h3>
-              <p class="fst-act-back-desc" data-fr="Écrans haute résolution intégrés dans chaque station. Votre message en boucle pendant les moments de forte attention et de captivité." data-en="High-resolution screens built into every station. Your message on loop during peak attention and captive moments.">Écrans haute résolution intégrés dans chaque station. Votre message en boucle pendant les moments de forte attention et de captivité.</p>
-              <div class="fst-act-back-tags">
-                <span class="fst-act-tag" data-fr="AUDIENCE" data-en="AUDIENCE">AUDIENCE</span>
-                <span class="fst-act-tag" data-fr="IMPACT" data-en="IMPACT">IMPACT</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 06 -->
-      <div class="fst-act-card" tabindex="0" role="button" aria-label="Collecte de leads">
-        <div class="fst-act-inner">
-          <div class="fst-act-face fst-act-front">
-            <img src="/img/marques/card6.png" alt="Collecte de leads" class="fst-act-img">
-            <div class="fst-act-overlay"></div>
-            <div class="fst-act-shimmer"></div>
-            <div class="fst-act-info">
-              <span class="fst-act-number">06</span>
-              <span class="fst-act-title" data-fr="COLLECTE DE LEADS" data-en="LEAD COLLECTION">COLLECTE DE LEADS</span>
-            </div>
-            <div class="fst-act-hint" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
-            </div>
-          </div>
-          <div class="fst-act-face fst-act-back">
-            <div class="fst-act-back-content">
-              <span class="fst-act-number">06</span>
-              <h3 class="fst-act-back-title" data-fr="COLLECTE DE LEADS" data-en="LEAD COLLECTION">COLLECTE DE LEADS</h3>
-              <p class="fst-act-back-desc" data-fr="Récupérez les données de vos futurs clients via QR code, formulaire intégré ou jeu-concours gamifié. ROI direct et mesurable." data-en="Capture your future customers' data via QR code, integrated form or gamified contest. Direct, measurable ROI.">Récupérez les données de vos futurs clients via QR code, formulaire intégré ou jeu-concours gamifié. ROI direct et mesurable.</p>
-              <div class="fst-act-back-tags">
-                <span class="fst-act-tag" data-fr="DATA" data-en="DATA">DATA</span>
-                <span class="fst-act-tag" data-fr="ROI" data-en="ROI">ROI</span>
-              </div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Aéroports, gares<br>& zones d'attente" data-en="Airports, stations<br>& waiting areas">Aéroports, gares<br>& zones d'attente</h2>
+            <p class="card-desc" data-fr="Des écrans placés dans des moments clés : attente, mobilité, besoin de batterie, attention disponible." data-en="Screens placed at key moments: waiting, mobility, low battery, available attention.">Des écrans placés dans des moments clés : attente, mobilité, besoin de batterie,
+              attention disponible.</p>
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
             </div>
           </div>
         </div>
@@ -310,88 +660,56 @@ Chaque recharge devient une interaction, chaque interaction une opportunité de 
     </div>
   </section>
 
-  <section class="fst-full-banner">
-    <img src="/img/marques/section-marques.png" alt="Description de l'image pour le SEO" class="fst-banner-img" loading="lazy">
-  </section>
-
-  <section class="fst-results">
-    <div class="fst-results-inner">
-      <div class="fst-results-headline">
-        <span data-fr="DES RÉSULTATS." data-en="REAL RESULTS.">DES RÉSULTATS.</span><br>
-        <span data-fr="UNE EXPÉRIENCE." data-en="AN EXPERIENCE.">UNE EXPÉRIENCE.</span><br>
-        <span data-fr="UN IMPACT." data-en="AN IMPACT.">UN IMPACT.</span>
+  <footer class="highlights-bar">
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
       </div>
+      <span class="highlight-text" data-fr="Besoin universel" data-en="Universal need">Besoin universel</span>
+    </div>
 
-      <div class="fst-stats-col">
-        <div class="fst-result-stat">
-          <div class="fst-result-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="6" width="16" height="12" rx="2" ry="2"></rect>
-              <line x1="22" y1="11" x2="22" y2="13"></line>
-              <rect x="5" y="9" width="2" height="6" fill="#ADFF00"></rect>
-              <rect x="9" y="9" width="2" height="6" fill="#ADFF00"></rect>
-              <rect x="13" y="9" width="2" height="6" fill="#ADFF00"></rect>
-            </svg>
-          </div>
-          <div class="fst-result-text">
-            <strong class="fst-result-value" data-fr="100% DE BATTERIE" data-en="100% BATTERY">100% DE BATTERIE</strong>
-            <span class="fst-result-label" data-fr="Plus de temps sur votre marque." data-en="More time on your brand.">Plus de temps sur votre marque.</span>
-          </div>
-        </div>
-
-        <div class="fst-result-stat">
-          <div class="fst-result-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3" fill="#ADFF00"></circle>
-              <circle cx="12" cy="12" r="7" stroke-dasharray="3 3"></circle>
-              <path d="m14 14 5 5-1 2-2-1-2-6Z"></path>
-            </svg>
-          </div>
-          <div class="fst-result-text">
-            <strong class="fst-result-value" data-fr="DES MILLIERS D'INTERACTIONS" data-en="THOUSANDS OF INTERACTIONS">DES MILLIERS D'INTERACTIONS</strong>
-            <span class="fst-result-label" data-fr="Naturelles et gamifiées." data-en="Natural and gamified.">Naturelles et gamifiées.</span>
-          </div>
-        </div>
-
-        <div class="fst-result-stat">
-          <div class="fst-result-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-              <circle cx="12" cy="12" r="3" fill="#ADFF00"></circle>
-              <path d="m19 3 1 2 2 1-2 1-1 2-1-2-2-1 2-1Z" fill="#ADFF00" stroke="none"></path>
-            </svg>
-          </div>
-          <div class="fst-result-text">
-            <strong class="fst-result-value" data-fr="UNE ATTENTION POSITIVE" data-en="POSITIVE ATTENTION">UNE ATTENTION POSITIVE</strong>
-            <span class="fst-result-label" data-fr="Douce et durable dans un contexte festif." data-en="Gentle and lasting in a festive context.">Douce et durable dans un contexte festif.</span>
-          </div>
-        </div>
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
       </div>
+      <span class="highlight-text" data-fr="Attention maximale" data-en="Maximum attention">Attention maximale</span>
     </div>
-  </section>
 
-
-  <div id="social-sidebar">
-    <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
-      <img src="/img/insta.png" alt="Instagram">
-    </a>
-    <div class="social-btn" title="TikTok">
-      <img src="/img/tiktok.png" alt="TikTok">
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      </div>
+      <span class="highlight-text" data-fr="Audience captive" data-en="Captive audience">Audience captive</span>
     </div>
-    <div class="social-btn" title="Téléphone">
-      <img src="/img/telephone.png" alt="Contact">
+
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+      </div>
+      <span class="highlight-text" data-fr="Visibilité puissante" data-en="Powerful visibility">Visibilité puissante</span>
     </div>
-  </div>
-
-
-  <div id="chatbot">
-    <i class="fas fa-comments"></i>
-  </div>
-
-  <script src="/js/chatbot.js"></script>
+  </footer>
 
   <script>
-    /* ── Language Switcher ── */
+    /* ── Language Switcher Logic ── */
     const langBtn = document.getElementById('langBtn');
     const langDropdown = document.getElementById('langDropdown');
     const currentFlag = document.getElementById('currentFlag');
@@ -420,7 +738,7 @@ Chaque recharge devient une interaction, chaque interaction une opportunité de 
     function updateDropdown(lang) {
       langDropdown.innerHTML = '';
       Object.entries(LANGS).forEach(([key, info]) => {
-        if (key === lang) return;
+        if (key === lang) return; // hide current lang
         const opt = document.createElement('div');
         opt.className = 'lang-option';
         opt.setAttribute('role', 'option');
@@ -431,65 +749,44 @@ Chaque recharge devient une interaction, chaque interaction une opportunité de 
       });
     }
 
-    function openDropdown() { langDropdown.classList.add('visible'); langBtn.classList.add('open'); langBtn.setAttribute('aria-expanded', 'true'); }
-    function closeDropdown() { langDropdown.classList.remove('visible'); langBtn.classList.remove('open'); langBtn.setAttribute('aria-expanded', 'false'); }
-
     function switchLang(lang) {
       currentLang = lang;
+      
       localStorage.setItem('selectedLanguage', lang);
+      
       applyLanguage(lang);
       updateButton(lang);
       updateDropdown(lang);
       closeDropdown();
     }
 
-    langBtn.addEventListener('click', e => {
+    function openDropdown() {
+      langDropdown.classList.add('visible');
+      langBtn.classList.add('open');
+      langBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeDropdown() {
+      langDropdown.classList.remove('visible');
+      langBtn.classList.remove('open');
+      langBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    langBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
     });
 
     document.addEventListener('click', closeDropdown);
-    langDropdown.addEventListener('click', e => e.stopPropagation());
+    langDropdown.addEventListener('click', (e) => e.stopPropagation());
 
+    // Init
     applyLanguage(currentLang);
     updateButton(currentLang);
     updateDropdown(currentLang);
 
-    /* ── Activation Cards — Sélection + Retournement ── */
-    (function () {
-      const cards = document.querySelectorAll('.fst-act-card');
-      const grid  = document.querySelector('.fst-act-grid');
-
-      cards.forEach(card => {
-        function toggle() {
-          const wasActive = card.classList.contains('active');
-          // Reset tous
-          cards.forEach(c => c.classList.remove('active'));
-          grid.classList.remove('has-active');
-          // Si la carte n'était pas active, on l'active
-          if (!wasActive) {
-            card.classList.add('active');
-            grid.classList.add('has-active');
-          }
-        }
-        card.addEventListener('click', toggle);
-        card.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-        });
-      });
-    })();
-
-    /* ── Smooth anchor scroll offset (fixed header) ── */
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (!target) return;
-        e.preventDefault();
-        const offset = 80;
-        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-      });
-    });
   </script>
 
 </body>
+
 </html>

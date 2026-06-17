@@ -497,7 +497,7 @@
             btn.disabled = true;
             btn.querySelector('span').textContent = 'Envoi en cours...';
 
-            const { error } = await db.from('Devis').insert(data);
+            const { error } = await db.from('Prive-formulaire').insert(data);
 
             if (error) {
                 alert('Une erreur est survenue. Veuillez réessayer.');

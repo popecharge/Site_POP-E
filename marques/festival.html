@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POP-E — Festivals & Salons</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/chatbot.css">
+  <link rel="stylesheet" href="/css/b2b.css" />
+  <link rel="stylesheet" href="/css/marque.css"/>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a href="/?skipIntro=true" class="logo-link">
+      <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
+    </a>
+
+    <div class="header-right">
+      <a href="/?skipIntro=true" class="nav-link nav-back" data-i18n="nav_back">← Retour</a>
+      <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-flag" id="currentFlag">🇫🇷</span>
+          <span class="lang-code" id="currentCode">FR</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown" role="listbox">
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="fst-hero">
+    <img src="/img/marques/background-haut.png" alt="Fond hero : foule festival de nuit" class="fst-hero-bg" loading="eager">
+    <div class="fst-hero-overlay"></div>
+
+    <div class="fst-hero-content">
+      <div class="fst-hero-left">
+        <h1 class="fst-hero-title">
+          <span data-fr="VOTRE MARQUE." data-en="YOUR BRAND.">VOTRE MARQUE.</span><br>
+          <span data-fr="AU CŒUR" data-en="AT THE HEART">AU CŒUR</span><br>
+          <span data-fr="DE L'EXPÉRIENCE" data-en="OF THE">DE L'EXPÉRIENCE</span><br>
+          <span class="accent" data-fr="FESTIVAL." data-en="FESTIVAL EXPERIENCE.">FESTIVAL.</span>
+        </h1>
+
+        <p class="fst-hero-desc"
+          data-fr="Transformez un service utile en une expérience de marque mémorable. 
+Chaque recharge devient une interaction, chaque interaction une opportunité de créer un souvenir positif."
+          data-en="Turn a useful service into a memorable brand experience. 
+Every refill becomes an interaction, and every interaction is an opportunity to create a positive memory.">
+          Transformez un service utile en une expérience de marque mémorable. 
+Chaque recharge devient une interaction, chaque interaction une opportunité de créer un souvenir positif.
+        </p>
+
+        <a href="#activations" class="fst-cta">
+          <span data-fr="DÉCOUVRIR NOS ACTIVATIONS" data-en="DISCOVER OUR ACTIVATIONS">DÉCOUVRIR NOS ACTIVATIONS</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+
+      <div class="fst-hero-right">
+  <div class="fst-stat-card">
+    <div class="fst-stat-icon">
+      <img src="/img/marques/icon-impact.png" alt="Icône impact visuel">
+    </div>
+    <div class="fst-stat-body">
+      <span class="fst-stat-label" data-fr="IMPACT VISUEL" data-en="VISUAL IMPACT">IMPACT VISUEL</span>
+      <p class="fst-stat-desc" data-fr="Une présence lumineuse, design et incontournable qui capte l'attention au cœur de la fête." data-en="A luminous, design-led and unmissable presence that captures attention at the heart of the party.">Une présence lumineuse, design et incontournable qui capte l'attention au cœur de la fête.</p>
+    </div>
+  </div>
+
+  <div class="fst-stat-card">
+    <div class="fst-stat-icon">
+      <img src="/img/marques/icon-audience.png" alt="Icône audience">
+    </div>
+    <div class="fst-stat-body">
+      <span class="fst-stat-label" data-fr="AUDIENCE QUALIFIÉE" data-en="QUALIFIED AUDIENCE">AUDIENCE QUALIFIÉE</span>
+      <p class="fst-stat-desc" data-fr="Captez une cible jeune, engagée et ultra-réceptive au moment exact où elle a besoin de vous." data-en="Capture a young, engaged and ultra-receptive target at the exact moment they need you.">Captez une cible jeune, engagée et ultra-réceptive au moment exact où elle a besoin de vous.</p>
+    </div>
+  </div>
+
+  <div class="fst-stat-card">
+    <div class="fst-stat-icon">
+      <img src="/img/marques/icon-partage.png" alt="Icône contenu partagé">
+    </div>
+    <div class="fst-stat-body">
+      <span class="fst-stat-label" data-fr="CONTENU PARTAGÉ" data-en="SHARED CONTENT">CONTENU PARTAGÉ</span>
+      <p class="fst-stat-desc" data-fr="Vos activations diffusées massivement sur les réseaux." data-en="Your activations massively broadcasted on social networks.">Vos activations diffusées massivement sur les réseaux.</p>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+
+
+  <section class="fst-trust">
+    <p class="fst-trust-label">
+      <span data-fr="ILS NOUS" data-en="THEY">ILS NOUS</span>
+      <span class="accent" data-fr="FONT CONFIANCE" data-en="TRUST US">FONT CONFIANCE</span>
+    </p>
+
+    <div class="fst-trust-divider" aria-hidden="true"></div>
+
+    <div class="fst-logos">
+      <img src="/img/marques/confiance-1.png" alt="logo" class="fst-logo-item" width="80" height="26">
+      <img src="/img/marques/confiance-2.png" alt="logo" class="fst-logo-item" width="120" height="26">
+      <img src="/img/marques/confiance-3.png" alt="logo" class="fst-logo-item" width="70" height="26">
+      <img src="/img/marques/confiance-4.png" alt="logo" class="fst-logo-item" width="26" height="26">
+      <img src="/img/marques/confiance-5.png" alt="logo" class="fst-logo-item" width="90" height="26">
+    </div>
+  </section>
+
+
+  <section class="fst-activations" id="activations">
+    <h2 class="fst-section-title" data-fr="NOS ACTIVATIONS" data-en="OUR ACTIVATIONS">NOS ACTIVATIONS</h2>
+    <p class="fst-act-subtitle" data-fr="Cliquez sur une activation pour découvrir le détail" data-en="Click an activation to discover more">Cliquez sur une activation pour découvrir le détail</p>
+
+    <div class="fst-act-grid">
+
+      <!-- 01 -->
+      <div class="fst-act-card" tabindex="0" role="button" aria-label="Recharge offerte">
+        <div class="fst-act-inner">
+          <div class="fst-act-face fst-act-front">
+            <img src="/img/marques/card1.png" alt="Recharge offerte" class="fst-act-img">
+            <div class="fst-act-overlay"></div>
+            <div class="fst-act-shimmer"></div>
+            <div class="fst-act-info">
+              <span class="fst-act-number">01</span>
+              <span class="fst-act-title" data-fr="RECHARGE OFFERTE" data-en="FREE CHARGING">RECHARGE OFFERTE</span>
+            </div>
+            <div class="fst-act-hint" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+            </div>
+          </div>
+          <div class="fst-act-face fst-act-back">
+            <div class="fst-act-back-content">
+              <span class="fst-act-number">01</span>
+              <h3 class="fst-act-back-title" data-fr="RECHARGE OFFERTE" data-en="FREE CHARGING">RECHARGE OFFERTE</h3>
+              <p class="fst-act-back-desc" data-fr="Offrez la recharge à vos festivaliers. Votre marque au cœur du moment de soulagement le plus attendu de la journée." data-en="Offer charging to your festival-goers. Your brand at the heart of the most anticipated relief of the day.">Offrez la recharge à vos festivaliers. Votre marque au cœur du moment de soulagement le plus attendu de la journée.</p>
+              <div class="fst-act-back-tags">
+                <span class="fst-act-tag" data-fr="ENGAGEMENT" data-en="ENGAGEMENT">ENGAGEMENT</span>
+                <span class="fst-act-tag" data-fr="VISIBILITÉ" data-en="VISIBILITY">VISIBILITÉ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="fst-act-card" tabindex="0" role="button" aria-label="Videobooth 360">
+        <div class="fst-act-inner">
+          <div class="fst-act-face fst-act-front">
+            <img src="/img/marques/card2.png" alt="Videobooth 360" class="fst-act-img">
+            <div class="fst-act-overlay"></div>
+            <div class="fst-act-shimmer"></div>
+            <div class="fst-act-info">
+              <span class="fst-act-number">02</span>
+              <span class="fst-act-title" data-fr="VIDEOBOOTH 360" data-en="360 VIDEOBOOTH">VIDEOBOOTH 360</span>
+            </div>
+            <div class="fst-act-hint" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+            </div>
+          </div>
+          <div class="fst-act-face fst-act-back">
+            <div class="fst-act-back-content">
+              <span class="fst-act-number">02</span>
+              <h3 class="fst-act-back-title" data-fr="VIDEOBOOTH 360" data-en="360 VIDEOBOOTH">VIDEOBOOTH 360</h3>
+              <p class="fst-act-back-desc" data-fr="Cabine photo & vidéo brandée. Chaque contenu créé est partagé sur les réseaux avec votre signature — reach organique garanti." data-en="Branded photo & video booth. Every piece of content created is shared on social media with your signature — guaranteed organic reach.">Cabine photo & vidéo brandée. Chaque contenu créé est partagé sur les réseaux avec votre signature — reach organique garanti.</p>
+              <div class="fst-act-back-tags">
+                <span class="fst-act-tag" data-fr="VIRAL" data-en="VIRAL">VIRAL</span>
+                <span class="fst-act-tag" data-fr="UGC" data-en="UGC">UGC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="fst-act-card" tabindex="0" role="button" aria-label="Zone chill sponsorisée">
+        <div class="fst-act-inner">
+          <div class="fst-act-face fst-act-front">
+            <img src="/img/marques/card3.png" alt="Zone chill sponsorisée" class="fst-act-img">
+            <div class="fst-act-overlay"></div>
+            <div class="fst-act-shimmer"></div>
+            <div class="fst-act-info">
+              <span class="fst-act-number">03</span>
+              <span class="fst-act-title" data-fr="ZONE CHILL SPONSORISÉE" data-en="SPONSORED CHILL ZONE">ZONE CHILL SPONSORISÉE</span>
+            </div>
+            <div class="fst-act-hint" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+            </div>
+          </div>
+          <div class="fst-act-face fst-act-back">
+            <div class="fst-act-back-content">
+              <span class="fst-act-number">03</span>
+              <h3 class="fst-act-back-title" data-fr="ZONE CHILL SPONSORISÉE" data-en="SPONSORED CHILL ZONE">ZONE CHILL SPONSORISÉE</h3>
+              <p class="fst-act-back-desc" data-fr="Espace lounge exclusif à votre image. Visibilité prolongée dans un environnement premium, mémorable et propice aux échanges." data-en="Exclusive lounge space in your brand image. Prolonged visibility in a premium, memorable environment ideal for engagement.">Espace lounge exclusif à votre image. Visibilité prolongée dans un environnement premium, mémorable et propice aux échanges.</p>
+              <div class="fst-act-back-tags">
+                <span class="fst-act-tag" data-fr="BRANDING" data-en="BRANDING">BRANDING</span>
+                <span class="fst-act-tag" data-fr="EXPÉRIENCE" data-en="EXPERIENCE">EXPÉRIENCE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="fst-act-card" tabindex="0" role="button" aria-label="Influenceurs">
+        <div class="fst-act-inner">
+          <div class="fst-act-face fst-act-front">
+            <img src="/img/marques/card4.png" alt="Influenceurs" class="fst-act-img">
+            <div class="fst-act-overlay"></div>
+            <div class="fst-act-shimmer"></div>
+            <div class="fst-act-info">
+              <span class="fst-act-number">04</span>
+              <span class="fst-act-title" data-fr="INFLUENCEURS" data-en="INFLUENCERS">INFLUENCEURS</span>
+            </div>
+            <div class="fst-act-hint" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+            </div>
+          </div>
+          <div class="fst-act-face fst-act-back">
+            <div class="fst-act-back-content">
+              <span class="fst-act-number">04</span>
+              <h3 class="fst-act-back-title" data-fr="INFLUENCEURS" data-en="INFLUENCERS">INFLUENCEURS</h3>
+              <p class="fst-act-back-desc" data-fr="Activation avec des créateurs triés sur le volet. Reach organique, authenticité de contenu et impact mesurable sur votre notoriété." data-en="Activation with hand-picked creators. Organic reach, authentic content and measurable impact on your brand awareness.">Activation avec des créateurs triés sur le volet. Reach organique, authenticité de contenu et impact mesurable sur votre notoriété.</p>
+              <div class="fst-act-back-tags">
+                <span class="fst-act-tag" data-fr="REACH" data-en="REACH">REACH</span>
+                <span class="fst-act-tag" data-fr="AUTHENTICITÉ" data-en="AUTHENTICITY">AUTHENTICITÉ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="fst-act-card" tabindex="0" role="button" aria-label="Publicité sur écran">
+        <div class="fst-act-inner">
+          <div class="fst-act-face fst-act-front">
+            <img src="/img/marques/card5.png" alt="Publicité sur écran" class="fst-act-img">
+            <div class="fst-act-overlay"></div>
+            <div class="fst-act-shimmer"></div>
+            <div class="fst-act-info">
+              <span class="fst-act-number">05</span>
+              <span class="fst-act-title" data-fr="PUBLICITÉ SUR ÉCRAN" data-en="ON-SCREEN ADVERTISING">PUBLICITÉ SUR ÉCRAN</span>
+            </div>
+            <div class="fst-act-hint" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+            </div>
+          </div>
+          <div class="fst-act-face fst-act-back">
+            <div class="fst-act-back-content">
+              <span class="fst-act-number">05</span>
+              <h3 class="fst-act-back-title" data-fr="PUBLICITÉ SUR ÉCRAN" data-en="ON-SCREEN ADVERTISING">PUBLICITÉ SUR ÉCRAN</h3>
+              <p class="fst-act-back-desc" data-fr="Écrans haute résolution intégrés dans chaque station. Votre message en boucle pendant les moments de forte attention et de captivité." data-en="High-resolution screens built into every station. Your message on loop during peak attention and captive moments.">Écrans haute résolution intégrés dans chaque station. Votre message en boucle pendant les moments de forte attention et de captivité.</p>
+              <div class="fst-act-back-tags">
+                <span class="fst-act-tag" data-fr="AUDIENCE" data-en="AUDIENCE">AUDIENCE</span>
+                <span class="fst-act-tag" data-fr="IMPACT" data-en="IMPACT">IMPACT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="fst-act-card" tabindex="0" role="button" aria-label="Collecte de leads">
+        <div class="fst-act-inner">
+          <div class="fst-act-face fst-act-front">
+            <img src="/img/marques/card6.png" alt="Collecte de leads" class="fst-act-img">
+            <div class="fst-act-overlay"></div>
+            <div class="fst-act-shimmer"></div>
+            <div class="fst-act-info">
+              <span class="fst-act-number">06</span>
+              <span class="fst-act-title" data-fr="COLLECTE DE LEADS" data-en="LEAD COLLECTION">COLLECTE DE LEADS</span>
+            </div>
+            <div class="fst-act-hint" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+            </div>
+          </div>
+          <div class="fst-act-face fst-act-back">
+            <div class="fst-act-back-content">
+              <span class="fst-act-number">06</span>
+              <h3 class="fst-act-back-title" data-fr="COLLECTE DE LEADS" data-en="LEAD COLLECTION">COLLECTE DE LEADS</h3>
+              <p class="fst-act-back-desc" data-fr="Récupérez les données de vos futurs clients via QR code, formulaire intégré ou jeu-concours gamifié. ROI direct et mesurable." data-en="Capture your future customers' data via QR code, integrated form or gamified contest. Direct, measurable ROI.">Récupérez les données de vos futurs clients via QR code, formulaire intégré ou jeu-concours gamifié. ROI direct et mesurable.</p>
+              <div class="fst-act-back-tags">
+                <span class="fst-act-tag" data-fr="DATA" data-en="DATA">DATA</span>
+                <span class="fst-act-tag" data-fr="ROI" data-en="ROI">ROI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="fst-full-banner">
+    <img src="/img/marques/section-marques.png" alt="Description de l'image pour le SEO" class="fst-banner-img" loading="lazy">
+  </section>
+
+  <section class="fst-results">
+    <div class="fst-results-inner">
+      <div class="fst-results-headline">
+        <span data-fr="DES RÉSULTATS." data-en="REAL RESULTS.">DES RÉSULTATS.</span><br>
+        <span data-fr="UNE EXPÉRIENCE." data-en="AN EXPERIENCE.">UNE EXPÉRIENCE.</span><br>
+        <span data-fr="UN IMPACT." data-en="AN IMPACT.">UN IMPACT.</span>
+      </div>
+
+      <div class="fst-stats-col">
+        <div class="fst-result-stat">
+          <div class="fst-result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="16" height="12" rx="2" ry="2"></rect>
+              <line x1="22" y1="11" x2="22" y2="13"></line>
+              <rect x="5" y="9" width="2" height="6" fill="#ADFF00"></rect>
+              <rect x="9" y="9" width="2" height="6" fill="#ADFF00"></rect>
+              <rect x="13" y="9" width="2" height="6" fill="#ADFF00"></rect>
+            </svg>
+          </div>
+          <div class="fst-result-text">
+            <strong class="fst-result-value" data-fr="100% DE BATTERIE" data-en="100% BATTERY">100% DE BATTERIE</strong>
+            <span class="fst-result-label" data-fr="Plus de temps sur votre marque." data-en="More time on your brand.">Plus de temps sur votre marque.</span>
+          </div>
+        </div>
+
+        <div class="fst-result-stat">
+          <div class="fst-result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3" fill="#ADFF00"></circle>
+              <circle cx="12" cy="12" r="7" stroke-dasharray="3 3"></circle>
+              <path d="m14 14 5 5-1 2-2-1-2-6Z"></path>
+            </svg>
+          </div>
+          <div class="fst-result-text">
+            <strong class="fst-result-value" data-fr="DES MILLIERS D'INTERACTIONS" data-en="THOUSANDS OF INTERACTIONS">DES MILLIERS D'INTERACTIONS</strong>
+            <span class="fst-result-label" data-fr="Naturelles et gamifiées." data-en="Natural and gamified.">Naturelles et gamifiées.</span>
+          </div>
+        </div>
+
+        <div class="fst-result-stat">
+          <div class="fst-result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ADFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+              <circle cx="12" cy="12" r="3" fill="#ADFF00"></circle>
+              <path d="m19 3 1 2 2 1-2 1-1 2-1-2-2-1 2-1Z" fill="#ADFF00" stroke="none"></path>
+            </svg>
+          </div>
+          <div class="fst-result-text">
+            <strong class="fst-result-value" data-fr="UNE ATTENTION POSITIVE" data-en="POSITIVE ATTENTION">UNE ATTENTION POSITIVE</strong>
+            <span class="fst-result-label" data-fr="Douce et durable dans un contexte festif." data-en="Gentle and lasting in a festive context.">Douce et durable dans un contexte festif.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="social-sidebar">
+    <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
+      <img src="/img/insta.png" alt="Instagram">
+    </a>
+    <div class="social-btn" title="TikTok">
+      <img src="/img/tiktok.png" alt="TikTok">
+    </div>
+    <div class="social-btn" title="Téléphone">
+      <img src="/img/telephone.png" alt="Contact">
+    </div>
+  </div>
+
+
+  <div id="chatbot">
+    <i class="fas fa-comments"></i>
+  </div>
+
+  <script src="/js/chatbot.js"></script>
+
+  <script>
+    /* ── Language Switcher ── */
+    const langBtn = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const currentFlag = document.getElementById('currentFlag');
+    const currentCode = document.getElementById('currentCode');
+
+    const LANGS = {
+      fr: { flag: '🇫🇷', code: 'FR' },
+      en: { flag: '🇬🇧', code: 'EN' }
+    };
+
+    let currentLang = localStorage.getItem('selectedLanguage') || 'fr';
+
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        const val = el.getAttribute('data-' + lang);
+        if (val !== null) el.innerHTML = val;
+      });
+      document.documentElement.lang = lang;
+    }
+
+    function updateButton(lang) {
+      currentFlag.textContent = LANGS[lang].flag;
+      currentCode.textContent = LANGS[lang].code;
+    }
+
+    function updateDropdown(lang) {
+      langDropdown.innerHTML = '';
+      Object.entries(LANGS).forEach(([key, info]) => {
+        if (key === lang) return;
+        const opt = document.createElement('div');
+        opt.className = 'lang-option';
+        opt.setAttribute('role', 'option');
+        opt.setAttribute('data-lang', key);
+        opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
+        opt.addEventListener('click', () => switchLang(key));
+        langDropdown.appendChild(opt);
+      });
+    }
+
+    function openDropdown() { langDropdown.classList.add('visible'); langBtn.classList.add('open'); langBtn.setAttribute('aria-expanded', 'true'); }
+    function closeDropdown() { langDropdown.classList.remove('visible'); langBtn.classList.remove('open'); langBtn.setAttribute('aria-expanded', 'false'); }
+
+    function switchLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('selectedLanguage', lang);
+      applyLanguage(lang);
+      updateButton(lang);
+      updateDropdown(lang);
+      closeDropdown();
+    }
+
+    langBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
+    });
+
+    document.addEventListener('click', closeDropdown);
+    langDropdown.addEventListener('click', e => e.stopPropagation());
+
+    applyLanguage(currentLang);
+    updateButton(currentLang);
+    updateDropdown(currentLang);
+
+    /* ── Activation Cards — Sélection + Retournement ── */
+    (function () {
+      const cards = document.querySelectorAll('.fst-act-card');
+      const grid  = document.querySelector('.fst-act-grid');
+
+      cards.forEach(card => {
+        function toggle() {
+          const wasActive = card.classList.contains('active');
+          // Reset tous
+          cards.forEach(c => c.classList.remove('active'));
+          grid.classList.remove('has-active');
+          // Si la carte n'était pas active, on l'active
+          if (!wasActive) {
+            card.classList.add('active');
+            grid.classList.add('has-active');
+          }
+        }
+        card.addEventListener('click', toggle);
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+      });
+    })();
+
+    /* ── Smooth anchor scroll offset (fixed header) ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const offset = 80;
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
