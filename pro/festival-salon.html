@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800&display=swap"
     rel="stylesheet" />
-    
+
   <link rel="stylesheet" href="/css/chatbot.css" />
   <link rel="stylesheet" href="/css/festival.css" />
 </head>
@@ -18,24 +18,24 @@
 
   <div class="bg-noise"></div>
 
-<header class="site-header">
+  <header class="site-header">
     <a href="/?skipIntro=true" class="logo-link">
-        <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
+      <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
     </a>
 
     <div class="header-right">
-        <a href="/pro/pro.html" class="nav-link nav-back" data-fr="← Retour" data-en="← Back">← Retour</a>
+      <a href="/pro/pro.html" class="nav-link nav-back" data-fr="← Retour" data-en="← Back">← Retour</a>
 
-        <div class="lang-switcher">
-            <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
-                <span class="lang-flag" id="currentFlag">🇫🇷</span>
-                <span class="lang-code" id="currentCode">FR</span>
-            </button>
-            <div class="lang-dropdown" id="langDropdown" role="listbox">
-            </div>
+      <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-flag" id="currentFlag">🇫🇷</span>
+          <span class="lang-code" id="currentCode">FR</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown" role="listbox">
         </div>
+      </div>
     </div>
-</header>
+  </header>
 
   <section class="hero">
     <div class="hero-content">
@@ -44,9 +44,11 @@
         <span class="accent" data-fr="Votre Événement" data-en="Your Event">Votre Événement</span>
       </h1>
       <p class="hero-subtitle">
-        <span data-fr="Chaque événement possède son public, son rythme et ses objectifs. <em>POP-E</em> adapte son dispositif pour créer la meilleure expérience possible."
+        <span
+          data-fr="Chaque événement possède son public, son rythme et ses objectifs. <em>POP-E</em> adapte son dispositif pour créer la meilleure expérience possible."
           data-en="Every event has its own audience, pace, and goals. <em>POP-E</em> tailors its approach to create the best possible experience.">
-          Chaque événement possède son public, son rythme et ses objectifs. <em>POP-E</em> adapte son dispositif pour créer la meilleure expérience possible.
+          Chaque événement possède son public, son rythme et ses objectifs. <em>POP-E</em> adapte son dispositif pour
+          créer la meilleure expérience possible.
         </span>
       </p>
     </div>
@@ -124,109 +126,25 @@
     </div>
   </section>
 
-        <div id="social-sidebar">
-        <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn"
-            title="Instagram">
-            <img src="/img/insta.png" alt="Instagram">
-        </a>
-        <div class="social-btn" title="TikTok">
-            <img src="/img/tiktok.png" alt="TikTok">
-        </div>
-        <div class="social-btn" title="Téléphone">
-            <img src="/img/telephone.png" alt="Contact">
-        </div>
+  <div id="social-sidebar">
+    <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn"
+      title="Instagram">
+      <img src="/img/insta.png" alt="Instagram">
+    </a>
+    <div class="social-btn" title="TikTok">
+      <img src="/img/tiktok.png" alt="TikTok">
     </div>
-
-    <div id="chatbot">
-        <i class="fas fa-comments"></i>
+    <div class="social-btn" title="Téléphone">
+      <img src="/img/telephone.png" alt="Contact">
     </div>
+  </div>
 
-    <script src="/js/chatbot.js"></script>
+  <div id="chatbot">
+    <i class="fas fa-comments"></i>
+  </div>
 
-  <script>
-    const langBtn = document.getElementById('langBtn');
-    const langDropdown = document.getElementById('langDropdown');
-    const currentFlag = document.getElementById('currentFlag');
-    const currentCode = document.getElementById('currentCode');
-
-    const LANGS = {
-      fr: { flag: '🇫🇷', code: 'FR' },
-      en: { flag: '🇬🇧', code: 'EN' }
-    };
-
-    let currentLang = localStorage.getItem('selectedLanguage') || 'fr';
-
-    function applyLanguage(lang) {
-      document.querySelectorAll('[data-fr]').forEach(el => {
-        const val = el.getAttribute('data-' + lang);
-        if (val !== null) el.innerHTML = val;
-      });
-      document.documentElement.lang = lang;
-    }
-
-    function updateButton(lang) {
-      currentFlag.textContent = LANGS[lang].flag;
-      currentCode.textContent = LANGS[lang].code;
-    }
-
-    function updateDropdown(lang) {
-      langDropdown.innerHTML = '';
-      Object.entries(LANGS).forEach(([key, info]) => {
-        if (key === lang) return;
-        const opt = document.createElement('div');
-        opt.className = 'lang-option';
-        opt.setAttribute('role', 'option');
-        opt.setAttribute('data-lang', key);
-        opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
-        opt.addEventListener('click', () => switchLang(key));
-        langDropdown.appendChild(opt);
-      });
-    }
-
-    function switchLang(lang) {
-      currentLang = lang;
-      applyLanguage(lang);
-      updateButton(lang);
-      updateDropdown(lang);
-      closeDropdown();
-    }
-
-    function openDropdown() {
-      langDropdown.classList.add('visible');
-      langBtn.classList.add('open');
-      langBtn.setAttribute('aria-expanded', 'true');
-    }
-
-    function closeDropdown() {
-      langDropdown.classList.remove('visible');
-      langBtn.classList.remove('open');
-      langBtn.setAttribute('aria-expanded', 'false');
-    }
-
-    function switchLang(lang) {
-      currentLang = lang;
-
-      localStorage.setItem('selectedLanguage', lang);
-
-      applyLanguage(lang);
-      updateButton(lang);
-      updateDropdown(lang);
-      closeDropdown();
-    }
-
-    langBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
-    });
-
-    document.addEventListener('click', closeDropdown);
-    langDropdown.addEventListener('click', (e) => e.stopPropagation());
-
-    // Initialisation
-    applyLanguage(currentLang);
-    updateButton(currentLang);
-    updateDropdown(currentLang);
-  </script>
+  <script src="/js/chatbot.js"></script>
+  <script src="/js/lang-switcher.js"></script>
 
 </body>
 

@@ -230,7 +230,7 @@
                 <div class="options-box">
                     <input type="checkbox" class="custom-checkbox">
                     <div class="option-img">
-                        <img src="/img/b2b-privé/videobooth.png" alt="Videobooth" width: auto;">   
+                        <img src="/img/b2b-privé/videobooth.png" alt="Videobooth" width: auto;">
                     </div>
                     <div class="option-content">
                         <span class="opt-label" data-fr="OPTIONS DISPONIBLES" data-en="AVAILABLE OPTIONS">OPTIONS
@@ -315,133 +315,7 @@
 
     <script src="/js/chatbot.js"></script>
 
-    <script>
-        /* ── Language Switcher Logic ── */
-        const langBtn = document.getElementById('langBtn');
-        const langDropdown = document.getElementById('langDropdown');
-        const currentFlag = document.getElementById('currentFlag');
-        const currentCode = document.getElementById('currentCode');
-        const validationMessages = {
-            fr: "Veuillez renseigner ce champ.",
-            en: "Please fill out this field."
-        };
-
-        const LANGS = {
-            fr: { flag: '🇫🇷', code: 'FR' },
-            en: { flag: '🇬🇧', code: 'EN' }
-        };
-
-        let currentLang = localStorage.getItem('selectedLanguage') || 'fr';
-
-        function applyLanguage(lang) {
-            document.querySelectorAll('[data-fr]').forEach(el => {
-                const val = el.getAttribute('data-' + lang);
-                if (val !== null) {
-                    // Vérifie s'il s'agit d'un input ou textarea pour traduire le placeholder
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = val;
-                    } else {
-                        el.innerHTML = val;
-                    }
-                }
-            });
-            document.documentElement.lang = lang;
-        }
-
-        function updateButton(lang) {
-            currentFlag.textContent = LANGS[lang].flag;
-            currentCode.textContent = LANGS[lang].code;
-        }
-
-        function updateDropdown(lang) {
-            langDropdown.innerHTML = '';
-            Object.entries(LANGS).forEach(([key, info]) => {
-                if (key === lang) return;
-                const opt = document.createElement('div');
-                opt.className = 'lang-option';
-                opt.setAttribute('role', 'option');
-                opt.setAttribute('data-lang', key);
-                opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
-                opt.addEventListener('click', () => switchLang(key));
-                langDropdown.appendChild(opt);
-            });
-        }
-
-        function switchLang(lang) {
-            currentLang = lang;
-            applyLanguage(lang);
-            updateButton(lang);
-            updateDropdown(lang);
-            closeDropdown();
-        }
-
-        function openDropdown() {
-            langDropdown.classList.add('visible');
-            langBtn.classList.add('open');
-            langBtn.setAttribute('aria-expanded', 'true');
-        }
-
-        function closeDropdown() {
-            langDropdown.classList.remove('visible');
-            langBtn.classList.remove('open');
-            langBtn.setAttribute('aria-expanded', 'false');
-        }
-
-        function switchLang(lang) {
-            currentLang = lang;
-
-            localStorage.setItem('selectedLanguage', lang);
-
-            applyLanguage(lang);
-            updateButton(lang);
-            updateDropdown(lang);
-            closeDropdown();
-        }
-
-        function updateFormValidationMessages() {
-            const requiredInputs = document.querySelectorAll('form [required]');
-
-            requiredInputs.forEach(input => {
-                // Force le message dans la langue actuelle lors de la vérification
-                input.oninvalid = function (e) {
-                    e.target.setCustomValidity(validationMessages[currentLang]);
-                };
-
-                // Réinitialise le message dès que l'utilisateur écrit pour ne pas bloquer le formulaire
-                input.addEventListener('input', function (e) {
-                    e.target.setCustomValidity("");
-                });
-            });
-        }
-
-        const phoneInput = document.getElementById('telephone');
-
-        phoneInput.addEventListener('input', function (e) {
-            // 1. On supprime absolument tout ce qui n'est pas un chiffre
-            let clearValue = e.target.value.replace(/\D/g, '');
-
-            // 2. On découpe la chaîne tous les 2 chiffres et on joint les blocs avec un espace
-            let formattedValue = clearValue.match(/.{1,2}/g)?.join(' ') || '';
-
-            // 3. On applique le résultat dans le champ en temps réel
-            e.target.value = formattedValue;
-        });
-
-        langBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
-        });
-
-        document.addEventListener('click', closeDropdown);
-        langDropdown.addEventListener('click', (e) => e.stopPropagation());
-
-        // Initialisation
-        applyLanguage(currentLang);
-        updateButton(currentLang);
-        updateDropdown(currentLang);
-        updateFormValidationMessages();
-
-    </script>
+    <script src="/js/lang-switcher.js"></script>
 
     <!-- SDK Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

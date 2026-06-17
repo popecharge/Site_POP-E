@@ -47,8 +47,7 @@
                 <p class="hero-subtitle" data-fr="Votre festival ne se résume pas à une programmation.
                     C'est une expérience dont chaque détail compte.
                     POP-E garantit que vos visiteurs restent connectés,
-                    rassurés et pleinement engagés du premier au dernier concert." 
-                    data-en="Your festival is more than just a lineup.
+                    rassurés et pleinement engagés du premier au dernier concert." data-en="Your festival is more than just a lineup.
                     It’s an experience where every detail matters.
                     POP-E ensures that your attendees stay connected,
                     feel at ease, and remain fully engaged from the first concert to the last.">
@@ -175,14 +174,13 @@
         </h2>
         <p class="hero-subtitle-center" data-fr="Ce n'est pas seulement une borne de recharge. 
 C'est un service qui améliore concrètement le confort,
- l'image et l'organisation de votre événement." 
-                    data-en="It’s not just a charging station. 
+ l'image et l'organisation de votre événement." data-en="It’s not just a charging station. 
 It’s a service that tangibly enhances the convenience,
 image, and organization of your event.">
-                    Ce n'est pas seulement une borne de recharge. 
-C'est un service qui améliore concrètement le confort,
- l'image et l'organisation de votre événement.
-                </p>
+            Ce n'est pas seulement une borne de recharge.
+            C'est un service qui améliore concrètement le confort,
+            l'image et l'organisation de votre événement.
+        </p>
         <div class="why-grid">
             <div class="why-card">
                 <div class="why-card-top">
@@ -259,10 +257,11 @@ C'est un service qui améliore concrètement le confort,
             COMMENT <span class="accent">ÇA FONCTIONNE ?</span>
         </h2>
 
-                <p class="hero-subtitle-center" data-fr="Une expérience fluide pour vos visiteurs. Une logistique invisible pour vos équipes." 
-                    data-en="A seamless experience for your visitors. Seamless logistics for your teams.">
-                    Une expérience fluide pour vos visiteurs. Une logistique invisible pour vos équipes.
-                </p>
+        <p class="hero-subtitle-center"
+            data-fr="Une expérience fluide pour vos visiteurs. Une logistique invisible pour vos équipes."
+            data-en="A seamless experience for your visitors. Seamless logistics for your teams.">
+            Une expérience fluide pour vos visiteurs. Une logistique invisible pour vos équipes.
+        </p>
 
         <div class="steps-horizontal">
             <div class="step-item">
@@ -337,11 +336,10 @@ C'est un service qui améliore concrètement le confort,
         </h2>
 
         <p class="hero-subtitle-center" data-fr="Parce que chaque festival est unique, nous avons imaginé plusieurs façons de collaborer.
- Choisissez celle qui correspond le mieux à votre projet." 
-                    data-en="Because every festival is unique, we’ve come up with several ways to collaborate.
+ Choisissez celle qui correspond le mieux à votre projet." data-en="Because every festival is unique, we’ve come up with several ways to collaborate.
 Choose the one that best fits your project.">
-                    Parce que chaque festival est unique, nous avons imaginé plusieurs façons de collaborer.
- Choisissez celle qui correspond le mieux à votre projet.
+            Parce que chaque festival est unique, nous avons imaginé plusieurs façons de collaborer.
+            Choisissez celle qui correspond le mieux à votre projet.
         </p>
 
         <div class="collab-grid">
@@ -424,7 +422,8 @@ Choose the one that best fits your project.">
                 <p class="ads-desc"
                     data-fr="Pendant que vos visiteurs rechargent leur téléphone, votre écran devient un média stratégique pour informer, orienter et valoriser vos partenaires."
                     data-en="While your visitors are charging their phones, your screen becomes a strategic tool for informing, guiding, and promoting your partners.">
-                    Pendant que vos visiteurs rechargent leur téléphone, votre écran devient un média stratégique pour informer, 
+                    Pendant que vos visiteurs rechargent leur téléphone, votre écran devient un média stratégique pour
+                    informer,
                     orienter et valoriser vos partenaires.</p>
 
                 <div class="ads-floating-tag"><span data-fr="📌 LINE-UP EN TEMPS RÉEL" data-en="📌 REAL-TIME LINE-UP">📌
@@ -459,12 +458,11 @@ Choose the one that best fits your project.">
             data-en="A <span class='accent'>CONCRETE AND MEASURABLE</span> IMPACT">UN IMPACT <span
                 class="accent">CONCRET ET MESURABLE</span></h2>
 
-                <p class="hero-subtitle-center" data-fr="Au-delà du service rendu, POP-E génère un impact positif 
-pour vos visiteurs, votre organisation et votre démarche RSE." 
-                    data-en="Beyond the service it provides, POP-E has a positive impact
+        <p class="hero-subtitle-center" data-fr="Au-delà du service rendu, POP-E génère un impact positif 
+pour vos visiteurs, votre organisation et votre démarche RSE." data-en="Beyond the service it provides, POP-E has a positive impact
 on your visitors, your organization, and your CSR efforts.">
-                    Au-delà du service rendu, POP-E génère un impact positif 
-pour vos visiteurs, votre organisation et votre démarche RSE.
+            Au-delà du service rendu, POP-E génère un impact positif
+            pour vos visiteurs, votre organisation et votre démarche RSE.
         </p>
 
         <div class="eco-grid">
@@ -567,90 +565,7 @@ pour vos visiteurs, votre organisation et votre démarche RSE.
 
     <script src="/js/chatbot.js"></script>
 
-    <script>
-        const langBtn = document.getElementById('langBtn');
-        const langDropdown = document.getElementById('langDropdown');
-        const currentFlag = document.getElementById('currentFlag');
-        const currentCode = document.getElementById('currentCode');
-
-        const LANGS = {
-            fr: { flag: '🇫🇷', code: 'FR' },
-            en: { flag: '🇬🇧', code: 'EN' }
-        };
-
-        let currentLang = localStorage.getItem('selectedLanguage') || 'fr';
-
-        function applyLanguage(lang) {
-            document.querySelectorAll('[data-fr]').forEach(el => {
-                const val = el.getAttribute('data-' + lang);
-                if (val !== null) el.innerHTML = val;
-            });
-            document.documentElement.lang = lang;
-        }
-
-        function updateButton(lang) {
-            currentFlag.textContent = LANGS[lang].flag;
-            currentCode.textContent = LANGS[lang].code;
-        }
-
-        function updateDropdown(lang) {
-            langDropdown.innerHTML = '';
-            Object.entries(LANGS).forEach(([key, info]) => {
-                if (key === lang) return;
-                const opt = document.createElement('div');
-                opt.className = 'lang-option';
-                opt.setAttribute('role', 'option');
-                opt.setAttribute('data-lang', key);
-                opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
-                opt.addEventListener('click', () => switchLang(key));
-                langDropdown.appendChild(opt);
-            });
-        }
-
-        function switchLang(lang) {
-            currentLang = lang;
-            applyLanguage(lang);
-            updateButton(lang);
-            updateDropdown(lang);
-            closeDropdown();
-        }
-
-        function openDropdown() {
-            langDropdown.classList.add('visible');
-            langBtn.classList.add('open');
-            langBtn.setAttribute('aria-expanded', 'true');
-        }
-
-        function closeDropdown() {
-            langDropdown.classList.remove('visible');
-            langBtn.classList.remove('open');
-            langBtn.setAttribute('aria-expanded', 'false');
-        }
-
-        function switchLang(lang) {
-            currentLang = lang;
-
-            localStorage.setItem('selectedLanguage', lang);
-
-            applyLanguage(lang);
-            updateButton(lang);
-            updateDropdown(lang);
-            closeDropdown();
-        }
-
-        langBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown();
-        });
-
-        document.addEventListener('click', closeDropdown);
-        langDropdown.addEventListener('click', (e) => e.stopPropagation());
-
-        // Initialisation
-        applyLanguage(currentLang);
-        updateButton(currentLang);
-        updateDropdown(currentLang);
-    </script>
+    <script src="/js/lang-switcher.js"></script>
 </body>
 
 </html>
