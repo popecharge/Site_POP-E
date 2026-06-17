@@ -207,10 +207,12 @@ body.light-mode .lang-btn:hover {
 }
 
 #intro-image {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center -170px;
 }
@@ -240,7 +242,8 @@ body.light-mode .lang-btn:hover {
 }
 
 #navbar img {
-  width: 210px;
+  width: 140px;
+  margin-top: 7%;
 }
 
 #navbar-right {
@@ -322,13 +325,13 @@ body.light-mode .lang-btn:hover {
   initial-value: 0deg;
   inherits: false;
 }
-
 .btn-app {
   position: absolute;
   z-index: 30;
-  bottom: 100px;
+  bottom: 90px;
   left: 210px;
-  width: 190px;
+  width: max-content;      
+  white-space: nowrap;     
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -346,6 +349,12 @@ body.light-mode .lang-btn:hover {
   transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
+.btn-icon {
+  width: 16px;  
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;         
+}
 .btn-app::before {
   content: '';
   position: absolute;
@@ -411,7 +420,7 @@ body.light-mode .lang-btn:hover {
 }
 
 #ccm-container {
-  background: var(--bg-card);
+  background: var(--black);
   border-radius: var(--radius-xl);
   border: 0.5px solid #ADFF00;
   padding: 32px 36px 36px;
@@ -425,9 +434,16 @@ body.light-mode .lang-btn:hover {
 #ccm-left h2 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(28px, 3vw, 48px);
-  color: var(--white);
   line-height: 1.05;
   margin: 0 0 10px;
+}
+
+.ccm-title-white {
+  color: #FFFFFF !important;
+}
+
+.ccm-title-green {
+  color: #ADFF00 !important;
 }
 
 #ccm-left p {
@@ -475,7 +491,7 @@ body.light-mode .lang-btn:hover {
 
 .step-card {
   position: relative;
-  background: var(--bg-step);
+  background: var(--black);
   border: 1px solid var(--border-step);
   border-radius: 12px;
   left: 1px;
@@ -558,7 +574,7 @@ body.light-mode .lang-btn:hover {
    ============================================= */
 #impact-positif {
   position: relative;
-  background: var(--bg-card);
+  background: var(--black);
   border-radius: var(--radius-xl);
   border: 0.5px solid #ADFF00;
   padding: 28px;
@@ -631,12 +647,13 @@ body.light-mode .lang-btn:hover {
 
 #ip-desc {
   font-family: 'Barlow', sans-serif;
-  font-size: 13px;
-  color: var(--white);
+  font-size: 15px;
+  color: var(--green);
   line-height: 1.5;
   margin: 0;
-  max-width: 180px;
-  margin-top: -100px;
+  max-width: 320px;
+  margin-top: -30px;
+  text-shadow: 0 0 20px rgb(255, 255, 143);
 }
 
 #ip-badge {
@@ -672,8 +689,8 @@ body.light-mode .lang-btn:hover {
 #ip-mains {
   position: absolute;
   right: -10px;
-  bottom: -10px;
-  width: 55%;
+  bottom: 40px;
+  width: 85%;
   pointer-events: none;
   opacity: 0.9;
 }
@@ -695,7 +712,7 @@ body.light-mode .lang-btn:hover {
 
 #ig-container {
   position: relative;
-  background: var(--bg-dark);
+  background: var(--black);
   border-radius: var(--radius-xl);
   border: 1px solid #222;
   overflow: hidden;
@@ -819,7 +836,7 @@ body.light-mode .lang-btn:hover {
 #ig-city,
 #ig-lieu {
   width: 100%;
-  background: #1e1e1e;
+  background: #ffffff;
   border: 1px solid #333;
   border-radius: var(--radius-md);
   padding: 10px 12px;
@@ -833,7 +850,7 @@ body.light-mode .lang-btn:hover {
 
 #ig-city::placeholder,
 #ig-lieu::placeholder {
-  color: rgba(255,255,255,0.4);
+  color: rgb(0, 0, 0);
 }
 
 #ig-city:focus,
@@ -1015,8 +1032,10 @@ body.light-mode .lang-btn:hover {
 }
 
 #ig-stats {
-  background: rgb(10, 10, 10);
+  background: var(--black);
   border-top: 1px solid #222;
+  border: 1px solid #222;
+
   border-radius: 0 0 var(--radius-xl) var(--radius-xl);
   display: flex;
   align-items: center;
@@ -1113,7 +1132,28 @@ body.light-mode .lang-btn:hover {
   align-self: flex-end;
   max-width: 55%;
 }
+.btn-app-ot {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid #ADFF00;
+  color: var(--green);
+  border-radius: var(--radius-lg);
+  position: absolute !important;
+  bottom: 30px !important;
+  left: 30px !important;
+  transform: rotate(0deg) !important;
+  z-index: 1 !important;
+  box-shadow:
+    0 0 20px rgba(173, 255, 0, 0.9),
+    0 0 50px rgba(173, 255, 0, 0.5),
+    0 0 80px rgba(173, 255, 0, 0.25),
+    inset 0 0 20px rgba(173, 255, 0, 0.2);
+  text-shadow: 0 0 16px rgba(200, 255, 80, 1);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 
+.btn-app-ot:hover {
+  transform: rotate(0deg) translateY(-3px) scale(1.05) !important;
+}
 #ot-panneau img {
   width: 300px;
   height: 300px;
@@ -1121,14 +1161,69 @@ body.light-mode .lang-btn:hover {
   display: block;
 }
 
+
 #ot-festival {
   flex: 1;
   position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
   min-height: 260px;
   background: #000000;
-  border: 0.5px solid #9109F0;
+  border-radius: var(--radius-xl);
+  border: none;
+  overflow: visible; 
+  isolation: isolate; 
+}
+
+#ot-festival::before {
+  content: '';
+  position: absolute;
+  border-radius:var(--radius-xl) ;
+  inset: -2px;
+
+  
+  background: conic-gradient(
+    from var(--angle-festival),
+    transparent 0%,
+    transparent 60%,
+    #9109F0 75%,
+    #cc44ff 82%,
+    #ffffff 86%,
+    #cc44ff 90%,
+    #9109F0 95%,
+    transparent 100%
+  );
+  z-index: 0;
+  animation: rotate-festival 8s linear infinite;
+}
+
+#ot-festival::after {
+  content: '';
+  position: absolute;
+  border-radius: calc(var(--radius-xl) - 2px);
+  inset: 2px;
+  background: #000000;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#ot-festival-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;            
+  border-radius: var(--radius-xl); 
+}
+
+@property --angle-festival {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-festival {
+  to { --angle-festival: 360deg; }
 }
 
 #ot-festival-inner {
@@ -1152,32 +1247,38 @@ body.light-mode .lang-btn:hover {
 #ot-festival-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%);
-  z-index: 1;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.952) 0%, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,0) 100%);  z-index: 1;
 }
 
 #ot-festival-content {
   position: relative;
   z-index: 2;
   padding: 32px 36px;
-  height: 100%;
+  flex: 1; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
 
 #ot-festival-content h2 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(28px, 3.2vw, 52px);
+  bottom: 90px;
   color: var(--white);
   line-height: 1.0;
   margin: 0 0 20px;
+  transform: rotate(-2deg);
+  display: inline-block;
 }
 
-#ot-festival-content h2 span,
+#ot-festival-content h2 span {
+  color: var(--white); 
+}
+
 #ot-festival-content h2 em {
-  color: #ADFF00;
-  font-style: normal;
+  color: var(--green); 
+  font-style: normal;  
 }
 
 #ot-festival-list {
@@ -1218,25 +1319,78 @@ body.light-mode .lang-btn:hover {
   align-items: center;
   gap: 12px;
 }
+@property --angle-fest-btn {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
 
+@keyframes rotate-fest-btn {
+  to { --angle-fest-btn: 360deg; }
+}
 .ot-fest-btn-main {
+  position: relative;
+  isolation: isolate;
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(14px, 1.3vw, 18px);
   letter-spacing: 0.06em;
   color: var(--white);
-  border: 2px solid rgb(127, 0, 182);
-  border-radius: var(--radius-full);
+  border: 2px solid #cc44ff;
+  border-radius: var(--radius-lg);
   padding: 10px 24px;
+  background: rgba(145, 9, 240, 0.3);
+  box-shadow:
+    0 0 20px rgba(145, 9, 240, 0.9),
+    0 0 50px rgba(145, 9, 240, 0.5),
+    0 0 80px rgba(145, 9, 240, 0.25),
+    inset 0 0 20px rgba(145, 9, 240, 0.2);
+  text-shadow: 0 0 16px rgba(220, 130, 255, 1);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .ot-fest-btn-main:hover {
-  background: rgba(145, 9, 240, 0.1);
-  border-color: #9109F0;
-  color: #fff;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 4px 20px rgba(145, 9, 240, 0.4), 0 0 8px rgba(145, 9, 240, 0.25);
+  transform: translateY(-3px) scale(1.05);
+}
+.ot-fest-btn-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 2px;
+  background: conic-gradient(from var(--angle-fest-btn), transparent 70%, #9109F0 82%, #cc44ff 87%, #ffffff 90%, #cc44ff 93%, #9109F0 97%, transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  animation: rotate-fest-btn 3s linear infinite;
+  animation-play-state: paused;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+.ot-fest-btn-main::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 60px;
+  background: radial-gradient(ellipse, rgba(145, 9, 240, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
 }
 
+.ot-fest-btn-main:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.ot-fest-btn-main:hover::after {
+  opacity: 1;
+}
 /* =============================================
    LIFESTYLE E-SHOP
    ============================================= */
@@ -1248,16 +1402,20 @@ body.light-mode .lang-btn:hover {
   position: relative;
   background: #000000;
   border-radius: var(--radius-xl);
-  border: 1px solid #7f00b6;
+  border: 1px solid #9109F0;
   overflow: hidden;
   display: flex;
-  align-items: center;
-  min-height: 200px;
+  flex-direction: column;
   box-sizing: border-box;
-  padding: 36px 40px;
   gap: 0;
 }
-
+#ls-top {
+  display: flex;
+  align-items: center;
+  padding: 36px 40px;
+  min-height: 400px;
+  position: relative;
+}
 #ls-left {
   position: relative;
   z-index: 1;
@@ -1284,12 +1442,13 @@ body.light-mode .lang-btn:hover {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(50px, 5vw, 90px);
   color: var(--white);
-  line-height: 1.0;
+  line-height: 0.95;      
   margin: 0;
   display: flex;
   flex-direction: column;
   font-weight: 700;
   align-items: flex-start;
+  gap: 0;                  
 }
 
 #ls-logo {
@@ -1339,7 +1498,7 @@ body.light-mode .lang-btn:hover {
 #ls-articles {
   position: absolute;
   left: 55%;
-  top: 60.5%;
+  top: 65.4%;
   transform: translate(-50%, -50%);
   width: 55%;
   pointer-events: none;
@@ -1384,7 +1543,193 @@ body.light-mode .lang-btn:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 4px 20px rgba(145, 9, 240, 0.4), 0 0 8px rgba(145, 9, 240, 0.25);
 }
+#ls-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(50px, 5vw, 90px);
+  color: var(--white);
+  line-height: 1.0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  align-items: flex-start;
+}
 
+#ls-title-festival {
+  color: var(--green);
+  font-style: italic;
+  line-height: 0.9;
+}
+
+#ls-title-collection {
+  color: var(--white);
+  line-height: 0.9;
+}
+
+/* Bouton hero eshop */
+#ls-btn-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(14px, 1.3vw, 18px);
+  letter-spacing: 0.06em;
+  color: var(--white);
+  text-decoration: none;  
+  margin-top: 8px;
+  border: 2px solid #cc44ff;
+  border-radius: var(--radius-lg);
+  padding: 10px 24px;
+  background: rgba(145, 9, 240, 0.3);
+  box-shadow:
+    0 0 20px rgba(145, 9, 240, 0.9),
+    0 0 50px rgba(145, 9, 240, 0.5),
+    0 0 80px rgba(145, 9, 240, 0.25),
+    inset 0 0 20px rgba(145, 9, 240, 0.2);
+  text-shadow: 0 0 16px rgba(220, 130, 255, 1);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#ls-btn-hero:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+@property --angle-ls-btn {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-ls-btn {
+  to { --angle-ls-btn: 360deg; }
+}
+
+#ls-btn-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 2px;
+  background: conic-gradient(from var(--angle-ls-btn), transparent 70%, #9109F0 82%, #cc44ff 87%, #ffffff 90%, #cc44ff 93%, #9109F0 97%, transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  animation: rotate-ls-btn 3s linear infinite;
+  animation-play-state: paused;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+#ls-btn-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 60px;
+  background: radial-gradient(ellipse, rgba(145, 9, 240, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+#ls-btn-hero:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+#ls-btn-hero:hover::after {
+  opacity: 1;
+}
+/* Bande ticker festivals */
+#ls-ticker-wrap {
+  display: flex;
+  align-items: center;
+  margin: 0 28px 28px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  height: 80px;
+}
+
+/* Label gauche fixe */
+#ls-ticker-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  height: 100%;
+}
+/* Zone scrollable */
+#ls-ticker-scroll {
+  overflow: hidden;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+/* La piste animée */
+#ls-ticker {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: ticker-scroll 35s linear infinite;
+  gap: 0;
+}
+
+/* Chaque festival */
+.ls-tick-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(13px, 2.5vw, 15px);   /* adaptatif */
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.ls-tick-item img {
+  display: none; 
+
+}
+
+.ls-tick-item small {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(8px, 1.5vw, 9px);
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Séparateur vertical */
+.ls-tick-sep {
+  display: inline-block;
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+#ls-ticker-wrap:hover #ls-ticker {
+  animation-play-state: paused;
+}
 /* =============================================
    PHOTOS SECTION (STAGIAIRES / AMBASSADEUR / COLLAB)
    ============================================= */
@@ -1425,9 +1770,9 @@ body.light-mode .lang-btn:hover {
   transform: scale(1.04);
 }
 
-.photo-card:nth-child(1) img { object-position: center 700%;  }
+.photo-card:nth-child(1) img { object-position: center 700%;margin-top: -20%;  }
 .photo-card:nth-child(2) img { object-position: center 0%; }
-.photo-card:nth-child(3) img { object-position: center 300%; }
+.photo-card:nth-child(3) img { object-position: center 300%; margin-top:-15%;}
 
 .photo-overlay {
   position: absolute;
@@ -1825,7 +2170,40 @@ body.light-mode .lang-btn:hover {
   background: #1a1a1a;
   color: #fff;
 }
+/* =============================================
+   MODALE QUESTION (#E300FF)
+   ============================================= */
+.ctx-e300 {
+  border: 1px solid rgba(227, 0, 255, 0.4);
+  box-shadow: 0 0 60px rgba(227, 0, 255, 0.15), 0 24px 60px rgba(0,0,0,0.6);
+}
 
+.ctx-e300::-webkit-scrollbar-thumb { background: #E300FF; }
+
+.badge-e300 {
+  background: rgba(227, 0, 255, 0.15);
+  border: 1px solid rgba(227, 0, 255, 0.4);
+}
+
+.ctx-e300 .modal-header p { color: #E300FF; }
+
+.ctx-e300 .modal-input:focus {
+  border-color: #E300FF;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ctx-e300 .modal-input:-webkit-autofill,
+.ctx-e300 .modal-input:-webkit-autofill:hover,
+.ctx-e300 .modal-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #0e0e0e inset;
+  border-color: #E300FF;
+}
+
+.btn-e300-submit {
+  background: #E300FF;
+  color: #fff;
+}
 /* =============================================
    SOCIAL SIDEBAR
    ============================================= */
@@ -1994,7 +2372,7 @@ body.light-mode .lang-btn:hover {
 
   .btn-app {
     left: 350px;
-    bottom: 70px;
+    bottom: 60px;
     font-size: 16px;
     padding: 11px 26px;
     width: 200px;
@@ -2037,7 +2415,7 @@ body.light-mode .lang-btn:hover {
 /* =============================================
    RESPONSIVE — DESKTOP STANDARD (1024px–1279px)
    ============================================= */
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (min-width: 1180px) and (max-width: 1279px) {
 
   .btn-app {
     left: 190px;
@@ -2071,93 +2449,179 @@ body.light-mode .lang-btn:hover {
 /* =============================================
    RESPONSIVE — TABLETTE PAYSAGE (768px–1023px)
    ============================================= */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1179px),
+       (min-width: 1024px) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
 
   /* ── INTRO ── */
+  #intro-image { display: none ; }
   #intro {
-    background-image: url('/img/app_tablette.png');
-    background-size: cover;
+    background-image: url('/img/app/app_tablette.png') ;
+    background-size: cover ;
     background-position: center;
   }
-  #intro-image { display: none; }
-  #navbar a:first-child { visibility: hidden; }
-  #navbar { padding: 16px 20px; }
-  .btn-app { left: 40px; bottom: 80px; width: 165px; font-size: 13px; padding: 9px 18px; }
+  #intro-fille {
+    right: 4%;
+    height: 100vh;
+  }
 
-  /* ── CCM ── */
-  #ccm-wrapper { flex-direction: column; padding: 40px 28px; gap: 32px; }
-  #ccm-container { width: 100%; }
-  #ccm-steps { gap: 16px; flex-wrap: wrap; justify-content: center; }
-  .step { max-width: 100px; }
-  .step-card { width: 140px; height: 200px; }
-  .step-card img { height: 80px; }
-  .step-arrow { display: none; }
 
-  /* ── IMPACT POSITIF ── */
-  #impact-positif { width: 100%; }
+  /* ── BOUTON ── */
+  .btn-app {
+    left: 240px ;
+    bottom: 90px ;
+    transform: rotate(-3deg) ;
+    width: 165px !important;
+    font-size: 13px !important;
+  }
+  .btn-app:hover {
+    transform: rotate(-3deg) translateY(-3px) !important;
+  }
 
-  /* ── IMPACT GRANDIT ── */
-  #impact-grandit { padding: 0 28px 40px; }
-  #ig-container { flex-direction: column; }
-  #ig-left { max-width: 100%; padding: 32px 28px 40px; }
-  #ig-form-card { width: calc(100% - 48px); margin: 0 24px 24px; }
-  #ig-globe { top: 40%; width: 80%; }
-  #ig-stats { flex-wrap: wrap; gap: 20px; padding: 20px 28px; justify-content: center; }
-  .ig-stat-icon { width: 60px; height: 60px; }
+  /* ── CCM — layout desktop conservé ── */
+  #ccm-wrapper {
+    flex-direction: row !important;
+    padding: 40px 28px !important;
+    gap: 20px !important;
+  }
+  #ccm-container { width: auto !important; }
+  #ccm-steps {
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+  }
+  .step-card { width: 130px !important; height: 200px !important; }
+  .step-card img { height: 80px !important; }
+  .step-arrow { display: flex !important; }
 
-  /* ── OÙ TROUVER ── */
-  #ot-wrapper { padding: 0 28px 40px; flex-direction: column; }
-  #ot-container { width: 100%; height: auto; padding: 28px; }
-  #ot-panneau img { width: 200px; height: 200px; }
-  #ot-festival { min-height: 320px; }
+  /* ── IMPACT POSITIF — côte à côte conservé ── */
+  #impact-positif {
+    flex: 1 !important;
+    width: auto !important;
+    align-self: stretch !important;
+  }
 
-  /* ── LIFESTYLE ── */
-  #lifestyle { padding: 0 28px 40px; }
-  #ls-container { flex-direction: column; padding: 28px; min-height: auto; }
-  #ls-left { max-width: 100%; }
-  #ls-articles { position: relative; left: auto; top: auto; transform: none; width: 100%; margin: 20px 0; }
-  #ls-articles img { width: 100%; height: auto; }
-  #ls-cta { margin-left: 0; }
-  #ls-btn { margin-top: 0; margin-left: 0; }
+  /* ── IMPACT GRANDIT — layout desktop conservé ── */
+  #impact-grandit { padding: 0 28px 40px !important; }
+  #ig-container {
+    flex-direction: row !important;
+    min-height: 320px !important;
+  }
+  #ig-left {
+    max-width: 340px !important;
+    padding: 40px 28px 100px !important;
+  }
+  #ig-globe {
+    position: absolute !important;
+    left: 50% !important;
+    top: 80% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 70% !important;
+    margin: 0 !important;
+  }
+  #ig-form-card {
+    width: 240px !important;
+    margin: 24px 16px 24px auto !important;
+    position: relative !important;
+  }
+  #ig-stats {
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    padding: 20px 28px !important;
+    justify-content: space-around !important;
+  }
+  .ig-stat-icon { width: 70px !important; height: 70px !important; }
+/* ── IG TABLEAU ── */
+  #ig-tableau {
+    position: absolute !important;
+    bottom: -20px !important;
+    right: 44px !important;
+    width: 240px !important;
+    height: 180px !important;
+    z-index: 9999 !important;
+    margin-top: 0 !important;
+  }
+  /* ── OÙ TROUVER — côte à côte conservé ── */
+  #ot-wrapper {
+    flex-direction: row !important;
+    padding: 0 28px 40px !important;
+    align-items: stretch !important;
+  }
+  #ot-container {
+    height: 380px !important;
+    padding: 28px !important;
+    width: auto !important;
+  }
+  #ot-panneau img { width: 220px !important; height: 220px !important; }
+  #ot-festival { min-height: 320px !important; }
 
-  /* ── PHOTOS ── */
-  #photos-section { padding: 0 28px 40px; }
-  #photos-container { flex-direction: column; }
-  .photo-card { height: 300px; }
+  /* ── LIFESTYLE — layout desktop conservé ── */
+  #lifestyle { padding: 0 28px 40px !important; }
+  #ls-top {
+    min-height: 380px !important;
+    position: relative !important;
+  }
+  #ls-left {
+    max-width: 280px !important;
+    z-index: 1 !important;
+  }
+  #ls-articles {
+    position: absolute !important;
+    left: 55% !important;
+    top: 65% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 55% !important;
+    margin: 0 !important;
+  }
+  #ls-articles img {
+    width: 550px !important;
+    height: 550px !important;
+  }
+
+  /* ── PHOTOS — côte à côte conservé ── */
+  #photos-section { padding: 0 28px 40px !important; }
+  #photos-container { flex-direction: row !important; }
+  .photo-card { height: 500px !important; }
 
   /* ── SOCIAL SIDEBAR ── */
-  #social-sidebar { right: 8px; gap: 8px; }
-  #social-sidebar .social-btn { width: 60px; height: 60px; }
-  #social-sidebar .social-btn img { width: 60px; height: 60px; }
+  #social-sidebar { right: 8px !important; }
+  #social-sidebar .social-btn { width: 65px !important; height: 65px !important; }
+  #social-sidebar .social-btn img { width: 65px !important; height: 65px !important; }
 
   /* ── FOOTER ── */
-  #footer { padding: 40px 28px 20px; }
-  #footer-container { flex-direction: column; gap: 36px; }
-  #footer-links { flex-wrap: wrap; gap: 32px; }
-  #footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
-  #footer-legal { gap: 16px; }
+  #footer { padding: 40px 28px 20px !important; }
+  #footer-container { flex-direction: row !important; gap: 40px !important; }
+  #footer-links { flex-wrap: nowrap !important; gap: 32px !important; }
+  #footer-bottom { flex-direction: row !important; }
 }
-
 /* =============================================
    RESPONSIVE — TABLETTE PORTRAIT (600px–767px)
    ============================================= */
-@media (min-width: 600px) and (max-width: 767px) {
-
-  /* ── INTRO ── */
-  #intro {
-    background-image: url('/img/app-(max-width-767px).png');
-    background-size: cover;
-    background-position: center;
-    height: 100svh;
+@media (min-width: 600px) and (max-width: 767px),
+       (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+ #intro-image {
+    display: none !important;
   }
-  #intro-image { display: none; }
-  #intro-fille { display: none; }
-  #green-banner { display: none; }
-  #green-banner-top { display: none; }
-  #navbar a:first-child { visibility: hidden; }
-  #navbar { padding: 16px 20px; }
-  .btn-app { left: 32px; bottom: 90px; width: 155px; font-size: 12.5px; padding: 8px 16px; }
+    #intro-fille { display: none; }
 
+  #intro {
+  background-image: url('/img/app/app-(max-width-767px).png') ;
+  background-size: 90% !important; 
+  background-position: 40% !important;
+
+  background-repeat: no-repeat !important;
+  background-color: #000 !important;
+  }
+
+  .btn-app {
+    left: 80px !important;
+    bottom: 75px !important;
+    transform: rotate(0deg) !important;
+    width: 155px;
+    font-size: 12.5px;
+  }
+
+  .btn-app:hover {
+    transform: rotate(0deg) translateY(-3px) !important;
+  }
   /* ── CCM ── */
   #ccm-wrapper { flex-direction: column; padding: 32px 20px; gap: 28px; }
   #ccm-container { width: 100%; }
@@ -2171,7 +2635,19 @@ body.light-mode .lang-btn:hover {
 
   /* ── IMPACT POSITIF ── */
   #impact-positif { width: 100%; }
-  #ip-mains { width: 45%; }
+  #ip-mains { width: 100%; bottom: 10%; }
+    #impact-positif {
+    gap: 5px ;
+  }
+
+  #ip-bottom {
+    margin-top: 16px ;
+  }
+
+ #ip-desc {
+    margin-top: 0;
+  }
+
 
   /* ── IMPACT GRANDIT ── */
   #impact-grandit { padding: 0 20px 32px; }
@@ -2201,7 +2677,15 @@ body.light-mode .lang-btn:hover {
   #ls-cta { margin-left: 0; }
   #ls-btn { margin-top: 0; margin-left: 0; }
   .ls-badge-icon { width: 70px; height: 70px; }
-
+#ls-top { min-height: auto; position: relative; }
+  #ls-articles {
+    position: relative;
+    left: auto; top: auto;
+    transform: none;
+    width: 100%;
+  }
+  #ig-globe { position: relative; top: auto; left: auto; transform: none; width: 90%; margin: 0 auto; }
+  #ot-container { height: auto; }
   /* ── PHOTOS ── */
   #photos-section { padding: 0 20px 32px; }
   #photos-container { flex-direction: column; }
@@ -2226,7 +2710,7 @@ body.light-mode .lang-btn:hover {
 
   /* ── INTRO ── */
   #intro {
-    background-image: url('/img/app-telephone.png');
+    background-image: url('/img/app/app-telephone.png');
     background-size: cover;
     background-position: center 10px;
     height: 120svh;
@@ -2252,11 +2736,18 @@ body.light-mode .lang-btn:hover {
   white-space: nowrap;
   padding: 10px 18px;
 }
-  .btn-app { left: 40%; transform: translateX(-50%) rotate(0.5deg); bottom: -80px; width: 160px; font-size: 13px; padding: 10px 20px; }
-  .btn-app:hover {
-    transform: rotate(0deg) translateY(0px);  
+  .btn-app { 
+    left: 40%; 
+    transform: translateX(-70%) rotate(-0.5deg); 
+    bottom: -110px; 
+    width: 160px; 
+    font-size: 13px; 
+    padding: 10px 20px; 
   }
 
+  .btn-app:hover {
+    transform: translateX(-70%) rotate(-0.5deg);
+  }
   /* ── CCM ── */
   #ccm-wrapper { flex-direction: column; padding: 28px 16px; gap: 24px; }
   #ccm-container { width: 100%; padding: 20px; }
@@ -2271,17 +2762,17 @@ body.light-mode .lang-btn:hover {
 
   /* ── IMPACT POSITIF ── */
 #impact-positif {
-    min-height: 500px;        /* allonge le container */
+    min-height: 500px;        
     padding-bottom: 40px;
   }
 
   .ip-stat-icon {
-    width: 80px;              /* agrandit les images (plante + recharge) */
+    width: 80px;             
     height: 80px;
   }
 
   .ip-number {
-    font-size: clamp(28px, 7vw, 40px);  /* agrandit les chiffres aussi */
+    font-size: clamp(28px, 7vw, 40px);  
   }
 
   #ip-bottom {
@@ -2291,13 +2782,13 @@ body.light-mode .lang-btn:hover {
 
   #ip-desc {
     font-size: 12px;
-    margin-top: -20px;         /* descend encore le texte */
+    margin-top: -20px;      
   }
 
   #ip-mains {
-    width: 50%;
-    right: -5px;
-    bottom: -30px;
+    width: 100%;
+    right: -10px;
+    bottom: 30px;
   }
 
   #ls-title { font-size: clamp(30px, 9vw, 44px); }
@@ -2314,11 +2805,11 @@ body.light-mode .lang-btn:hover {
   .ig-stat-icon { width: 48px; height: 48px; }
 
   #ig-tableau {
-  position: absolute;        /* plus d'absolute */
+  position: absolute;
   bottom: auto;
   right: 8.5%;
-  width: 82%;               /* prend toute la largeur du parent */
-  margin-top: -20px;          /* juste en dessous du bouton */
+  width: 82%;            
+  margin-top: -20px;          
   height: 180px;
   background: #111;
   border: 1px solid #2e2e2e;
@@ -2332,7 +2823,7 @@ body.light-mode .lang-btn:hover {
   #ot-wrapper { padding: 0 16px 28px; flex-direction: column; }
   #ot-container { width: 100%; height: auto; padding: 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
   #ot-panneau { max-width: 100%; align-self: center; }
-  #ot-panneau img { width: 140px; height: 140px; }
+  #ot-panneau img { width: 170px; height: 170px;margin-left: 40%; margin-top: -50%;}
   #ot-festival { min-height: 260px; }
   #ot-festival-content { padding: 20px; }
   #ot-festival-content h2 { font-size: clamp(24px, 7vw, 36px); }
@@ -2351,6 +2842,45 @@ body.light-mode .lang-btn:hover {
   #ls-logo {
   width: 40%;
 }
+/* ── TICKER ── */
+#ls-ticker-wrap {
+  margin: 0 0 20px;        
+  border-radius: 0;
+  height: 70px;
+}
+
+#ls-ticker-label {
+  padding: 0 10px;
+  gap: 6px;
+}
+
+#ls-ticker-label img {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+#ls-ticker-label > div div:first-child {
+  font-size: 9px;
+}
+
+#ls-ticker-label > div div:last-child {
+  font-size: 11px;
+}
+
+.ls-tick-item {
+  padding: 0 14px;
+  font-size: 14px;          
+
+}
+
+.ls-tick-item small {
+  font-size: 8px;
+}
+
+#ls-ticker {
+  animation-duration: 25s; 
+}
+/*badges*/
   #ls-badges { gap: 12px; }
   .ls-badge-icon { width: 60px; height: 60px; }
   .ls-badge span { margin-top: -20px; }
@@ -2383,6 +2913,7 @@ body.light-mode .lang-btn:hover {
     height: auto;
     display: block;
     object-fit: contain;
+    margin-bottom: 8%;
   }
   .photo-card { height: 260px; }
 
@@ -2400,7 +2931,8 @@ body.light-mode .lang-btn:hover {
   #footer-links { flex-direction: column; gap: 20px; }
   #footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
   #footer-legal { flex-wrap: wrap; gap: 14px; }
-}
+
+  }
 
 /* =============================================
    TRÈS PETIT MOBILE (< 380px)
@@ -2408,7 +2940,7 @@ body.light-mode .lang-btn:hover {
 @media (max-width: 379px) {
 
  #intro {
-  background-image: url('/img/app-telephone.png');
+  background-image: url('/img/app/app-telephone.png');
   background-size: cover;
   background-position: center -20px;  
   background-color: #000000;

@@ -6,135 +6,113 @@
 const FESTIVALS = [
   {
     id: 1,
-    name: "Hellfest",
-    city: "Clisson",
-    lat: 47.0833, lng: -1.2833,
-    dates: "20 – 23 Juin 2026",
-    address: "Château de la Salle, 44190 Clisson",
-    genre: "Metal / Rock",
-    bornes: "8 bornes • 192 batteries",
-    emoji: "/img/fes1.png"
+    name: "Dystopia Festival Rennes",
+    city: "Bruz / Rennes",
+    lat: 47.9869, lng: -1.7465,
+    dates: "13 – 14 Février 2026",
+    address: "Parc Expo de Rennes, Bruz",
+    genre: "Electro / Techno",
+    bornes: "6 bornes • 144 batteries",
+    emoji: "/img/festival/fes1.png"
   },
   {
     id: 2,
-    name: "Les Vieilles Charrues",
-    city: "Carhaix",
-    lat: 48.2763, lng: -3.5736,
-    dates: "16 – 19 Juillet 2026",
-    address: "Kerampuilh, 29270 Carhaix-Plouguer",
-    genre: "Généraliste / Pop / Rock",
-    bornes: "12 bornes • 288 batteries",
-    emoji: "/img/fes2.png"
+    name: "Odizia Festival",
+    city: "Aix-en-Provence",
+    lat: 43.5297, lng: 5.4474,
+    dates: "13 – 14 Mars 2026",
+    address: "6MIC, Aix-en-Provence",
+    genre: "Electro / Dance",
+    bornes: "5 bornes • 120 batteries",
+    emoji: "/img/festival/fes2.png"
   },
   {
     id: 3,
-    name: "Rock en Seine",
-    city: "Saint-Cloud",
-    lat: 48.8430, lng: 2.2090,
-    dates: "28 – 30 Août 2026",
-    address: "Domaine National de Saint-Cloud, 92210",
-    genre: "Rock / Indie / Electro",
-    bornes: "10 bornes • 240 batteries",
-    emoji: "/img/fes3.png"
+    name: "Millésime Festival",
+    city: "La Réole",
+    lat: 44.5756, lng: -0.0369,
+    dates: "22 – 23 Mai 2026",
+    address: "Hippodrome, La Réole, 33190",
+    genre: "Pop / Rock / Variété",
+    bornes: "4 bornes • 96 batteries",
+    emoji: "/img/festival/fes3.png"
   },
   {
     id: 4,
-    name: "Solidays",
-    city: "Paris",
-    lat: 48.8566, lng: 2.3522,
-    dates: "26 – 28 Juin 2026",
-    address: "Hippodrome de Longchamp, 75016 Paris",
-    genre: "Éclectique / Solidaire",
+    name: "Le Jardin du Michel",
+    city: "Dommartin-lès-Toul",
+    lat: 48.6686, lng: 5.8897,
+    dates: "22 – 24 Mai 2026",
+    address: "Allée de l'Île des Sables, Dommartin-lès-Toul",
+    genre: "Rock / Indie / Folk",
     bornes: "6 bornes • 144 batteries",
-    emoji: "/img/fes4.png"
+    emoji: "/img/festival/fes4.png"
   },
   {
     id: 5,
-    name: "Festival de Nîmes",
-    city: "Nîmes",
-    lat: 43.8367, lng: 4.3601,
-    dates: "5 – 25 Juillet 2026",
-    address: "Arènes de Nîmes, 30000 Nîmes",
-    genre: "Pop / Rock / Variété",
-    bornes: "4 bornes • 96 batteries",
-    emoji: "/img/fes5.png"
+    name: "Evasion Festival",
+    city: "Vaulx-en-Velin",
+    lat: 45.8077, lng: 4.9522,
+    dates: "27 – 28 Juin 2026",
+    address: "Plage de l'Atol, Grand Parc Miribel Jonage, Chemin de la Bletta",
+    genre: "Electro / Hip-Hop",
+    bornes: "6 bornes • 144 batteries",
+    emoji: "/img/festival/fes5.png"
   },
   {
     id: 6,
-    name: "Dour Festival",
-    city: "Bordeaux",
-    lat: 44.8378, lng: -0.5792,
-    dates: "10 – 13 Juillet 2026",
-    address: "Parc des Expositions, 33300 Bordeaux",
-    genre: "Electro / Techno / Hip-Hop",
-    bornes: "6 bornes • 144 batteries",
-    emoji: "/img/fes6.png"
+    name: "Solar Festival",
+    city: "Le Crès / Montpellier",
+    lat: 43.6416, lng: 3.9360,
+    dates: "4 Juillet 2026",
+    address: "Lac du Crès \"Jean-Marie Rouché\", 34920 Le Crès",
+    genre: "Electro / Techno",
+    bornes: "5 bornes • 120 batteries",
+    emoji: "/img/festival/fes6.png"
   },
   {
     id: 7,
-    name: "Festival de Cannes",
-    city: "Cannes",
-    lat: 43.5528, lng: 7.0174,
-    dates: "13 – 24 Mai 2026",
-    address: "Palais des Festivals, 06400 Cannes",
-    genre: "Cinéma / Culture",
+    name: "Festival Musicalarue",
+    city: "Luxey",
+    lat: 44.2833, lng: -0.6167,
+    dates: "31 Juillet – 2 Août 2026",
+    address: "Luxey, Landes, 40430",
+    genre: "Musiques du Monde / Folk",
     bornes: "5 bornes • 120 batteries",
-    emoji: "/img/fes7.png"
+    emoji: "/img/festival/fes7.png"
   },
   {
     id: 8,
-    name: "Main Square Festival",
-    city: "Arras",
-    lat: 50.2924, lng: 2.7771,
-    dates: "3 – 5 Juillet 2026",
-    address: "Citadelle d'Arras, 62000 Arras",
-    genre: "Rock / Pop / Electro",
-    bornes: "7 bornes • 168 batteries",
-    emoji: "/img/fes8.png"
+    name: "Fort Décibel Festival",
+    city: "Cussac-Fort-Médoc",
+    lat: 45.1167, lng: -0.7167,
+    dates: "7 – 8 Août 2026",
+    address: "Fort Médoc, Cussac-Fort-Médoc",
+    genre: "Metal / Rock",
+    bornes: "5 bornes • 120 batteries",
+    emoji: "/img/festival/fes8.png"
   },
   {
     id: 9,
-    name: "Fiesta des Suds",
-    city: "Marseille",
-    lat: 43.2965, lng: 5.3698,
-    dates: "17 – 19 Octobre 2026",
-    address: "Dock des Suds, 13002 Marseille",
-    genre: "Monde / Reggae / Afro",
+    name: "Les Perséides Festival",
+    city: "Étoile-sur-Rhône",
+    lat: 44.8583, lng: 4.8722,
+    dates: "14 – 15 Août 2026",
+    address: "Domaine des Clévos, 390 route de Marmans, Étoile-sur-Rhône",
+    genre: "Rock / Pop / Indie",
     bornes: "4 bornes • 96 batteries",
-    emoji: "/img/fes9.png"
+    emoji: "/img/festival/fes9.png"
   },
   {
     id: 10,
-    name: "Transmusicales",
-    city: "Rennes",
-    lat: 48.1173, lng: -1.6778,
-    dates: "3 – 7 Décembre 2026",
-    address: "Le Liberté & Parc Expo, 35000 Rennes",
-    genre: "Découverte / Indie / World",
-    bornes: "5 bornes • 120 batteries",
-    emoji: "/img/fes10.png"
-  },
-  {
-    id: 11,
-    name: "Festival Interceltique",
-    city: "Lorient",
-    lat: 47.7482, lng: -3.3673,
-    dates: "1 – 10 Août 2026",
-    address: "Centre-ville, 56100 Lorient",
-    genre: "Musiques Celtiques",
-    bornes: "6 bornes • 144 batteries",
-    emoji: "/img/fes11.png"
-  },
-  {
-    id: 12,
-    name: "Musilac",
-    city: "Aix-les-Bains",
-    lat: 45.6887, lng: 5.9115,
-    dates: "9 – 12 Juillet 2026",
-    address: "Esplanade du Lac, 73100 Aix-les-Bains",
-    genre: "Pop / Rock / Electro",
-    bornes: "5 bornes • 120 batteries",
-    emoji: "/img/fes12.png"
+    name: "Lezart Festival",
+    city: "Vicq-sur-Gartempe",
+    lat: 46.6667, lng: 0.8833,
+    dates: "21 – 23 Août 2026",
+    address: "Vicq-sur-Gartempe, 86260",
+    genre: "Rock / Alternatif",
+    bornes: "4 bornes • 96 batteries",
+    emoji: "/img/festival/fes10.png"
   }
 ];
 
@@ -162,7 +140,7 @@ function createIcon(active = false) {
   return L.divIcon({
     className: '',
     html: `<div class="loc-marker-wrap">
-      <img src="/img/loc.png" class="loc-marker${active ? ' loc-marker-active' : ''}"
+      <img src="/img/festival/loc.png" class="loc-marker${active ? ' loc-marker-active' : ''}"
            onerror="this.style.display='none';this.parentNode.innerHTML='<div style=\\'width:32px;height:32px;background:#ADFF00;border-radius:50%;border:2px solid #fff;box-shadow:0 0 12px rgba(173,255,0,0.8);display:flex;align-items:center;justify-content:center;font-size:14px;\\'>📍</div>'">
     </div>`,
     iconSize: [36, 36],
@@ -204,7 +182,6 @@ function openPopup(id) {
   const f = FESTIVALS.find(x => x.id === id);
   if (!f) return;
 
-  // Réinitialiser l'état précédent
   if (activeId && markers[activeId]) {
     markers[activeId].setIcon(createIcon(false));
   }
@@ -222,7 +199,6 @@ function openPopup(id) {
     listItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-  // Remplir le popup
   document.getElementById('popup-name').textContent    = f.name;
   document.getElementById('popup-city').textContent    = f.city + ' — ' + f.dates;
   document.getElementById('popup-dates').textContent   = f.dates;
@@ -246,7 +222,6 @@ function closePopup() {
   }
 }
 
-// Fermer avec Échap
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closePopup();
 });

@@ -346,7 +346,147 @@ const DATA = {
     },
   }
 };
+/* ─── MODALE "QUESTION" — traduction dynamique sur toutes les pages ─── */
+  function getModalLang() {
+    return window.currentLang || localStorage.getItem('pope-lang') || 'fr';
+  }
 
+  if (typeof window.openModal !== 'function') {
+    window.openModal = function (name) {
+      const modal = document.getElementById('modal-' + name);
+      if (modal) {
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    };
+  }
+  if (typeof window.closeModal !== 'function') {
+    window.closeModal = function (name) {
+      const modal = document.getElementById('modal-' + name);
+      if (modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    };
+  }
+
+  const STRINGS_Q = {
+    fr: { title: 'POSER UNE QUESTION', sub: 'On vous répond rapidement', desc: 'Une question spécifique ? Laissez-nous vos coordonnées et votre message.',
+          fn: 'Prénom', ln: 'Nom', em: 'Email', ph: 'Téléphone (optionnel)', msg: 'Votre question...', send: 'ENVOYER MA QUESTION ✦',
+          sentMsg: '✓ Message envoyé !', errMsg: 'Erreur, veuillez réessayer.' },
+    en: { title: 'ASK A QUESTION', sub: 'We reply quickly', desc: 'A specific question? Leave us your details and your message.',
+          fn: 'First name', ln: 'Last name', em: 'Email', ph: 'Phone (optional)', msg: 'Your question...', send: 'SEND MY QUESTION ✦',
+          sentMsg: '✓ Message sent!', errMsg: 'Error, please try again.' }
+  };
+
+  let qModal = document.getElementById('modal-question');
+  const modalAlreadyExisted = !!qModal;
+
+  if (!qModal) {
+    // Pages où la modale n'existe pas encore en HTML : on la construit.
+    const initial = STRINGS_Q[getModalLang()] || STRINGS_Q.fr;
+    const wrap = document.createElement('div');
+    wrap.innerHTML = `
+      <div class="contact-modal" id="modal-question">
+        <div class="modal-overlay"></div>
+        <div class="modal-window ctx-e300">
+          <button class="modal-close">✕</button>
+          <div class="modal-header">
+            <div class="modal-badge badge-e300"><img src="/img/chatbot.png" alt="Question"></div>
+            <div><h2>${initial.title}</h2><p>${initial.sub}</p></div>
+          </div>
+          <p class="modal-desc">${initial.desc}</p>
+          <div class="modal-form">
+            <div class="modal-row">
+              <input type="text" class="modal-input" placeholder="${initial.fn}">
+              <input type="text" class="modal-input" placeholder="${initial.ln}">
+            </div>
+            <input type="email" class="modal-input" placeholder="${initial.em}">
+            <input type="tel" class="modal-input" placeholder="${initial.ph}">
+            <textarea class="modal-input modal-textarea" placeholder="${initial.msg}"></textarea>
+            <button class="modal-submit btn-e300-submit">${initial.send}</button>
+          </div>
+        </div>
+      </div>`;
+    qModal = wrap.firstElementChild;
+    document.body.appendChild(qModal);
+  }
+
+  // Références récupérées qu'elle vienne d'être créée OU qu'elle existe déjà
+  // en HTML (cas de la page utilisateurs).
+  const h2El      = qModal.querySelector('.modal-header h2');
+  const subEl     = qModal.querySelector('.modal-header p');
+  const descEl    = qModal.querySelector('.modal-desc');
+  const rowInputs = qModal.querySelectorAll('.modal-row .modal-input');
+  const fnInput   = rowInputs[0];
+  const lnInput   = rowInputs[1];
+  const emInput   = qModal.querySelector('input[type="email"]');
+  const phInput   = qModal.querySelector('input[type="tel"]');
+  const msgInput  = qModal.querySelector('textarea');
+  const sendBtn   = qModal.querySelector('.modal-submit');
+
+  function refreshQuestionModalLang() {
+    const L = STRINGS_Q[getModalLang()] || STRINGS_Q.fr;
+    if (h2El)     h2El.textContent     = L.title;
+    if (subEl)    subEl.textContent    = L.sub;
+    if (descEl)   descEl.textContent   = L.desc;
+    if (fnInput)  fnInput.placeholder  = L.fn;
+    if (lnInput)  lnInput.placeholder  = L.ln;
+    if (emInput)  emInput.placeholder  = L.em;
+    if (phInput)  phInput.placeholder  = L.ph;
+    if (msgInput) msgInput.placeholder = L.msg;
+    if (sendBtn)  sendBtn.textContent  = L.send;
+  }
+
+  // Rafraîchit la langue dès que la modale devient "open", peu importe
+  // quel code (le nôtre ou app.js) a déclenché l'ouverture.
+  new MutationObserver(() => {
+    if (qModal.classList.contains('open')) refreshQuestionModalLang();
+  }).observe(qModal, { attributes: true, attributeFilter: ['class'] });
+
+  if (!modalAlreadyExisted) {
+    // On n'attache ce comportement que si on a créé la modale nous-mêmes :
+    // sur la page utilisateurs, app.js gère déjà fermeture/soumission.
+    qModal.querySelector('.modal-overlay').addEventListener('click', () => closeModal('question'));
+    qModal.querySelector('.modal-close').addEventListener('click', () => closeModal('question'));
+
+    qModal.querySelector('.modal-submit').addEventListener('click', async function (e) {
+      e.preventDefault();
+      const L = STRINGS_Q[getModalLang()] || STRINGS_Q.fr;
+      const data = new FormData();
+      data.append('_subject', 'POP-E — question');
+      data.append('formulaire', 'question');
+      qModal.querySelectorAll('input, textarea').forEach(el => {
+        if (el.value.trim()) data.append(el.placeholder || el.type, el.value.trim());
+      });
+
+      this.disabled = true;
+      this.textContent = '...';
+      try {
+        const res = await fetch('https://formspree.io/f/mqeoldyp', {
+          method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          closeModal('question');
+          const toast = document.createElement('div');
+          toast.textContent = L.sentMsg;
+          toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#ADFF00;color:#000;padding:12px 24px;border-radius:30px;font-family:Barlow,sans-serif;font-weight:700;font-size:14px;z-index:99999;';
+          document.body.appendChild(toast);
+          setTimeout(() => toast.remove(), 3000);
+        } else {
+          alert(L.errMsg);
+        }
+      } catch (err) {
+        alert(L.errMsg);
+      }
+      this.disabled = false;
+      this.textContent = L.send;
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal('question');
+    });
+  }
   /* ─── INJECTION HTML ────────────────────────────────────────────── */
 
   const html = `
@@ -523,6 +663,44 @@ const DATA = {
       return;
     }
 
+    if (item.id === 4) {
+      addTyping();
+      await new Promise(r => setTimeout(r, 700));
+      removeTyping();
+
+      const lang = window.currentLang || 'fr';
+      const msg = lang === 'fr'
+        ? 'Remplissez ce formulaire, notre équipe vous répond rapidement !'
+        : 'Fill in this form, our team will get back to you quickly!';
+      const btnLabel = lang === 'fr' ? 'Nous contacter' : 'Contact us';
+
+      await addBubble(msg, 'bot');
+
+      const wrap = document.createElement('div');
+      wrap.className = 'cb-choices menu-ctx-4';
+      const b = document.createElement('div');
+      b.className = 'cb-choice';
+      b.innerHTML = `<span>${btnLabel}</span>`;
+      b.addEventListener('click', e => {
+      e.stopPropagation();
+      closeChat();
+      if (typeof openModal === 'function') {
+        openModal('question');
+      } else {
+        const modal = document.getElementById('modal-question');
+        if (modal) modal.classList.add('open');
+      }
+    });
+      wrap.appendChild(b);
+      body.appendChild(wrap);
+
+      await new Promise(r => setTimeout(r, 300));
+      addBackButton(t().back_menu, () => {
+        clearChoices();
+        welcome();
+      });
+      return;
+    }
     addTyping();
     await new Promise(r => setTimeout(r, 800));
     removeTyping();
@@ -690,7 +868,8 @@ const DATA = {
 
   function openChat() {
     isOpen = true;
-    if (!body.hasChildNodes()) welcome();
+    body.innerHTML = '';
+    welcome();
     win.classList.add('open');
     setTimeout(() => {
       win.style.height = win.offsetHeight + 'px';

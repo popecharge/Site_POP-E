@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>POP-E — Festivals</title>
+  <link rel="icon" type="image/png" href="/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
@@ -19,7 +20,6 @@
     <a href="/"><img src="/img/logo2.png" alt="POP-E Logo"></a>
     <div id="navbar-right">
       <a href="../app.html" class="nav-link nav-back" data-i18n="nav_back">← Retour</a>
-      <a href="/" class="nav-link" data-i18n="nav_home">Accueil</a>
       <a href="#" class="nav-link active" data-i18n="nav_festivals">Festivals</a>
 
       <!-- LANG SWITCHER -->
@@ -79,21 +79,21 @@
     <div id="popup-city">—</div>
     <div id="popup-divider"></div>
     <div class="popup-row">
-      <div class="popup-icon"><img src="/img/calendrier.png" alt="Calendrier"></div>
+      <div class="popup-icon"><img src="/img/festival/calendrier.png" alt="Calendrier"></div>
       <div>
         <div class="popup-label" data-i18n="popup_dates_label">Dates</div>
         <div class="popup-value" id="popup-dates">—</div>
       </div>
     </div>
     <div class="popup-row">
-      <div class="popup-icon2"><img src="/img/loc2.png" alt="Localisation"></div>
+      <div class="popup-icon2"><img src="/img/festival/loc2.png" alt="Localisation"></div>
       <div>
         <div class="popup-label" data-i18n="popup_address_label">Adresse</div>
         <div class="popup-value" id="popup-address">—</div>
       </div>
     </div>
     <div class="popup-row">
-      <div class="popup-icon2"><img src="/img/genre.png" alt="Genre"></div>
+      <div class="popup-icon2"><img src="/img/festival/genre.png" alt="Genre"></div>
       <div>
         <div class="popup-label" data-i18n="popup_genre_label">Genre</div>
         <div class="popup-value" id="popup-genre">—</div>
@@ -106,7 +106,6 @@
         <div class="popup-value" id="popup-bornes">—</div>
       </div>
     </div>
-    <button id="popup-cta" data-i18n="popup_cta">EN SAVOIR PLUS →</button>
   </div>
 
   <script src="/js/festivals.js"></script>
