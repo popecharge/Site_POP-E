@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POP-E — Salons, Parcs d'exposition & Événements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/chatbot.css">
+  <link rel="stylesheet" href="/css/salon.css">
+</head>
+
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header class="site-header">
+        <a href="/?skipIntro=true" class="logo-link">
+            <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
+        </a>
+
+        <div class="header-right">
+            <a href="/pro/pro.html" class="nav-link nav-back" data-fr="← Retour" data-en="← Back">← Retour</a>
+            <div class="lang-switcher">
+                <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="lang-flag" id="currentFlag">🇫🇷</span>
+                    <span class="lang-code" id="currentCode">FR</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown" role="listbox"></div>
+            </div>
+        </div>
+    </header>
+
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 1 · HERO
+  ═══════════════════════════════════════ -->
+  <section class="fst-hero salon-hero">
+    <img src="/img/b2b-salon/background-haut.png"
+         alt="Salon d'exposition connecté avec borne POP-E"
+         class="fst-hero-bg" loading="eager">
+    <div class="fst-hero-overlay"></div>
+
+    <div class="fst-hero-content">
+
+      <!-- Left : texte -->
+      <div class="fst-hero-left">
+        <span class="s-cat-tag">Salons, Parcs d'exposition &amp; Événements</span>
+
+        <h1 class="fst-hero-title">
+          Transformez<br>
+          votre salon en une<br>
+          <span class="accent-em">expérience<br>connectée.</span>
+        </h1>
+
+        <p class="fst-hero-desc">
+          Offrez à vos visiteurs un service premium de recharge et créez des espaces d'échange,
+          de networking et de visibilité au cœur de votre événement.
+        </p>
+
+        <div class="s-cta-group">
+          <a href="/pro/devis-salon.html" class="fst-cta">
+            DEMANDER UN DEVIS
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="3"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 2 · FEATURES STRIP
+  ═══════════════════════════════════════ -->
+  <section class="s-feat-strip">
+    <div class="s-feat-grid">
+
+      <!-- RECHARGE -->
+      <div class="s-feat-item">
+        <div class="s-feat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <div>
+          <div class="s-feat-title">RECHARGE</div>
+          <p class="s-feat-desc">Partout, tout le temps</p>
+        </div>
+      </div>
+
+      <!-- CONNECTIVITÉ -->
+      <div class="s-feat-item">
+        <div class="s-feat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"/>
+            <circle cx="6" cy="12" r="3"/>
+            <circle cx="18" cy="19" r="3"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+          </svg>
+        </div>
+        <div>
+          <div class="s-feat-title">CONNECTIVITÉ</div>
+          <p class="s-feat-desc">Restez connecté simplement</p>
+        </div>
+      </div>
+
+      <!-- VISIBILITÉ -->
+      <div class="s-feat-item">
+        <div class="s-feat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <div class="s-feat-title">VISIBILITÉ</div>
+          <p class="s-feat-desc">Votre message au bon endroit</p>
+        </div>
+      </div>
+
+      <!-- NETWORKING -->
+      <div class="s-feat-item">
+        <div class="s-feat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div>
+          <div class="s-feat-title">NETWORKING</div>
+          <p class="s-feat-desc">Favorisez les échanges</p>
+        </div>
+      </div>
+
+      <!-- PERFORMANCE -->
+      <div class="s-feat-item">
+        <div class="s-feat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6"  y1="20" x2="6"  y2="14"/>
+            <line x1="2"  y1="20" x2="22" y2="20"/>
+          </svg>
+        </div>
+        <div>
+          <div class="s-feat-title">PERFORMANCE</div>
+          <p class="s-feat-desc">Un service apprécié de tous</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 3 · STATS BAND (carte blanche)
+  ═══════════════════════════════════════ -->
+  <section class="s-stats">
+    <div class="s-stats-inner">
+
+      <!-- 48 Batteries -->
+      <div class="s-stat">
+        <div class="s-stat-ico">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
+            <line x1="23" y1="13" x2="23" y2="11"/>
+            <line x1="8" y1="12" x2="12" y2="12"/>
+            <line x1="10" y1="10" x2="10" y2="14"/>
+          </svg>
+        </div>
+        <div class="s-stat-body">
+          <span class="s-stat-num">48</span>
+          <span class="s-stat-label">Batteries disponibles<br>par borne</span>
+        </div>
+      </div>
+
+      <!-- 3 Connecteurs -->
+      <div class="s-stat">
+        <div class="s-stat-ico">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22v-4"/>
+            <rect x="8" y="14" width="8" height="4" rx="1"/>
+            <path d="M9 14V4M15 14V4"/>
+            <line x1="7" y1="6" x2="9" y2="6"/>
+            <line x1="15" y1="6" x2="17" y2="6"/>
+            <line x1="7" y1="9" x2="9" y2="9"/>
+            <line x1="15" y1="9" x2="17" y2="9"/>
+          </svg>
+        </div>
+        <div class="s-stat-body">
+          <span class="s-stat-num">3</span>
+          <span class="s-stat-label">Connecteurs intégrés<br>(USB-C, Lightning, Micro-USB)</span>
+        </div>
+      </div>
+
+      <!-- 43" Écran -->
+      <div class="s-stat">
+        <div class="s-stat-ico">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div class="s-stat-body">
+          <span class="s-stat-num">43″</span>
+          <span class="s-stat-label">Écran haute luminosité<br>pour vos contenus</span>
+        </div>
+      </div>
+
+      <!-- 20 min -->
+      <div class="s-stat">
+        <div class="s-stat-ico">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="s-stat-body">
+          <span class="s-stat-num">20 min</span>
+          <span class="s-stat-label">Installation<br>seulement</span>
+        </div>
+      </div>
+
+      <!-- 100% Autonome -->
+      <div class="s-stat">
+        <div class="s-stat-ico">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="s-stat-body">
+          <span class="s-stat-num">100%</span>
+          <span class="s-stat-label">Autonome<br>équipés POP-E</span>
+        </div>
+      </div>
+
+      <!-- ∞ Possibilités -->
+      <div class="s-stat">
+        <div class="s-stat-ico">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+               fill="none" stroke="#080A06" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 12c-2-2.5-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.5 6-4z"/>
+            <path d="M12 12c2 2.5 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.5-6 4z"/>
+          </svg>
+        </div>
+        <div class="s-stat-body">
+          <span class="s-stat-num">∞</span>
+          <span class="s-stat-label">Possibilités de<br>sponsoring</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 4 · UN SUPPORT MÉDIA INTELLIGENT
+  ═══════════════════════════════════════ -->
+  <section class="s-media">
+    <div class="s-section-intro">
+      <span class="s-eyebrow">Un support média intelligent</span>
+      <h2 class="s-section-title">
+        AU SERVICE DE VOTRE <span class="accent">ÉVÉNEMENT.</span>
+      </h2>
+    </div>
+
+    <div class="s-media-grid">
+
+      <!-- Plan du salon -->
+      <div class="s-mcard">
+        <img src="/img/b2b-salon/media-plan.png" alt="Plan du salon" class="s-mcard-img">
+        <div class="s-mcard-body">
+          <span class="s-mcard-eyebrow">Plan du salon</span>
+          <span class="s-mcard-title">TROUVEZ<br>VOTRE CHEMIN</span>
+        </div>
+      </div>
+
+      <!-- Conférences -->
+      <div class="s-mcard">
+        <img src="/img/b2b-salon/media-conf.png" alt="Conférences" class="s-mcard-img">
+        <div class="s-mcard-body">
+          <span class="s-mcard-eyebrow">Conférences</span>
+          <span class="s-mcard-title">NE MANQUEZ<br>RIEN</span>
+        </div>
+      </div>
+
+      <!-- Partenaires -->
+      <div class="s-mcard">
+        <img src="/img/b2b-salon/partenaires.png" alt="Partenaires" class="s-mcard-img">
+        <div class="s-mcard-body">
+          <span class="s-mcard-eyebrow">Vos partenaires</span>
+          <span class="s-mcard-title">PLUS DE VISIBILITÉ<br>POUR VOS PARTENAIRES</span>
+        </div>
+      </div>
+
+      <!-- Communication connectée-->
+      <div class="s-mcard">
+        <img src="/img/b2b-salon/media-jeu.png" alt="Connectée" class="s-mcard-img">
+        <div class="s-mcard-body">
+          <span class="s-mcard-eyebrow">COMMUNICATION CONNECTÉE</span>
+          <span class="s-mcard-title">ACTIVEZ<br>VOTRE AUDIENCE</span>
+        </div>
+      </div>
+
+      <!-- RESTEZ MOBILES -->
+      <div class="s-mcard">
+        <img src="/img/b2b-salon/media-chill.png" alt="Restez actif" class="s-mcard-img">
+        <div class="s-mcard-body">
+          <span class="s-mcard-eyebrow">Restez actifs</span>
+          <span class="s-mcard-title">Restez connectés<br>Restez mobiles</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 5 · POURQUOI CHOISIR POP-E ?
+  ═══════════════════════════════════════ -->
+  <section class="s-why">
+    <h2 class="s-why-title">POURQUOI CHOISIR <span class="accent">POP-E</span> ?</h2>
+
+    <div class="s-why-grid">
+
+      <div class="s-why-card">
+        <div class="s-why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+               fill="none" stroke="#ADFF00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <span class="s-why-name">Un service apprécié de tous les visiteurs</span>
+        <p class="s-why-desc">Fini la batterie vide ! Vos visiteurs restent connectés et vivent une meilleure expérience.</p>
+      </div>
+
+      <div class="s-why-card">
+        <div class="s-why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+               fill="none" stroke="#ADFF00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+        </div>
+        <span class="s-why-name">Un outil de visibilité performant</span>
+        <p class="s-why-desc">Diffusez vos contenus et générez des revenus grâce à nos espaces publicitaires premium.</p>
+      </div>
+
+      <div class="s-why-card">
+        <div class="s-why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+               fill="none" stroke="#ADFF00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <span class="s-why-name">Autonome &amp; clé en main</span>
+        <p class="s-why-desc">Installation rapide, sans câblage ni travaux. Nos bornes sont 100% autonomes et sécurisées.</p>
+      </div>
+
+      <div class="s-why-card">
+        <div class="s-why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+               fill="none" stroke="#ADFF00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <span class="s-why-name">Un impact positif</span>
+        <p class="s-why-desc">Réduisez le stress lié à la batterie et favorisez les échanges et le networking sur votre événement.</p>
+      </div>
+
+      <div class="s-why-card">
+        <div class="s-why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+               fill="none" stroke="#ADFF00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <span class="s-why-name">Support &amp; suivi inclus</span>
+        <p class="s-why-desc">Nos équipes vous accompagnent avant, pendant et après votre événement.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 6 · BOTTOM CTA
+  ═══════════════════════════════════════ -->
+  <section class="s-cta-section" id="devis">
+    <img src="/img/b2b-salon/background-bottom.png" alt="" class="s-cta-bg">
+    <div class="s-cta-overlay"></div>
+
+    <div class="s-cta-content">
+      <h2 class="s-cta-title">
+        Offrez une<br>
+        <span class="accent">expérience<br>connectée</span><br>
+        à vos visiteurs.
+      </h2>
+
+      <p class="s-cta-desc">
+        Transformez un simple besoin de recharge en un service utile, apprécié
+        et rentable pour votre événement.
+      </p>
+
+      <a href="/pro/devis-salon.html" class="fst-cta">
+        DEMANDER UN DEVIS PERSONNALISÉ
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="3"
+             stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+
+      <div class="s-cta-perks">
+        <div class="s-cta-perk">
+          <div class="s-perk-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                 fill="none" stroke="#ADFF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          Réponse rapide sous 24h
+        </div>
+        <div class="s-cta-perk">
+          <div class="s-perk-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                 fill="none" stroke="#ADFF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          Devis personnalisé sans engagement
+        </div>
+        <div class="s-cta-perk">
+          <div class="s-perk-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                 fill="none" stroke="#ADFF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          Accompagnement de A à Z
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SOCIAL SIDEBAR -->
+  <div id="social-sidebar">
+    <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer"
+       class="social-btn" title="Instagram">
+      <img src="/img/insta.png" alt="Instagram">
+    </a>
+    <div class="social-btn" title="TikTok">
+      <img src="/img/tiktok.png" alt="TikTok">
+    </div>
+    <div class="social-btn" title="Téléphone">
+      <img src="/img/telephone.png" alt="Contact">
+    </div>
+  </div>
+
+  <div id="chatbot"><i class="fas fa-comments"></i></div>
+  <script src="/js/chatbot.js"></script>
+
+  <script>
+    /* ── Header scroll effect ── */
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* ── Language Switcher ── */
+    const langBtn      = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const currentFlag  = document.getElementById('currentFlag');
+    const currentCode  = document.getElementById('currentCode');
+    const LANGS = { fr: { flag: '🇫🇷', code: 'FR' }, en: { flag: '🇬🇧', code: 'EN' } };
+    let currentLang = localStorage.getItem('selectedLanguage') || 'fr';
+
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        const v = el.getAttribute('data-' + lang);
+        if (v !== null) el.innerHTML = v;
+      });
+      document.documentElement.lang = lang;
+    }
+    function updateButton(lang)   { currentFlag.textContent = LANGS[lang].flag; currentCode.textContent = LANGS[lang].code; }
+    function updateDropdown(lang) {
+      langDropdown.innerHTML = '';
+      Object.entries(LANGS).forEach(([key, info]) => {
+        if (key === lang) return;
+        const opt = document.createElement('div');
+        opt.className = 'lang-option';
+        opt.setAttribute('role', 'option');
+        opt.innerHTML = `<span class="lang-flag">${info.flag}</span><span>${info.code}</span>`;
+        opt.addEventListener('click', () => switchLang(key));
+        langDropdown.appendChild(opt);
+      });
+    }
+    const openDropdown  = () => { langDropdown.classList.add('visible');    langBtn.classList.add('open');    langBtn.setAttribute('aria-expanded', 'true');  };
+    const closeDropdown = () => { langDropdown.classList.remove('visible'); langBtn.classList.remove('open'); langBtn.setAttribute('aria-expanded', 'false'); };
+    function switchLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('selectedLanguage', lang);
+      applyLanguage(lang); updateButton(lang); updateDropdown(lang); closeDropdown();
+    }
+    langBtn.addEventListener('click', e => { e.stopPropagation(); langDropdown.classList.contains('visible') ? closeDropdown() : openDropdown(); });
+    document.addEventListener('click', closeDropdown);
+    langDropdown.addEventListener('click', e => e.stopPropagation());
+    applyLanguage(currentLang); updateButton(currentLang); updateDropdown(currentLang);
+
+    /* ── Navigation dots ── */
+    document.querySelectorAll('.s-dot').forEach(dot => {
+      dot.addEventListener('click', function () {
+        document.querySelectorAll('.s-dot').forEach(d => d.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    /* ── Preview cards ── */
+    document.querySelectorAll('.s-pcard').forEach(card => {
+      card.addEventListener('click', function () {
+        document.querySelectorAll('.s-pcard').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    /* ── Smooth anchor scroll ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>

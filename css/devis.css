@@ -290,6 +290,14 @@ max-width: 900px;
     position: relative;
 }
 
+.form-intro {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
@@ -630,6 +638,35 @@ textarea:focus {
 .security-info i {
     color: var(--accent);
 }
+
+.form-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: -15px; /* Compense le margin-top du bouton */
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.form-benefits i {
+    color: var(--accent);
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* Ajustement responsive pour la réassurance sur mobile */
+@media (max-width: 768px) {
+    .form-benefits {
+        gap: 12px;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+    }
+}
+
 
 /* --- DISPOSITION SECTION HORAIRES --- */
 .hours-section-container {
