@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POP-E — Choisissez Votre Activité</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/chatbot.css">
+  <link rel="stylesheet" href="/css/b2b.css" />
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header / Logo -->
+  <header class="site-header">
+    <a href="/?skipIntro=true" class="logo-link">
+      <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
+    </a>
+
+    <div class="header-right">
+      <a href="/?skipIntro=true" class="nav-link nav-back" data-i18n="nav_back">← Retour</a>
+      <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-flag" id="currentFlag">🇫🇷</span>
+          <span class="lang-code" id="currentCode">FR</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown" role="listbox">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="bg-noise"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span data-fr="CHOISISSEZ" data-en="CHOOSE">CHOISISSEZ</span>
+        <span class="accent" data-fr="VOTRE LIEU" data-en="YOUR VENUE">VOTRE LIEU</span>
+      </h1>
+      <p class="hero-subtitle">
+        <span data-fr="CHAQUE ENVIRONNEMENT." data-en="EVERY ENVIRONMENT.">CHAQUE ENVIRONNEMENT.</span>
+        <em data-fr="UNE STRATÉGIE DIFFÉRENTE." data-en="A DIFFERENT STRATEGY.">UNE STRATÉGIE DIFFÉRENTE.</em><br><br>
+        <span data-fr="Découvrez la solution conçue pour votre activité."
+          data-en="Discover the solution designed for your business.">Découvrez la solution conçue pour votre
+          activité.</span><br>
+        <span
+          data-fr="Attirez plus de visiteurs. Améliorez leur expérience. Génerez de nouveaux revenus grâce au partage des locations et des campagnes publicitaires."
+          data-en="Attract more visitors. Improve their experience. Generate new revenue through rental sharing and advertising campaigns.">Attirez
+          plus de visiteurs. Améliorez leur expérience. Génerez de nouveaux revenus grâce au partage des locations et
+          des campagnes publicitaires.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Cards Grid -->
+  <section class="cards-section cards-zone">
+    <div class="cards-grid">
+
+      <a href="festival-salon.html" class="card">
+        <div class="card-overlay">
+          <div class="card-header">
+            <span class="card-number">01</span>
+            <div class="card-number-line"></div>
+          </div>
+
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="FESTIVALS<br>&amp; SALONS" data-en="FESTIVALS<br>&amp; TRADE SHOWS">
+              FESTIVALS<br>&amp; SALONS</h2>
+            <p class="card-desc" data-fr="Attirez, engagez et monétisez votre public."
+              data-en="Attract, engage and monetise your audience.">Attirez, engagez et monétisez votre public.</p>
+          </div>
+
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-festival.png" alt="Icône Festival" class="card-icon">
+          </div>
+
+          <div class="card-button-wrapper">
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="borne-recharge-etablissement.html" class="card">
+        <div class="card-overlay">
+          <div class="card-header">
+            <span class="card-number">02</span>
+            <div class="card-number-line"></div>
+          </div>
+
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="BARS, CLUBS<br>&amp; HOTELS" data-en="BARS, CLUBS<br>&amp; HOTELS">BARS,
+              CLUBS<br>&amp; HOTELS</h2>
+            <p class="card-desc" data-fr="Augmentez le temps sur place et la consommation."
+              data-en="Increase dwell time and on-site spending.">Augmentez le temps sur place et la consommation.</p>
+          </div>
+
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-bar.png" alt="Icône Bar" class="card-icon">
+          </div>
+
+          <div class="card-button-wrapper">
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="collectivités.html" class="card">
+        <div class="card-overlay">
+          <div class="card-header">
+            <span class="card-number">03</span>
+            <div class="card-number-line"></div>
+          </div>
+
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="ESPACES PUBLICS" data-en="PUBLIC SPACES">ESPACES PUBLICS</h2>
+            <p class="card-desc" data-fr="Un service utile, moderne et visible."
+              data-en="A useful, modern and visible service.">Un service utile, moderne et visible.</p>
+          </div>
+
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-public.png" alt="Icône Public" class="card-icon">
+          </div>
+
+          <div class="card-button-wrapper">
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="privé.html" class="card">
+        <div class="card-overlay">
+          <div class="card-header">
+            <span class="card-number">04</span>
+            <div class="card-number-line"></div>
+          </div>
+
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="ÉVÉNEMENTS PRIVÉS" data-en="PRIVATE EVENTS">ÉVÉNEMENTS PRIVÉS</h2>
+            <p class="card-desc" data-fr="Créez une expérience premium pour vos invités."
+              data-en="Create a premium experience for your guests.">Créez une expérience premium pour vos invités.</p>
+          </div>
+
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-privé.png" alt="Icône Privé" class="card-icon">
+          </div>
+
+          <div class="card-button-wrapper">
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <div id="social-sidebar">
+    <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn"
+      title="Instagram">
+      <img src="/img/insta.png" alt="Instagram">
+    </a>
+    <div class="social-btn" title="TikTok">
+      <img src="/img/tiktok.png" alt="TikTok">
+    </div>
+    <div class="social-btn" title="Téléphone">
+      <img src="/img/telephone.png" alt="Contact">
+    </div>
+  </div>
+
+  <div id="chatbot">
+    <i class="fas fa-comments"></i>
+  </div>
+
+  <script src="/js/chatbot.js"></script>
+  <script src="/js/lang-switcher.js"></script>
+
+
+</body>
+
+</html>

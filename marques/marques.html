@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POP-E — Votre Marque sur nos Écrans</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/chatbot.css">
+  <link rel="stylesheet" href="/css/marques/marques.css">
+
+</head>
+
+<body>
+
+  <div class="bg-noise"></div>
+
+  <header class="site-header">
+    <a href="/?skipIntro=true" class="logo-link">
+      <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
+    </a>
+
+    <div class="header-right">
+      <a href="/pro/pro.html" class="nav-link nav-back" data-fr="← Retour" data-en="← Back">← Retour</a>
+
+      <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-flag" id="currentFlag">🇫🇷</span>
+          <span class="lang-code" id="currentCode">FR</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown" role="listbox"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title" data-fr="Votre marque <span class='accent'>sur les écrans pop-e.</span>"
+        data-en="Your brand <span class='accent'>on pop-e screens.</span>">
+        Votre marque
+        <span class="accent">sur les écrans pop-e.</span>
+      </h1>
+      <p class="hero-subtitle" data-fr="Visible là où le public a vraiment besoin de vous."
+        data-en="Visible where the audience really needs you.">Visible là où le public a vraiment besoin de vous.</p>
+      <p class="hero-desc"
+        data-fr="POP-E transforme ses bornes de recharge en supports média nouvelle génération : des écrans placés dans des lieux de passage, d'attente, de fête et d'expérience. Une présence utile, contextuelle et mémorable."
+        data-en="POP-E transforms its charging stations into next-generation media supports: screens placed in transit areas, waiting zones, party and experience venues. A useful, contextual, and memorable presence.">
+        POP-E transforme ses bornes de recharge en supports média nouvelle génération : des écrans placés dans des lieux
+        de passage, d'attente, de fête et d'expérience. Une présence utile, contextuelle et mémorable.
+      </p>
+    </div>
+
+    <div class="hero-visual">
+      <img src="/img/borne.png" alt="Borne Écran POP-E" class="borne-main-img">
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="cards-grid">
+
+      <!-- Carte 1 : Festivals -->
+      <a href="/marques/festival.html" class="card">
+        <div class="card-overlay">
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-festival.png" alt="Festivals" class="card-icon">
+          </div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Festivals &<br>grands événements" data-en="Festivals &<br>major events">
+              Festivals &<br>grands événements</h2>
+            <p class="card-desc" data-fr="Attirez, engagez et monétisez votre public."
+              data-en="Attract, engage and monetize your audience.">Attirez, engagez et monétisez votre public.</p>
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Carte 2 : Bars -->
+      <a href="#" class="card">
+        <div class="card-overlay">
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-bar.png" alt="Bars" class="card-icon">
+          </div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Bars, hôtels &<br>lieux de vie"
+              data-en="Bars, hotels &<br>lifestyle venues">Bars, hôtels &<br>lieux de vie</h2>
+            <p class="card-desc" data-fr="Augmentez le temps sur place et la consommation."
+              data-en="Increase dwell time and on-site spending.">Augmentez le temps sur place et la consommation.</p>
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Carte 3 : Espaces publics -->
+      <a href="#" class="card">
+        <div class="card-overlay">
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-public.png" alt="Espaces publics" class="card-icon">
+          </div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Espaces<br>publics" data-en="Public<br>spaces">Espaces<br>publics</h2>
+            <p class="card-desc" data-fr="Un service utile, moderne et visible."
+              data-en="A useful, modern and visible service.">Un service utile, moderne et visible.</p>
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Carte 4 : Transports -->
+      <a href="#" class="card">
+        <div class="card-overlay">
+          <div class="card-center-icon">
+            <img src="/img/b2b-acceuil/icon-privé.png" alt="Transports" class="card-icon">
+          </div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Aéroports, gares<br>& zones d'attente"
+              data-en="Airports, stations<br>& waiting areas">Aéroports, gares<br>& zones d'attente</h2>
+            <p class="card-desc"
+              data-fr="Des écrans placés dans des moments clés : attente, mobility, besoin de batterie, attention disponible."
+              data-en="Screens placed at key moments: waiting, mobility, low battery, available attention.">Des écrans
+              placés dans des moments clés : attente, mobilité, besoin de batterie,
+              attention disponible.</p>
+            <div class="btn-offer">
+              <span class="btn-text" data-fr="VOIR L'OFFRE" data-en="SEE OFFER">VOIR L'OFFRE</span>
+              <span class="btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+  <footer class="highlights-bar">
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+      </div>
+      <span class="highlight-text" data-fr="Besoin universel" data-en="Universal need">Besoin universel</span>
+    </div>
+
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </div>
+      <span class="highlight-text" data-fr="Attention maximale" data-en="Maximum attention">Attention maximale</span>
+    </div>
+
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      </div>
+      <span class="highlight-text" data-fr="Audience captive" data-en="Captive audience">Audience captive</span>
+    </div>
+
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+      </div>
+      <span class="highlight-text" data-fr="Visibilité puissante" data-en="Powerful visibility">Visibilité
+        puissante</span>
+    </div>
+  </footer>
+
+  <script src="/js/lang-switcher.js"></script>
+
+</body>
+
+</html>

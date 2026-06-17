@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>POP E</title>
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Bebas+Neue&family=Syne:wght@800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/css/chatbot.css">
+</head>
+<body>
+
+  <header>
+    <div id="intro">
+      <img id="intro-image" src="/img/app/utilisateurs.png" alt="intro" fetchpriority="low">
+      <div id="green-banner">
+        <span data-i18n="banner">Batterie Externe <span class="sep">•</span>
+        Recharge Partout <span class="sep">•</span>
+        Éco Responsable <span class="sep">•</span>
+        Batterie Externe <span class="sep">•</span>
+        Recharge Partout <span class="sep">•</span>
+        Éco Responsable</span>
+      </div>
+
+      <div id="green-banner-top">
+        <span data-i18n="banner">Batterie Externe <span class="sep">•</span>
+        Recharge Partout <span class="sep">•</span>
+        Éco Responsable <span class="sep">•</span>
+        Batterie Externe <span class="sep">•</span>
+        Recharge Partout <span class="sep">•</span>
+        Éco Responsable</span>
+      </div>
+
+      <nav id="navbar">
+        <a href="/"><img src="/img/logo2.png" alt="POP-E Logo"></a>
+        <div id="navbar-right">
+        <a href="/?skipIntro=true" class="nav-link nav-back" data-i18n="nav_back">← Retour</a>
+        <a href="#" class="nav-link active" data-i18n="nav_app">App</a>
+
+          <!-- LANG SWITCHER ICI -->
+          <div class="lang-switcher">
+            <button class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+              <span class="lang-flag" id="lang-flag">🇫🇷</span>
+              <span class="lang-code" id="lang-code">FR</span>
+              <svg class="lang-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,3 5,7 8,3"/>
+              </svg>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+              <div class="lang-option" data-lang="fr" role="option">
+                <span class="lang-flag">🇫🇷</span> Français
+              </div>
+              <div class="lang-option" data-lang="en" role="option">
+                <span class="lang-flag">🇬🇧</span> English
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </nav>
+      <img id="intro-fille" src="/img/app/fille2.png" alt="fille">
+      <a href="#" id="download-btn" class="btn-app" data-i18n="btn_download">
+        <img src="/img/app/telecharger.png" class="btn-icon" alt=""> Télécharger l'appli
+      </a>    
+    </div>
+
+    </header>
+
+<main>
+  <div id="ccm-wrapper">
+
+    <section id="ccm-container">
+      <div id="ccm-left">  
+          <h2 data-i18n="ccm_title">
+            <span class="ccm-title-white">COMMENT </span><span class="ccm-title-green">ÇA MARCHE ?</span>
+          </h2>
+        </div>
+      <div id="ccm-steps">
+        <div class="step">
+          <div class="step-card">
+            <span class="step-number">1</span>
+            <img src="/img/app/loc3.png" alt="">
+            <div class="step-info">
+              <p class="step-verb" data-i18n="step1_verb">TROUVEZ</p>
+              <p class="step-desc" data-i18n="step1_desc">Repérez les bornes POP-E autour de vous.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-arrow">
+          <svg width="50" height="12" viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="3" cy="6" r="3" fill="#ADFF00"/>
+            <line x1="6" y1="6" x2="44" y2="6" stroke="#ADFF00" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <polygon points="44,2 50,6 44,10" fill="#ADFF00"/>
+          </svg>
+        </div>
+
+        <div class="step">
+          <div class="step-card">
+            <span class="step-number">2</span>
+            <img src="/img/app/telephone1.png" alt="">
+            <div class="step-info">
+              <p class="step-verb" data-i18n="step2_verb">LOUEZ</p>
+              <p class="step-desc" data-i18n="step2_desc">Scannez le QR code, prenez une batterie.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-arrow">
+          <svg width="50" height="12" viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="3" cy="6" r="3" fill="#ADFF00"/>
+            <line x1="6" y1="6" x2="44" y2="6" stroke="#ADFF00" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <polygon points="44,2 50,6 44,10" fill="#ADFF00"/>
+          </svg>
+        </div>
+
+        <div class="step">
+          <div class="step-card">
+            <span class="step-number">3</span>
+            <img src="/img/app/rechargez.png" alt="">
+            <div class="step-info">
+              <p class="step-verb" data-i18n="step3_verb">RECHARGEZ</p>
+              <p class="step-desc" data-i18n="step3_desc">Rechargez tous vos appareils où que vous soyez.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-arrow">
+          <svg width="50" height="12" viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="3" cy="6" r="3" fill="#ADFF00"/>
+            <line x1="6" y1="6" x2="44" y2="6" stroke="#ADFF00" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <polygon points="44,2 50,6 44,10" fill="#ADFF00"/>
+          </svg>
+        </div>
+
+        <div class="step">
+          <div class="step-card">
+            <span class="step-number">4</span>
+            <img src="/img/app/pope_batterie.png" alt="">
+            <div class="step-info">
+              <p class="step-verb" data-i18n="step4_verb">RETOURNEZ</p>
+              <p class="step-desc" data-i18n="step4_desc">Déposez la batterie dans n'importe quelle borne du réseau.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="impact-positif">
+      <div id="ip-header">
+        <img src="/img/app/positif.png" alt="" class="ip-icon">
+        <h2 data-i18n="ip_title">NOTRE IMPACT POSITIF</h2>
+      </div>
+      <div class="ip-stat">
+        <img src="/img/app/arbre.png" alt="" class="ip-stat-icon">
+        <div>
+          <p class="ip-number">12 543</p>
+          <p class="ip-label" data-i18n="ip_trees">ARBRES PLANTÉS</p>
+        </div>
+      </div>
+      <div class="ip-stat">
+        <img src="/img/app/recharge1.png" alt="" class="ip-stat-icon">
+        <div>
+          <p class="ip-number">1 245 780</p>
+          <p class="ip-label" data-i18n="ip_charges">RECHARGES EFFECTUÉES</p>
+        </div>
+      </div>
+      <div id="ip-bottom">
+        <p id="ip-desc" data-i18n="ip_desc">Chaque recharge compte! Les utilisateurs participent à la plantation de nouvelles Forêts en France + 1 arbre planté par borne implantés!</p>
+      </div>
+      <div id="ip-mains">
+        <img src="/img/app/mains.png" alt="">
+      </div>
+    </section>
+
+  </div>
+
+  <section id="impact-grandit">
+    <div id="ig-container">
+      <div id="ig-left">
+        <h2 id="ig-title" data-i18n="ig_title">UN IMPACT<br>QUI GRANDIT<br><span>AVEC VOUS</span></h2>
+        <p id="ig-desc" data-i18n="ig_desc">Chaque recharge compte.<br>Ensemble, construisons un<br>monde plus connecté et<br>plus responsable.</p>
+        <a href="/utilisateurs/e-foret.html" class="btn-impact" data-i18n="ig_btn">VOIR NOTRE IMPACT →</a>      </div>
+      <div id="ig-globe">
+        <img src="/img/app/terre2.png" alt="Globe">
+      </div>
+      <div id="ig-form-card">
+        <div id="ig-form-header">
+          <img src="/img/app/positif.png" alt="" class="ig-form-icon">
+          <h3 data-i18n="ig_form_title">ON ARRIVE CHEZ TOI ?</h3>
+        </div>
+        <p id="ig-form-desc" data-i18n="ig_form_desc">Dis-nous où tu veux voir une borne POP-E dans ta ville !</p>
+        <div style="position:relative;">
+          <input type="text" id="ig-city" autocomplete="off" data-i18n-placeholder="ig_city_placeholder">
+          <div id="ig-ac-list"></div>
+        </div>
+        <input type="text" id="ig-lieu" data-i18n-placeholder="ig_lieu_placeholder">
+        <div id="ig-success-msg" data-i18n="ig_success">✓ Demande enregistrée !</div>
+        <button id="ig-submit" data-i18n="ig_submit">JE PROPOSE MA VILLE !</button>
+        <p id="ig-social-proof">
+          <img src="/img/app/membres.png" alt="" class="ig-users-icon">
+          <span id="ig-proof-text">0 demande(s) enregistrée(s)</span>
+        </p>
+        <button id="ig-btn-voir" data-i18n="ig_btn_voir">VOIR LES VILLES PROPOSÉES ▾</button>
+      </div>
+    </div>
+
+    <div id="ig-tableau" style="display:none;">
+      <div id="ig-tableau-header">
+        <span data-i18n="ig_tableau_title">VILLES PROPOSÉES</span>
+        <button id="ig-btn-export">↓ JSON</button>
+      </div>
+      <div id="ig-ville-list"></div>
+    </div>
+
+    <div id="ig-stats">
+      <div class="ig-stat">
+        <img src="/img/app/loc4.png" alt="" class="ig-stat-icon">
+        <div>
+          <p class="ig-stat-number">250K+</p>
+          <p class="ig-stat-label" data-i18n="stat_charges">recharges</p>
+        </div>
+      </div>
+      <div class="ig-stat">
+        <img src="/img/app/loc5.png" alt="" class="ig-stat-icon">
+        <div>
+          <p class="ig-stat-number">1 250</p>
+          <p class="ig-stat-label" data-i18n="stat_bornes">bornes installées</p>
+        </div>
+      </div>
+      <div class="ig-stat">
+        <img src="/img/app/globe.png" alt="" class="ig-stat-icon">
+        <div>
+          <p class="ig-stat-number">45</p>
+          <p class="ig-stat-label" data-i18n="stat_villes">villes couvertes</p>
+        </div>
+      </div>
+      <div class="ig-stat">
+        <img src="/img/app/dechets.png" alt="" class="ig-stat-icon">
+        <div>
+          <p class="ig-stat-number">15T</p>
+          <p class="ig-stat-label" data-i18n="stat_dechets">de déchets évités</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="ot-wrapper">
+    <section id="ou-trouver">
+      <div id="ot-container">
+        <div id="ot-left">
+          <h2 id="ot-title" data-i18n="ot_title">OÙ NOUS<br>TROUVER</h2>
+          <p id="ot-desc" data-i18n="ot_desc">Partout où vous vivez,<br>voyagez, sortez.</p>
+          <a href="#" class="btn-app btn-app-ot" data-i18n="btn_download_ot">
+            <img src="/img/app/telecharger_green.png" class="btn-icon" alt=""> Télécharger l'appli
+          </a>
+        </div>
+        <div id="ot-panneau">
+          <img src="/img/app/trouver.png" alt="Panneau où trouver POP-E">
+        </div>
+      </div>
+    </section>
+
+    <section id="ot-festival">
+      <a href="/utilisateurs/app/festivals.html" id="ot-festival-inner">
+        <img src="/img/app/concert.png" alt="Festival" id="ot-festival-bg">
+        <div id="ot-festival-overlay"></div>
+        <div id="ot-festival-content">
+          <h2>
+            <span data-i18n="fest_title1">T'ES UN</span><br>
+            <span data-i18n="fest_title2">FESTIVALIER</span><br>
+            <em data-i18n="fest_title3">HORS PAIR</em>
+          </h2>
+          <ul id="ot-festival-list">
+            <li>
+              <img src="/img/app/loc6.png" alt="Localisation" class="ot-fest-icon">
+              <span data-i18n="fest_li1">Trouves <strong>ta borne</strong> en festival</span>
+            </li>
+            <li>
+              <img src="/img/app/telephone2.png" alt="Téléphone" class="ot-fest-icon">
+              <span data-i18n="fest_li2">Gardes ton téléphone chargé <strong>avec toi</strong></span>
+            </li>
+            <li>
+              <img src="/img/app/charge.png" alt="Charge" class="ot-fest-icon">
+              <span data-i18n="fest_li3">Profites <strong>à 100%</strong></span>
+            </li>
+          </ul>
+          <div id="ot-festival-btns">
+            <span class="ot-fest-btn-main" data-i18n="fest_btn">VOIR LES FESTIVALS →</span>
+          </div>
+        </div>
+      </a>
+    </section>
+  </div>
+
+  <section id="lifestyle">
+  <div id="ls-container">
+  <div id="ls-top">
+    <div id="ls-left">
+      <div id="ls-tag">
+        <img src="/img/app/eshop.png" alt="" class="ls-tag-icon">
+      </div>
+      <h2 id="ls-title">
+        <img src="/img/logo2.png" alt="POP-E" id="ls-logo">
+        <span id="ls-title-festival">FESTIVAL</span>
+        <span id="ls-title-collection">COLLECTION</span>
+      </h2>
+      <p id="ls-desc" data-i18n="ls_desc">L'essentiel. Le style. L'énergie.</p>
+      <a href="/utilisateurs/app/boutique.html" id="ls-btn-hero" data-i18n="ls_btn">
+        VOIR LES PRODUITS →
+      </a>
+    </div>
+    <div id="ls-articles">
+      <img src="/img/app/articles.png" alt="Articles lifestyle POP-E">
+    </div>
+  </div>
+
+  <div id="ls-ticker-wrap">
+  <div id="ls-ticker-label">
+    <img src="/img/eclair.png" alt="⚡" style="width:70px;height:70px;object-fit:contain;">
+    <div>
+     <div style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:0.08em;color:rgba(255,255,255,0.7);line-height:1.3;" data-i18n="ticker_label">RETROUVES NOUS SUR LES<br>FESTIVALS PARTENAIRES</div>
+     <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:0.08em;color:var(--green);" data-i18n="ticker_brand">POP-E</div>
+    </div>
+  </div>
+  <div id="ls-ticker-scroll">
+    <div id="ls-ticker">
+      <span class="ls-tick-item"><img src="/img/fes1.png" alt="DYSTOPIA">DYSTOPIA<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes2.png" alt="ODIZIA">ODIZIA<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes3.png" alt="MILLÉSIME">MILLÉSIME<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes4.png" alt="FORT DÉCIBEL">FORT DÉCIBEL<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes5.png" alt="SOLAR">SOLAR<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes6.png" alt="MUSICALARUE">MUSICALARUE<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes7.png" alt="LES PERSÉIDES">LES PERSÉIDES<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes8.png" alt="LEZART">LEZART<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes9.png" alt="EVASION">EVASION<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes10.png" alt="JARDIN DU MICHEL">JARDIN DU MICHEL<br><small>FESTIVAL</small></span>
+      <!-- doublon -->
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes1.png" alt="DYSTOPIA">DYSTOPIA<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes2.png" alt="ODIZIA">ODIZIA<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes3.png" alt="MILLÉSIME">MILLÉSIME<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes4.png" alt="FORT DÉCIBEL">FORT DÉCIBEL<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes5.png" alt="SOLAR">SOLAR<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes6.png" alt="MUSICALARUE">MUSICALARUE<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes7.png" alt="LES PERSÉIDES">LES PERSÉIDES<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes8.png" alt="LEZART">LEZART<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes9.png" alt="EVASION">EVASION<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes10.png" alt="JARDIN DU MICHEL">JARDIN DU MICHEL<br><small>FESTIVAL</small></span>
+    </div>
+  </div>
+</div>
+
+</section>
+
+  <section id="photos-section">
+    <div id="photos-container">
+      <div class="photo-card">
+        <img src="/img/app/stagiairesf4.png" alt="Stagiaires">
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <img src="/img/app/ambassadeur4.png" alt="Ambassadeurs">
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <img src="/img/app/collab4.png" alt="Collaborations">
+        <div class="photo-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALES CONTACT -->
+
+  <!-- STAGIAIRES -->
+  <div class="contact-modal" id="modal-stagiaires">
+    <div class="modal-overlay" onclick="closeModal('stagiaires')"></div>
+    <div class="modal-window ctx-green">
+      <button class="modal-close" onclick="closeModal('stagiaires')">✕</button>
+      <div class="modal-header">
+        <div class="modal-badge badge-green">
+          <img src="/img/app/stage.png" alt="Stage">
+        </div>
+        <div>
+          <h2 data-i18n="modal_stage_title">REJOINS L'ÉQUIPE</h2>
+          <p data-i18n="modal_stage_sub">Stage chez POP-E</p>
+        </div>
+      </div>
+      <p class="modal-desc" data-i18n="modal_stage_desc">Tu veux vivre une expérience qui charge vraiment ta carrière ? Dis-nous tout.</p>
+      <div class="modal-form">
+        <div class="modal-row">
+          <input type="text" class="modal-input" data-i18n-placeholder="placeholder_firstname">
+          <input type="text" class="modal-input" data-i18n-placeholder="placeholder_lastname">
+        </div>
+        <input type="email" class="modal-input" data-i18n-placeholder="placeholder_email">
+        <input type="text" class="modal-input" data-i18n-placeholder="placeholder_school">
+        <input type="tel" class="modal-input" data-i18n-placeholder="placeholder_phone">
+        <input type="date" class="modal-input modal-date">
+        <div class="cs-wrap ctx-green">
+          <button class="cs-trigger" type="button" data-i18n="modal_stage_domain">Domaine de stage</button>
+          <div class="cs-dropdown">
+            <div class="cs-option" data-value="marketing" data-i18n="domain_marketing">Marketing et Communication</div>
+            <div class="cs-option" data-value="dev" data-i18n="domain_dev">Développement Web</div>
+            <div class="cs-option" data-value="bizdev" data-i18n="domain_bizdev">Commercial / Business Dev</div>
+            <div class="cs-option" data-value="design" data-i18n="domain_design">Design / UX</div>
+            <div class="cs-option" data-value="autre" data-i18n="domain_other">Autre</div>
+          </div>
+        </div>
+        <textarea class="modal-input modal-textarea" data-i18n-placeholder="placeholder_stage_why"></textarea>
+        <button class="modal-submit btn-green-submit">
+          <span data-i18n="modal_stage_submit">ENVOYER MA CANDIDATURE</span> <img src="/img/app/recharge2.png" alt="" class="btn-icon">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AMBASSADEUR -->
+  <div class="contact-modal" id="modal-ambassadeur">
+    <div class="modal-overlay" onclick="closeModal('ambassadeur')"></div>
+    <div class="modal-window ctx-purple">
+      <button class="modal-close" onclick="closeModal('ambassadeur')">✕</button>
+      <div class="modal-header">
+        <div class="modal-badge badge-purple">
+          <img src="/img/recharge.png" alt="Ambassadeur">
+        </div>
+        <div>
+          <h2 data-i18n="modal_amb_title">DEVIENS AMBASSADEUR</h2>
+          <p data-i18n="modal_amb_sub">Représente POP-E</p>
+        </div>
+      </div>
+      <p class="modal-desc" data-i18n="modal_amb_desc">Tu as de l'énergie à revendre ? Deviens la voix de POP-E dans ta ville.</p>
+      <div class="modal-form">
+        <div class="modal-row">
+          <input type="text" class="modal-input" data-i18n-placeholder="placeholder_firstname">
+          <input type="text" class="modal-input" data-i18n-placeholder="placeholder_lastname">
+        </div>
+        <input type="email" class="modal-input" data-i18n-placeholder="placeholder_email">
+        <input type="text" class="modal-input" data-i18n-placeholder="placeholder_city">
+        <input type="text" class="modal-input" data-i18n-placeholder="placeholder_social">
+        <div class="cs-wrap ctx-purple">
+          <button class="cs-trigger" type="button" data-i18n="modal_amb_profile">Ton profil</button>
+          <div class="cs-dropdown">
+            <div class="cs-option" data-value="creator" data-i18n="profile_creator">Créateur de contenu</div>
+            <div class="cs-option" data-value="etudiant" data-i18n="profile_student">Étudiant actif</div>
+            <div class="cs-option" data-value="fest" data-i18n="profile_fest">Festivalier / Événementiel</div>
+            <div class="cs-option" data-value="sport" data-i18n="profile_sport">Sportif / Lifestyle</div>
+            <div class="cs-option" data-value="autre" data-i18n="domain_other">Autre</div>
+          </div>
+        </div>
+        <textarea class="modal-input modal-textarea" data-i18n-placeholder="placeholder_amb_why"></textarea>
+        <button class="modal-submit btn-purple-submit">
+          <span data-i18n="modal_amb_submit">LANCER LA COLLAB</span> <img src="/img/app/fusee.png" alt="" class="btn-icon">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLLAB -->
+  <div class="contact-modal" id="modal-collab">
+    <div class="modal-overlay" onclick="closeModal('collab')"></div>
+    <div class="modal-window ctx-cyan">
+      <button class="modal-close" onclick="closeModal('collab')">✕</button>
+      <div class="modal-header">
+        <div class="modal-badge badge-cyan">
+          <img src="/img/app/collabicon.png" alt="Collab">
+        </div>
+        <div>
+          <h2 data-i18n="modal_collab_title">ON COLLABORE ?</h2>
+          <p data-i18n="modal_collab_sub">Partenariat et Collab</p>
+        </div>
+      </div>
+      <p class="modal-desc" data-i18n="modal_collab_desc">Une idée folle ? Un projet commun ? On est chauds pour en parler.</p>
+      <div class="modal-form">
+        <div class="modal-row">
+          <input type="text" class="modal-input" data-i18n-placeholder="placeholder_firstname">
+          <input type="text" class="modal-input" data-i18n-placeholder="placeholder_lastname">
+        </div>
+        <input type="email" class="modal-input" data-i18n-placeholder="placeholder_email_pro">
+        <input type="text" class="modal-input" data-i18n-placeholder="placeholder_company">
+        <input type="text" class="modal-input" data-i18n-placeholder="placeholder_social">
+        <div class="cs-wrap ctx-cyan">
+          <button class="cs-trigger" type="button" data-i18n="modal_collab_type">Type de collab</button>
+          <div class="cs-dropdown">
+            <div class="cs-option" data-value="event" data-i18n="collab_event">Événement / Festival</div>
+            <div class="cs-option" data-value="brand" data-i18n="collab_brand">Marque / Co-branding</div>
+            <div class="cs-option" data-value="media" data-i18n="collab_media">Média / Presse</div>
+            <div class="cs-option" data-value="tech" data-i18n="collab_tech">Technologie / Startup</div>
+            <div class="cs-option" data-value="autre" data-i18n="domain_other">Autre</div>
+          </div>
+        </div>
+        <textarea class="modal-input modal-textarea" data-i18n-placeholder="placeholder_collab_desc"></textarea>
+        <button class="modal-submit btn-cyan-submit">
+          <span data-i18n="modal_collab_submit">DEVENIR PARTENAIRE</span> <img src="/img/app/recharge2.png" alt="" class="btn-icon">
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- QUESTION LIBRE -->
+<div class="contact-modal" id="modal-question">
+  <div class="modal-overlay" onclick="closeModal('question')"></div>
+  <div class="modal-window ctx-e300">
+    <button class="modal-close" onclick="closeModal('question')">✕</button>
+    <div class="modal-header">
+      <div class="modal-badge badge-e300">
+        <img src="/img/chatbot.png" alt="Question">
+      </div>
+      <div>
+        <h2 data-i18n="modal_q_title">POSER UNE QUESTION</h2>
+        <p data-i18n="modal_q_sub">On vous répond rapidement</p>
+      </div>
+    </div>
+    <p class="modal-desc" data-i18n="modal_q_desc">Une question spécifique ? Laissez-nous vos coordonnées et votre message.</p>
+    <div class="modal-form">
+      <div class="modal-row">
+        <input type="text" class="modal-input" placeholder="Prénom">
+        <input type="text" class="modal-input" placeholder="Nom">
+      </div>
+      <input type="email" class="modal-input" placeholder="Email">
+      <input type="tel" class="modal-input" placeholder="Téléphone (optionnel)">
+      <textarea class="modal-input modal-textarea" placeholder="Votre question..."></textarea>
+      <button class="modal-submit btn-e300-submit">ENVOYER MA QUESTION ✦</button>
+    </div>
+  </div>
+</div>
+
+  <div id="social-sidebar">
+    <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
+      <img src="/img/insta.png" alt="Instagram">
+    </a>
+    <a href="https://www.tiktok.com/@pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn" title="TikTok">
+      <img src="/img/tiktok.png" alt="TikTok">
+    </a>
+    <a href="tel:+33618158880" class="social-btn" title="Téléphone">
+      <img src="/img/telephone.png" alt="Téléphone">
+    </a>
+  </div>
+
+  <footer id="footer">
+    <div id="footer-container">
+      <div id="footer-brand">
+        <img src="/img/logo2.png" alt="POP-E Logo">
+        <p data-i18n="footer_tagline">La batterie externe en libre-service.<br>Partout. Tout le temps.</p>
+        <div id="footer-socials">
+          <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn">Instagram</a>
+          <a href="https://www.tiktok.com/@pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn">TikTok</a>
+          <a href="https://www.linkedin.com/company/pop-e" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
+        </div>
+      </div>
+      <div id="footer-links">
+        <div class="footer-col">
+          <h4 data-i18n="footer_col1_title">Solution</h4>
+          <a href="#ccm-container" data-i18n="footer_how">Comment ça marche</a>
+          <a href="#ou-trouver" data-i18n="footer_where">Où utiliser POP-E</a>
+          <a href="#photos-section" data-i18n="footer_ambassador">Ambassadeur</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col2_title">Entreprise</h4>
+          <a href="#impact-positif" data-i18n="footer_about">À propos</a>
+          <a href="#impact-grandit" data-i18n="footer_impact">Impact</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col3_title">Contact</h4>
+          <a href="#modal-question" onclick="openModal('question'); return false;" data-i18n="footer_contact">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+    <div id="footer-bottom">
+      <span data-i18n="footer_rights">© 2026 POP-E. Tous droits réservés.</span>
+     <div id="footer-legal">
+        <a href="/legal/mentions-legales.html" data-i18n="footer_legal1">Mentions légales</a>
+        <a href="/legal/cgu.html" data-i18n="footer_cgu">CGU</a>
+        <a href="/legal/confidentialite.html" data-i18n="footer_privacy">Confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+  <script src="/js/chatbot.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/ig-form.js"></script>
+  <script src="/js/lang.js"></script>
+
+</body>
+</html>

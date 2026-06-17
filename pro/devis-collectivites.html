@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="POP-E | Devis Collectivités" data-en="POP-E | Public Sector Quotation">POP-E | Devis Collectivités
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/chatbot.css">
+    <link rel="stylesheet" href="/css/devis.css">
+    <link rel="stylesheet" href="/css/b2b.css" />
+
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="/?skipIntro=true" class="logo-link">
+            <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
+        </a>
+
+        <div class="header-right">
+            <a href="/pro/pro.html" class="nav-link nav-back" data-fr="← Retour" data-en="← Back">← Retour</a>
+
+            <div class="lang-switcher">
+                <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="lang-flag" id="currentFlag">🇫🇷</span>
+                    <span class="lang-code" id="currentCode">FR</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown" role="listbox"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-title-wrapper">
+                <h1 data-fr="DEVIS <span class='accent'>COLLECTIVITÉS</span>"
+                    data-en="PUBLIC SECTOR <span class='accent'>QUOTATION</span>">DEVIS <span
+                        class="accent">COLLECTIVITÉS</span></h1>
+                <img src="/img/b2b-devis/carnet.png" alt="Icône carnet" class="title-icon">
+            </div>
+            <p class="subtitle"
+                data-fr="Configurez l'équipement de votre espace public,<br>on vous prépare une offre de recharge <strong>sur-mesure</strong>."
+                data-en="Configure your public space setup,<br>we will prepare a <strong>tailor-made</strong> charging solution.">
+                Configurez l'équipement de votre espace public,<br>
+                on vous prépare une offre de recharge <strong>sur-mesure</strong>.
+            </p>
+        </section>
+
+        <section class="form-container">
+            <form action="#" method="POST">
+
+                <p class="form-intro"
+                    data-fr="En moins de 2 minutes, décrivez votre événement.<br>Nos équipes vous proposeront une solution personnalisée, adaptée à votre fréquentation, votre configuration et vos objectifs."
+                    data-en="Describe your event in under 2 minutes.<br>Our teams will offer a personalized solution adapted to your attendance, setup, and goals.">
+                    En moins de 2 minutes, décrivez votre événement.<br>
+                    Nos équipes vous proposeront une solution personnalisée, adaptée à votre fréquentation, votre
+                    configuration et vos objectifs.
+                </p>
+
+                <!-- ══════════════════════════════════════
+                     SECTION 1 — VOTRE COLLECTIVITÉ
+                ══════════════════════════════════════ -->
+                <div class="separator" style="margin-top: 0;" data-fr="VOTRE COLLECTIVITÉ" data-en="YOUR ORGANISATION">
+                    VOTRE COLLECTIVITÉ</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span data-fr="NOM DE LA COLLECTIVITÉ" data-en="ORGANISATION NAME">NOM DE LA
+                                COLLECTIVITÉ</span> <span class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-landmark"></i>
+                            <input type="text" name="nom_collectivite"
+                                data-fr="Ex : Mairie de Lyon, Région Île-de-France…"
+                                data-en="E.g., Lyon City Hall, Île-de-France Region..."
+                                placeholder="Ex : Mairie de Lyon, Région Île-de-France…" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-fr="NOM DU LIEU" data-en="VENUE NAME">NOM DU LIEU</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-pin"></i>
+                            <input type="text" name="nom_lieu" data-fr="Ex : Médiathèque centrale, Salle des fêtes…"
+                                data-en="E.g., Central Library, Community Hall..."
+                                placeholder="Ex : Médiathèque centrale, Salle des fêtes…" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label><span data-fr="VILLE" data-en="CITY">VILLE</span> <span class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" name="ville" data-fr="Ex : Paris, Lyon, Bordeaux…"
+                                data-en="E.g., Paris, London, New York..." placeholder="Ex : Paris, Lyon, Bordeaux…"
+                                required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══════════════════════════════════════
+                     SECTION 2 — FRÉQUENTATION (identique Commerce)
+                ══════════════════════════════════════ -->
+                <div class="separator" data-fr="FRÉQUENTATION" data-en="ATTENDANCE">FRÉQUENTATION</div>
+
+                <div class="hours-section-container">
+                    <div class="hours-inputs-grid">
+                        <div class="form-group">
+                            <label><span data-fr="HEURE D'OUVERTURE" data-en="OPENING TIME">HEURE D'OUVERTURE</span>
+                                <span class="asterisk">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="far fa-clock"></i>
+                                <input type="text" name="heure_ouverture" data-fr="Ex : 18:00" data-en="E.g., 6:00 PM"
+                                    placeholder="Ex : 18:00" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><span data-fr="HEURE DE FERMETURE" data-en="CLOSING TIME">HEURE DE FERMETURE</span>
+                                <span class="asterisk">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-clock"></i>
+                                <input type="text" name="heure_fermeture" data-fr="Ex : 03:00" data-en="E.g., 3:00 AM"
+                                    placeholder="Ex : 03:00" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hours-info-box">
+                        <i class="fas fa-users hours-info-icon"></i>
+                        <div class="hours-info-content">
+                            <h4 data-fr="À TITRE INDICATIF" data-en="FOR INFORMATION ONLY">À TITRE INDICATIF</h4>
+                            <p data-fr="Ces informations nous permettent de dimensionner les équipements et d'optimiser la capacité de recharge pour votre établissement."
+                                data-en="This details allow us to properly scale the equipment and optimize the charging capacity for your venue.">
+                                Ces informations nous permettent de dimensionner les équipements et d'optimiser la
+                                capacité de recharge pour votre établissement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label><span data-fr="FRÉQUENTATION QUOTIDIENNE ESTIMÉE"
+                                data-en="ESTIMATED DAILY VISITORS">FRÉQUENTATION QUOTIDIENNE ESTIMÉE</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="far fa-user"></i>
+                            <input type="text" name="frequentation_quotidienne" inputmode="numeric" pattern="[0-9]*"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')" data-fr="Ex : 200"
+                                data-en="E.g., 200" placeholder="Ex : 200" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══════════════════════════════════════
+                     SECTION 3 — CHOIX DE LA BORNE
+                ══════════════════════════════════════ -->
+                <div class="separator" data-fr="CHOIX DE LA BORNE" data-en="CHARGING STATION SELECTION">CHOIX DE LA
+                    BORNE</div>
+
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label><span data-fr="QUELLE BORNE VOUS INTÉRESSE ?"
+                                data-en="WHICH STATION ARE YOU INTERESTED IN?">QUELLE BORNE VOUS INTÉRESSE ?</span>
+                            <span class="asterisk">*</span></label>
+
+                        <div class="borne-grid">
+
+                            <label class="borne-card">
+                                <img src="/img/borne3.png" alt="Borne 6 batteries" class="borne-card__img">
+                                <span class="borne-card__name" data-fr="6 BATTERIES" data-en="6 BATTERIES">6
+                                    BATTERIES</span>
+                                <span class="borne-card__desc" data-fr="Sans écran uniquement"
+                                    data-en="Without screen only">Sans écran uniquement</span>
+                                <div class="borne-card__solo">
+                                    <input type="radio" name="choix_borne" value="6 batteries - Sans écran" required>
+                                </div>
+                            </label>
+
+                            <div class="borne-card">
+                                <img src="/img/borne2.png" alt="Borne 24 batteries" class="borne-card__img">
+                                <span class="borne-card__name" data-fr="24 BATTERIES" data-en="24 BATTERIES">24
+                                    BATTERIES</span>
+                                <div class="borne-card__options">
+                                    <label class="borne-card__opt">
+                                        <input type="radio" name="choix_borne" value="24 batteries - Avec écran">
+                                        <span data-fr="Avec écran" data-en="With screen">Avec écran</span>
+                                    </label>
+                                    <label class="borne-card__opt">
+                                        <input type="radio" name="choix_borne" value="24 batteries - Sans écran">
+                                        <span data-fr="Sans écran" data-en="Without screen">Sans écran</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="borne-card">
+                                <img src="/img/borne1.png" alt="Borne 48 batteries" class="borne-card__img">
+                                <span class="borne-card__name" data-fr="48 BATTERIES" data-en="48 BATTERIES">48
+                                    BATTERIES</span>
+                                <div class="borne-card__options">
+                                    <label class="borne-card__opt">
+                                        <input type="radio" name="choix_borne" value="48 batteries - Avec écran">
+                                        <span data-fr="Avec écran" data-en="With screen">Avec écran</span>
+                                    </label>
+                                    <label class="borne-card__opt">
+                                        <input type="radio" name="choix_borne" value="48 batteries - Sans écran">
+                                        <span data-fr="Sans écran" data-en="Without screen">Sans écran</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <label class="borne-card">
+                                <div class="borne-card__icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <span class="borne-card__name--muted" data-fr="Je souhaite<br>être conseillé"
+                                    data-en="I want to<br>get advice">Je souhaite<br>être conseillé</span>
+                                <div class="borne-card__solo">
+                                    <input type="radio" name="choix_borne" value="Je souhaite être conseillé">
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══════════════════════════════════════
+                     SECTION 4 — MODE DE RECHARGE
+                ══════════════════════════════════════ -->
+                <div class="separator" data-fr="MODE DE RECHARGE" data-en="CHARGING MODEL">MODE DE RECHARGE</div>
+
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label><span data-fr="COMMENT SOUHAITEZ-VOUS PROPOSER LA RECHARGE À VOS CLIENTS ?"
+                                data-en="HOW DO YOU WANT TO OFFER CHARGING TO YOUR CUSTOMERS?">COMMENT SOUHAITEZ-VOUS
+                                PROPOSER LA RECHARGE À VOS CLIENTS ?</span> <span class="asterisk">*</span></label>
+
+                        <div class="borne-grid">
+
+                            <label class="borne-card">
+                                <div class="recharge-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <span class="recharge-label" data-fr="Recharge payante<br>par le client"
+                                    data-en="Paid charging<br>by customer">Recharge payante<br>par le client</span>
+                                <div class="borne-card__solo">
+                                    <input type="radio" name="mode_recharge" value="Recharge payante par le client"
+                                        required>
+                                </div>
+                            </label>
+
+                            <label class="borne-card">
+                                <div class="recharge-icon">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <span class="recharge-label" data-fr="1 heure offerte<br>par mon établissement"
+                                    data-en="1 free hour<br>by my venue">1 heure offerte<br>par mon établissement</span>
+                                <div class="borne-card__solo">
+                                    <input type="radio" name="mode_recharge"
+                                        value="1 heure offerte par mon établissement">
+                                </div>
+                            </label>
+
+                            <label class="borne-card">
+                                <div class="recharge-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <span class="recharge-label" data-fr="Recharge offerte<br>grâce à un sponsor"
+                                    data-en="Free charging<br>via a sponsor">Recharge offerte<br>grâce à un
+                                    sponsor</span>
+                                <div class="borne-card__solo">
+                                    <input type="radio" name="mode_recharge" value="Recharge offerte par un sponsor">
+                                </div>
+                            </label>
+
+                            <label class="borne-card">
+                                <div class="recharge-icon">
+                                    <i class="far fa-comment-dots"></i>
+                                </div>
+                                <span class="recharge-label" data-fr="Je souhaite<br>être conseillé"
+                                    data-en="I want to<br>get advice">Je souhaite<br>être conseillé</span>
+                                <div class="borne-card__solo">
+                                    <input type="radio" name="mode_recharge" value="Je souhaite être conseillé">
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══════════════════════════════════════
+                     SECTION 5 — INFORMATIONS COMPLÉMENTAIRES
+                ══════════════════════════════════════ -->
+                <div class="separator" data-fr="INFORMATIONS COMPLÉMENTAIRES" data-en="ADDITIONAL INFORMATION">
+                    INFORMATIONS COMPLÉMENTAIRES</div>
+
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label data-fr="VOS REMARQUES OU BESOINS SPÉCIFIQUES"
+                            data-en="YOUR REMARKS OR SPECIFIC NEEDS">VOS REMARQUES OU BESOINS SPÉCIFIQUES</label>
+                        <div class="input-wrapper" style="align-items: flex-start;">
+                            <i class="far fa-comment-dots" style="top: 20px;"></i>
+                            <textarea name="informations_complementaires"
+                                data-fr="Décrivez vos contraintes techniques, vos attentes ou toute information utile…"
+                                data-en="Describe your technical constraints, expectations, or any useful information..."
+                                placeholder="Décrivez vos contraintes techniques, vos attentes ou toute information utile…"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══════════════════════════════════════
+                     SECTION 6 — VOS COORDONNÉES
+                ══════════════════════════════════════ -->
+                <div class="separator" data-fr="VOS COORDONNÉES" data-en="YOUR CONTACT DETAILS">VOS COORDONNÉES</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span data-fr="PRÉNOM" data-en="FIRST NAME">PRÉNOM</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="far fa-user"></i>
+                            <input type="text" name="prenom" data-fr="Ex : Sophie" data-en="E.g., Jane"
+                                placeholder="Ex : Sophie" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-fr="NOM" data-en="LAST NAME">NOM</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" name="nom" data-fr="Ex : Martin" data-en="E.g., Doe"
+                                placeholder="Ex : Martin" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span data-fr="E-MAIL" data-en="EMAIL">E-MAIL</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="far fa-envelope"></i>
+                            <input type="email" name="email" placeholder="votre@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-fr="TÉLÉPHONE" data-en="PHONE">TÉLÉPHONE</span> <span
+                                class="asterisk">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone-alt"></i>
+                            <input type="tel" name="telephone" id="telephone" inputmode="numeric" maxlength="14"
+                                placeholder="06 12 34 56 78" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-benefits">
+                    <span><i class="fas fa-check"></i> <span data-fr="Devis gratuit" data-en="Free quote">Devis
+                            gratuit</span></span>
+                    <span><i class="fas fa-check"></i> <span data-fr="Sans engagement" data-en="No commitment">Sans
+                            engagement</span></span>
+                    <span><i class="fas fa-check"></i> <span data-fr="Réponse sous 24 à 48 h"
+                            data-en="Response within 24-48h">Réponse sous 24 à 48 h</span></span>
+                </div>
+
+                <div class="btn-submit-wrapper">
+                    <button type="submit" class="btn-cta">
+                        <span data-fr="ENVOYER MA DEMANDE DE DEVIS" data-en="SUBMIT REQUEST">ENVOYER MA DEMANDE DE
+                            DEVIS</span>
+                        <span class="btn-cta-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+
+            </form>
+
+            <div class="security-info">
+                <i class="fas fa-lock"></i>
+                <span data-fr="Vos informations sont 100% sécurisées et confidentielles."
+                    data-en="Your information is 100% secure and confidential.">Vos informations sont 100% sécurisées et
+                    confidentielles.</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- ══════════════════════════════════════
+         POPUP CONFIRMATION
+    ══════════════════════════════════════ -->
+    <div id="popup-overlay"
+        style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); z-index:1000; align-items:center; justify-content:center;">
+        <div id="popup-box"
+            style="background:#0a0c08; border:1px solid rgba(173,255,0,0.4); border-radius:20px; padding:60px 50px; max-width:480px; width:90%; text-align:center; position:relative; transform:scale(0.8); opacity:0; transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;">
+            <div id="popup-check"
+                style="width:80px; height:80px; background:var(--accent); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 28px; font-size:2.2rem; color:#000; transform:scale(0); transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.2s;">
+                ✓</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:2.4rem; letter-spacing:0.04em; margin:0 0 12px; color:#fff;"
+                data-fr="DEMANDE ENVOYÉE !" data-en="REQUEST SENT!">
+                DEMANDE ENVOYÉE !</h2>
+            <p style="color:rgba(255,255,255,0.65); font-size:1rem; line-height:1.7; margin:0 0 36px;"
+                data-fr="Nous avons bien reçu votre demande de devis.<br>Notre équipe vous contactera dans les plus brefs délais."
+                data-en="We have received your quotation request.<br>Our team will contact you as soon as possible.">
+                Nous avons bien reçu votre demande de devis.<br>Notre équipe vous contactera dans les plus brefs délais.
+            </p>
+            <button onclick="closePopup()"
+                style="background:var(--accent); border:none; border-radius:999px; padding:14px 40px; font-family:'Barlow',sans-serif; font-weight:800; font-size:1rem; color:#000; cursor:pointer; letter-spacing:0.05em; transition:all 0.3s ease;"
+                data-fr="FERMER" data-en="CLOSE">
+                FERMER</button>
+        </div>
+    </div>
+
+    <script src="/js/chatbot.js"></script>
+
+    <script src="/js/lang-switcher.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        // ── Connexion Supabase ──
+        const { createClient } = supabase;
+        const db = createClient(
+            'https://lzjxepjgsqhyprlgmpgy.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx6anhlcGpnc3FoeXBybGdtcGd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMDQxMjAsImV4cCI6MjA5NTg4MDEyMH0.BFygMWxG07uGHH_PtutQ6vRs4cXDC1TobKNJupFouoA'
+        );
+
+        // ── Soumission du formulaire ──
+        document.querySelector('form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.querySelector('span').textContent;
+            btn.disabled = true;
+
+            // Adaptation textuelle du bouton pendant l'envoi
+            btn.querySelector('span').textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
+
+            const formData = new FormData(this);
+
+            const data = {
+                nom_collectivite: formData.get('nom_collectivite'),
+                nom_lieu: formData.get('nom_lieu'),
+                ville: formData.get('ville'),
+                frequentation_quotidienne: parseInt(formData.get('frequentation_quotidienne')) || 0,
+                heure_ouverture: formData.get('heure_ouverture'),
+                heure_fermeture: formData.get('heure_fermeture'),
+                choix_borne: formData.get('choix_borne'),
+                mode_recharge: formData.get('mode_recharge'),
+                informations_complementaires: formData.get('informations_complementaires'),
+                prenom: formData.get('prenom'),
+                nom: formData.get('nom'),
+                email: formData.get('email'),
+                telephone: formData.get('telephone')
+            };
+
+            const { error } = await db.from('Collectivites_formulaire').insert([data]);
+
+            if (error) {
+                const errMsg = currentLang === 'fr'
+                    ? 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer.'
+                    : 'An error occurred while submitting. Please try again.';
+                alert(errMsg);
+                console.error('Erreur Supabase:', error);
+                btn.disabled = false;
+                btn.querySelector('span').textContent = originalText;
+            } else {
+                this.reset();
+                const overlay = document.getElementById('popup-overlay');
+                const box = document.getElementById('popup-box');
+                const check = document.getElementById('popup-check');
+                overlay.style.display = 'flex';
+                setTimeout(() => {
+                    box.style.transform = 'scale(1)';
+                    box.style.opacity = '1';
+                    setTimeout(() => { check.style.transform = 'scale(1)'; }, 200);
+                }, 10);
+                btn.disabled = false;
+                btn.querySelector('span').textContent = originalText;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

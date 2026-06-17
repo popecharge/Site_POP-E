@@ -1,0 +1,753 @@
+/* ═══════════════════════════════════════════════════════════
+   privé.css — Page Événements Privés POP-E
+   Complète b2b.css (variables, reset, header, footer, sidebar)
+═══════════════════════════════════════════════════════════ */
+
+/* ──────────────────────────────────────────
+   HERO (Split-screen moderne et opaque à gauche)
+────────────────────────────────────────── */
+.prive-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  background-color: var(--black);
+}
+
+/* Background image réel - Pleine largeur */
+.hero-bg-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: url('/img/b2b-privé/background.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--green);
+}
+
+.nav-link.nav-back {
+  color: var(--green);
+  border: 1px solid rgba(173, 255, 0, 0.3);
+  border-radius: 999px;
+  padding: 5px 14px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-link.nav-back:hover {
+  background: rgba(173, 255, 0, 0.08);
+  border-color: var(--green);
+}
+
+.prive-hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 80px 0 0 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 0;
+}
+
+/* Bloc texte de gauche - Transparent */
+.prive-hero-text {
+  background-color: transparent;
+  padding: 24px 60px 24px clamp(40px, 8vw, 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* ── Hero Badge ── */
+.hero-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #ADFF00;
+  border: 1px solid #ADFF00;
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin-bottom: 22px;
+  align-self: flex-start;
+}
+
+/* ── Hero Title ── */
+.prive-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.prive-hero-title .accent {
+  background-image: linear-gradient(to right, #ADFF00 75%, #b8e027);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* ── Hero Subtitle ── */
+.prive-hero-sub {
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin-bottom: 38px;
+  font-weight: 400;
+}
+
+.prive-hero-sub strong {
+  color: #ADFF00;
+  font-weight: 400;
+}
+
+/* ── CTA Button ── */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: #ADFF00;
+  border-radius: 999px;
+  padding: 10px 10px 10px 24px;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: #000;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 0 25px rgba(173, 255, 0, 0.4);
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 0 35px rgba(173, 255, 0, 0.6),
+    0 0 60px rgba(173, 255, 0, 0.3);
+  background: #c0ff20;
+}
+
+.btn-cta-arrow {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.btn-cta:hover .btn-cta-arrow {
+  transform: translateX(3px);
+}
+
+/* ── Hero Visual ── */
+.prive-hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-product-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-product-placeholder img {
+  width: auto;
+  height: 55vh;
+  max-width: 90%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+}
+
+
+/* ──────────────────────────────────────────
+   BENEFITS SECTION (Passée en noir pur)
+────────────────────────────────────────── */
+.benefits-section {
+  position: relative;
+  background: #000000;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.benefits-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(173, 255, 0, 0.25) 40%, rgba(173, 255, 0, 0.25) 60%, transparent);
+}
+
+/* Rectangle intérieur englobant */
+.benefits-inner {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000000;
+  padding: 40px 40px 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  letter-spacing: 0.04em;
+  color: var(--text);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.section-title .accent {
+  background-image: linear-gradient(to right, #ADFF00 75%, #b8e027);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  margin-top: 32px;
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 36px 24px;
+  position: relative;
+}
+
+.benefit-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 1px;
+  background: rgba(173, 255, 0, 0.25);
+  z-index: 1;
+}
+
+.benefit-icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+
+.benefit-icon svg {
+  width: 42px;
+  height: 42px;
+}
+
+.benefit-icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.benefit-item:hover .benefit-icon {
+  transform: translateY(-3px);
+}
+
+.benefit-main {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.benefit-sub {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+
+/* ──────────────────────────────────────────
+   EVENT TYPES SECTION (Même style que pro.html)
+────────────────────────────────────────── */
+.events-section {
+  position: relative;
+  background:
+    linear-gradient(to bottom, var(--black) 0%, transparent 20%),
+    url('/img/b2b-privé/card-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--black);
+  padding: 80px 80px;
+  overflow: hidden;
+}
+
+.events-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(173, 255, 0, 0.2) 40%, rgba(173, 255, 0, 0.2) 60%, transparent);
+}
+
+.events-inner {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Event Cards Grid ── */
+.event-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.event-cards-grid .event-card:nth-child(4) .event-card-icon img {
+  width: 90px; /* Ajustez cette valeur selon la taille souhaitée */
+}
+
+.event-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--radius);
+  overflow: hidden;
+  /* Retrait du padding-bottom, géré par le footer pour s'aligner sur b2b.css */
+  padding: 30px 24px 0px 24px; 
+  border: 1px solid rgba(192, 192, 192, 0.15);
+  background: transparent;
+
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), border-color 0.4s, box-shadow 0.4s;
+  transform: translateZ(0);
+  z-index: 2;
+}
+
+/* Header de carte avec fond noir identique à b2b.css */
+.event-card .card-header {
+  width: 100%;
+  background: transparent;
+  padding: 20px 20px 10px 20px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Conteneur d'icône épuré géant */
+.event-card-icon {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px; /* Marge réduite */
+  background: transparent;
+  border: none;
+  transition: transform 0.4s ease;
+}
+
+.event-card-icon img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.event-card-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.event-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.4;
+  margin-bottom: 0; /* Géré par le flex-grow et le footer */
+  max-width: 90%;
+  position: relative;
+  z-index: 2;
+  flex-grow: 1; /* Pousse le footer vers le bas */
+}
+
+/* ── Structure Footer Exacte (Même style que pro.html) ── */
+.card-footer {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 40px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.card-button-wrapper {
+  position: relative;
+  z-index: 3;
+}
+
+/* Gradient sombre sous le texte (Maintenu sur la carte pour l'effet de fondu sur la hauteur) */
+.event-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 65%;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(8, 10, 6, 0.7) 30%,
+      rgba(8, 10, 6, 0.97) 70%,
+      rgba(8, 10, 6, 1) 100%);
+  pointer-events: none;
+  z-index: 1;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+/* Bouton style capsule "VOIR L'OFFRE" */
+.event-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 32px;
+  background: transparent;
+  border-radius: 999px;
+  border: 1px solid rgba(173, 255, 0, 0.4);
+  color: #ADFF00;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.event-card-btn svg {
+  transition: transform 0.3s ease;
+}
+
+/* ── HOVER EFFECTS EXACTS (3D + Neon Glow + Border rotatif) ── */
+.event-card:hover {
+  will-change: transform, box-shadow;
+  transform: perspective(800px) translateY(-8px) rotateY(8deg);
+  border-color: #ADFF00;
+  box-shadow:
+    0 0 0 1px #ADFF00,
+    0 0 25px rgba(173, 255, 0, 0.6),
+    0 0 50px rgba(173, 255, 0, 0.25),
+    0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+/* Animation de l'icône au survol */
+.event-card:hover .event-card-icon img {
+  animation: icon-pulse 1.2s ease-in-out infinite;
+}
+.event-card:hover .event-card-icon {
+  transform: scale(1.1);
+}
+
+/* État actif du bouton au survol de la carte */
+.event-card:hover .event-card-btn {
+  background: #ADFF00;
+  color: #000;
+  box-shadow: 0 0 15px rgba(173, 255, 0, 0.4);
+}
+.event-card:hover .event-card-btn svg {
+  transform: translateX(3px);
+}
+
+/* Bordure animée magique (Conic-gradient) */
+.event-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  padding: 1.5px;
+  background: conic-gradient(from var(--angle), transparent 70%, #ADFF00 85%, white 90%, #ADFF00 95%, transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+  pointer-events: none;
+  animation: rotate-border 2s linear infinite;
+  animation-play-state: paused;
+}
+
+.event-card:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+
+/* ──────────────────────────────────────────
+   CTA BANNER (Pleine largeur, centré et sans vide)
+────────────────────────────────────────── */
+.cta-banner {
+  position: relative;
+  background: #000;
+  background: linear-gradient(135deg, #050704 0%, #0c0f08 100%);
+  padding: 60px 40px;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(173, 255, 0, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-banner-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;               
+  border: 1px solid #ADFF00;
+  border-radius: 24px;
+  padding: 50px 60px;
+  background: rgba(10, 12, 8, 0.9);
+  box-shadow: 
+    0 0 35px rgba(173, 255, 0, 0.15),
+    inset 0 0 20px rgba(173, 255, 0, 0.05);
+}
+
+.cta-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.cta-right {
+  flex-shrink: 0;
+}
+
+.cta-right .btn-cta--large {
+  padding: 18px 18px 18px 36px;
+  font-size: 1.05rem;
+  box-shadow: 0 0 35px rgba(173, 255, 0, 0.5);
+}
+
+.cta-icon-wrap svg {
+    width: 75px; /* ou la taille souhaitée */
+    height: 75px;
+    display: block; /* Évite les espaces parasites */
+}
+
+
+/* ──────────────────────────────────────────
+   RESPONSIVE & ANIMATIONS ENGINE
+────────────────────────────────────────── */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-border {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes icon-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 1100px) {
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .benefit-item:nth-child(3)::after,
+  .benefit-item:nth-child(6)::after {
+    display: none !important;
+  }
+  .event-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .prive-hero {
+    flex-direction: column;
+    height: auto !important;
+    min-height: auto !important;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+  .hero-bg-placeholder {
+    display: none;
+  }
+  .prive-hero-inner {
+    grid-template-columns: 1fr;
+    padding: 0;                   /* Supprime le trou restant au-dessus */
+    height: auto !important;      /* CORRIGÉ : Sécurité pour empêcher ce bloc de s'étirer */
+    min-height: auto !important;
+  }
+  .prive-hero-visual {
+    height: 250px;                /* Ajuste l'image pour tablette */
+    order: -1;                    /* Place bien l'image au-dessus du texte */
+    width: 100%;
+  }
+  .prive-hero-text {
+    padding: 40px 20px;           /* Un padding propre et serré autour du texte */
+    text-align: center;
+  }
+  .benefits-section,
+  .events-section,
+  .cta-banner {
+    padding: 40px 24px;
+  }
+  .cta-banner-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    gap: 32px;
+  }
+  .cta-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .benefit-item:nth-child(2)::after,
+  .benefit-item:nth-child(4)::after,
+  .benefit-item:nth-child(6)::after {
+    display: none !important;
+  }
+  .event-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .event-card {
+    height: auto;
+    padding: 35px 20px 0 20px; /* Aligné avec la logique du footer */
+  }
+  .event-card-icon img {
+    width: 120px;
+  }
+  .prive-hero-title {
+    font-size: clamp(2.6rem, 10vw, 3.5rem);
+  }
+  .section-title {
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  }
+  .benefits-section,
+  .events-section,
+  .cta-banner {
+    padding: 16px;
+  }
+}

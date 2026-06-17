@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-fr="Choisissez Votre Événement" data-en="Choose Your Event">Choisissez Votre Événement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/chatbot.css" />
+  <link rel="stylesheet" href="/css/festival.css" />
+</head>
+
+<body>
+
+  <div class="bg-noise"></div>
+
+  <header class="site-header">
+    <a href="/?skipIntro=true" class="logo-link">
+      <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
+    </a>
+
+    <div class="header-right">
+      <a href="/pro/pro.html" class="nav-link nav-back" data-fr="← Retour" data-en="← Back">← Retour</a>
+
+      <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-flag" id="currentFlag">🇫🇷</span>
+          <span class="lang-code" id="currentCode">FR</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown" role="listbox">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span data-fr="Choisissez" data-en="Choose">Choisissez</span><br>
+        <span class="accent" data-fr="Votre Événement" data-en="Your Event">Votre Événement</span>
+      </h1>
+      <p class="hero-subtitle">
+        <span
+          data-fr="Chaque événement possède son public, son rythme et ses objectifs. <em>POP-E</em> adapte son dispositif pour créer la meilleure expérience possible."
+          data-en="Every event has its own audience, pace, and goals. <em>POP-E</em> tailors its approach to create the best possible experience.">
+          Chaque événement possède son public, son rythme et ses objectifs. <em>POP-E</em> adapte son dispositif pour
+          créer la meilleure expérience possible.
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="cards-grid">
+
+      <a class="card" href="/pro/festival.html">
+        <div class="card-bg" style="background-image: url('/img/b2b-événements/festival-card.jpeg');"></div>
+        <div class="card-bg-overlay"></div>
+        <div class="card-overlay">
+          <div class="card-header">
+            <span class="card-number">01</span>
+            <div class="card-number-line"></div>
+          </div>
+          <div class="card-spacer"></div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Festivals" data-en="Festivals">Festivals</h2>
+            <p class="card-desc" data-fr="Attirez, engagez et monétisez votre public."
+              data-en="Attract, engage, and monetize your audience.">Attirez, engagez et monétisez votre public.</p>
+            <ul class="card-features">
+              <li data-fr="Flux massif" data-en="Massive flow">Flux massif</li>
+              <li data-fr="Temps d'exposition élevé" data-en="High exposure time">Temps d'exposition élevé</li>
+              <li data-fr="Expérience utile" data-en="Useful experience">Expérience utile</li>
+            </ul>
+          </div>
+          <div class="card-button-wrapper">
+            <span class="btn-offer">
+              <span class="btn-text" data-fr="Voir l'offre" data-en="View offer">Voir l'offre</span>
+              <span class="btn-arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="/pro/salon.html">
+        <div class="card-bg" style="background-image: url('/img/b2b-événements/salon-card.jpeg');"></div>
+        <div class="card-bg-overlay"></div>
+        <div class="card-overlay">
+          <div class="card-header">
+            <span class="card-number">02</span>
+            <div class="card-number-line"></div>
+          </div>
+          <div class="card-spacer"></div>
+          <div class="card-footer">
+            <h2 class="card-title" data-fr="Salons" data-en="Trade Shows">Salons</h2>
+            <p class="card-desc" data-fr="Transformez l'attention en opportunité."
+              data-en="Turn attention into opportunity.">Transformez l'attention en opportunité.</p>
+            <ul class="card-features">
+              <li data-fr="Génération de leads" data-en="Lead generation">Génération de leads</li>
+              <li data-fr="Temps de présence long" data-en="Long attendance time">Temps de présence long</li>
+              <li data-fr="ROI mesurable" data-en="Measurable ROI">ROI mesurable</li>
+            </ul>
+          </div>
+          <div class="card-button-wrapper">
+            <span class="btn-offer">
+              <span class="btn-text" data-fr="Voir l'offre" data-en="View offer">Voir l'offre</span>
+              <span class="btn-arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div id="social-sidebar">
+    <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn"
+      title="Instagram">
+      <img src="/img/insta.png" alt="Instagram">
+    </a>
+    <div class="social-btn" title="TikTok">
+      <img src="/img/tiktok.png" alt="TikTok">
+    </div>
+    <div class="social-btn" title="Téléphone">
+      <img src="/img/telephone.png" alt="Contact">
+    </div>
+  </div>
+
+  <div id="chatbot">
+    <i class="fas fa-comments"></i>
+  </div>
+
+  <script src="/js/chatbot.js"></script>
+  <script src="/js/lang-switcher.js"></script>
+
+</body>
+
+</html>

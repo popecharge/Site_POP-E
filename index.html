@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POP-E – Charge Your Power</title>
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/css/acceuil.css">
+  <link rel="stylesheet" href="/css/chatbot.css">
+</head>
+<body>
+
+  <!-- LANG SWITCHER -->
+  <div class="lang-switcher" id="langSwitcher">
+    <button class="lang-btn" id="langBtn">
+      <span class="lang-flag" id="currentFlag">🇫🇷</span>
+      <span class="lang-code" id="currentCode">FR</span>
+      <svg class="lang-chevron" viewBox="0 0 10 10" fill="none">
+        <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="lang-dropdown" id="langDropdown"></div>
+  </div>
+
+  <!-- INTRO -->
+  <div id="intro">
+    <h1 class="logo"><img id="intro-logo" src="/img/logo2.png" alt="Logo POP-E"></h1>
+    <div id="manifeste"></div>
+  </div>
+
+  <!-- PHRASE CLÉ -->
+  <div id="phrase-key">
+    <h2>POP-E transforme chaque lieu<br>en point d'<span class="g">énergie</span> et de visibilité.</h2>
+    <p>Batteries en libre-service. Écrans utiles. Impact réel.</p>
+  </div>
+
+  <!-- SKIP -->
+  <div id="skip-btn" onclick="skipIntro()">PASSER ↓</div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <img id="nav-logo" src="/img/logo2.png" alt="Logo POP-E" style="opacity:0;visibility:hidden;transition:opacity .3s">
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" style="opacity:0;transition:opacity .6s ease">
+    <img src="/img/batterie.png" class="side-image left-img"  id="img-batterie" alt="Batterie POP-E">
+    <img src="/img/borne.png"    class="side-image right-img" id="img-borne"    alt="Borne POP-E">
+
+    <div id="hero-text">
+      <h1 id="hero-h1"><span class="green">Chargez<br></span> Diffusez<br> <span class="green">Impactez</span></h1>
+      <p id="hero-p">Le réseau de bornes intelligentes qui recharge<br>vos visiteurs et transforme chaque lieu en <br>espace de communication à forte visibilité. </p>
+    </div>
+
+    <div id="features-strip">
+      <div class="feat-item">
+        <img class="feat-icon" src="/img/acceuil/chargef.png" alt="Recharge Mobile">
+        <span class="feat-label">Service essentiel</span>
+      </div>
+
+      <div class="feat-item">
+        <img class="feat-icon" src="/img/acceuil/telef.png" alt="Publicité Digitale">
+        <span class="feat-label">Média d'impact</span>
+      </div>
+
+      <div class="feat-item">
+        <img class="feat-icon" src="/img/acceuil/membref.png" alt="Expérience Visiteur">
+        <span class="feat-label">Expérience premium</span>
+      </div>
+
+      <div class="feat-item">
+        <img class="feat-icon" src="/img/acceuil/locf.png" alt="Partout">
+        <span class="feat-label">Disponible partout</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT UTILISER -->
+<section id="section-use">
+
+  <div id="stats-box">
+    <div class="stat-item">
+      <img class="stat-icon" src="/img/acceuil/chargef.png" alt="Recharges">
+      <span class="stat-value">+50 000</span>
+      <span class="stat-label">Recharges Effectuées</span>
+    </div>
+    <div class="stat-item">
+      <img class="stat-icon" src="/img/acceuil/membref.png" alt="Visiteurs">
+      <span class="stat-value">+200 000</span>
+      <span class="stat-label">interactions visiteurs</span>
+    </div>
+    <div class="stat-item">
+      <img class="stat-icon" src="/img/acceuil/telef.png" alt="Publicité">
+      <span class="stat-value">8</span>
+      <span class="stat-label">Espaces Pub par Borne</span>
+    </div>
+    <div class="stat-item">
+      <img class="stat-icon" src="/img/acceuil/locf.png" alt="Localisation">
+      <span class="stat-value">Partout</span>
+      <span class="stat-label">Festivals · Villes · Commerces</span>
+    </div>
+  </div>
+
+  <div class="reveal" style="margin-top:80px">
+    <h2>UNE SOLUTION. <span>TROIS EXPÉRIENCES</span></h2>
+    <p class="section-sub">Une seule technologie. Des possibilités infinies. Décrouvrez l'expérience POP-E pensée pour votre univers.</p>
+  </div>
+
+  <div class="use-cards">
+
+    <div class="use-card-outer">
+      <div class="use-card card-green reveal" id="use-card-borne" onclick="gotoPage('pro/pro.html')">
+        <div class="use-card-img-wrap">
+          <img src="/img/acceuil/lieu.png" class="use-card-img" alt="Installer une borne" onerror="this.style.background='#0d1a05'">
+          <div class="use-card-title-overlay">
+            <h3>Offrir <br><span class="keyword">un service </span><br>indispensable</h3>
+          </div>
+        </div>
+        <div class="use-card-body">
+          <p> Proposez un service que vos visiteurs utiliseront réellement
+ tout en créant une nouvelle source de revenus et un support de communication
+ pour votre événement ou votre établissement.</p>
+          <ul class="use-check-list">
+            <li>Recharge mobile en libre-service</li>
+            <li>Installation rapide et autonome</li>
+            <li>Revenus publicitaires partagés</li>
+            <li>Expérience visiteur renforcée</li>
+          </ul>
+          <a href="pro/pro.html" class="use-card-cta">Découvrir la solution →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="use-card-outer">
+      <div class="use-card card-purple reveal" id="use-card-marque" onclick="gotoPage('marques/marques.html')">
+        <div class="use-card-img-wrap">
+          <img src="/img/acceuil/festival.png" class="use-card-img" alt="Promouvoir votre marque" onerror="this.style.background='#0d0012'">
+          <div class="use-card-title-overlay">
+            <h3>Capter <br><span class="keyword">l'attention </span><br>au bon moment</h3>
+          </div>
+        </div>
+        <div class="use-card-body">
+          <p> Diffusez votre message sur un média physique innovant,
+ au cœur de l'expérience visiteur, lorsque votre audience est la plus disponible et la plus engagée.</p>
+          <ul class="use-check-list">
+            <li>Audience qualifiée et captive</li>
+            <li>Exclusivité par secteur</li>
+            <li>Diffusion en continu</li>
+            <li>Impact mémorable</li>
+          </ul>
+          <a href="marques/marques.html" class="use-card-cta">Découvrir les opportunités →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="use-card-outer">
+      <div class="use-card card-cyan reveal" id="use-card-user" onclick="window.location.href='utilisateurs/app.html'">
+        <div class="use-card-img-wrap">
+          <img src="/img/acceuil/utilisateur.png" class="use-card-img" alt="Recharger mon téléphone" onerror="this.style.background='#001518'">
+          <div class="use-card-title-overlay">
+            <h3>Restez <br><span class="keyword"></span>connecté<br>partout</h3>
+          </div>
+        </div>
+        <div class="use-card-body">
+          <p>Votre batterie s'arrête. Pas votre journée. Avec POP-E, restez connecté et profitez de chaque instant, où que vous soyez.</p>
+          <ul class="use-check-list">
+            <li>En moins de 30 secondes</li>
+            <li>Sans chercher une prise</li>
+            <li>Liberté totale de mouvement</li>
+            <li>Disponible partout</li>
+          </ul>
+          <a href="utilisateurs/app.html" class="use-card-cta">Découvrir l'expérience →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- POURQUOI POP-E -->
+  <section id="section-why">
+    <h2 class="reveal">POURQUOI CHOISIR <span>POP-E</span> ?</h2>
+      <div class="why-grid">
+
+        <div class="why-item reveal">
+          <img src="/img/acceuil/chargef.png" class="why-icon-img" alt="Zéro investissement">
+          <h4>Zéro Investissement</h4>
+          <p>Aucun coût pour les organisateurs*</p>
+        </div>
+
+        <div class="why-item reveal">
+          <img src="/img/acceuil/horloge.png" class="why-icon-img" alt="Installation rapide">
+          <h4>Installation Rapide</h4>
+          <p>Moins de 20 minutes</p>
+        </div>
+
+        <div class="why-item reveal">
+          <img src="/img/acceuil/batterief.png" class="why-icon-img" alt="Batteries toujours chargées">
+          <h4>Batteries Toujours Chargées</h4>
+          <p>Disponibilité 24/7</p>
+        </div>
+
+        <div class="why-item reveal">
+          <img src="/img/acceuil/reseau.png" class="why-icon-img" alt="Données et statistiques">
+          <h4>Données &amp; Stats</h4>
+          <p>Suivez l'utilisation en temps réel</p>
+        </div>
+
+        <div class="why-item reveal">
+          <img src="/img/acceuil/securitef.png" class="why-icon-img" alt="Sécurisé et fiable">
+          <h4>Sécurisé &amp; Fiable</h4>
+          <p>Batteries sécurisées et assurées</p>
+        </div>
+
+      </div>
+    <p style="margin-top:24px;font-size:11px;color:var(--text-muted)">*Selon modèle choisi.</p>
+  </section>
+
+  <!-- PARTENAIRES -->
+  <section id="section-partners">
+  <p class="section-title-sm reveal">Ils nous font déjà confiance pour enrichir l'expérience de leurs visiteurs.</p>
+  <div class="partners-row reveal">
+    <img class="partner-logo" src="/img/acceuil/snoryb.png" alt="SNØRY">
+    <img class="partner-logo" src="/img/acceuil/sportb.png" alt="Sport Elec">
+    <img class="partner-logo" src="/img/acceuil/mediab.png" alt="Mediaquizz">
+    <img class="partner-logo" src="/img/acceuil/mcdob.png" alt="McDonald's">
+    <img class="partner-logo" src="/img/acceuil/olnab.png" alt="Olna">
+  </div>
+  <!-- TICKER FESTIVALS -->
+<div id="ls-ticker-wrap" style="margin: 0 40px 48px; border-radius: 14px;">
+  <div id="ls-ticker-label">
+    <img src="/img/eclair.png" alt="⚡" style="width:70px;height:70px;object-fit:contain;">
+    <div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:0.08em;color:rgba(255,255,255,0.7);line-height:1.3;">RETROUVES NOUS SUR LES<br>FESTIVALS PARTENAIRES</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:0.08em;color:var(--green);">POP-E</div>
+    </div>
+  </div>
+  <div id="ls-ticker-scroll">
+    <div id="ls-ticker">
+      <span class="ls-tick-item"><img src="/img/fes1.png" alt="DYSTOPIA">DYSTOPIA<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes2.png" alt="ODIZIA">ODIZIA<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes3.png" alt="MILLÉSIME">MILLÉSIME<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes4.png" alt="FORT DÉCIBEL">FORT DÉCIBEL<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes5.png" alt="SOLAR">SOLAR<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes6.png" alt="MUSICALARUE">MUSICALARUE<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes7.png" alt="LES PERSÉIDES">LES PERSÉIDES<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes8.png" alt="LEZART">LEZART<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes9.png" alt="EVASION">EVASION<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes10.png" alt="JARDIN DU MICHEL">JARDIN DU MICHEL<br><small>FESTIVAL</small></span>
+      <!-- doublon pour boucle infinie -->
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes1.png" alt="DYSTOPIA">DYSTOPIA<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes2.png" alt="ODIZIA">ODIZIA<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes3.png" alt="MILLÉSIME">MILLÉSIME<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes4.png" alt="FORT DÉCIBEL">FORT DÉCIBEL<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes5.png" alt="SOLAR">SOLAR<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes6.png" alt="MUSICALARUE">MUSICALARUE<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes7.png" alt="LES PERSÉIDES">LES PERSÉIDES<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes8.png" alt="LEZART">LEZART<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes9.png" alt="EVASION">EVASION<br><small>FESTIVAL</small></span>
+      <span class="ls-tick-sep"></span>
+      <span class="ls-tick-item"><img src="/img/fes10.png" alt="JARDIN DU MICHEL">JARDIN DU MICHEL<br><small>FESTIVAL</small></span>
+    </div>
+  </div>
+</div>
+  <p class="partners-note reveal">Et plus de 150 partenaires à travers la France.</p>
+</section>
+
+<!-- CTA FINAL -->
+<section id="section-cta">
+  <div class="cta-bg-img">
+    <img src="/img/acceuil/borne_acceuil.png" alt="Borne POP-E">
+  </div>
+  <div class="cta-overlay"></div>
+  <div class="cta-inner reveal">
+    <div class="cta-left">
+      <h2>Et si votre lieu devenait le prochain<br><span>point de connexion POP-E ?</span></h2>
+    </div>
+    <div class="cta-right">
+      <p>Rejoignez le réseau POP-E et faites de votre lieu un espace incontournable.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="/pro/pro.html" class="btn-cta-primary">Recevoir mon projet personnalisé →</a>
+        <a href="#" class="btn-cta-secondary" onclick="openModal('question'); return false;">Nous contacter</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer id="footer">
+  <div id="footer-container">
+    <div id="footer-brand">
+      <img src="/img/logo2.png" alt="POP-E Logo">
+      <p>Le réseau de bornes intelligentes qui recharge vos visiteurs et transforme chaque lieu en espace de visibilité.</p>
+      <div id="footer-socials">
+        <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn">Instagram</a>
+        <a href="https://www.tiktok.com/@pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn">TikTok</a>
+        <a href="https://www.linkedin.com/company/pop-e" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+    <div id="footer-links">
+      <div class="footer-col">
+        <h4>Solution</h4>
+        <a href="pro/pro.html">Installer une borne</a>
+        <a href="marques/marques.html">Diffuser ma marque</a>
+        <a href="utilisateurs/app.html">Recharger mon téléphone</a>
+      </div>
+      <div class="footer-col">
+        <h4>Découvrir</h4>
+        <a href="utilisateurs/app/festivals.html">Festivals partenaires</a>
+        <a href="utilisateurs/app/boutique.html">Boutique</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@pope.charge/" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="tel:+33618158880">+33 6 18 15 88 80</a>
+      </div>
+    </div>
+  </div>
+  <div id="footer-bottom">
+    <span>© 2026 POP-E. Tous droits réservés.</span>
+    <div id="footer-legal">
+      <a href="/legal/mentions-legales.html">Mentions légales</a>
+      <a href="/legal/cgu.html">CGU</a>
+      <a href="/legal/confidentialite.html">Confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+  <!-- SOCIAL SIDEBAR -->
+  <div id="social-sidebar" style="opacity:0;visibility:hidden;transition:opacity .5s ease">
+  <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
+    <img src="/img/insta.png" alt="Instagram">
+  </a>
+  <a href="https://www.tiktok.com/@pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn" title="TikTok">
+    <img src="/img/tiktok.png" alt="TikTok">
+  </a>
+  <a href="tel:+33618158880" class="social-btn" title="Téléphone">
+    <img src="/img/telephone.png" alt="Téléphone">
+  </a>
+</div>
+
+  <!-- TRANSITION OVERLAY -->
+  <div id="transition-overlay"></div>
+
+  <script src="/js/chatbot.js"></script>
+  <script src="/js/acceuil.js"></script>
+
+</body>
+</html>

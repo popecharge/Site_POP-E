@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bars · Clubs · Hôtels — POP-E</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/chatbot.css" />
+  <link rel="stylesheet" href="/css/lieux.css" />
+  <link rel="stylesheet" href="/css/b2b.css" />
+</head>
+
+<body>
+
+  <div class="bg-noise"></div>
+
+  <header class="site-header">
+    <a href="/?skipIntro=true" class="logo-link">
+      <img src="/img/logo2.png" alt="POP-E Logo" class="logo-img">
+    </a>
+
+    <div class="header-right">
+      <a href="/pro/pro.html" class="nav-link nav-back" data-fr="← Retour" data-en="← Back">← Retour</a>
+
+      <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-flag" id="currentFlag">🇫🇷</span>
+          <span class="lang-code" id="currentCode">FR</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown" role="listbox">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="deco-lines top-right">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="accent" data-fr="Augmentez l'expérience." data-en="Boost the experience.">Augmentez
+            l'expérience.</span><br>
+          <span data-fr="Pas juste la consommation." data-en="Not just consumption.">Pas juste la consommation.</span>
+        </h1>
+        <p class="hero-subtitle">
+          <span data-fr="Un service utile, invisible et <strong>premium</strong>"
+            data-en="A useful, invisible and <strong>premium</strong> service">Un service utile, invisible et
+            <strong>premium</strong></span><br>
+          <span data-fr="qui transforme l'expérience client." data-en="that transforms the guest experience.">qui
+            transforme l'expérience client.</span>
+        </p>
+        <a href="/pro/presentation-commerces.html" class="btn-install" data-fr="Installer POP-E →"
+          data-en="Install POP-E →">Installer POP-E →</a>
+      </div>
+      <div class="hero-visual">
+        <div class="battery-wrapper">
+          <img src="/img/batterie.png" alt="" class="hero-img" />
+
+          <div class="float-badge badge-top-left">
+            <span class="badge-icon">
+              <img src="/img/b2b-commerces/icon-4k.png" alt="" />
+            </span>
+            <span class="badge-label" data-fr="Écran 4K" data-en="4K Screen">Écran 4K</span>
+          </div>
+
+          <div class="float-badge badge-top-right">
+            <span class="badge-icon">
+              <img src="/img/b2b-commerces/icon-innovation.png" alt="" />
+            </span>
+            <span class="badge-label" data-fr="Innovation" data-en="Innovation">Innovation</span>
+          </div>
+
+          <div class="float-badge badge-bottom-left">
+            <span class="badge-icon">
+              <img src="/img/b2b-commerces/icon-eco.png" alt="" />
+            </span>
+            <span class="badge-label" data-fr="Écoresponsable" data-en="Eco-friendly">Écoresponsable</span>
+          </div>
+
+          <div class="float-badge badge-bottom-right">
+            <span class="badge-icon">
+              <img src="/img/b2b-commerces/icon-revenus.png" alt="" />
+            </span>
+            <span class="badge-label" data-fr="Revenus passifs" data-en="Passive income">Revenus passifs</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="/img//b2b-commerces/icon-experience.png" alt="" />
+        </div>
+        <div class="feature-text">
+          <h3 class="feature-title" data-fr="Expérience client" data-en="Guest experience">Expérience client</h3>
+          <p class="feature-desc" data-fr="Service indispensable<br>sans friction."
+            data-en="Essential service<br>without friction.">Service indispensable<br>sans friction.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="/img/b2b-commerces/icon-premium.png" alt="" />
+        </div>
+        <div class="feature-text">
+          <h3 class="feature-title" data-fr="Image premium" data-en="Premium image">Image premium</h3>
+          <p class="feature-desc" data-fr="Positionnez votre lieu<br>comme innovant."
+            data-en="Position your venue<br>as innovative.">Positionnez votre lieu<br>comme innovant.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="/img/b2b-commerces/icon-revenu.png" alt="" />
+        </div>
+        <div class="feature-text">
+          <h3 class="feature-title" data-fr="Revenu complémentaire" data-en="Additional revenue">Revenu complémentaire
+          </h3>
+          <p class="feature-desc" data-fr="Générez un flux<br>sans effort." data-en="Generate a flow<br>effortlessly.">
+            Générez un flux<br>sans effort.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="social-sidebar">
+    <a href="https://www.instagram.com/pope.charge/" target="_blank" rel="noopener noreferrer" class="social-btn"
+      title="Instagram">
+      <img src="/img/insta.png" alt="Instagram">
+    </a>
+    <div class="social-btn" title="TikTok">
+      <img src="/img/tiktok.png" alt="TikTok">
+    </div>
+    <div class="social-btn" title="Téléphone">
+      <img src="/img/telephone.png" alt="Contact">
+    </div>
+  </div>
+
+  <div id="chatbot">
+    <i class="fas fa-comments"></i>
+  </div>
+
+  <script src="/js/chatbot.js"></script>
+
+  <script src="/js/lang-switcher.js"></script>
+
+</body>
+
+</html>
