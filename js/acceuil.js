@@ -209,8 +209,8 @@ const translations = {
     cta_btn2: 'Nous contacter',
     footer_desc: 'Le réseau de bornes intelligentes qui recharge vos visiteurs et transforme chaque lieu en espace de visibilité.',
     footer_cols: [
-      { title: 'Solution', links: [['Installer une borne','pro/pro.html'],['Diffuser ma marque','marques/marques.html'],['Recharger mon téléphone','utilisateurs/app.html']] },
-      { title: 'Découvrir', links: [['Festivals partenaires','utilisateurs/app/festivals.html'],['Boutique','utilisateurs/app/boutique.html']] },
+      { title: 'Solution', links: [['Installer une borne','pro/pro.html'],['Diffuser ma marque','marques/marques.html'],['Recharger mon téléphone','utilisateurs/utilisateurs.html']] },
+      { title: 'Découvrir', links: [['Festivals partenaires','utilisateurs/festivals.html'],['Boutique','utilisateurs/boutique.html']] },
       { title: 'Contact', links: [['Instagram','https://www.instagram.com/pope.charge/'],['TikTok','https://www.tiktok.com/@pope.charge/'],['+33 6 18 15 88 80','tel:+33618158880']] }
     ],
     footer_rights: '© 2026 POP-E. Tous droits réservés.',
@@ -249,7 +249,7 @@ const translations = {
     footer_desc: 'The smart charging network that powers your visitors and turns every venue into a visibility space.',
     footer_cols: [
       { title: 'Solution', links: [['Install a station','pro/pro.html'],['Broadcast my brand','marques/marques.html'],['Charge my phone','utilisateurs/app.html']] },
-      { title: 'Discover', links: [['Partner festivals','utilisateurs/app/festivals.html'],['Shop','utilisateurs/app/boutique.html']] },
+      { title: 'Discover', links: [['Partner festivals','utilisateurs/festivals.html'],['Shop','utilisateurs/boutique.html']] },
       { title: 'Contact', links: [['Instagram','https://www.instagram.com/pope.charge/'],['TikTok','https://www.tiktok.com/@pope.charge/'],['Call us','tel:+33618158880']] }
     ],
     footer_rights: '© 2026 POP-E. All rights reserved.',
