@@ -20,6 +20,7 @@
       position: relative;
       width: 100%;
       height: 100vh;
+      height: 100dvh; /* fix iOS Safari (barre d'adresse) */
       background: var(--black);
       overflow: hidden;
     }
@@ -33,6 +34,34 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+    }
+
+    /* ===== RESPONSIVE ===== */
+
+    /* Tablette (portrait & paysage) */
+    @media (max-width: 1200px) {
+      #navbar {
+        padding: 16px 20px;
+      }
+      #navbar a img {
+        max-width: 110px;
+      }
+    }
+
+    /* Téléphone */
+    @media (max-width: 600px) {
+      #navbar {
+        padding: 12px 16px;
+      }
+      #navbar a img {
+        max-width: 90px;
+      }
+      .nav-back {
+        font-size: 14px;
+      }
+      .lang-code {
+        display: none; /* ne garde que le drapeau sur petit écran */
+      }
     }
   </style>
 </head>
@@ -72,34 +101,90 @@
 
   <script src="/js/lang.js"></script>
   <script>
-    // Change la photo de fond selon la langue choisie (fr / en)
+    // ===== Images selon device + langue =====
+    // ⚠️ Le nom de variable "currentLang" est déjà utilisé en global par lang.js (let currentLang = ...).
+    // On utilise donc "efHeroLang" ici pour ne JAMAIS entrer en conflit, sinon
+    // tout ce bloc <script> plante au chargement (SyntaxError) et plus rien ne marche,
+    // y compris le bouton retour.
+    var HERO_IMAGES = {
+      desktop:        { fr: '/img/app/e-foret.jpeg',                en: '/img/app/e-foretEN.png' },
+      phone:          { fr: '/img/app/eforet-tlfn.png',             en: '/img/app/eforet-tlfnEN.png' },
+      ipad:           { fr: '/img/app/eforet-ipad.png',             en: '/img/app/eforet-ipadEN.png' },
+      tabletPortrait: { fr: '/img/app/eforet-TablettePortrait.png', en: '/img/app/eforet-TablettePortraitEN.png' }
+    };
+
+    // Détecte la catégorie d'écran en fonction de la largeur + de l'orientation
+    function getEfBreakpoint() {
+      var w = window.innerWidth;
+      var isPortrait = window.matchMedia('(orientation: portrait)').matches;
+
+      if (w <= 600) return 'phone';
+      if (w <= 1200) return isPortrait ? 'tabletPortrait' : 'ipad';
+      return 'desktop';
+    }
+
+    var efHeroLang = 'fr';
+
+    // Change la photo de fond selon la langue ET la taille d'écran
     function setHeroImage(lang) {
       var img = document.getElementById('ef-bg');
       if (!img) return;
-      img.src = (lang === 'en') ? '/img/app/e-foretEN.png' : '/img/app/e-foret.jpeg';
+
+      var bp = getEfBreakpoint();
+      var set = HERO_IMAGES[bp] || HERO_IMAGES.desktop;
+      var src = (lang === 'en') ? set.en : set.fr;
+
+      if (img.getAttribute('src') !== src) {
+        img.src = src;
+      }
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-      // Langue de départ : on se base sur l'attribut lang du <html>
-      // (mis à jour par lang.js si l'utilisateur avait déjà choisi EN ailleurs sur le site)
-      var initialLang = document.documentElement.lang === 'en' ? 'en' : 'fr';
-      setHeroImage(initialLang);
+      // Langue de départ : on récupère la langue déjà gérée par lang.js
+      // (lang.js expose window.getCurrentLang(), basé sur localStorage + <html lang>)
+      efHeroLang = (typeof window.getCurrentLang === 'function')
+        ? window.getCurrentLang()
+        : (document.documentElement.lang === 'en' ? 'en' : 'fr');
 
-      // À chaque clic sur une option du switcher, on met à jour la photo
+      setHeroImage(efHeroLang);
+
+      // À chaque clic sur une option du switcher, on met à jour la langue + la photo
+      // (lang.js gère déjà l'ouverture/fermeture du dropdown et applyLang() ;
+      // ce listener ne fait QUE mettre à jour l'image de fond, en plus, sans rien casser)
       document.querySelectorAll('.lang-option').forEach(function (option) {
         option.addEventListener('click', function () {
-          setHeroImage(option.getAttribute('data-lang'));
+          efHeroLang = option.getAttribute('data-lang');
+          setHeroImage(efHeroLang);
         });
       });
 
       // Bouton retour : revient à la page précédente, sinon repli sur l'accueil
-      document.getElementById('ef-back').addEventListener('click', function (e) {
-        e.preventDefault();
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          window.location.href = '/';
-        }
+      var backBtn = document.getElementById('ef-back');
+      if (backBtn) {
+        backBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (window.history.length > 1) {
+            window.history.back();
+          } else {
+            window.location.href = '/';
+          }
+        });
+      }
+
+      // Recalcule la bonne image au redimensionnement (debounce pour éviter le spam)
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          setHeroImage(efHeroLang);
+        }, 150);
+      });
+
+      // Recalcule aussi au changement d'orientation (tablette portrait <-> paysage)
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          setHeroImage(efHeroLang);
+        }, 200);
       });
     });
   </script>
